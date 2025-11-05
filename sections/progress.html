@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>छात्र प्रगति रिपोर्ट - श्री जगदम्बा स्कूल</title>
+    <title>छात्र प्रगति - श्री जगदम्बा स्कूल</title>
     <link rel="icon" href="../images/favicon.ico">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/progress.css">
@@ -19,10 +19,10 @@
             </div>
             <nav class="desktop-nav">
                 <a href="../index.html" class="nav-link">होम</a>
-                <a href="../index.html#about" class="nav-link">हमारे बारे में</a>
-                <a href="../index.html#gallery" class="nav-link">गैलरी</a>
-                <a href="progress.html" class="nav-link active">प्रगति रिपोर्ट</a>
-                <a href="../index.html#contact" class="nav-link">संपर्क</a>
+                <a href="../pages/about.html" class="nav-link">हमारे बारे में</a>
+                <a href="../pages/gallery.html" class="nav-link">गैलरी</a>
+                <a href="progress.html" class="nav-link active">छात्र प्रगति</a>
+                <a href="../pages/contact.html" class="nav-link">संपर्क</a>
             </nav>
         </div>
     </header>
@@ -30,15 +30,19 @@
     <main>
         <section class="progress-section">
             <div class="container">
-                <h2 class="section-title">छात्र प्रगति रिपोर्ट</h2>
+                <h2 class="section-title">छात्र प्रगति</h2>
                 
-                <div class="search-container">
-                    <div class="search-box">
-                        <input type="text" id="studentId" placeholder="छात्र आईडी दर्ज करें (उदा: STU001)">
-                        <button onclick="searchStudent()">
-                            <i class="fas fa-search"></i> खोजें
-                        </button>
+                <div class="class-selection">
+                    <h3>कक्षा चुनें</h3>
+                    <div class="class-buttons">
+                        <button class="class-btn" onclick="selectClass('class_2')">कक्षा 2</button>
+                        <button class="class-btn" onclick="selectClass('class_3')">कक्षा 3</button>
                     </div>
+                </div>
+
+                <div class="students-list" id="studentsList" style="display: none;">
+                    <h3 id="classTitle"></h3>
+                    <div class="students-grid" id="studentsGrid"></div>
                 </div>
 
                 <div class="report-card" id="reportCard">
@@ -105,10 +109,10 @@
                     </div>
                 </div>
 
-                <div class="no-result" id="noResult">
-                    <i class="fas fa-search" style="font-size: 3rem; color: var(--text-light); margin-bottom: 1rem;"></i>
-                    <h3>कोई रिकॉर्ड नहीं मिला</h3>
-                    <p>कृपया सही छात्र आईडी दर्ज करें</p>
+                <div class="back-button" id="backButton" style="display: none;">
+                    <button onclick="goBack()">
+                        <i class="fas fa-arrow-left"></i> वापस जाएं
+                    </button>
                 </div>
             </div>
         </section>
@@ -116,10 +120,10 @@
 
     <nav class="mobile-nav">
         <a href="../index.html" class="nav-item"><i class="fas fa-home"></i><span>होम</span></a>
-        <a href="../index.html#about" class="nav-item"><i class="fas fa-info-circle"></i><span>हमारे बारे</span></a>
-        <a href="../index.html#gallery" class="nav-item"><i class="fas fa-images"></i><span>गैलरी</span></a>
-        <a href="progress.html" class="nav-item active"><i class="fas fa-chart-line"></i><span>प्रगति</span></a>
-        <a href="../index.html#contact" class="nav-item"><i class="fas fa-phone"></i><span>संपर्क</span></a>
+        <a href="../pages/about.html" class="nav-item"><i class="fas fa-info-circle"></i><span>हमारे बारे</span></a>
+        <a href="../pages/gallery.html" class="nav-item"><i class="fas fa-images"></i><span>गैलरी</span></a>
+        <a href="progress.html" class="nav-item active"><i class="fas fa-users"></i><span>छात्र</span></a>
+        <a href="../pages/contact.html" class="nav-item"><i class="fas fa-phone"></i><span>संपर्क</span></a>
     </nav>
 
     <script src="../js/progress.js"></script>

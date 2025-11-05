@@ -5,8 +5,12 @@ let studentsData = {};
 
 async function loadStudentsData() {
     try {
-        const response = await fetch('json/class2_students.json');
-        studentsData.class2 = await response.json();
+        const res2 = await fetch('json/class2_students.json');
+        studentsData.class2 = await res2.json();
+        
+        const res3 = await fetch('json/class3_students.json');
+        studentsData.class3 = await res3.json();
+        
         renderStudentsSection();
     } catch (error) {
         console.error('Error loading students:', error);
@@ -19,6 +23,7 @@ function renderStudentsSection() {
             <h2 class="section-title">हमारे छात्र</h2>
             <div class="class-tabs">
                 <button class="class-tab active" onclick="switchClass('class2')">कक्षा 2</button>
+                <button class="class-tab" onclick="switchClass('class3')">कक्षा 3</button>
             </div>
             <div class="students-grid" id="studentsGrid"></div>
         </div>

@@ -1,75 +1,112 @@
-// Sample student data
+// Class-wise student data - will be loaded from JSON
+let classData = {
+    class_2: { title: 'कक्षा 2 के छात्र', students: [] },
+    class_3: { title: 'कक्षा 3 के छात्र', students: [] }
+};
+
+// Load student data from JSON files
+async function loadStudentData() {
+    try {
+        const [class2Response, class3Response] = await Promise.all([
+            fetch('../json/class2_students.json'),
+            fetch('../json/class3_students.json')
+        ]);
+        
+        const class2Students = await class2Response.json();
+        const class3Students = await class3Response.json();
+        
+        classData.class_2.students = class2Students.map(student => ({
+            id: `STU2_${student.roll_no.toString().padStart(2, '0')}`,
+            name: student.student_name,
+            rollNo: student.roll_no.toString().padStart(2, '0'),
+            photo: `../images/students/${student.image}`
+        }));
+        
+        classData.class_3.students = class3Students.map(student => ({
+            id: `STU3_${student.roll_no.toString().padStart(2, '0')}`,
+            name: student.student_name,
+            rollNo: student.roll_no.toString().padStart(2, '0'),
+            photo: `../images/students/${student.image}`
+        }));
+    } catch (error) {
+        console.error('Error loading student data:', error);
+    }
+}
+
+// Initialize data on page load
+document.addEventListener('DOMContentLoaded', loadStudentData);
+
+// Sample progress data for students (can be expanded)
 const studentsData = {
-    'STU001': {
-        name: 'राज कुमार',
-        class: 'कक्षा 10-A',
+    'STU2_01': {
+        name: 'AAKANSHA',
+        class: 'कक्षा 2',
         rollNo: '01',
         session: '2023-24',
         examType: 'वार्षिक परीक्षा',
-        photo: '../images/students/class2/1_class2.jpg',
+        photo: '../images/students/class_2/01_class2.jpg',
         subjects: [
             { name: 'हिंदी', obtained: 85, total: 100, grade: 'A' },
             { name: 'अंग्रेजी', obtained: 78, total: 100, grade: 'B' },
             { name: 'गणित', obtained: 92, total: 100, grade: 'A' },
-            { name: 'विज्ञान', obtained: 88, total: 100, grade: 'A' },
-            { name: 'सामाजिक विज्ञान', obtained: 82, total: 100, grade: 'A' }
+            { name: 'विज्ञान', obtained: 88, total: 100, grade: 'A' }
         ],
         attendance: 95
-    },
-    'STU002': {
-        name: 'प्रिया शर्मा',
-        class: 'कक्षा 10-B',
-        rollNo: '05',
-        session: '2023-24',
-        examType: 'वार्षिक परीक्षा',
-        photo: '../images/students/class2/2_class2.jpg',
-        subjects: [
-            { name: 'हिंदी', obtained: 90, total: 100, grade: 'A' },
-            { name: 'अंग्रेजी', obtained: 88, total: 100, grade: 'A' },
-            { name: 'गणित', obtained: 95, total: 100, grade: 'A' },
-            { name: 'विज्ञान', obtained: 92, total: 100, grade: 'A' },
-            { name: 'सामाजिक विज्ञान', obtained: 87, total: 100, grade: 'A' }
-        ],
-        attendance: 98
-    },
-    'STU003': {
-        name: 'अमित वर्मा',
-        class: 'कक्षा 9-A',
-        rollNo: '12',
-        session: '2023-24',
-        examType: 'वार्षिक परीक्षा',
-        photo: '../images/students/class2/3_class2.jpg',
-        subjects: [
-            { name: 'हिंदी', obtained: 75, total: 100, grade: 'B' },
-            { name: 'अंग्रेजी', obtained: 70, total: 100, grade: 'B' },
-            { name: 'गणित', obtained: 80, total: 100, grade: 'A' },
-            { name: 'विज्ञान', obtained: 78, total: 100, grade: 'B' },
-            { name: 'सामाजिक विज्ञान', obtained: 72, total: 100, grade: 'B' }
-        ],
-        attendance: 92
     }
 };
 
-function searchStudent() {
-    const studentId = document.getElementById('studentId').value.trim().toUpperCase();
-    const reportCard = document.getElementById('reportCard');
-    const noResult = document.getElementById('noResult');
+function selectClass(className) {
+    const classInfo = classData[className];
+    const studentsList = document.getElementById('studentsList');
+    const classTitle = document.getElementById('classTitle');
+    const studentsGrid = document.getElementById('studentsGrid');
+    const backButton = document.getElementById('backButton');
+    const classSelection = document.querySelector('.class-selection');
 
-    if (!studentId) {
-        alert('कृपया छात्र आईडी दर्ज करें');
-        return;
-    }
+    classTitle.textContent = classInfo.title;
+    studentsGrid.innerHTML = '';
 
+    classInfo.students.forEach(student => {
+        const studentCard = `
+            <div class="student-card" onclick="showStudentReport('${student.id}')">
+                <img src="${student.photo}" alt="${student.name}" onerror="this.src='../images/logo.png'">
+                <h4>${student.name}</h4>
+                <p>रोल नं: ${student.rollNo}</p>
+            </div>
+        `;
+        studentsGrid.innerHTML += studentCard;
+    });
+
+    classSelection.style.display = 'none';
+    studentsList.style.display = 'block';
+    backButton.style.display = 'block';
+}
+
+function showStudentReport(studentId) {
     const student = studentsData[studentId];
+    const reportCard = document.getElementById('reportCard');
+    const studentsList = document.getElementById('studentsList');
+    const backButton = document.getElementById('backButton');
 
     if (student) {
         displayReport(student, studentId);
+        studentsList.style.display = 'none';
         reportCard.classList.add('show');
-        noResult.classList.remove('show');
     } else {
-        reportCard.classList.remove('show');
-        noResult.classList.add('show');
+        alert('इस छात्र की प्रगति रिपोर्ट अभी उपलब्ध नहीं है');
     }
+}
+
+function goBack() {
+    const classSelection = document.querySelector('.class-selection');
+    const studentsList = document.getElementById('studentsList');
+    const reportCard = document.getElementById('reportCard');
+    const backButton = document.getElementById('backButton');
+
+    reportCard.classList.remove('show');
+    studentsList.style.display = 'none';
+    backButton.style.display = 'none';
+    classSelection.style.display = 'block';
 }
 
 function displayReport(student, studentId) {
@@ -125,9 +162,4 @@ function calculateRank(percentage) {
     return '4th';
 }
 
-// Enter key support
-document.getElementById('studentId').addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-        searchStudent();
-    }
-});
+

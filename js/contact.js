@@ -10,21 +10,21 @@ const contactContent = `
                     <i class="fas fa-map-marker-alt"></i>
                 </div>
                 <h3>पता</h3>
-                <p>123, शिक्षा मार्ग<br>गुरुकुल नगर, दिल्ली - 110001</p>
+                <p>Dhadheru Bhamuwan<br>Churu - 331802</p>
             </div>
             <div class="contact-card">
                 <div class="contact-icon">
                     <i class="fas fa-phone"></i>
                 </div>
                 <h3>फोन</h3>
-                <p>+91-11-12345678<br>+91-98765-43210</p>
+                <p>+91-98288-69462</p>
             </div>
             <div class="contact-card">
                 <div class="contact-icon">
                     <i class="fas fa-envelope"></i>
                 </div>
                 <h3>ईमेल</h3>
-                <p>info@shreejagadambaschool.com<br>admission@shreejagadambaschool.com</p>
+                <p>jagdamba.educationhub@gmail.com</p>
             </div>
         </div>
     </div>
