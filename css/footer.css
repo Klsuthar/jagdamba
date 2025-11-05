@@ -1,7 +1,5 @@
 .footer {
-    position: fixed;
-    bottom: 70px;
-    left: 0;
+    position: static;
     width: 100%;
     background: rgba(45, 55, 72, 0.95);
     backdrop-filter: blur(10px);
@@ -9,9 +7,9 @@
     text-align: center;
     padding: 1rem;
     font-size: 0.8rem;
-    z-index: 999;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     margin: 0;
+    margin-bottom: 75px;
 }
 
 .footer a {
@@ -27,12 +25,11 @@
 
 @media (min-width: 768px) {
     .footer {
-        position: relative;
-        bottom: auto;
         background: var(--text);
         padding: 1.5rem;
         font-size: 0.9rem;
         margin-top: 2rem;
+        margin-bottom: 0;
     }
 }
 
