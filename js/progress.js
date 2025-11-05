@@ -4,17 +4,25 @@ let classData = {
     class_3: { title: 'कक्षा 3 के छात्र', students: [] }
 };
 
-// Load student data from JSON files
+// Student results data
+let studentsData = {};
+
+// Load student data and results from JSON files
 async function loadStudentData() {
     try {
-        const [class2Response, class3Response] = await Promise.all([
+        const [class2Response, class3Response, class2ResultsResponse, class3ResultsResponse] = await Promise.all([
             fetch('../json/class2_students.json'),
-            fetch('../json/class3_students.json')
+            fetch('../json/class3_students.json'),
+            fetch('../json/class2_results.json'),
+            fetch('../json/class3_results.json')
         ]);
         
         const class2Students = await class2Response.json();
         const class3Students = await class3Response.json();
+        const class2Results = await class2ResultsResponse.json();
+        const class3Results = await class3ResultsResponse.json();
         
+        // Map student list data
         classData.class_2.students = class2Students.map(student => ({
             id: `STU2_${student.roll_no.toString().padStart(2, '0')}`,
             name: student.student_name,
@@ -28,6 +36,33 @@ async function loadStudentData() {
             rollNo: student.roll_no.toString().padStart(2, '0'),
             photo: `../images/students/${student.image}`
         }));
+        
+        // Map results data
+        class2Results.forEach(result => {
+            studentsData[result.student_id] = {
+                name: result.student_name,
+                class: 'कक्षा 2',
+                rollNo: result.roll_no.toString().padStart(2, '0'),
+                session: result.session,
+                examType: result.exam_type,
+                photo: `../images/students/class_2/${result.roll_no.toString().padStart(2, '0')}_class2.jpg`,
+                subjects: result.subjects,
+                attendance: result.attendance
+            };
+        });
+        
+        class3Results.forEach(result => {
+            studentsData[result.student_id] = {
+                name: result.student_name,
+                class: 'कक्षा 3',
+                rollNo: result.roll_no.toString().padStart(2, '0'),
+                session: result.session,
+                examType: result.exam_type,
+                photo: `../images/students/class_3/${result.roll_no.toString().padStart(2, '0')}_class3.jpg`,
+                subjects: result.subjects,
+                attendance: result.attendance
+            };
+        });
     } catch (error) {
         console.error('Error loading student data:', error);
     }
@@ -35,25 +70,6 @@ async function loadStudentData() {
 
 // Initialize data on page load
 document.addEventListener('DOMContentLoaded', loadStudentData);
-
-// Sample progress data for students (can be expanded)
-const studentsData = {
-    'STU2_01': {
-        name: 'AAKANSHA',
-        class: 'कक्षा 2',
-        rollNo: '01',
-        session: '2023-24',
-        examType: 'वार्षिक परीक्षा',
-        photo: '../images/students/class_2/01_class2.jpg',
-        subjects: [
-            { name: 'हिंदी', obtained: 85, total: 100, grade: 'A' },
-            { name: 'अंग्रेजी', obtained: 78, total: 100, grade: 'B' },
-            { name: 'गणित', obtained: 92, total: 100, grade: 'A' },
-            { name: 'विज्ञान', obtained: 88, total: 100, grade: 'A' }
-        ],
-        attendance: 95
-    }
-};
 
 function selectClass(className) {
     const classInfo = classData[className];

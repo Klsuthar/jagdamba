@@ -1,0 +1,72 @@
+[
+  {
+    "student_id": "STU2_01",
+    "roll_no": 1,
+    "student_name": "AAKANSHA",
+    "session": "2023-24",
+    "exam_type": "वार्षिक परीक्षा",
+    "subjects": [
+      { "name": "हिंदी", "obtained": 85, "total": 100, "grade": "A" },
+      { "name": "अंग्रेजी", "obtained": 78, "total": 100, "grade": "B" },
+      { "name": "गणित", "obtained": 92, "total": 100, "grade": "A" },
+      { "name": "पर्यावरण अध्ययन", "obtained": 88, "total": 100, "grade": "A" }
+    ],
+    "attendance": 95
+  },
+  {
+    "student_id": "STU2_02",
+    "roll_no": 2,
+    "student_name": "AANAND SUTHAR",
+    "session": "2023-24",
+    "exam_type": "वार्षिक परीक्षा",
+    "subjects": [
+      { "name": "हिंदी", "obtained": 90, "total": 100, "grade": "A" },
+      { "name": "अंग्रेजी", "obtained": 85, "total": 100, "grade": "A" },
+      { "name": "गणित", "obtained": 88, "total": 100, "grade": "A" },
+      { "name": "पर्यावरण अध्ययन", "obtained": 92, "total": 100, "grade": "A" }
+    ],
+    "attendance": 98
+  },
+  {
+    "student_id": "STU2_03",
+    "roll_no": 3,
+    "student_name": "ARADHYA",
+    "session": "2023-24",
+    "exam_type": "वार्षिक परीक्षा",
+    "subjects": [
+      { "name": "हिंदी", "obtained": 75, "total": 100, "grade": "B" },
+      { "name": "अंग्रेजी", "obtained": 70, "total": 100, "grade": "B" },
+      { "name": "गणित", "obtained": 80, "total": 100, "grade": "A" },
+      { "name": "पर्यावरण अध्ययन", "obtained": 78, "total": 100, "grade": "B" }
+    ],
+    "attendance": 92
+  },
+  {
+    "student_id": "STU2_04",
+    "roll_no": 4,
+    "student_name": "ARCHANA",
+    "session": "2023-24",
+    "exam_type": "वार्षिक परीक्षा",
+    "subjects": [
+      { "name": "हिंदी", "obtained": 88, "total": 100, "grade": "A" },
+      { "name": "अंग्रेजी", "obtained": 82, "total": 100, "grade": "A" },
+      { "name": "गणित", "obtained": 85, "total": 100, "grade": "A" },
+      { "name": "पर्यावरण अध्ययन", "obtained": 90, "total": 100, "grade": "A" }
+    ],
+    "attendance": 96
+  },
+  {
+    "student_id": "STU2_05",
+    "roll_no": 5,
+    "student_name": "BABULAL",
+    "session": "2023-24",
+    "exam_type": "वार्षिक परीक्षा",
+    "subjects": [
+      { "name": "हिंदी", "obtained": 72, "total": 100, "grade": "B" },
+      { "name": "अंग्रेजी", "obtained": 68, "total": 100, "grade": "C" },
+      { "name": "गणित", "obtained": 75, "total": 100, "grade": "B" },
+      { "name": "पर्यावरण अध्ययन", "obtained": 70, "total": 100, "grade": "B" }
+    ],
+    "attendance": 88
+  }
+]
