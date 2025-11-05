@@ -1,6 +1,6 @@
 .progress-section {
-    padding: 6rem 0.75rem 2rem;
-    min-height: 100vh;
+    padding: 6rem 0.75rem 3rem;
+    min-height: calc(100vh - 140px);
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     position: relative;
 }
@@ -22,7 +22,8 @@
 
 @media (min-width: 768px) {
     .progress-section {
-        padding: 7rem 1rem 3rem;
+        padding: 7rem 1rem 4rem;
+        min-height: auto;
     }
 }
 

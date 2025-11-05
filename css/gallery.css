@@ -1,6 +1,7 @@
 .gallery-section {
     padding: 6rem 1rem 3rem;
     background: white;
+    min-height: calc(100vh - 140px);
 }
 
 .gallery-grid {
@@ -56,6 +57,7 @@
 @media (min-width: 768px) {
     .gallery-section {
         padding: 7rem 2rem 4rem;
+        min-height: auto;
     }
 
     .gallery-grid {

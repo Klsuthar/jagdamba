@@ -1,6 +1,7 @@
 .contact-section {
     padding: 6rem 1rem 3rem;
     background: var(--bg);
+    min-height: calc(100vh - 140px);
 }
 
 .contact-grid {
@@ -50,6 +51,7 @@
 @media (min-width: 768px) {
     .contact-section {
         padding: 7rem 2rem 4rem;
+        min-height: auto;
     }
 
     .contact-grid {
