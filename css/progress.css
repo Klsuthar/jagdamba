@@ -1,7 +1,11 @@
 .progress-section {
-    padding: 5rem 0.75rem 2rem;
+    padding: 6rem 0.75rem 2rem;
     min-height: 100vh;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+}
+
+.progress-section .container {
     position: relative;
 }
 
@@ -18,7 +22,7 @@
 
 @media (min-width: 768px) {
     .progress-section {
-        padding: 6rem 1rem 3rem;
+        padding: 7rem 1rem 3rem;
     }
 }
 
@@ -263,29 +267,47 @@
     }
 }
 
-.back-button {
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-.back-button button {
-    padding: 1rem 2rem;
-    background: rgba(255, 255, 255, 0.9);
-    color: #667eea;
+.back-button-top {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
     border: 2px solid #667eea;
-    border-radius: 50px;
+    border-radius: 50%;
+    color: #667eea;
+    font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-weight: 600;
-    font-size: 1rem;
-    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    touch-action: manipulation;
 }
 
-.back-button button:hover {
+.back-button-top:hover {
     background: #667eea;
     color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.back-button-top:active {
+    transform: scale(0.95);
+}
+
+@media (min-width: 768px) {
+    .back-button-top {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+        top: 1.5rem;
+        left: 1.5rem;
+    }
 }
 
 .search-container {
