@@ -20,7 +20,17 @@ body {
     font-family: 'Poppins', sans-serif;
     color: var(--text);
     overflow-x: hidden;
-    padding-bottom: 70px;
+    padding-bottom: 75px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+    body {
+        padding-bottom: 0;
+        padding-top: 80px;
+        font-size: 16px;
+    }
 }
 
 .header {
@@ -38,10 +48,16 @@ body {
 .header-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 0.75rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+@media (min-width: 768px) {
+    .header-container {
+        padding: 1rem;
+    }
 }
 
 .logo {
@@ -51,14 +67,26 @@ body {
 }
 
 .logo img {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     object-fit: contain;
 }
 
 .logo h2 {
     color: var(--primary);
-    font-size: 1.2rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+@media (min-width: 768px) {
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .logo h2 {
+        font-size: 1.5rem;
+    }
 }
 
 .desktop-nav {
@@ -122,9 +150,16 @@ body {
     box-shadow: 0 -8px 32px rgba(0,0,0,0.15);
     display: flex;
     justify-content: space-around;
-    padding: 0.8rem 0;
+    padding: 0.6rem 0.5rem;
     z-index: 1000;
     border-top: 1px solid rgba(255,255,255,0.2);
+    min-height: 70px;
+}
+
+@media (min-width: 768px) {
+    .mobile-nav {
+        display: none;
+    }
 }
 
 .mobile-nav .nav-item {
@@ -133,11 +168,13 @@ body {
     align-items: center;
     text-decoration: none;
     color: var(--text-light);
-    font-size: 0.75rem;
-    padding: 0.5rem;
+    font-size: 0.7rem;
+    padding: 0.4rem 0.3rem;
     transition: all 0.3s ease;
-    border-radius: 12px;
+    border-radius: 10px;
     position: relative;
+    min-width: 50px;
+    touch-action: manipulation;
 }
 
 .mobile-nav .nav-item::before {
@@ -161,8 +198,8 @@ body {
 }
 
 .mobile-nav .nav-item i {
-    font-size: 1.3rem;
-    margin-bottom: 0.25rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
     transition: all 0.3s ease;
 }
 
@@ -220,32 +257,56 @@ body {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255,255,255,0.2);
     color: white;
-    font-size: 1.5rem;
-    width: 50px;
-    height: 50px;
+    font-size: 1.2rem;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
+    touch-action: manipulation;
 }
 
 .lightbox-close {
-    top: 30px;
-    right: 30px;
+    top: 15px;
+    right: 15px;
 }
 
 .lightbox-prev {
-    left: 30px;
+    left: 15px;
     top: 50%;
     transform: translateY(-50%);
 }
 
 .lightbox-next {
-    right: 30px;
+    right: 15px;
     top: 50%;
     transform: translateY(-50%);
+}
+
+@media (min-width: 768px) {
+    .lightbox-close,
+    .lightbox-prev,
+    .lightbox-next {
+        font-size: 1.5rem;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .lightbox-close {
+        top: 30px;
+        right: 30px;
+    }
+    
+    .lightbox-prev {
+        left: 30px;
+    }
+    
+    .lightbox-next {
+        right: 30px;
+    }
 }
 
 .lightbox-close:hover,
@@ -265,15 +326,6 @@ body {
 }
 
 @media (min-width: 768px) {
-    body {
-        padding-bottom: 0;
-        padding-top: 80px;
-    }
-
-    .logo h2 {
-        font-size: 1.5rem;
-    }
-
     .desktop-nav {
         display: flex;
     }
@@ -281,8 +333,40 @@ body {
     .menu-toggle {
         display: none;
     }
+}
 
+/* Improve touch targets for mobile */
+@media (max-width: 767px) {
+    .nav-item,
+    .class-btn,
+    .student-card,
+    button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* Optimize for very small screens */
+@media (max-width: 360px) {
+    .header-container {
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .logo h2 {
+        font-size: 0.9rem;
+    }
+    
     .mobile-nav {
-        display: none;
+        padding: 0.4rem 0.25rem;
+        min-height: 65px;
+    }
+    
+    .mobile-nav .nav-item {
+        font-size: 0.65rem;
+        padding: 0.3rem 0.2rem;
+    }
+    
+    .mobile-nav .nav-item i {
+        font-size: 1.1rem;
     }
 }
