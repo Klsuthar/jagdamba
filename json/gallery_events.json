@@ -1,81 +1,118 @@
 {
   "events": [
     {
-      "eventName": "स्कूल की झलकियाँ",
+      "eventName": "School Glimpses",
       "images": [
         {
           "path": "../images/School_outer_look.jpg",
-          "alt": "स्कूल भवन"
+          "alt": "School Building"
         },
         {
           "path": "../images/principal.jpg",
-          "alt": "प्रिंसिपल"
+          "alt": "Principal"
         },
         {
           "path": "../images/Director.jpg",
-          "alt": "निदेशक"
+          "alt": "Director"
         }
       ]
     },
     {
-      "eventName": "प्रतिभा सम्मान समारोह",
+      "eventName": "Talent Award Ceremony",
       "images": [
         {
           "path": "../images/Partibha_smman.jpg",
-          "alt": "प्रतिभा सम्मान"
+          "alt": "Talent Award"
         },
         {
           "path": "../images/Partibha_smman2.jpg",
-          "alt": "प्रतिभा सम्मान 2"
+          "alt": "Talent Award 2"
         },
         {
           "path": "../images/Partibha_smman3.jpg",
-          "alt": "प्रतिभा सम्मान 3"
+          "alt": "Talent Award 3"
         }
       ]
     },
     {
-      "eventName": "चित्रकला प्रतियोगिता",
+      "eventName": "Drawing Competition",
       "images": [
         {
           "path": "../images/events/drawing_competition/1.jpg",
-          "alt": "चित्रकला प्रतियोगिता 1"
+          "alt": "Drawing Competition 1"
         },
         {
           "path": "../images/events/drawing_competition/2.jpg",
-          "alt": "चित्रकला प्रतियोगिता 2"
+          "alt": "Drawing Competition 2"
         },
         {
           "path": "../images/events/drawing_competition/3.jpg",
-          "alt": "चित्रकला प्रतियोगिता 3"
+          "alt": "Drawing Competition 3"
         },
         {
           "path": "../images/events/drawing_competition/4.jpg",
-          "alt": "चित्रकला प्रतियोगिता 4"
+          "alt": "Drawing Competition 4"
         },
         {
           "path": "../images/events/drawing_competition/5.jpg",
-          "alt": "चित्रकला प्रतियोगिता 5"
+          "alt": "Drawing Competition 5"
         },
         {
           "path": "../images/events/drawing_competition/6.jpg",
-          "alt": "चित्रकला प्रतियोगिता 6"
+          "alt": "Drawing Competition 6"
         },
         {
           "path": "../images/events/drawing_competition/7.jpg",
-          "alt": "चित्रकला प्रतियोगिता 7"
+          "alt": "Drawing Competition 7"
         },
         {
           "path": "../images/events/drawing_competition/8.jpg",
-          "alt": "चित्रकला प्रतियोगिता 8"
+          "alt": "Drawing Competition 8"
         },
         {
           "path": "../images/events/drawing_competition/9.jpg",
-          "alt": "चित्रकला प्रतियोगिता 9"
+          "alt": "Drawing Competition 9"
         },
         {
           "path": "../images/events/drawing_competition/10.jpg",
-          "alt": "चित्रकला प्रतियोगिता 10"
+          "alt": "Drawing Competition 10"
+        }
+      ]
+    },
+    {
+      "eventName": "Computer Class",
+      "images": [
+        {
+          "path": "../images/events/computer_class/1.jpg",
+          "alt": "Computer Class 1"
+        },
+        {
+          "path": "../images/events/computer_class/2.jpg",
+          "alt": "Computer Class 2"
+        },
+        {
+          "path": "../images/events/computer_class/3.jpg",
+          "alt": "Computer Class 3"
+        },
+        {
+          "path": "../images/events/computer_class/4.jpg",
+          "alt": "Computer Class 4"
+        },
+        {
+          "path": "../images/events/computer_class/5.jpg",
+          "alt": "Computer Class 5"
+        },
+        {
+          "path": "../images/events/computer_class/6.jpg",
+          "alt": "Computer Class 6"
+        },
+        {
+          "path": "../images/events/computer_class/7.jpg",
+          "alt": "Computer Class 7"
+        },
+        {
+          "path": "../images/events/computer_class/8.jpg",
+          "alt": "Computer Class 8"
         }
       ]
     }
