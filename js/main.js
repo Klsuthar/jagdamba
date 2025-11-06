@@ -62,11 +62,21 @@ const lightboxPrev = document.querySelector('.lightbox-prev');
 const lightboxNext = document.querySelector('.lightbox-next');
 
 let currentImageIndex = 0;
-let galleryImages = [];
+let currentEventIndex = 0;
+window.galleryImages = [];
+window.eventImages = [];
+
+function openEventLightbox(eventIndex, imageIndex) {
+    currentEventIndex = eventIndex;
+    currentImageIndex = imageIndex;
+    lightboxImage.src = window.eventImages[currentEventIndex][currentImageIndex];
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
 
 function openLightbox(index) {
     currentImageIndex = index;
-    lightboxImage.src = galleryImages[currentImageIndex];
+    lightboxImage.src = window.galleryImages[currentImageIndex];
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
@@ -77,10 +87,17 @@ function closeLightbox() {
 }
 
 function navigateLightbox(direction) {
-    currentImageIndex += direction;
-    if (currentImageIndex < 0) currentImageIndex = galleryImages.length - 1;
-    if (currentImageIndex >= galleryImages.length) currentImageIndex = 0;
-    lightboxImage.src = galleryImages[currentImageIndex];
+    if (window.eventImages[currentEventIndex]) {
+        currentImageIndex += direction;
+        if (currentImageIndex < 0) currentImageIndex = window.eventImages[currentEventIndex].length - 1;
+        if (currentImageIndex >= window.eventImages[currentEventIndex].length) currentImageIndex = 0;
+        lightboxImage.src = window.eventImages[currentEventIndex][currentImageIndex];
+    } else {
+        currentImageIndex += direction;
+        if (currentImageIndex < 0) currentImageIndex = window.galleryImages.length - 1;
+        if (currentImageIndex >= window.galleryImages.length) currentImageIndex = 0;
+        lightboxImage.src = window.galleryImages[currentImageIndex];
+    }
 }
 
 lightboxClose.addEventListener('click', closeLightbox);
