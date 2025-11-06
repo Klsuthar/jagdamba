@@ -4,15 +4,15 @@
       "eventName": "स्कूल की झलकियाँ",
       "images": [
         {
-          "path": "images/School_outer_look.jpg",
+          "path": "../images/School_outer_look.jpg",
           "alt": "स्कूल भवन"
         },
         {
-          "path": "images/principal.jpg",
+          "path": "../images/principal.jpg",
           "alt": "प्रिंसिपल"
         },
         {
-          "path": "images/Director.jpg",
+          "path": "../images/Director.jpg",
           "alt": "निदेशक"
         }
       ]
@@ -21,15 +21,15 @@
       "eventName": "प्रतिभा सम्मान समारोह",
       "images": [
         {
-          "path": "images/Partibha_smman.jpg",
+          "path": "../images/Partibha_smman.jpg",
           "alt": "प्रतिभा सम्मान"
         },
         {
-          "path": "images/Partibha_smman2.jpg",
+          "path": "../images/Partibha_smman2.jpg",
           "alt": "प्रतिभा सम्मान 2"
         },
         {
-          "path": "images/Partibha_smman3.jpg",
+          "path": "../images/Partibha_smman3.jpg",
           "alt": "प्रतिभा सम्मान 3"
         }
       ]
@@ -38,43 +38,43 @@
       "eventName": "चित्रकला प्रतियोगिता",
       "images": [
         {
-          "path": "images/events/drawing_competition/1.jpg",
+          "path": "../images/events/drawing_competition/1.jpg",
           "alt": "चित्रकला प्रतियोगिता 1"
         },
         {
-          "path": "images/events/drawing_competition/2.jpg",
+          "path": "../images/events/drawing_competition/2.jpg",
           "alt": "चित्रकला प्रतियोगिता 2"
         },
         {
-          "path": "images/events/drawing_competition/3.jpg",
+          "path": "../images/events/drawing_competition/3.jpg",
           "alt": "चित्रकला प्रतियोगिता 3"
         },
         {
-          "path": "images/events/drawing_competition/4.jpg",
+          "path": "../images/events/drawing_competition/4.jpg",
           "alt": "चित्रकला प्रतियोगिता 4"
         },
         {
-          "path": "images/events/drawing_competition/5.jpg",
+          "path": "../images/events/drawing_competition/5.jpg",
           "alt": "चित्रकला प्रतियोगिता 5"
         },
         {
-          "path": "images/events/drawing_competition/6.jpg",
+          "path": "../images/events/drawing_competition/6.jpg",
           "alt": "चित्रकला प्रतियोगिता 6"
         },
         {
-          "path": "images/events/drawing_competition/7.jpg",
+          "path": "../images/events/drawing_competition/7.jpg",
           "alt": "चित्रकला प्रतियोगिता 7"
         },
         {
-          "path": "images/events/drawing_competition/8.jpg",
+          "path": "../images/events/drawing_competition/8.jpg",
           "alt": "चित्रकला प्रतियोगिता 8"
         },
         {
-          "path": "images/events/drawing_competition/9.jpg",
+          "path": "../images/events/drawing_competition/9.jpg",
           "alt": "चित्रकला प्रतियोगिता 9"
         },
         {
-          "path": "images/events/drawing_competition/10.jpg",
+          "path": "../images/events/drawing_collection/10.jpg",
           "alt": "चित्रकला प्रतियोगिता 10"
         }
       ]

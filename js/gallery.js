@@ -3,7 +3,10 @@ const gallerySection = document.querySelector('.gallery-section');
 window.eventImages = [];
 
 fetch('../json/gallery_events.json')
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) throw new Error('JSON not found');
+        return response.json();
+    })
     .then(data => {
         let htmlContent = '<div class="container"><h2 class="section-title">हमारी गैलरी</h2>';
         
@@ -30,5 +33,9 @@ fetch('../json/gallery_events.json')
         
         htmlContent += '</div>';
         gallerySection.innerHTML = htmlContent;
+        console.log('Gallery loaded successfully');
     })
-    .catch(error => console.error('Error loading gallery:', error));
+    .catch(error => {
+        console.error('Error loading gallery:', error);
+        gallerySection.innerHTML = '<div class="container"><h2 class="section-title">Error: ' + error.message + '</h2></div>';
+    });
