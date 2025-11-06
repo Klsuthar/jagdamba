@@ -85,7 +85,9 @@ function selectClass(className) {
     classInfo.students.forEach(student => {
         const studentCard = `
             <div class="student-card" onclick="showStudentReport('${student.id}')">
-                <img src="${student.photo}" alt="${student.name}" onerror="this.src='../images/logo.png'">
+                <div class="student-avatar">
+                    <img src="${student.photo}" alt="${student.name}" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(student.name)}&background=2563eb&color=fff&size=150'">
+                </div>
                 <h4>${student.name}</h4>
                 <p>रोल नं: ${student.rollNo}</p>
             </div>
@@ -127,7 +129,12 @@ function goBack() {
 
 function displayReport(student, studentId) {
     // Basic info
-    document.getElementById('studentPhoto').src = student.photo;
+    const photoElement = document.getElementById('studentPhoto');
+    photoElement.src = student.photo;
+    photoElement.onerror = function() {
+        this.onerror = null;
+        this.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(student.name)}&background=2563eb&color=fff&size=200`;
+    };
     document.getElementById('studentName').textContent = student.name;
     document.getElementById('studentClass').textContent = student.class;
     document.getElementById('displayId').textContent = studentId;
