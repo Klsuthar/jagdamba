@@ -847,15 +847,30 @@
 
 .attendance-fill {
     height: 100%;
-    background: linear-gradient(90deg, #10b981, #667eea);
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     font-weight: 700;
     font-size: 0.85rem;
-    transition: width 1s ease;
-    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+    transition: all 1s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.attendance-fill.excellent {
+    background: linear-gradient(90deg, #10b981, #059669);
+}
+
+.attendance-fill.good {
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
+}
+
+.attendance-fill.average {
+    background: linear-gradient(90deg, #f59e0b, #d97706);
+}
+
+.attendance-fill.poor {
+    background: linear-gradient(90deg, #ef4444, #dc2626);
 }
 
 @media (min-width: 768px) {
@@ -868,6 +883,18 @@
         font-size: 1rem;
     }
 }
+
+.attendance-status {
+    margin-top: 0.5rem;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.attendance-status.excellent { color: #10b981; }
+.attendance-status.good { color: #3b82f6; }
+.attendance-status.average { color: #f59e0b; }
+.attendance-status.poor { color: #ef4444; }
 
 .no-result {
     text-align: center;
