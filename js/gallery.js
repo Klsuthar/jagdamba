@@ -8,7 +8,7 @@ fetch('../json/gallery_events.json')
         return response.json();
     })
     .then(data => {
-        let htmlContent = '<div class="container"><h2 class="section-title">हमारी गैलरी</h2><div class="gallery-grid">';
+        let htmlContent = '<div class="container"><h2 class="section-title">Our Gallery</h2><div class="gallery-grid">';
         
         data.events.forEach((event, eventIndex) => {
             const eventImgs = event.images.map(img => img.path);
@@ -22,7 +22,7 @@ fetch('../json/gallery_events.json')
                     </div>
                     <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); padding: 1rem; color: white;">
                         <h3 style="margin: 0; font-size: 1.1rem;">${event.eventName}</h3>
-                        <p style="margin: 0.3rem 0 0; font-size: 0.9rem; opacity: 0.9;">${event.images.length} छवियाँ</p>
+                        <p style="margin: 0.3rem 0 0; font-size: 0.9rem; opacity: 0.9;">${event.images.length} Images</p>
                     </div>
                 </div>
             `;

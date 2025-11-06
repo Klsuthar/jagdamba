@@ -1,7 +1,7 @@
 // Class-wise student data - will be loaded from JSON
 let classData = {
-    class_2: { title: 'कक्षा 2 के छात्र', students: [] },
-    class_3: { title: 'कक्षा 3 के छात्र', students: [] }
+    class_2: { title: 'Class 2 Students', students: [] },
+    class_3: { title: 'Class 3 Students', students: [] }
 };
 
 // Student results data
@@ -44,7 +44,7 @@ async function loadStudentData() {
         class2Results.forEach(result => {
             studentsData[result.student_id] = {
                 name: result.student_name,
-                class: 'कक्षा 2',
+                class: 'Class 2',
                 rollNo: result.roll_no.toString().padStart(2, '0'),
                 session: result.session,
                 examType: result.exam_type,
@@ -57,7 +57,7 @@ async function loadStudentData() {
         class3Results.forEach(result => {
             studentsData[result.student_id] = {
                 name: result.student_name,
-                class: 'कक्षा 3',
+                class: 'Class 3',
                 rollNo: result.roll_no.toString().padStart(2, '0'),
                 session: result.session,
                 examType: result.exam_type,
@@ -96,7 +96,7 @@ function selectClass(className) {
                     <img src="${student.photo}" alt="${student.name}" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(student.name)}&background=2563eb&color=fff&size=150'">
                 </div>
                 <h4>${student.name}</h4>
-                <p>रोल नं: ${student.rollNo}</p>
+                <p>Roll No: ${student.rollNo}</p>
             </div>
         `;
         studentsGrid.innerHTML += studentCard;
@@ -118,7 +118,7 @@ function showStudentReport(studentId) {
         studentsList.style.display = 'none';
         reportCard.classList.add('show');
     } else {
-        alert('इस छात्र की प्रगति रिपोर्ट अभी उपलब्ध नहीं है');
+        alert('Progress report for this student is not available yet');
     }
 }
 

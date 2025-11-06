@@ -3,22 +3,22 @@ const aboutSection = document.querySelector('.about-section');
 
 const aboutContent = `
     <div class="container">
-        <h2 class="section-title">हमारे बारे में</h2>
+        <h2 class="section-title">About Us</h2>
         
         <div class="leadership-section">
             <div class="leader-card">
                 <div class="leader-img">
-                    <img src="../images/Director.jpg" alt="निदेशक">
+                    <img src="../images/Director.jpg" alt="Director">
                 </div>
-                <h3>निदेशक का संदेश</h3>
-                <p>शिक्षा वह शक्ति है जो जीवन को बदल सकती है। श्री जगदम्बा स्कूल में हम हर बच्चे को उनकी पूरी क्षमता तक पहुंचने में मदद करते हैं।</p>
+                <h3>Director's Message</h3>
+                <p>Education is the power that can transform lives. At Shri Jagdamba School, we help every child reach their full potential.</p>
             </div>
             <div class="leader-card">
                 <div class="leader-img">
-                    <img src="../images/principal.jpg" alt="प्रिंसिपल">
+                    <img src="../images/principal.jpg" alt="Principal">
                 </div>
-                <h3>प्रिंसिपल का संदेश</h3>
-                <p>हमारा उद्देश्य न केवल शैक्षणिक उत्कृष्टता प्राप्त करना है बल्कि बच्चों में नैतिक मूल्यों और जीवन कौशल का विकास करना भी है।</p>
+                <h3>Principal's Message</h3>
+                <p>Our goal is not only to achieve academic excellence but also to develop moral values and life skills in children.</p>
             </div>
         </div>
 
@@ -27,22 +27,22 @@ const aboutContent = `
                 <div class="card-icon">
                     <i class="fas fa-book-open"></i>
                 </div>
-                <h3>शैक्षणिक उत्कृष्टता</h3>
-                <p>आधुनिक शिक्षा पद्धतियों के साथ पारंपरिक मूल्यों का संयोजन</p>
+                <h3>Academic Excellence</h3>
+                <p>Combining modern teaching methods with traditional values</p>
             </div>
             <div class="about-card">
                 <div class="card-icon">
                     <i class="fas fa-users"></i>
                 </div>
-                <h3>सहयोगी वातावरण</h3>
-                <p>छात्र, शिक्षक और अभिभावक मिलकर मजबूत शिक्षा समुदाय</p>
+                <h3>Collaborative Environment</h3>
+                <p>Students, teachers and parents together form a strong education community</p>
             </div>
             <div class="about-card">
                 <div class="card-icon">
                     <i class="fas fa-trophy"></i>
                 </div>
-                <h3>समग्र विकास</h3>
-                <p>शैक्षिक, खेल, कला और सांस्कृतिक गतिविधियों में संतुलित विकास</p>
+                <h3>Holistic Development</h3>
+                <p>Balanced development in academic, sports, arts and cultural activities</p>
             </div>
         </div>
     </div>

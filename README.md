@@ -1,8 +1,8 @@
-# श्री जगदम्बा स्कूल वेबसाइट
+# Shri Jagdamba School Website
 
 ## 📱 Mobile-Friendly School Website
 
-यह एक पूर्ण रूप से मोबाइल-फ्रेंडली स्कूल वेबसाइट है जो छात्रों की प्रगति रिपोर्ट दिखाने की सुविधा के साथ आती है।
+A fully mobile-friendly school website with student progress report features.
 
 ## 🗂️ Project Structure
 
@@ -109,14 +109,14 @@ Edit `js/progress.js` and add new student data:
 
 ```javascript
 'STU004': {
-    name: 'छात्र का नाम',
-    class: 'कक्षा 10-A',
+    name: 'Student Name',
+    class: 'Class 10-A',
     rollNo: '15',
     session: '2023-24',
-    examType: 'वार्षिक परीक्षा',
+    examType: 'Annual Exam',
     photo: '../Photoes/Student/class_3/student4.jpg',
     subjects: [
-        { name: 'हिंदी', obtained: 85, total: 100, grade: 'A' },
+        { name: 'Hindi', obtained: 85, total: 100, grade: 'A' },
         // Add more subjects...
     ],
     attendance: 95
@@ -157,13 +157,13 @@ Edit `js/progress.js` and add new student data:
 - Mobile browsers
 
 ## 🎓 Sample Student IDs for Testing
-- **STU001** - राज कुमार (Class 10-A)
-- **STU002** - प्रिया शर्मा (Class 10-B)
-- **STU003** - अमित वर्मा (Class 9-A)
+- **STU2_01** - Class 2 Student 1
+- **STU2_02** - Class 2 Student 2
+- **STU3_01** - Class 3 Student 1
 
 ## 📞 Support
 For any issues or customization needs, contact the school administration.
 
 ---
 
-**Made with ❤️ for श्री जगदम्बा स्कूल**
+**Made with ❤️ for Shri Jagdamba School**

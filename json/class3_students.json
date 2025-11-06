@@ -35,6 +35,11 @@
     "image": "class_3/07_class3.jpg"
   },
   {
+    "roll_no": 8,
+    "student_name": "DIVYA",
+    "image": "class_3/08_class3.jpg"
+  },
+  {
     "roll_no": 9,
     "student_name": "GOURI",
     "image": "class_3/09_class3.jpg"
@@ -70,6 +75,16 @@
     "image": "class_3/15_class3.png"
   },
   {
+    "roll_no": 16,
+    "student_name": "MANSI",
+    "image": "class_3/16_class3.jpg"
+  },
+  {
+    "roll_no": 17,
+    "student_name": "MANVANDER SINGH",
+    "image": "class_3/17_class3.jpg"
+  },
+  {
     "roll_no": 18,
     "student_name": "NARESH SUTHAR",
     "image": "class_3/18_class3.jpg"
@@ -93,5 +108,15 @@
     "roll_no": 22,
     "student_name": "RAVI PRAKASH",
     "image": "class_3/22_class3.jpg"
+  },
+  {
+    "roll_no": 23,
+    "student_name": "SARSWATI",
+    "image": "class_3/23_class3.jpg"
+  },
+  {
+    "roll_no": 24,
+    "student_name": "SONAKSHI",
+    "image": "class_3/24_class3.jpg"
   }
 ]
