@@ -755,7 +755,7 @@
     border: 1px solid rgba(102, 126, 234, 0.15);
     transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     min-height: 75px;
     display: flex;
     flex-direction: column;
@@ -767,6 +767,10 @@
         padding: 1rem 0.7rem;
         min-height: 85px;
     }
+    
+    .attendance-bar {
+        height: 38px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -774,6 +778,7 @@
         padding: 1.8rem 1.3rem;
         border-radius: 16px;
         min-height: auto;
+        overflow: hidden;
     }
 }
 
@@ -838,39 +843,39 @@
 .attendance-bar {
     width: 100%;
     height: 35px;
-    background: #e5e7eb;
+    background: linear-gradient(to right, #ef4444 0%, #ef4444 85%, #f59e0b 85%, #f59e0b 90%, #3b82f6 90%, #3b82f6 95%, #10b981 95%, #10b981 100%);
     border-radius: 20px;
-    overflow: hidden;
+    overflow: visible;
     margin-top: 0.7rem;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .attendance-fill {
     height: 100%;
+    background: transparent;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+    padding-right: 10px;
     color: white;
     font-weight: 700;
     font-size: 0.85rem;
-    transition: all 1s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: width 1s ease;
+    position: relative;
 }
 
-.attendance-fill.excellent {
-    background: linear-gradient(90deg, #10b981, #059669);
-}
-
-.attendance-fill.good {
-    background: linear-gradient(90deg, #3b82f6, #2563eb);
-}
-
-.attendance-fill.average {
-    background: linear-gradient(90deg, #f59e0b, #d97706);
-}
-
-.attendance-fill.poor {
-    background: linear-gradient(90deg, #ef4444, #dc2626);
+.attendance-fill::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 45px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
 }
 
 @media (min-width: 768px) {
@@ -882,19 +887,11 @@
     .attendance-fill {
         font-size: 1rem;
     }
+    
+    .attendance-fill::after {
+        height: 50px;
+    }
 }
-
-.attendance-status {
-    margin-top: 0.5rem;
-    text-align: center;
-    font-size: 0.75rem;
-    font-weight: 600;
-}
-
-.attendance-status.excellent { color: #10b981; }
-.attendance-status.good { color: #3b82f6; }
-.attendance-status.average { color: #f59e0b; }
-.attendance-status.poor { color: #ef4444; }
 
 .no-result {
     text-align: center;

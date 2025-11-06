@@ -177,26 +177,12 @@ function displayReport(student, studentId) {
     document.getElementById('percentage').textContent = `${percentage}%`;
     document.getElementById('rank').textContent = calculateRank(percentage);
 
-    // Attendance with color coding
+    // Attendance with gradient bar
     const attendanceFill = document.getElementById('attendanceFill');
     setTimeout(() => {
         const attendance = student.attendance;
         attendanceFill.style.width = `${attendance}%`;
         attendanceFill.textContent = `${attendance}%`;
-        
-        // Remove existing classes
-        attendanceFill.className = 'attendance-fill';
-        
-        // Add color class based on attendance
-        if (attendance >= 95) {
-            attendanceFill.classList.add('excellent');
-        } else if (attendance >= 90) {
-            attendanceFill.classList.add('good');
-        } else if (attendance >= 85) {
-            attendanceFill.classList.add('average');
-        } else {
-            attendanceFill.classList.add('poor');
-        }
     }, 300);
 }
 
