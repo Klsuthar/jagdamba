@@ -4,12 +4,12 @@
     "roll_no": 1,
     "student_name": "AANAND SINGH",
     "session": "2023-24",
-    "exam_type": "वार्षिक परीक्षा",
+    "exam_type": "Annual Exam",
     "subjects": [
-      { "name": "हिंदी", "obtained": 92, "total": 100, "grade": "A" },
-      { "name": "अंग्रेजी", "obtained": 88, "total": 100, "grade": "A" },
-      { "name": "गणित", "obtained": 95, "total": 100, "grade": "A" },
-      { "name": "पर्यावरण अध्ययन", "obtained": 90, "total": 100, "grade": "A" }
+      { "name": "Hindi", "obtained": 92, "total": 100, "grade": "A" },
+      { "name": "English", "obtained": 88, "total": 100, "grade": "A" },
+      { "name": "Mathematics", "obtained": 95, "total": 100, "grade": "A" },
+      { "name": "EVS", "obtained": 90, "total": 100, "grade": "A" }
     ],
     "attendance": 97
   },
@@ -18,12 +18,12 @@
     "roll_no": 2,
     "student_name": "ANURADHA",
     "session": "2023-24",
-    "exam_type": "वार्षिक परीक्षा",
+    "exam_type": "Annual Exam",
     "subjects": [
-      { "name": "हिंदी", "obtained": 85, "total": 100, "grade": "A" },
-      { "name": "अंग्रेजी", "obtained": 80, "total": 100, "grade": "A" },
-      { "name": "गणित", "obtained": 88, "total": 100, "grade": "A" },
-      { "name": "पर्यावरण अध्ययन", "obtained": 86, "total": 100, "grade": "A" }
+      { "name": "Hindi", "obtained": 85, "total": 100, "grade": "A" },
+      { "name": "English", "obtained": 80, "total": 100, "grade": "A" },
+      { "name": "Mathematics", "obtained": 88, "total": 100, "grade": "A" },
+      { "name": "EVS", "obtained": 86, "total": 100, "grade": "A" }
     ],
     "attendance": 94
   },
@@ -32,12 +32,12 @@
     "roll_no": 3,
     "student_name": "ARAV SINWAL",
     "session": "2023-24",
-    "exam_type": "वार्षिक परीक्षा",
+    "exam_type": "Annual Exam",
     "subjects": [
-      { "name": "हिंदी", "obtained": 78, "total": 100, "grade": "B" },
-      { "name": "अंग्रेजी", "obtained": 75, "total": 100, "grade": "B" },
-      { "name": "गणित", "obtained": 82, "total": 100, "grade": "A" },
-      { "name": "पर्यावरण अध्ययन", "obtained": 80, "total": 100, "grade": "A" }
+      { "name": "Hindi", "obtained": 78, "total": 100, "grade": "B" },
+      { "name": "English", "obtained": 75, "total": 100, "grade": "B" },
+      { "name": "Mathematics", "obtained": 82, "total": 100, "grade": "A" },
+      { "name": "EVS", "obtained": 80, "total": 100, "grade": "A" }
     ],
     "attendance": 91
   },
@@ -46,12 +46,12 @@
     "roll_no": 4,
     "student_name": "ARVIND JAT",
     "session": "2023-24",
-    "exam_type": "वार्षिक परीक्षा",
+    "exam_type": "Annual Exam",
     "subjects": [
-      { "name": "हिंदी", "obtained": 90, "total": 100, "grade": "A" },
-      { "name": "अंग्रेजी", "obtained": 87, "total": 100, "grade": "A" },
-      { "name": "गणित", "obtained": 92, "total": 100, "grade": "A" },
-      { "name": "पर्यावरण अध्ययन", "obtained": 89, "total": 100, "grade": "A" }
+      { "name": "Hindi", "obtained": 90, "total": 100, "grade": "A" },
+      { "name": "English", "obtained": 87, "total": 100, "grade": "A" },
+      { "name": "Mathematics", "obtained": 92, "total": 100, "grade": "A" },
+      { "name": "EVS", "obtained": 89, "total": 100, "grade": "A" }
     ],
     "attendance": 96
   },
@@ -60,13 +60,279 @@
     "roll_no": 5,
     "student_name": "DINDAYAL",
     "session": "2023-24",
-    "exam_type": "वार्षिक परीक्षा",
+    "exam_type": "Annual Exam",
     "subjects": [
-      { "name": "हिंदी", "obtained": 70, "total": 100, "grade": "B" },
-      { "name": "अंग्रेजी", "obtained": 68, "total": 100, "grade": "C" },
-      { "name": "गणित", "obtained": 75, "total": 100, "grade": "B" },
-      { "name": "पर्यावरण अध्ययन", "obtained": 72, "total": 100, "grade": "B" }
+      { "name": "Hindi", "obtained": 70, "total": 100, "grade": "B" },
+      { "name": "English", "obtained": 68, "total": 100, "grade": "C" },
+      { "name": "Mathematics", "obtained": 75, "total": 100, "grade": "B" },
+      { "name": "EVS", "obtained": 72, "total": 100, "grade": "B" }
     ],
     "attendance": 89
+  },
+  {
+    "student_id": "STU3_06",
+    "roll_no": 6,
+    "student_name": "DIVYANSH SHARMA",
+    "session": "2023-24",
+    "exam_type": "Annual Exam",
+    "subjects": [
+      { "name": "Hindi", "obtained": 88, "total": 100, "grade": "A" },
+      { "name": "English", "obtained": 85, "total": 100, "grade": "A" },
+      { "name": "Mathematics", "obtained": 90, "total": 100, "grade": "A" },
+      { "name": "EVS", "obtained": 87, "total": 100, "grade": "A" }
+    ],
+    "attendance": 95
+  },
+  {
+    "student_id": "STU3_07",
+    "roll_no": 7,
+    "student_name": "GAURAV KUMAR",
+    "session": "2023-24",
+    "exam_type": "Annual Exam",
+    "subjects": [
+      { "name": "Hindi", "obtained": 82, "total": 100, "grade": "A" },
+      { "name": "English", "obtained": 78, "total": 100, "grade": "B" },
+      { "name": "Mathematics", "obtained": 85, "total": 100, "grade": "A" },
+      { "name": "EVS", "obtained": 83, "total": 100, "grade": "A" }
+    ],
+    "attendance": 92
+  },
+  {
+    "student_id": "STU3_08",
+    "roll_no": 8,
+    "student_name": "HARSH VERMA",
+    "session": "2023-24",
+    "exam_type": "Annual Exam",
+    "subjects": [
+      { "name": "Hindi", "obtained": 75, "total": 100, "grade": "B" },
+      { "name": "English", "obtained": 72, "total": 100, "grade": "B" },
+      { "name": "Mathematics", "obtained": 80, "total": 100, "grade": "A" },
+      { "name": "EVS", "obtained": 77, "total": 100, "grade": "B" }
+    ],
+    "attendance": 90
+  },
+  {
+    "student_id": "STU3_09",
+    "roll_no": 9,
+    "student_name": "ISHITA PATEL",
+    "session": "2023-24",
+    "exam_type": "Annual Exam",
+    "subjects": [
+      { "name": "Hindi", "obtained": 94, "total": 100, "grade": "A" },
+      { "name": "English", "obtained": 91, "total": 100, "grade": "A" },
+      { "name": "Mathematics", "obtained": 96, "total": 100, "grade": "A" },
+      { "name": "EVS", "obtained": 93, "total": 100, "grade": "A" }
+    ],
+    "attendance": 98
+  },
+  {
+    "student_id": "STU3_10",
+    "roll_no": 10,
+    "student_name": "JIYA GUPTA",
+    "session": "2023-24",
+    "exam_type": "Annual Exam",
+    "subjects": [
+      { "name": "Hindi", "obtained": 86, "total": 100, "grade": "A" },
+      { "name": "English", "obtained": 83, "total": 100, "grade": "A" },
+      { "name": "Mathematics", "obtained": 89, "total": 100, "grade": "A" },
+      { "name": "EVS", "obtained": 85, "total": 100, "grade": "A" }
+    ],
+    "attendance": 93
+  },
+  {
+    "student_id": "STU3_11",
+    "roll_no": 11,
+    "student_name": "KAVYA SINGH",
+    "session": "2023-24",
+    "exam_type": "Annual Exam",
+    "subjects": [
+      { "name": "Hindi", "obtained": 80, "total": 100, "grade": "A" },
+      { "name": "English", "obtained": 76, "total": 100, "grade": "B" },
+      { "name": "Mathematics", "obtained": 84, "total": 100, "grade": "A" },
+      { "name": "EVS", "obtained": 81, "total": 100, "grade": "A" }
+    ],
+    "attendance": 91
+  },
+  {
+    "student_id": "STU3_12",
+    "roll_no": 12,
+    "student_name": "LAKSHYA YADAV",
+    "session": "2023-24",
+    "exam_type": "Annual Exam",
+    "subjects": [
+      { "name": "Hindi", "obtained": 72, "total": 100, "grade": "B" },
+      { "name": "English", "obtained": 70, "total": 100, "grade": "B" },
+      { "name": "Mathematics", "obtained": 76, "total": 100, "grade": "B" },
+      { "name": "EVS", "obtained": 74, "total": 100, "grade": "B" }
+    ],
+    "attendance": 88
+  },
+  {
+    "student_id": "STU3_13",
+    "roll_no": 13,
+    "student_name": "MANVI SHARMA",
+    "session": "2023-24",
+    "exam_type": "Annual Exam",
+    "subjects": [
+      { "name": "Hindi", "obtained": 91, "total": 100, "grade": "A" },
+      { "name": "English", "obtained": 89, "total": 100, "grade": "A" },
+      { "name": "Mathematics", "obtained": 93, "total": 100, "grade": "A" },
+      { "name": "EVS", "obtained": 90, "total": 100, "grade": "A" }
+    ],
+    "attendance": 96
+  },
+  {
+    "student_id": "STU3_14",
+    "roll_no": 14,
+    "student_name": "NAMAN JOSHI",
+    "session": "2023-24",
+    "exam_type": "Annual Exam",
+    "subjects": [
+      { "name": "Hindi", "obtained": 84, "total": 100, "grade": "A" },
+      { "name": "English", "obtained": 81, "total": 100, "grade": "A" },
+      { "name": "Mathematics", "obtained": 87, "total": 100, "grade": "A" },
+      { "name": "EVS", "obtained": 84, "total": 100, "grade": "A" }
+    ],
+    "attendance": 94
+  },
+  {
+    "student_id": "STU3_15",
+    "roll_no": 15,
+    "student_name": "PRIYA KUMARI",
+    "session": "2023-24",
+    "exam_type": "Annual Exam",
+    "subjects": [
+      { "name": "Hindi", "obtained": 77, "total": 100, "grade": "B" },
+      { "name": "English", "obtained": 74, "total": 100, "grade": "B" },
+      { "name": "Mathematics", "obtained": 81, "total": 100, "grade": "A" },
+      { "name": "EVS", "obtained": 78, "total": 100, "grade": "B" }
+    ],
+    "attendance": 90
+  },
+  {
+    "student_id": "STU3_16",
+    "roll_no": 16,
+    "student_name": "RAHUL MEENA",
+    "session": "2023-24",
+    "exam_type": "Annual Exam",
+    "subjects": [
+      { "name": "Hindi", "obtained": 89, "total": 100, "grade": "A" },
+      { "name": "English", "obtained": 86, "total": 100, "grade": "A" },
+      { "name": "Mathematics", "obtained": 91, "total": 100, "grade": "A" },
+      { "name": "EVS", "obtained": 88, "total": 100, "grade": "A" }
+    ],
+    "attendance": 95
+  },
+  {
+    "student_id": "STU3_17",
+    "roll_no": 17,
+    "student_name": "RIYA CHAUHAN",
+    "session": "2023-24",
+    "exam_type": "Annual Exam",
+    "subjects": [
+      { "name": "Hindi", "obtained": 93, "total": 100, "grade": "A" },
+      { "name": "English", "obtained": 90, "total": 100, "grade": "A" },
+      { "name": "Mathematics", "obtained": 95, "total": 100, "grade": "A" },
+      { "name": "EVS", "obtained": 92, "total": 100, "grade": "A" }
+    ],
+    "attendance": 97
+  },
+  {
+    "student_id": "STU3_18",
+    "roll_no": 18,
+    "student_name": "SAHIL KUMAR",
+    "session": "2023-24",
+    "exam_type": "Annual Exam",
+    "subjects": [
+      { "name": "Hindi", "obtained": 68, "total": 100, "grade": "C" },
+      { "name": "English", "obtained": 65, "total": 100, "grade": "C" },
+      { "name": "Mathematics", "obtained": 72, "total": 100, "grade": "B" },
+      { "name": "EVS", "obtained": 70, "total": 100, "grade": "B" }
+    ],
+    "attendance": 87
+  },
+  {
+    "student_id": "STU3_19",
+    "roll_no": 19,
+    "student_name": "SANYA AGARWAL",
+    "session": "2023-24",
+    "exam_type": "Annual Exam",
+    "subjects": [
+      { "name": "Hindi", "obtained": 87, "total": 100, "grade": "A" },
+      { "name": "English", "obtained": 84, "total": 100, "grade": "A" },
+      { "name": "Mathematics", "obtained": 90, "total": 100, "grade": "A" },
+      { "name": "EVS", "obtained": 86, "total": 100, "grade": "A" }
+    ],
+    "attendance": 94
+  },
+  {
+    "student_id": "STU3_20",
+    "roll_no": 20,
+    "student_name": "TANVI RAJPUT",
+    "session": "2023-24",
+    "exam_type": "Annual Exam",
+    "subjects": [
+      { "name": "Hindi", "obtained": 81, "total": 100, "grade": "A" },
+      { "name": "English", "obtained": 79, "total": 100, "grade": "B" },
+      { "name": "Mathematics", "obtained": 85, "total": 100, "grade": "A" },
+      { "name": "EVS", "obtained": 82, "total": 100, "grade": "A" }
+    ],
+    "attendance": 92
+  },
+  {
+    "student_id": "STU3_21",
+    "roll_no": 21,
+    "student_name": "VANSH TIWARI",
+    "session": "2023-24",
+    "exam_type": "Annual Exam",
+    "subjects": [
+      { "name": "Hindi", "obtained": 74, "total": 100, "grade": "B" },
+      { "name": "English", "obtained": 71, "total": 100, "grade": "B" },
+      { "name": "Mathematics", "obtained": 78, "total": 100, "grade": "B" },
+      { "name": "EVS", "obtained": 75, "total": 100, "grade": "B" }
+    ],
+    "attendance": 89
+  },
+  {
+    "student_id": "STU3_22",
+    "roll_no": 22,
+    "student_name": "YASH SINGH",
+    "session": "2023-24",
+    "exam_type": "Annual Exam",
+    "subjects": [
+      { "name": "Hindi", "obtained": 90, "total": 100, "grade": "A" },
+      { "name": "English", "obtained": 88, "total": 100, "grade": "A" },
+      { "name": "Mathematics", "obtained": 92, "total": 100, "grade": "A" },
+      { "name": "EVS", "obtained": 89, "total": 100, "grade": "A" }
+    ],
+    "attendance": 96
+  },
+  {
+    "student_id": "STU3_23",
+    "roll_no": 23,
+    "student_name": "ZARA KHAN",
+    "session": "2023-24",
+    "exam_type": "Annual Exam",
+    "subjects": [
+      { "name": "Hindi", "obtained": 85, "total": 100, "grade": "A" },
+      { "name": "English", "obtained": 82, "total": 100, "grade": "A" },
+      { "name": "Mathematics", "obtained": 88, "total": 100, "grade": "A" },
+      { "name": "EVS", "obtained": 84, "total": 100, "grade": "A" }
+    ],
+    "attendance": 93
+  },
+  {
+    "student_id": "STU3_24",
+    "roll_no": 24,
+    "student_name": "AADHYA VERMA",
+    "session": "2023-24",
+    "exam_type": "Annual Exam",
+    "subjects": [
+      { "name": "Hindi", "obtained": 79, "total": 100, "grade": "B" },
+      { "name": "English", "obtained": 76, "total": 100, "grade": "B" },
+      { "name": "Mathematics", "obtained": 83, "total": 100, "grade": "A" },
+      { "name": "EVS", "obtained": 80, "total": 100, "grade": "A" }
+    ],
+    "attendance": 91
   }
 ]
