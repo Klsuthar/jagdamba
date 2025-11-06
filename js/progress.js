@@ -22,6 +22,9 @@ async function loadStudentData() {
         const class2Results = await class2ResultsResponse.json();
         const class3Results = await class3ResultsResponse.json();
         
+        console.log('Class 2 Students:', class2Students.length);
+        console.log('Class 3 Students:', class3Students.length);
+        
         // Map student list data
         classData.class_2.students = class2Students.map(student => ({
             id: `STU2_${student.roll_no.toString().padStart(2, '0')}`,
@@ -63,6 +66,10 @@ async function loadStudentData() {
                 attendance: result.attendance
             };
         });
+        
+        console.log('Data loaded successfully');
+        console.log('Class 2 students count:', classData.class_2.students.length);
+        console.log('Class 3 students count:', classData.class_3.students.length);
     } catch (error) {
         console.error('Error loading student data:', error);
     }
