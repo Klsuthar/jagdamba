@@ -1,6 +1,6 @@
 # Header Component Usage Guide
 
-## 📁 Files Created
+## 📁 Files Created 
 - `components/header.html` - Header HTML structure
 - `css/header.css` - Header styles
 - `js/header.js` - Header functionality
