@@ -1,0 +1,137 @@
+<!-- Leadership Cards -->
+<div class="leadership-container">
+    <!-- Director Card -->
+    <div class="principal-card">
+        <div class="card-header director-bg">
+            <div class="header-content">
+                <div class="header-left">
+                    <div class="principal-image" onclick="openImageModal('../images/director.jpg', 'Gopal Krishan Bhamu - Director')">
+                        <img src="../images/director.jpg" alt="Director">
+                    </div>
+                </div>
+                <div class="header-right">
+                    <h3 class="principal-name">Gopal Krishan Bhamu</h3>
+                    <p class="principal-designation">Director</p>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <blockquote class="principal-message">
+                "Education is the power that can transform lives. At Shree Jagdamba Convent School, we help every child reach their full potential."
+            </blockquote>
+        </div>
+        <div class="card-footer">
+            <a href="tel:+919828869462" class="social-icon phone-icon" title="Call Director">
+                <i class="fas fa-phone-alt"></i>
+            </a>
+            <!-- <a href="https://facebook.com" target="_blank" class="social-icon facebook-icon" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="social-icon instagram-icon" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a> -->
+        </div>
+    </div>
+
+    <!-- Principal Card -->
+    <div class="principal-card">
+        <div class="card-header principal-bg">
+            <div class="header-content">
+                <div class="header-left">
+                    <div class="principal-image" onclick="openImageModal('../images/principal.jpg', 'Rakesh Jangir - Principal')">
+                        <img src="../images/principal.jpg" alt="Principal">
+                    </div>
+                </div>
+                <div class="header-right">
+                    <h3 class="principal-name">Rakesh Jangir</h3>
+                    <p class="principal-designation">Principal</p>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <blockquote class="principal-message">
+                "Education is not the filling of a pail, but the lighting of a fire. At Shree Jagdamba Convent School, we nurture young minds to become responsible citizens and future leaders."
+            </blockquote>
+        </div>
+        <div class="card-footer">
+            <a href="tel:+919784394907" class="social-icon phone-icon" title="Call Principal">
+                <i class="fas fa-phone-alt"></i>
+            </a>
+            <!-- <a href="https://facebook.com" target="_blank" class="social-icon facebook-icon" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="social-icon instagram-icon" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a> -->
+        </div>
+    </div>
+
+    <!-- Headmaster Card -->
+    <div class="principal-card">
+        <div class="card-header headmaster-bg">
+            <div class="header-content">
+                <div class="header-left">
+                    <div class="principal-image" onclick="openImageModal('../images/headmaster.webp', 'Ram Partap Guruwa - Headmaster')">
+                        <img src="../images/headmaster.webp" alt="Headmaster">
+                    </div>
+                </div>
+                <div class="header-right">
+                    <h3 class="principal-name">Ram Partap Guruwa</h3>
+                    <p class="principal-designation">Headmaster & English Teacher</p>
+                    <p class="principal-qualification">MA, BA and BEd<br><small style="font-size: 0.85em; opacity: 0.9;">from MGSU University</small></p>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <blockquote class="principal-message">
+                "Our goal is not only to achieve academic excellence but also to develop moral values and life skills in children."
+            </blockquote>
+        </div>
+        <div class="card-footer">
+            <a href="tel:+919376362716" class="social-icon phone-icon" title="Call Headmaster">
+                <i class="fas fa-phone-alt"></i>
+            </a>
+            <!-- <a href="https://facebook.com" target="_blank" class="social-icon facebook-icon" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="social-icon instagram-icon" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a> -->
+        </div>
+    </div>
+</div>
+
+<!-- Image Modal -->
+<div class="image-modal" id="imageModal" onclick="closeImageModal()">
+    <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+        <button class="modal-close" onclick="closeImageModal()">×</button>
+        <img src="" alt="" class="modal-image" id="modalImage">
+        <div class="modal-info" id="modalInfo"></div>
+    </div>
+</div>
+
+<script>
+function openImageModal(imageSrc, info) {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalInfo = document.getElementById('modalInfo');
+    
+    modalImage.src = imageSrc;
+    modalInfo.textContent = info;
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeImageModal() {
+    const modal = document.getElementById('imageModal');
+    modal.classList.remove('show');
+    document.body.style.overflow = '';
+}
+
+// Close on Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeImageModal();
+    }
+});
+</script>

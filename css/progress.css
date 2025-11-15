@@ -33,9 +33,10 @@
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.95));
     backdrop-filter: blur(15px);
     border-radius: 20px;
-    padding: 1.8rem 1.2rem;
+    padding: 1.8rem 1.2rem 0;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.5);
     animation: slideUp 0.6s ease;
+    overflow: hidden;
 }
 
 @keyframes slideUp {
@@ -75,6 +76,7 @@
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 1.5rem;
 }
 
 .class-btn {
@@ -102,7 +104,7 @@
 @media (min-width: 768px) {
     .class-selection {
         margin-bottom: 3rem;
-        padding: 2rem;
+        padding: 2rem 2rem 0;
     }
     
     .class-selection h3 {

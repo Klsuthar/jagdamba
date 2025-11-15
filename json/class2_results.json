@@ -320,19 +320,5 @@
       { "name": "EVS", "obtained": 89, "total": 100, "grade": "A" }
     ],
     "attendance": 96
-  },
-  {
-    "student_id": "STU2_24",
-    "roll_no": 24,
-    "student_name": "AADHYA SHARMA",
-    "session": "2023-24",
-    "exam_type": "Annual Exam",
-    "subjects": [
-      { "name": "Hindi", "obtained": 82, "total": 100, "grade": "A" },
-      { "name": "English", "obtained": 79, "total": 100, "grade": "B" },
-      { "name": "Mathematics", "obtained": 86, "total": 100, "grade": "A" },
-      { "name": "EVS", "obtained": 84, "total": 100, "grade": "A" }
-    ],
-    "attendance": 93
   }
 ]

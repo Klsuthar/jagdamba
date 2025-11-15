@@ -1,40 +1,6 @@
 {
   "events": [
     {
-      "eventName": "School Glimpses",
-      "images": [
-        {
-          "path": "../images/School_outer_look.jpg",
-          "alt": "School Building"
-        },
-        {
-          "path": "../images/principal.jpg",
-          "alt": "Principal"
-        },
-        {
-          "path": "../images/Director.jpg",
-          "alt": "Director"
-        }
-      ]
-    },
-    {
-      "eventName": "Talent Award Ceremony",
-      "images": [
-        {
-          "path": "../images/Partibha_smman.jpg",
-          "alt": "Talent Award"
-        },
-        {
-          "path": "../images/Partibha_smman2.jpg",
-          "alt": "Talent Award 2"
-        },
-        {
-          "path": "../images/Partibha_smman3.jpg",
-          "alt": "Talent Award 3"
-        }
-      ]
-    },
-    {
       "eventName": "Drawing Competition",
       "images": [
         {
@@ -80,6 +46,27 @@
       ]
     },
     {
+      "eventName": "Classroom Gallery",
+      "images": [
+        {
+          "path": "../images/events/classroom_gallery/1.webp",
+          "alt": "Classroom Gallery 1"
+        },
+        {
+          "path": "../images/events/classroom_gallery/2.webp",
+          "alt": "Classroom Gallery 2"
+        },
+        {
+          "path": "../images/events/classroom_gallery/3.webp",
+          "alt": "Classroom Gallery 3"
+        },
+        {
+          "path": "../images/events/classroom_gallery/4.webp",
+          "alt": "Classroom Gallery 4"
+        }
+      ]
+    },
+    {
       "eventName": "Computer Class",
       "images": [
         {
@@ -114,6 +101,74 @@
           "path": "../images/events/computer_class/8.jpg",
           "alt": "Computer Class 8"
         }
+      ]
+    },
+    {
+      "eventName": "Annual Result Day 2024",
+      "images": [
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (1).jpg", "alt": "Annual Result Day 1"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (11).jpg", "alt": "Annual Result Day 2"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (32).jpg", "alt": "Annual Result Day 3"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (62).jpg", "alt": "Annual Result Day 4"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (63).jpg", "alt": "Annual Result Day 5"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (64).jpg", "alt": "Annual Result Day 6"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (65).jpg", "alt": "Annual Result Day 7"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (66).jpg", "alt": "Annual Result Day 8"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (67).jpg", "alt": "Annual Result Day 9"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (68).jpg", "alt": "Annual Result Day 10"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (69).jpg", "alt": "Annual Result Day 11"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (70).jpg", "alt": "Annual Result Day 12"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (71).jpg", "alt": "Annual Result Day 13"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (72).jpg", "alt": "Annual Result Day 14"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (73).jpg", "alt": "Annual Result Day 15"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (74).jpg", "alt": "Annual Result Day 16"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (75).jpg", "alt": "Annual Result Day 17"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (76).jpg", "alt": "Annual Result Day 18"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (77).jpg", "alt": "Annual Result Day 19"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (78).jpg", "alt": "Annual Result Day 20"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (79).jpg", "alt": "Annual Result Day 21"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (80).jpg", "alt": "Annual Result Day 22"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (81).jpg", "alt": "Annual Result Day 23"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (82).jpg", "alt": "Annual Result Day 24"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (83).jpg", "alt": "Annual Result Day 25"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (84).jpg", "alt": "Annual Result Day 26"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (85).jpg", "alt": "Annual Result Day 27"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (86).jpg", "alt": "Annual Result Day 28"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (87).jpg", "alt": "Annual Result Day 29"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (88).jpg", "alt": "Annual Result Day 30"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (89).jpg", "alt": "Annual Result Day 31"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (90).jpg", "alt": "Annual Result Day 32"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (91).jpg", "alt": "Annual Result Day 33"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (92).jpg", "alt": "Annual Result Day 34"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (93).jpg", "alt": "Annual Result Day 35"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (94).jpg", "alt": "Annual Result Day 36"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (95).jpg", "alt": "Annual Result Day 37"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (96).jpg", "alt": "Annual Result Day 38"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (97).jpg", "alt": "Annual Result Day 39"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (98).jpg", "alt": "Annual Result Day 40"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (99).jpg", "alt": "Annual Result Day 41"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (100).jpg", "alt": "Annual Result Day 42"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (101).jpg", "alt": "Annual Result Day 43"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (102).jpg", "alt": "Annual Result Day 44"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (103).jpg", "alt": "Annual Result Day 45"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (104).jpg", "alt": "Annual Result Day 46"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (105).jpg", "alt": "Annual Result Day 47"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (106).jpg", "alt": "Annual Result Day 48"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (107).jpg", "alt": "Annual Result Day 49"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (108).jpg", "alt": "Annual Result Day 50"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (109).jpg", "alt": "Annual Result Day 51"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (110).jpg", "alt": "Annual Result Day 52"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (111).jpg", "alt": "Annual Result Day 53"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (112).jpg", "alt": "Annual Result Day 54"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (113).jpg", "alt": "Annual Result Day 55"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (114).jpg", "alt": "Annual Result Day 56"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (115).jpg", "alt": "Annual Result Day 57"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (116).jpg", "alt": "Annual Result Day 58"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (117).jpg", "alt": "Annual Result Day 59"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (118).jpg", "alt": "Annual Result Day 60"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (119).jpg", "alt": "Annual Result Day 61"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (120).jpg", "alt": "Annual Result Day 62"},
+        {"path": "../images/events/annual_result_day_2024/annual_result_day (121).jpg", "alt": "Annual Result Day 63"}
       ]
     }
   ]

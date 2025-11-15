@@ -2,136 +2,293 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Shri Jagdamba School - Temple of Education">
-    <title>Shri Jagdamba School</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Shree Jagdamba Convent School | Shree Jagdamba School - Quality education with modern facilities, experienced teachers, and 100% success rate. Best CBSE school with transport, computer lab & sports facilities.">
+    <meta name="keywords" content="Shree Jagdamba School, Shree Jagdamba Convent School, best school, CBSE school, quality education, student progress, modern education, school admission">
+    <meta name="author" content="Shree Jagdamba Convent School">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2d3748">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Jagdamba School">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
+    <!-- Android Chrome Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="site.webmanifest">
+    
+    <link rel="canonical" href="https://shree-jagdamba.web.app/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shree-jagdamba.web.app/">
+    <meta property="og:title" content="Shree Jagdamba Convent School | Shree Jagdamba School - Best Education">
+    <meta property="og:description" content="Quality education with modern facilities, experienced teachers, and 100% success rate. Enroll your child at Shree Jagdamba School today!">
+    <meta property="og:image" content="https://shree-jagdamba.web.app/images/logo.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://shree-jagdamba.web.app/">
+    <meta property="twitter:title" content="Shree Jagdamba Convent School | Shree Jagdamba School">
+    <meta property="twitter:description" content="Quality education with modern facilities and 100% success rate.">
+    <meta property="twitter:image" content="https://shree-jagdamba.web.app/images/logo.png">
+    
+    <title>Shree Jagdamba Convent School | Shree Jagdamba School - Best CBSE School</title>
     <link rel="icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/hero.css">
-    <link rel="stylesheet" href="css/about.css">
-    <link rel="stylesheet" href="css/gallery.css">
-    <link rel="stylesheet" href="css/contact.css">
-    <link rel="stylesheet" href="css/students.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/modern-ui.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <style>
+        /* Instant visual improvements */
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --accent: #ec4899;
+            --success: #10b981;
+            --dark: #0f172a;
+            --light: #f8fafc;
+        }
+        body { font-family: 'Inter', -apple-system, sans-serif; }
+        .hero-section { 
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.6) 0%, rgba(118, 75, 162, 0.6) 50%, rgba(240, 147, 251, 0.6) 100%), url('images/hero-bg.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .stat-card { backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.2); }
+        .feature-item { border-radius: 24px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
+        .floating-symbols { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; overflow: hidden; }
+        .symbol { position: absolute; font-weight: 700; will-change: transform; }
+        @keyframes float1 { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-30px) rotate(180deg); } }
+        @keyframes float2 { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(20px); } }
+        @keyframes pulse { 0%, 100% { opacity: 0.15; } 50% { opacity: 0.3; } }
+        @media (max-width: 768px) { .symbol { font-size: 1.2rem !important; } }
+    </style>
+    <meta name="google-site-verification" content="-9-M6l5K41Hz9A8jzUSlKp8OboqLdQqRJEqyo5jNwvo" />
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBJ8C4HZ2V"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HBJ8C4HZ2V');
+    </script>
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Shree Jagdamba Convent School",
+      "alternateName": "Shree Jagdamba School",
+      "url": "https://shree-jagdamba.web.app",
+      "logo": "https://shree-jagdamba.web.app/images/logo.png",
+      "description": "Shree Jagdamba Convent School provides quality education with modern facilities, experienced teachers, and 100% success rate.",
+      "foundingDate": "2001",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://www.facebook.com/shreejagdambaschool",
+        "https://www.instagram.com/shreejagdambaschool"
+      ]
+    }
+    </script>
 </head>
 <body>
-    <header class="header" id="header">
-        <div class="header-container">
-            <div class="logo">
-                <img src="images/logo.png" alt="Logo">
-                <h2>Shri Jagdamba School</h2>
-            </div>
-            <nav class="desktop-nav">
-                <a href="index.html" class="nav-link active">Home</a>
-                <a href="pages/about.html" class="nav-link">About Us</a>
-                <a href="pages/gallery.html" class="nav-link">Gallery</a>
-                <a href="sections/progress.html" class="nav-link">Student Progress</a>
-                <a href="pages/contact.html" class="nav-link">Contact</a>
-            </nav>
-            <button class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </header>
+    <div id="header-placeholder"></div>
 
-    <main>
-        <section class="hero-section">
+    <main role="main">
+        <section class="hero-section" aria-labelledby="hero-title">
             <div class="hero-content">
-                <div class="hero-animation">
-                    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                    <lottie-player src="lottie/Kids.json" background="transparent" speed="1" loop autoplay></lottie-player>
-                </div>
-                <h1 class="hero-title">Welcome to Shri Jagdamba School</h1>
-                <p class="hero-subtitle">Where Education, Values and Success Meet</p>
+                <div class="hero-badge">🎓 Excellence in Education Since 2001</div>
+                <h1 class="hero-title" id="hero-title">
+                    Welcome to <span class="gradient-text">Shree Jagdamba Convent School</span>
+                </h1>
+                <p class="hero-subtitle">Where Education, Values and Success Meet 🌟</p>
                 <div class="hero-buttons">
-                    <a href="pages/about.html" class="cta-button primary">About Us</a>
-                    <a href="sections/progress.html" class="cta-button secondary">Student Progress</a>
+                    <a href="admin/login.html" class="cta-button primary" aria-label="Admin login">
+                        <span>Admin Login</span>
+                        <i class="fas fa-user-shield"></i>
+                    </a>
+                    <a href="sections/progress.html" class="cta-button secondary" aria-label="View student progress reports">
+                        <span>Student Portal</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <section id="home" class="features-section">
+        <div style="background: white;">
+            <img src="images/stikers/students.webp" alt="Shree Jagdamba School Students - Quality Education" style="width: 100%; display: block; margin: 0; padding: 0;">
+        </div>
+        <div style="background: #0a2463; color: white; text-align: center; padding: 20px; margin: 0; font-size: 1.3rem; font-weight: 600; font-family: 'Georgia', serif; letter-spacing: 0.5px;">We teach beyond books — preparing students for life.</div>
+
+        <section id="home" class="features-section" aria-labelledby="features-heading">
+            <h2 id="features-heading" class="sr-only">School Statistics and Features</h2>
             <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <i class="fas fa-users"></i>
-                        <h3>500+</h3>
-                        <p>Students</p>
+                <div class="stats-grid" role="list">
+                    <div class="stat-card" role="listitem">
+                        <i class="fas fa-users" aria-hidden="true"></i>
+                        <h3><span class="counter" data-target="120">0</span>+</h3>
+                        <p>Happy Students</p>
                     </div>
-                    <div class="stat-card">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                        <h3>30+</h3>
-                        <p>Teachers</p>
+                    <div class="stat-card" role="listitem">
+                        <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
+                        <h3><span class="counter" data-target="4">0</span>+</h3>
+                        <p>Expert Teachers</p>
                     </div>
-                    <div class="stat-card">
-                        <i class="fas fa-trophy"></i>
-                        <h3>95%</h3>
-                        <p>Exam Results</p>
+                    <div class="stat-card" role="listitem">
+                        <i class="fas fa-trophy" aria-hidden="true"></i>
+                        <h3><span class="counter" data-target="100">0</span>%</h3>
+                        <p>Success Rate</p>
                     </div>
-                    <div class="stat-card">
-                        <i class="fas fa-award"></i>
-                        <h3>20+</h3>
-                        <p>Years Experience</p>
+                    <div class="stat-card" role="listitem">
+                        <i class="fas fa-award" aria-hidden="true"></i>
+                        <h3><span class="counter" data-target="4">0</span>+</h3>
+                        <p>Years Legacy</p>
                     </div>
                 </div>
 
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <i class="fas fa-book-reader"></i>
+                <img src="images/stikers/student_nursary.webp" alt="Shree Jagdamba Convent School Nursery Students" style="width: 100%; display: block; margin: 0; padding: 0;">
+                <div style="background: #0d5e3a; color: white; text-align: center; padding: 20px; margin: 0 0 10px 0; font-size: 1.3rem; font-weight: 600; font-family: 'Georgia', serif; letter-spacing: 0.5px;">Not just teaching, but building the future</div>
+
+                <div class="features-grid" role="list">
+                    <article class="feature-card" role="listitem">
+                        <div class="feature-icon">
+                            <img src="images/icons/classroom.png" alt="Modern Education" style="width: 60px; height: 60px;">
+                        </div>
                         <h3>Modern Education</h3>
                         <p>Latest teaching methods and technology</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-bus"></i>
+                    </article>
+
+                    <article class="feature-card" role="listitem">
+                        <div class="feature-icon">
+                            <img src="images/icons/bus.png" alt="Transport Facility" style="width: 60px; height: 60px;">
+                        </div>
                         <h3>Transport Facility</h3>
                         <p>Safe and convenient bus service</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-futbol"></i>
+                    </article>
+
+                    <article class="feature-card" role="listitem">
+                        <div class="feature-icon">
+                            <img src="images/icons/sports.png" alt="Sports Facilities" style="width: 60px; height: 60px;">
+                        </div>
                         <h3>Sports Facilities</h3>
                         <p>Playground for physical development</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-laptop"></i>
+                    </article>
+
+                    <article class="feature-card" role="listitem">
+                        <div class="feature-icon">
+                            <img src="images/icons/pc.png" alt="Computer Lab" style="width: 60px; height: 60px;">
+                        </div>
                         <h3>Computer Lab</h3>
                         <p>Modern lab for digital education</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-video"></i>
+                    </article>
+
+                    <article class="feature-card" role="listitem">
+                        <div class="feature-icon">
+                            <img src="images/icons/cctv-camera.png" alt="CCTV Campus" style="width: 60px; height: 60px;">
+                        </div>
                         <h3>CCTV Campus</h3>
-                        <p>24x7 security surveillance system</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-book"></i>
-                        <h3>Library</h3>
-                        <p>Vast book collection and reading room</p>
-                    </div>
+                        <p>24x7 security surveillance</p>
+                    </article>
+
+                    <article class="feature-card" role="listitem">
+                        <div class="feature-icon">
+                            <img src="images/icons/web-link.png" alt="Tech Support" style="width: 60px; height: 60px;">
+                        </div>
+                        <h3>Tech Support</h3>
+                        <p>Fast information for parents</p>
+                    </article>
                 </div>
             </div>
         </section>
+
+        <div style="width: 100%; margin: 0; padding: 0; line-height: 0;">
+            <img src="images/stikers/student_with_headmaster.webp" alt="Students with Headmaster" style="width: 100%; height: auto; display: block; margin: 0; padding: 0;">
+        </div>
     </main>
+
+    <div style="background: #2d4558; color: white; text-align: center; padding: 1rem; margin: 0;">
+        <img src="images/logo.png" alt="School Logo" style="width: 60px; height: 60px; margin: 0 auto 0.75rem; display: block;">
+        <h3 style="font-size: clamp(1.2rem, 3.5vw, 1.5rem); margin-bottom: 0.25rem; font-weight: 600;">Shree Jagdamba Convent School</h3>
+        <p style="font-size: 0.9rem; opacity: 0.85; margin: 0;">Excellence in Education</p>
+    </div>
 
     <div id="footer-placeholder"></div>
 
-    <nav class="mobile-nav">
-        <a href="index.html" class="nav-item active"><i class="fas fa-home"></i><span>Home</span></a>
-        <a href="pages/about.html" class="nav-item"><i class="fas fa-info-circle"></i><span>About</span></a>
-        <a href="pages/gallery.html" class="nav-item"><i class="fas fa-images"></i><span>Gallery</span></a>
-        <a href="sections/progress.html" class="nav-item"><i class="fas fa-users"></i><span>Students</span></a>
-        <a href="pages/contact.html" class="nav-item"><i class="fas fa-phone"></i><span>Contact</span></a>
+    <nav class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+        <a href="index.html" class="nav-item active" aria-current="page" aria-label="Home"><i class="fas fa-home" aria-hidden="true"></i><span>Home</span></a>
+        <a href="pages/about.html" class="nav-item" aria-label="About Us"><i class="fas fa-info-circle" aria-hidden="true"></i><span>About</span></a>
+        <a href="pages/gallery.html" class="nav-item" aria-label="Gallery"><i class="fas fa-images" aria-hidden="true"></i><span>Gallery</span></a>
+        <a href="sections/progress.html" class="nav-item" aria-label="Student Progress"><i class="fas fa-users" aria-hidden="true"></i><span>Students</span></a>
+        <a href="pages/contact.html" class="nav-item" aria-label="Contact"><i class="fas fa-phone" aria-hidden="true"></i><span>Contact</span></a>
     </nav>
 
-    <div class="lightbox" id="lightbox">
-        <button class="lightbox-close"><i class="fas fa-times"></i></button>
-        <button class="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
-        <img src="" alt="" class="lightbox-image">
-        <button class="lightbox-next"><i class="fas fa-chevron-right"></i></button>
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+        <button class="lightbox-close" aria-label="Close image viewer"><i class="fas fa-times" aria-hidden="true"></i></button>
+        <button class="lightbox-prev" aria-label="Previous image"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+        <img src="" alt="" class="lightbox-image" loading="lazy">
+        <button class="lightbox-next" aria-label="Next image"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
     </div>
 
+    <script src="js/pwa.js"></script>
+    <script src="js/scroll-animation.js"></script>
+    <script src="js/header.js"></script>
     <script src="js/main.js"></script>
     <script src="js/hero.js"></script>
+    <script src="js/home.js"></script>
     <script src="js/footer.js"></script>
+    <script>
+        fetch('components/header.html')
+            .then(r => r.text())
+            .then(html => {
+                document.getElementById('header-placeholder').innerHTML = html.replace(/\.\.\/images/g, 'images').replace(/\.\.\/pages/g, 'pages').replace(/\.\.\/sections/g, 'sections').replace(/\.\.\/index\.html/g, 'index.html');
+            });
+    </script>
+    <script>
+        const container = document.getElementById('floatingSymbols');
+        if (container) {
+            const symbols = ['π', '∑', '∫', '√', 'α', 'β', 'θ', 'Δ', '∞', 'x²', 'y³', 'a+b', 'E=mc²', 'A', 'B', 'C', 'X', 'Y', 'Z', '÷', '×', '+', '=', '%', '∂', 'λ', 'μ', 'σ', 'Ω', '≈', '≠', '≤', '≥', '📚', '✏️', '📐', '🔬', '🎨', '🎵'];
+            const colors = ['#1976d2', '#d32f2f', '#388e3c', '#f57c00', '#7b1fa2', '#c2185b', '#0097a7', '#5d4037'];
+            const animations = ['float1', 'float2', 'pulse'];
+            const isMobile = window.innerWidth <= 768;
+            const count = isMobile ? 20 : 35;
+            for(let i = 0; i < count; i++) {
+                const symbol = document.createElement('div');
+                symbol.className = 'symbol';
+                symbol.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+                symbol.style.left = Math.random() * 100 + '%';
+                symbol.style.top = Math.random() * 100 + '%';
+                symbol.style.color = colors[Math.floor(Math.random() * colors.length)];
+                symbol.style.fontSize = isMobile ? '1.2rem' : (1.5 + Math.random() * 1.5) + 'rem';
+                symbol.style.animation = animations[Math.floor(Math.random() * animations.length)] + ' ' + (10 + Math.random() * 10) + 's infinite ease-in-out';
+                symbol.style.animationDelay = Math.random() * 3 + 's';
+                symbol.style.opacity = 0.15 + Math.random() * 0.1;
+                container.appendChild(symbol);
+            }
+        }
+    </script>
 </body>
 </html>

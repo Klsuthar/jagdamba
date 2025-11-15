@@ -3,33 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery - Shri Jagdamba School</title>
+    <title>Gallery - Shree Jagdamba Convent School</title>
+    <meta name="theme-color" content="#2d4558">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Jagdamba">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="apple-touch-icon" href="../images/icons/icon-192x192.png">
     <link rel="icon" href="../images/favicon.ico">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBJ8C4HZ2V"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HBJ8C4HZ2V');
+    </script>
+    
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/gallery.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header class="header" id="header">
-        <div class="header-container">
-            <div class="logo">
-                <img src="../images/logo.png" alt="Logo">
-                <h2>Shri Jagdamba School</h2>
-            </div>
-            <nav class="desktop-nav">
-                <a href="../index.html" class="nav-link">Home</a>
-                <a href="about.html" class="nav-link">About Us</a>
-                <a href="gallery.html" class="nav-link active">Gallery</a>
-                <a href="../sections/progress.html" class="nav-link">Student Progress</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-            </nav>
-            <button class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </header>
+    <div id="header-placeholder"></div>
 
     <main>
         <section class="gallery-section"></section>
@@ -46,14 +47,23 @@
     </nav>
 
     <div class="lightbox" id="lightbox">
+        <button class="lightbox-download" id="lightboxDownload"><i class="fas fa-download"></i></button>
         <button class="lightbox-close"><i class="fas fa-times"></i></button>
         <button class="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
         <img src="" alt="" class="lightbox-image">
         <button class="lightbox-next"><i class="fas fa-chevron-right"></i></button>
     </div>
 
+    <script src="../js/pwa.js"></script>
+    <script src="../js/scroll-animation.js"></script>
+    <script src="../js/header.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/gallery.js"></script>
     <script src="../js/footer.js"></script>
+    <script>
+        fetch('../components/header.html')
+            .then(r => r.text())
+            .then(html => document.getElementById('header-placeholder').innerHTML = html);
+    </script>
 </body>
 </html>

@@ -1,0 +1,255 @@
+/* 🚀 Next-Level Modern UI Enhancements */
+
+/* Hero Background Shapes */
+.hero-bg-shapes {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+    animation: float 20s infinite ease-in-out;
+}
+
+.shape-1 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #ff6b6b, transparent);
+    top: -10%;
+    left: -10%;
+    animation-delay: 0s;
+}
+
+.shape-2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #4ecdc4, transparent);
+    bottom: -10%;
+    right: -10%;
+    animation-delay: 7s;
+}
+
+.shape-3 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, #ffe66d, transparent);
+    top: 50%;
+    left: 50%;
+    animation-delay: 14s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -30px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+/* Hero Badge */
+.hero-badge {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    color: white;
+    font-size: clamp(0.75rem, 2vw, 0.9rem);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    animation: slideDown 0.8s ease;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(135deg, #fff 0%, #ffd700 50%, #fff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s infinite;
+    background-size: 200% auto;
+}
+
+@keyframes shimmer {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+/* Enhanced CTA Buttons */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+}
+
+.cta-button:hover::before {
+    transform: translateX(100%);
+}
+
+.cta-button i {
+    transition: transform 0.3s;
+}
+
+.cta-button:hover i {
+    transform: translateX(5px);
+}
+
+.cta-button.secondary:hover i {
+    transform: translateY(-3px);
+}
+
+/* Enhanced Stat Cards */
+.stat-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+    border-radius: 16px;
+    margin: 0 auto 1rem;
+    transition: transform 0.3s;
+}
+
+.stat-card:hover .stat-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.stat-icon i {
+    font-size: 2rem;
+}
+
+.stat-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: rgba(255,255,255,0.2);
+    overflow: hidden;
+}
+
+.stat-progress::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #fbbf24, #f59e0b);
+    transform: translateX(-100%);
+    animation: progressBar 2s ease-out forwards;
+}
+
+@keyframes progressBar {
+    to { transform: translateX(0); }
+}
+
+.stat-card-1 .stat-icon { background: linear-gradient(135deg, #667eea, #764ba2); }
+.stat-card-2 .stat-icon { background: linear-gradient(135deg, #f093fb, #f5576c); }
+.stat-card-3 .stat-icon { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+.stat-card-4 .stat-icon { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+
+.stat-card-1 .stat-progress::after { background: linear-gradient(90deg, #667eea, #764ba2); animation-delay: 0.2s; }
+.stat-card-2 .stat-progress::after { background: linear-gradient(90deg, #f093fb, #f5576c); animation-delay: 0.4s; }
+.stat-card-3 .stat-progress::after { background: linear-gradient(90deg, #4facfe, #00f2fe); animation-delay: 0.6s; }
+.stat-card-4 .stat-progress::after { background: linear-gradient(90deg, #43e97b, #38f9d7); animation-delay: 0.8s; }
+
+/* Feature Items Enhancement */
+.feature-item {
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    padding: 2px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.4), rgba(255,255,255,0.1));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+@media (hover: hover) {
+    .feature-item:hover::before {
+        opacity: 1;
+    }
+    
+    .feature-item:hover {
+        transform: translateY(-8px) scale(1.02);
+    }
+}
+
+/* Micro-interactions */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.stat-card:hover h3 {
+    animation: pulse 0.6s ease;
+}
+
+/* Loading Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-card {
+    animation: fadeInUp 0.6s ease backwards;
+}
+
+.stat-card:nth-child(1) { animation-delay: 0.1s; }
+.stat-card:nth-child(2) { animation-delay: 0.2s; }
+.stat-card:nth-child(3) { animation-delay: 0.3s; }
+.stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    html {
+        scroll-behavior: auto;
+    }
+}

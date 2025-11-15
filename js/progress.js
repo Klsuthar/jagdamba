@@ -1,5 +1,6 @@
 // Class-wise student data - will be loaded from JSON
 let classData = {
+    class_1: { title: 'Class 1 Students', students: [] },
     class_2: { title: 'Class 2 Students', students: [] },
     class_3: { title: 'Class 3 Students', students: [] }
 };
@@ -10,22 +11,34 @@ let studentsData = {};
 // Load student data and results from JSON files
 async function loadStudentData() {
     try {
-        const [class2Response, class3Response, class2ResultsResponse, class3ResultsResponse] = await Promise.all([
+        const [class1Response, class2Response, class3Response, class1ResultsResponse, class2ResultsResponse, class3ResultsResponse] = await Promise.all([
+            fetch('../json/class1_result.json'),
             fetch('../json/class2_students.json'),
             fetch('../json/class3_students.json'),
+            fetch('../json/class1_results.json'),
             fetch('../json/class2_results.json'),
             fetch('../json/class3_results.json')
         ]);
         
+        const class1Students = await class1Response.json();
         const class2Students = await class2Response.json();
         const class3Students = await class3Response.json();
+        const class1Results = await class1ResultsResponse.json();
         const class2Results = await class2ResultsResponse.json();
         const class3Results = await class3ResultsResponse.json();
         
+        console.log('Class 1 Students:', class1Students.length);
         console.log('Class 2 Students:', class2Students.length);
         console.log('Class 3 Students:', class3Students.length);
         
         // Map student list data
+        classData.class_1.students = class1Students.map(student => ({
+            id: `STU1_${student.roll_no.toString().padStart(2, '0')}`,
+            name: student.student_name,
+            rollNo: student.roll_no.toString().padStart(2, '0'),
+            photo: `../images/students/${student.image}`
+        }));
+        
         classData.class_2.students = class2Students.map(student => ({
             id: `STU2_${student.roll_no.toString().padStart(2, '0')}`,
             name: student.student_name,
@@ -41,6 +54,19 @@ async function loadStudentData() {
         }));
         
         // Map results data
+        class1Results.forEach(result => {
+            studentsData[result.student_id] = {
+                name: result.student_name,
+                class: 'Class 1',
+                rollNo: result.roll_no.toString().padStart(2, '0'),
+                session: result.session,
+                examType: result.exam_type,
+                photo: `../images/students/class_1/${result.roll_no.toString().padStart(2, '0')}_class1.webp`,
+                subjects: result.subjects,
+                attendance: result.attendance
+            };
+        });
+        
         class2Results.forEach(result => {
             studentsData[result.student_id] = {
                 name: result.student_name,
@@ -48,7 +74,7 @@ async function loadStudentData() {
                 rollNo: result.roll_no.toString().padStart(2, '0'),
                 session: result.session,
                 examType: result.exam_type,
-                photo: `../images/students/class_2/${result.roll_no.toString().padStart(2, '0')}_class2.jpg`,
+                photo: `../images/students/class_2/${result.roll_no.toString().padStart(2, '0')}_class2.webp`,
                 subjects: result.subjects,
                 attendance: result.attendance
             };
@@ -61,13 +87,14 @@ async function loadStudentData() {
                 rollNo: result.roll_no.toString().padStart(2, '0'),
                 session: result.session,
                 examType: result.exam_type,
-                photo: `../images/students/class_3/${result.roll_no.toString().padStart(2, '0')}_class3.jpg`,
+                photo: `../images/students/class_3/${result.roll_no.toString().padStart(2, '0')}_class3.webp`,
                 subjects: result.subjects,
                 attendance: result.attendance
             };
         });
         
         console.log('Data loaded successfully');
+        console.log('Class 1 students count:', classData.class_1.students.length);
         console.log('Class 2 students count:', classData.class_2.students.length);
         console.log('Class 3 students count:', classData.class_3.students.length);
     } catch (error) {

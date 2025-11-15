@@ -3,30 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Student Progress - Shri Jagdamba School</title>
+    <title>Student Progress - Shree Jagdamba Convent School</title>
+    <meta name="theme-color" content="#2d4558">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Jagdamba">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="apple-touch-icon" href="../images/icons/icon-192x192.png">
     <link rel="icon" href="../images/favicon.ico">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBJ8C4HZ2V"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HBJ8C4HZ2V');
+    </script>
+    
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/progress.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header class="header" id="header">
-        <div class="header-container">
-            <div class="logo">
-                <img src="../images/logo.png" alt="Logo">
-                <h2>Shri Jagdamba School</h2>
-            </div>
-            <nav class="desktop-nav">
-                <a href="../index.html" class="nav-link">Home</a>
-                <a href="../pages/about.html" class="nav-link">About Us</a>
-                <a href="../pages/gallery.html" class="nav-link">Gallery</a>
-                <a href="progress.html" class="nav-link active">Student Progress</a>
-                <a href="../pages/contact.html" class="nav-link">Contact</a>
-            </nav>
-        </div>
-    </header>
+    <div id="header-placeholder"></div>
 
     <main>
         <section class="progress-section">
@@ -40,9 +44,11 @@
                 <div class="class-selection">
                     <h3>Select Class</h3>
                     <div class="class-buttons">
+                        <button class="class-btn" onclick="selectClass('class_1')">Class 1</button>
                         <button class="class-btn" onclick="selectClass('class_2')">Class 2</button>
                         <button class="class-btn" onclick="selectClass('class_3')">Class 3</button>
                     </div>
+                    <img src="../images/stikers/student.webp" alt="Students" style="width: 100%; display: block; margin: 0; padding: 0;">
                 </div>
 
                 <div class="students-list" id="studentsList" style="display: none;">
@@ -129,7 +135,16 @@
         <a href="../pages/contact.html" class="nav-item"><i class="fas fa-phone"></i><span>Contact</span></a>
     </nav>
 
+    <script src="../js/pwa.js"></script>
+    <script src="../js/scroll-animation.js"></script>
+    <script src="../js/header.js"></script>
+    <script src="../js/main.js"></script>
     <script src="../js/progress.js"></script>
     <script src="../js/footer.js"></script>
+    <script>
+        fetch('../components/header.html')
+            .then(r => r.text())
+            .then(html => document.getElementById('header-placeholder').innerHTML = html);
+    </script>
 </body>
 </html>

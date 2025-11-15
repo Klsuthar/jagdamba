@@ -8,31 +8,57 @@ fetch('../json/gallery_events.json')
         return response.json();
     })
     .then(data => {
-        let htmlContent = '<div class="container"><h2 class="section-title">Our Gallery</h2><div class="gallery-grid">';
+        let htmlContent = `
+            <div class="container">
+                <div class="gallery-header">
+                    <h2 class="section-title"><span class="highlight-text">Our</span> Gallery</h2>
+                    <p class="section-subtitle">Capturing Moments of Excellence & Joy</p>
+                </div>
+                <div class="gallery-grid">`;
         
         data.events.forEach((event, eventIndex) => {
             const eventImgs = event.images.map(img => img.path);
             window.eventImages[eventIndex] = eventImgs;
             
             htmlContent += `
-                <div class="gallery-item" onclick="openEventLightbox(${eventIndex}, 0)" style="position: relative;">
-                    <img src="${event.images[0].path}" alt="${event.eventName}" loading="lazy">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-expand"></i>
+                <div class="gallery-item" onclick="openEventLightbox(${eventIndex}, 0)" role="button" tabindex="0" aria-label="View ${event.eventName} gallery">
+                    <div class="gallery-image-wrapper">
+                        <img src="${event.images[0].path}" alt="${event.eventName}" loading="lazy">
+                        <div class="photo-badge">
+                            <i class="fas fa-images"></i>
+                            ${event.images.length}
+                        </div>
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
                     </div>
-                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); padding: 1rem; color: white;">
-                        <h3 style="margin: 0; font-size: 1.1rem;">${event.eventName}</h3>
-                        <p style="margin: 0.3rem 0 0; font-size: 0.9rem; opacity: 0.9;">${event.images.length} Images</p>
+                    <div class="gallery-info">
+                        <h3>${event.eventName}</h3>
+                        <p><i class="fas fa-calendar"></i> School Event</p>
                     </div>
-                </div>
-            `;
+                </div>`;
         });
         
         htmlContent += '</div></div>';
         gallerySection.innerHTML = htmlContent;
-        console.log('Gallery loaded successfully');
+        
+        // Add keyboard support
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    item.click();
+                }
+            });
+        });
     })
     .catch(error => {
         console.error('Error loading gallery:', error);
-        gallerySection.innerHTML = '<div class="container"><h2 class="section-title">Error: ' + error.message + '</h2></div>';
+        gallerySection.innerHTML = `
+            <div class="container">
+                <div class="gallery-header">
+                    <h2 class="section-title">Gallery Unavailable</h2>
+                    <p class="section-subtitle" style="color: #ef4444;">Unable to load gallery images. Please try again later.</p>
+                </div>
+            </div>`;
     });

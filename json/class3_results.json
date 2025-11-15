@@ -4,12 +4,12 @@
     "roll_no": 1,
     "student_name": "AANAND SINGH",
     "session": "2023-24",
-    "exam_type": "Annual Exam",
+    "exam_type": "First Class Test",
     "subjects": [
-      { "name": "Hindi", "obtained": 92, "total": 100, "grade": "A" },
-      { "name": "English", "obtained": 88, "total": 100, "grade": "A" },
-      { "name": "Mathematics", "obtained": 95, "total": 100, "grade": "A" },
-      { "name": "EVS", "obtained": 90, "total": 100, "grade": "A" }
+      { "name": "Hindi", "obtained": 1, "total": 10 },
+      { "name": "English", "obtained": 3, "total": 10},
+      { "name": "Mathematics", "obtained": 2, "total": 1 },
+      { "name": "EVS", "obtained": null, "total": 10}
     ],
     "attendance": 97
   },
@@ -72,7 +72,7 @@
   {
     "student_id": "STU3_06",
     "roll_no": 6,
-    "student_name": "DIVYANSH SHARMA",
+    "student_name": "DINESH",
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
@@ -86,7 +86,7 @@
   {
     "student_id": "STU3_07",
     "roll_no": 7,
-    "student_name": "GAURAV KUMAR",
+    "student_name": "DINESH SIMAR",
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
@@ -100,7 +100,7 @@
   {
     "student_id": "STU3_08",
     "roll_no": 8,
-    "student_name": "HARSH VERMA",
+    "student_name": "DIVYA",
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
@@ -114,7 +114,7 @@
   {
     "student_id": "STU3_09",
     "roll_no": 9,
-    "student_name": "ISHITA PATEL",
+    "student_name": "GOURI",
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
@@ -128,7 +128,7 @@
   {
     "student_id": "STU3_10",
     "roll_no": 10,
-    "student_name": "JIYA GUPTA",
+    "student_name": "HEJAL PAL",
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
@@ -142,7 +142,7 @@
   {
     "student_id": "STU3_11",
     "roll_no": 11,
-    "student_name": "KAVYA SINGH",
+    "student_name": "KANAK",
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
@@ -156,7 +156,7 @@
   {
     "student_id": "STU3_12",
     "roll_no": 12,
-    "student_name": "LAKSHYA YADAV",
+    "student_name": "KAUSHALYA",
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
@@ -170,7 +170,7 @@
   {
     "student_id": "STU3_13",
     "roll_no": 13,
-    "student_name": "MANVI SHARMA",
+    "student_name": "LAXMI",
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
@@ -184,7 +184,7 @@
   {
     "student_id": "STU3_14",
     "roll_no": 14,
-    "student_name": "NAMAN JOSHI",
+    "student_name": "MAHESH BAJYA",
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
@@ -198,7 +198,7 @@
   {
     "student_id": "STU3_15",
     "roll_no": 15,
-    "student_name": "PRIYA KUMARI",
+    "student_name": "MANISHA NEHRA",
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
@@ -212,7 +212,7 @@
   {
     "student_id": "STU3_16",
     "roll_no": 16,
-    "student_name": "RAHUL MEENA",
+    "student_name": "MANSI",
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
@@ -226,7 +226,7 @@
   {
     "student_id": "STU3_17",
     "roll_no": 17,
-    "student_name": "RIYA CHAUHAN",
+    "student_name": "MANVANDER SINGH",
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
@@ -240,7 +240,7 @@
   {
     "student_id": "STU3_18",
     "roll_no": 18,
-    "student_name": "SAHIL KUMAR",
+    "student_name": "NARESH SUTHAR",
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
@@ -254,7 +254,7 @@
   {
     "student_id": "STU3_19",
     "roll_no": 19,
-    "student_name": "SANYA AGARWAL",
+    "student_name": "NAVEEN",
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
@@ -268,7 +268,7 @@
   {
     "student_id": "STU3_20",
     "roll_no": 20,
-    "student_name": "TANVI RAJPUT",
+    "student_name": "NISHTHA SUTHAR",
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
@@ -282,7 +282,7 @@
   {
     "student_id": "STU3_21",
     "roll_no": 21,
-    "student_name": "VANSH TIWARI",
+    "student_name": "PRAVEENA",
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
@@ -296,7 +296,7 @@
   {
     "student_id": "STU3_22",
     "roll_no": 22,
-    "student_name": "YASH SINGH",
+    "student_name": "RAVI PRAKASH",
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
@@ -310,7 +310,7 @@
   {
     "student_id": "STU3_23",
     "roll_no": 23,
-    "student_name": "ZARA KHAN",
+    "student_name": "SARSWATI",
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
@@ -324,7 +324,7 @@
   {
     "student_id": "STU3_24",
     "roll_no": 24,
-    "student_name": "AADHYA VERMA",
+    "student_name": "SONAKSHI",
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
