@@ -9,7 +9,7 @@
       { "name": "Hindi", "obtained": 1, "total": 10 },
       { "name": "English", "obtained": 3, "total": 10 },
       { "name": "Mathematics", "obtained": 2, "total": 10 },
-      { "name": "EVS", "obtained": null, "total": 10 }
+      { "name": "EVS", "obtained": 4, "total": 10 }
     ],
     "attendance": 97
   },
@@ -23,7 +23,7 @@
       { "name": "Hindi", "obtained": 8, "total": 10 },
       { "name": "English", "obtained": 9, "total": 10 },
       { "name": "Mathematics", "obtained": 8, "total": 10 },
-      { "name": "EVS", "obtained": null, "total": 10 }
+      { "name": "EVS", "obtained": 7, "total": 10 }
     ],
     "attendance": 94
   },
@@ -37,7 +37,7 @@
       { "name": "Hindi", "obtained": 1, "total": 10 },
       { "name": "English", "obtained": 7, "total": 10 },
       { "name": "Mathematics", "obtained": 8, "total": 10 },
-      { "name": "EVS", "obtained": null, "total": 10 }
+      { "name": "EVS", "obtained": 5, "total": 10 }
     ],
     "attendance": 91
   },
@@ -51,7 +51,7 @@
       { "name": "Hindi", "obtained": 7, "total": 10 },
       { "name": "English", "obtained": 5, "total": 10 },
       { "name": "Mathematics", "obtained": 7, "total": 10 },
-      { "name": "EVS", "obtained": null, "total": 10 }
+      { "name": "EVS", "obtained": 6, "total": 10 }
     ],
     "attendance": 96
   },
@@ -65,7 +65,7 @@
       { "name": "Hindi", "obtained": 9, "total": 10 },
       { "name": "English", "obtained": 9, "total": 10 },
       { "name": "Mathematics", "obtained": 9, "total": 10 },
-      { "name": "EVS", "obtained": null, "total": 10 }
+      { "name": "EVS", "obtained": 5, "total": 10 }
     ],
     "attendance": 89
   },
@@ -93,7 +93,7 @@
       { "name": "Hindi", "obtained": 6, "total": 10 },
       { "name": "English", "obtained": 5, "total": 10 },
       { "name": "Mathematics", "obtained": 4, "total": 10 },
-      { "name": "EVS", "obtained": null, "total": 10 }
+      { "name": "EVS", "obtained": 7, "total": 10 }
     ],
     "attendance": 92
   },
@@ -107,7 +107,7 @@
       { "name": "Hindi", "obtained": 8, "total": 10 },
       { "name": "English", "obtained": 10, "total": 10 },
       { "name": "Mathematics", "obtained": 9, "total": 10 },
-      { "name": "EVS", "obtained": null, "total": 10 }
+      { "name": "EVS", "obtained": 9, "total": 10 }
     ],
     "attendance": 90
   },
@@ -121,7 +121,7 @@
       { "name": "Hindi", "obtained": 6, "total": 10 },
       { "name": "English", "obtained": null, "total": 10 },
       { "name": "Mathematics", "obtained": 4, "total": 10 },
-      { "name": "EVS", "obtained": null, "total": 10 }
+      { "name": "EVS", "obtained": 7, "total": 10 }
     ],
     "attendance": 98
   },
@@ -135,7 +135,7 @@
       { "name": "Hindi", "obtained": 8, "total": 10 },
       { "name": "English", "obtained": 5, "total": 10 },
       { "name": "Mathematics", "obtained": 7, "total": 10 },
-      { "name": "EVS", "obtained": null, "total": 10 }
+      { "name": "EVS", "obtained": 6, "total": 10 }
     ],
     "attendance": 93
   },
@@ -149,7 +149,7 @@
       { "name": "Hindi", "obtained": 7, "total": 10 },
       { "name": "English", "obtained": 6, "total": 10 },
       { "name": "Mathematics", "obtained": 5, "total": 10 },
-      { "name": "EVS", "obtained": null, "total": 10 }
+      { "name": "EVS", "obtained": 8, "total": 10 }
     ],
     "attendance": 91
   },
@@ -163,7 +163,7 @@
       { "name": "Hindi", "obtained": 10, "total": 10 },
       { "name": "English", "obtained": 10, "total": 10 },
       { "name": "Mathematics", "obtained": 10, "total": 10 },
-      { "name": "EVS", "obtained": null, "total": 10 }
+      { "name": "EVS", "obtained": 10, "total": 10 }
     ],
     "attendance": 88
   },
@@ -177,7 +177,7 @@
       { "name": "Hindi", "obtained": 9, "total": 10 },
       { "name": "English", "obtained": 7, "total": 10 },
       { "name": "Mathematics", "obtained": 9, "total": 10 },
-      { "name": "EVS", "obtained": null, "total": 10 }
+      { "name": "EVS", "obtained": 7, "total": 10 }
     ],
     "attendance": 96
   },
@@ -191,7 +191,7 @@
       { "name": "Hindi", "obtained": 7, "total": 10 },
       { "name": "English", "obtained": 7, "total": 10 },
       { "name": "Mathematics", "obtained": 10, "total": 10 },
-      { "name": "EVS", "obtained": null, "total": 10 }
+      { "name": "EVS", "obtained": 7, "total": 10 }
     ],
     "attendance": 94
   },
@@ -205,7 +205,7 @@
       { "name": "Hindi", "obtained": 1, "total": 10 },
       { "name": "English", "obtained": 3, "total": 10 },
       { "name": "Mathematics", "obtained": 3, "total": 10 },
-      { "name": "EVS", "obtained": null, "total": 10 }
+      { "name": "EVS", "obtained": 4, "total": 10 }
     ],
     "attendance": 90
   },
@@ -219,7 +219,7 @@
       { "name": "Hindi", "obtained": 10, "total": 10 },
       { "name": "English", "obtained": 10, "total": 10 },
       { "name": "Mathematics", "obtained": 9, "total": 10 },
-      { "name": "EVS", "obtained": null, "total": 10 }
+      { "name": "EVS", "obtained": 10, "total": 10 }
     ],
     "attendance": 95
   },
@@ -233,7 +233,7 @@
       { "name": "Hindi", "obtained": 5, "total": 10 },
       { "name": "English", "obtained": 6, "total": 10 },
       { "name": "Mathematics", "obtained": 9, "total": 10 },
-      { "name": "EVS", "obtained": null, "total": 10 }
+      { "name": "EVS", "obtained": 3, "total": 10 }
     ],
     "attendance": 97
   },
@@ -247,7 +247,7 @@
       { "name": "Hindi", "obtained": 7, "total": 10 },
       { "name": "English", "obtained": null, "total": 10 },
       { "name": "Mathematics", "obtained": 9, "total": 10 },
-      { "name": "EVS", "obtained": null, "total": 10 }
+      { "name": "EVS", "obtained": 10, "total": 10 }
     ],
     "attendance": 87
   },
@@ -261,7 +261,7 @@
       { "name": "Hindi", "obtained": 10, "total": 10 },
       { "name": "English", "obtained": 5, "total": 10 },
       { "name": "Mathematics", "obtained": 6, "total": 10 },
-      { "name": "EVS", "obtained": null, "total": 10 }
+      { "name": "EVS", "obtained": 5, "total": 10 }
     ],
     "attendance": 94
   },
@@ -275,7 +275,7 @@
       { "name": "Hindi", "obtained": 10, "total": 10 },
       { "name": "English", "obtained": 10, "total": 10 },
       { "name": "Mathematics", "obtained": 9, "total": 10 },
-      { "name": "EVS", "obtained": null, "total": 10 }
+      { "name": "EVS", "obtained": 7, "total": 10 }
     ],
     "attendance": 92
   },
@@ -303,7 +303,7 @@
       { "name": "Hindi", "obtained": 7, "total": 10 },
       { "name": "English", "obtained": 6, "total": 10 },
       { "name": "Mathematics", "obtained": 8, "total": 10 },
-      { "name": "EVS", "obtained": null, "total": 10 }
+      { "name": "EVS", "obtained": 9, "total": 10 }
     ],
     "attendance": 96
   },
@@ -317,7 +317,7 @@
       { "name": "Hindi", "obtained": 10, "total": 10 },
       { "name": "English", "obtained": 9, "total": 10 },
       { "name": "Mathematics", "obtained": 8, "total": 10 },
-      { "name": "EVS", "obtained": null, "total": 10 }
+      { "name": "EVS", "obtained": 6, "total": 10 }
     ],
     "attendance": 93
   },
@@ -331,7 +331,7 @@
       { "name": "Hindi", "obtained": null, "total": 10 },
       { "name": "English", "obtained": null, "total": 10 },
       { "name": "Mathematics", "obtained": null, "total": 10 },
-      { "name": "EVS", "obtained": null, "total": 10 }
+      { "name": "EVS", "obtained": 7, "total": 10 }
     ],
     "attendance": 91
   }

@@ -85,13 +85,43 @@ const aboutContent2 = `
         </div>
 
         <h2 class="section-title">Why Choose Us</h2>
-        <div class="about-grid">
-            <div class="about-card"><div class="card-icon"><i class="fas fa-book-open"></i></div><h3>Academic Excellence</h3><p>Modern teaching methods with traditional values</p></div>
-            <div class="about-card"><div class="card-icon"><i class="fas fa-users"></i></div><h3>Collaborative Environment</h3><p>Strong community of students, teachers & parents</p></div>
-            <div class="about-card"><div class="card-icon"><i class="fas fa-trophy"></i></div><h3>Holistic Development</h3><p>Balanced growth in academics, sports & arts</p></div>
-            <div class="about-card"><div class="card-icon"><i class="fas fa-chalkboard-teacher"></i></div><h3>Expert Faculty</h3><p>Experienced and dedicated teaching staff</p></div>
-            <div class="about-card"><div class="card-icon"><i class="fas fa-laptop"></i></div><h3>Smart Classes</h3><p>Technology-enabled learning environment</p></div>
-            <div class="about-card"><div class="card-icon"><i class="fas fa-shield-alt"></i></div><h3>Safe Environment</h3><p>Secure campus with caring supervision</p></div>
+        <div class="excellence-grid">
+            <div class="excellence-card">
+                <div class="excellence-number">01</div>
+                <div class="excellence-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h3>Academic Excellence</h3>
+                <p>Modern teaching methods with traditional values</p>
+            </div>
+            <div class="excellence-card">
+                <div class="excellence-number">02</div>
+                <div class="excellence-icon"><i class="fas fa-users"></i></div>
+                <h3>Collaborative Environment</h3>
+                <p>Strong community of students, teachers & parents</p>
+            </div>
+            <div class="excellence-card">
+                <div class="excellence-number">03</div>
+                <div class="excellence-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>Holistic Development</h3>
+                <p>Balanced growth in academics, sports & arts</p>
+            </div>
+            <div class="excellence-card">
+                <div class="excellence-number">04</div>
+                <div class="excellence-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                <h3>Expert Faculty</h3>
+                <p>Experienced and dedicated teaching staff</p>
+            </div>
+            <div class="excellence-card">
+                <div class="excellence-number">05</div>
+                <div class="excellence-icon"><i class="fas fa-laptop"></i></div>
+                <h3>Smart Classes</h3>
+                <p>Technology-enabled learning environment</p>
+            </div>
+            <div class="excellence-card">
+                <div class="excellence-number">06</div>
+                <div class="excellence-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Safe Environment</h3>
+                <p>Secure campus with caring supervision</p>
+            </div>
         </div>
 
         <div class="feature-image">
@@ -145,7 +175,7 @@ const scrollObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.teacher-card, .about-card, .mv-card, .principal-card').forEach(el => {
+document.querySelectorAll('.teacher-card, .excellence-card, .mv-card, .principal-card, .highlight-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'all 0.6s ease';

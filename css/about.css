@@ -118,6 +118,12 @@
     border-radius: 12px;
     text-align: center;
     box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .stat-number {
@@ -185,6 +191,12 @@
 .mv-card:hover .mv-icon {
     transform: scale(1.1) rotate(5deg);
     background: rgba(255,255,255,0.35);
+    animation: bounce-icon 0.8s ease;
+}
+
+@keyframes bounce-icon {
+    0%, 100% { transform: scale(1.1) rotate(5deg) translateY(0); }
+    50% { transform: scale(1.15) rotate(5deg) translateY(-5px); }
 }
 
 .mv-card h3 {
@@ -567,83 +579,156 @@
     display: block;
 }
 
-.about-grid {
+/* School Highlights */
+.school-highlights {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
-    max-width: 1200px;
-    margin: 2rem auto 0;
+    margin: 3rem auto;
+    max-width: 1000px;
+    padding: 0 1rem;
 }
 
-.about-card {
+.highlight-card {
     background: white;
     padding: 2rem 1.5rem;
     border-radius: 16px;
     text-align: center;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    transition: all 0.4s ease;
-    border: 1px solid rgba(37, 99, 235, 0.1);
-    position: relative;
-    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #6366f1;
+    transition: all 0.3s ease;
 }
 
-.about-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #2563eb, #10b981);
-    transform: scaleX(0);
-    transition: transform 0.4s ease;
+.highlight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.2);
+    border-left-color: #8b5cf6;
 }
 
-.about-card:hover::before {
-    transform: scaleX(1);
+.highlight-card:hover .highlight-icon {
+    transform: scale(1.1);
+    animation: pulse-icon 1s ease-in-out infinite;
 }
 
-.about-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(37, 99, 235, 0.15);
-    border-color: rgba(37, 99, 235, 0.2);
+@keyframes pulse-icon {
+    0%, 100% { transform: scale(1.1); }
+    50% { transform: scale(1.15); }
 }
 
-.about-card:active {
-    transform: translateY(-8px) scale(0.98);
-}
-
-.card-icon {
-    width: 70px;
-    height: 70px;
-    margin: 0 auto 1.25rem;
-    background: linear-gradient(135deg, #2563eb 0%, #10b981 100%);
-    border-radius: 20px;
+.highlight-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 2rem;
-    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
-    transition: all 0.4s ease;
+    font-size: 1.8rem;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+    transition: transform 0.3s ease;
 }
 
-.about-card:hover .card-icon {
-    transform: scale(1.1) rotate(-5deg);
-    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.35);
-}
-
-.about-card h3 {
-    font-size: 1.2rem;
+.highlight-card h4 {
+    font-size: 1.1rem;
     color: #1e293b;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     font-weight: 700;
-    letter-spacing: -0.02em;
 }
 
-.about-card p {
+.highlight-card p {
+    font-size: 0.9rem;
     color: #64748b;
-    line-height: 1.7;
-    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Excellence Grid for About Page */
+.excellence-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(25px, 4vw, 35px);
+    max-width: 1200px;
+    margin: 2rem auto 0;
+    padding: 0 1rem;
+}
+
+.excellence-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 20px;
+    padding: clamp(35px, 6vw, 45px);
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 2px solid #e5e7eb;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.excellence-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.15);
+    border-color: #6366f1;
+}
+
+.excellence-card:hover .excellence-icon {
+    animation: rotate-icon 0.6s ease;
+}
+
+@keyframes rotate-icon {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.excellence-number {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(99, 102, 241, 0.08);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1;
+}
+
+.excellence-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+}
+
+.excellence-icon i {
+    font-size: 2.2rem;
+    color: white;
+}
+
+.excellence-card h3 {
+    font-size: clamp(1.2rem, 3vw, 1.4rem);
+    color: #1e293b;
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    z-index: 1;
+}
+
+.excellence-card p {
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+    color: #64748b;
+    line-height: 1.8;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    z-index: 1;
 }
 
 @media (min-width: 768px) {
@@ -768,18 +853,26 @@
         font-size: 0.68rem;
     }
 
-    .about-grid {
+    .excellence-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
     }
 
-    .about-card {
+    .excellence-card {
         padding: 2rem;
     }
 
-    .about-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    .excellence-number {
+        font-size: 3.5rem;
+    }
+
+    .excellence-icon {
+        width: 85px;
+        height: 85px;
+    }
+
+    .excellence-icon i {
+        font-size: 2.4rem;
     }
 
     .mv-card:hover {
@@ -792,19 +885,26 @@
         box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
 
-    .card-icon {
+    .school-highlights {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+
+    .highlight-card {
+        padding: 2.5rem 2rem;
+    }
+
+    .highlight-icon {
         width: 70px;
         height: 70px;
         font-size: 2rem;
     }
 
-    .about-card h3 {
-        font-size: 1.3rem;
-        margin-bottom: 0.75rem;
+    .highlight-card h4 {
+        font-size: 1.2rem;
     }
 
-    .about-card p {
-        font-size: 1rem;
-        line-height: 1.7;
+    .highlight-card p {
+        font-size: 0.95rem;
     }
 }
