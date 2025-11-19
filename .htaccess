@@ -14,13 +14,13 @@
     AddType image/png .png
 </IfModule>
 
-# Enable caching for PWA assets
-<IfModule mod_expires.c>
-    ExpiresActive On
-    ExpiresByType application/manifest+json "access plus 1 week"
-    ExpiresByType image/png "access plus 1 month"
-    ExpiresByType text/css "access plus 1 month"
-    ExpiresByType application/javascript "access plus 1 month"
+# Disable caching - always serve latest files
+<IfModule mod_headers.c>
+    <FilesMatch "\.(html|htm|js|css|json)$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires "0"
+    </FilesMatch>
 </IfModule>
 
 # Enable compression

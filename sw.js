@@ -1,4 +1,4 @@
-const CACHE_NAME = 'jagdamba-v2.9';
+const CACHE_NAME = 'jagdamba-v3.0';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -28,6 +28,7 @@ const urlsToCache = [
 ];
 
 self.addEventListener('install', e => {
+  console.log('[SW] Installing new version:', CACHE_NAME);
   e.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => cache.addAll(urlsToCache))
@@ -36,20 +37,39 @@ self.addEventListener('install', e => {
 });
 
 self.addEventListener('activate', e => {
+  console.log('[SW] Activating new version:', CACHE_NAME);
   e.waitUntil(
     caches.keys().then(keys => 
       Promise.all(
         keys.filter(key => key !== CACHE_NAME)
-          .map(key => caches.delete(key))
+          .map(key => {
+            console.log('[SW] Deleting old cache:', key);
+            return caches.delete(key);
+          })
       )
-    ).then(() => self.clients.claim())
+    ).then(() => {
+      console.log('[SW] Claiming clients');
+      return self.clients.claim();
+    }).then(() => {
+      return self.clients.matchAll().then(clients => {
+        clients.forEach(client => {
+          console.log('[SW] Reloading client:', client.url);
+          client.postMessage({ type: 'FORCE_RELOAD' });
+        });
+      });
+    })
   );
 });
 
 self.addEventListener('fetch', e => {
   e.respondWith(
-    caches.match(e.request)
-      .then(response => response || fetch(e.request))
+    fetch(e.request)
+      .then(response => {
+        const clonedResponse = response.clone();
+        caches.open(CACHE_NAME).then(cache => cache.put(e.request, clonedResponse));
+        return response;
+      })
+      .catch(() => caches.match(e.request))
       .catch(() => caches.match('/index.html'))
   );
 });

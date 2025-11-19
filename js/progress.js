@@ -7,6 +7,7 @@ let classData = {
 
 // Student results data
 let studentsData = {};
+let classResults = { class_1: [], class_2: [], class_3: [] };
 
 // Load student data and results from JSON files
 async function loadStudentData() {
@@ -55,7 +56,7 @@ async function loadStudentData() {
         
         // Map results data
         class1Results.forEach(result => {
-            studentsData[result.student_id] = {
+            const data = {
                 name: result.student_name,
                 class: 'Class 1',
                 rollNo: result.roll_no.toString().padStart(2, '0'),
@@ -65,10 +66,12 @@ async function loadStudentData() {
                 subjects: result.subjects,
                 attendance: result.attendance
             };
+            studentsData[result.student_id] = data;
+            classResults.class_1.push({ id: result.student_id, ...data });
         });
         
         class2Results.forEach(result => {
-            studentsData[result.student_id] = {
+            const data = {
                 name: result.student_name,
                 class: 'Class 2',
                 rollNo: result.roll_no.toString().padStart(2, '0'),
@@ -78,10 +81,12 @@ async function loadStudentData() {
                 subjects: result.subjects,
                 attendance: result.attendance
             };
+            studentsData[result.student_id] = data;
+            classResults.class_2.push({ id: result.student_id, ...data });
         });
         
         class3Results.forEach(result => {
-            studentsData[result.student_id] = {
+            const data = {
                 name: result.student_name,
                 class: 'Class 3',
                 rollNo: result.roll_no.toString().padStart(2, '0'),
@@ -91,6 +96,8 @@ async function loadStudentData() {
                 subjects: result.subjects,
                 attendance: result.attendance
             };
+            studentsData[result.student_id] = data;
+            classResults.class_3.push({ id: result.student_id, ...data });
         });
         
         console.log('Data loaded successfully');
@@ -184,25 +191,27 @@ function displayReport(student, studentId) {
     let totalMax = 0;
 
     student.subjects.forEach(subject => {
-        totalObtained += subject.obtained;
+        const obtained = subject.obtained !== null ? subject.obtained : 0;
+        totalObtained += obtained;
         totalMax += subject.total;
+        
+        const displayObtained = subject.obtained !== null ? obtained : 'AB';
 
         const row = `
             <tr>
                 <td>${subject.name}</td>
-                <td>${subject.obtained}</td>
+                <td>${displayObtained}</td>
                 <td>${subject.total}</td>
-                <td><span class="grade ${subject.grade}">${subject.grade}</span></td>
             </tr>
         `;
         subjectsBody.innerHTML += row;
     });
 
     // Performance summary
-    const percentage = ((totalObtained / totalMax) * 100).toFixed(2);
+    const percentage = totalMax > 0 ? ((totalObtained / totalMax) * 100).toFixed(2) : 0;
     document.getElementById('totalMarks').textContent = `${totalObtained}/${totalMax}`;
     document.getElementById('percentage').textContent = `${percentage}%`;
-    document.getElementById('rank').textContent = calculateRank(percentage);
+    document.getElementById('rank').textContent = calculateRank(studentId, percentage);
 
     // Attendance with gradient bar
     const attendanceFill = document.getElementById('attendanceFill');
@@ -213,11 +222,25 @@ function displayReport(student, studentId) {
     }, 300);
 }
 
-function calculateRank(percentage) {
-    if (percentage >= 90) return '1st';
-    if (percentage >= 80) return '2nd';
-    if (percentage >= 70) return '3rd';
-    return '4th';
+function calculateRank(studentId, percentage) {
+    const classKey = studentId.startsWith('STU1_') ? 'class_1' : 
+                     studentId.startsWith('STU2_') ? 'class_2' : 'class_3';
+    
+    const rankings = classResults[classKey].map(student => {
+        let total = 0, max = 0;
+        student.subjects.forEach(sub => {
+            total += sub.obtained !== null ? sub.obtained : 0;
+            max += sub.total;
+        });
+        return { id: student.id, percentage: max > 0 ? (total / max) * 100 : 0 };
+    }).sort((a, b) => b.percentage - a.percentage);
+    
+    const rank = rankings.findIndex(r => r.id === studentId) + 1;
+    
+    if (rank === 1) return '🥇 1st';
+    if (rank === 2) return '🥈 2nd';
+    if (rank === 3) return '🥉 3rd';
+    return `${rank}th`;
 }
 
 

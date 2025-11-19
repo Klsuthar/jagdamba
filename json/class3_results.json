@@ -7,9 +7,9 @@
     "exam_type": "First Class Test",
     "subjects": [
       { "name": "Hindi", "obtained": 1, "total": 10 },
-      { "name": "English", "obtained": 3, "total": 10},
-      { "name": "Mathematics", "obtained": 2, "total": 1 },
-      { "name": "EVS", "obtained": null, "total": 10}
+      { "name": "English", "obtained": 3, "total": 10 },
+      { "name": "Mathematics", "obtained": 2, "total": 10 },
+      { "name": "EVS", "obtained": null, "total": 10 }
     ],
     "attendance": 97
   },
@@ -20,10 +20,10 @@
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
-      { "name": "Hindi", "obtained": 85, "total": 100, "grade": "A" },
-      { "name": "English", "obtained": 80, "total": 100, "grade": "A" },
-      { "name": "Mathematics", "obtained": 88, "total": 100, "grade": "A" },
-      { "name": "EVS", "obtained": 86, "total": 100, "grade": "A" }
+      { "name": "Hindi", "obtained": 8, "total": 10 },
+      { "name": "English", "obtained": 9, "total": 10 },
+      { "name": "Mathematics", "obtained": 8, "total": 10 },
+      { "name": "EVS", "obtained": null, "total": 10 }
     ],
     "attendance": 94
   },
@@ -34,10 +34,10 @@
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
-      { "name": "Hindi", "obtained": 78, "total": 100, "grade": "B" },
-      { "name": "English", "obtained": 75, "total": 100, "grade": "B" },
-      { "name": "Mathematics", "obtained": 82, "total": 100, "grade": "A" },
-      { "name": "EVS", "obtained": 80, "total": 100, "grade": "A" }
+      { "name": "Hindi", "obtained": 1, "total": 10 },
+      { "name": "English", "obtained": 7, "total": 10 },
+      { "name": "Mathematics", "obtained": 8, "total": 10 },
+      { "name": "EVS", "obtained": null, "total": 10 }
     ],
     "attendance": 91
   },
@@ -48,10 +48,10 @@
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
-      { "name": "Hindi", "obtained": 90, "total": 100, "grade": "A" },
-      { "name": "English", "obtained": 87, "total": 100, "grade": "A" },
-      { "name": "Mathematics", "obtained": 92, "total": 100, "grade": "A" },
-      { "name": "EVS", "obtained": 89, "total": 100, "grade": "A" }
+      { "name": "Hindi", "obtained": 7, "total": 10 },
+      { "name": "English", "obtained": 5, "total": 10 },
+      { "name": "Mathematics", "obtained": 7, "total": 10 },
+      { "name": "EVS", "obtained": null, "total": 10 }
     ],
     "attendance": 96
   },
@@ -62,10 +62,10 @@
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
-      { "name": "Hindi", "obtained": 70, "total": 100, "grade": "B" },
-      { "name": "English", "obtained": 68, "total": 100, "grade": "C" },
-      { "name": "Mathematics", "obtained": 75, "total": 100, "grade": "B" },
-      { "name": "EVS", "obtained": 72, "total": 100, "grade": "B" }
+      { "name": "Hindi", "obtained": 9, "total": 10 },
+      { "name": "English", "obtained": 9, "total": 10 },
+      { "name": "Mathematics", "obtained": 9, "total": 10 },
+      { "name": "EVS", "obtained": null, "total": 10 }
     ],
     "attendance": 89
   },
@@ -76,10 +76,10 @@
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
-      { "name": "Hindi", "obtained": 88, "total": 100, "grade": "A" },
-      { "name": "English", "obtained": 85, "total": 100, "grade": "A" },
-      { "name": "Mathematics", "obtained": 90, "total": 100, "grade": "A" },
-      { "name": "EVS", "obtained": 87, "total": 100, "grade": "A" }
+      { "name": "Hindi", "obtained": 3, "total": 10 },
+      { "name": "English", "obtained": null, "total": 10 },
+      { "name": "Mathematics", "obtained": 8, "total": 10 },
+      { "name": "EVS", "obtained": null, "total": 10 }
     ],
     "attendance": 95
   },
@@ -90,10 +90,10 @@
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
-      { "name": "Hindi", "obtained": 82, "total": 100, "grade": "A" },
-      { "name": "English", "obtained": 78, "total": 100, "grade": "B" },
-      { "name": "Mathematics", "obtained": 85, "total": 100, "grade": "A" },
-      { "name": "EVS", "obtained": 83, "total": 100, "grade": "A" }
+      { "name": "Hindi", "obtained": 6, "total": 10 },
+      { "name": "English", "obtained": 5, "total": 10 },
+      { "name": "Mathematics", "obtained": 4, "total": 10 },
+      { "name": "EVS", "obtained": null, "total": 10 }
     ],
     "attendance": 92
   },
@@ -104,10 +104,10 @@
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
-      { "name": "Hindi", "obtained": 75, "total": 100, "grade": "B" },
-      { "name": "English", "obtained": 72, "total": 100, "grade": "B" },
-      { "name": "Mathematics", "obtained": 80, "total": 100, "grade": "A" },
-      { "name": "EVS", "obtained": 77, "total": 100, "grade": "B" }
+      { "name": "Hindi", "obtained": 8, "total": 10 },
+      { "name": "English", "obtained": 10, "total": 10 },
+      { "name": "Mathematics", "obtained": 9, "total": 10 },
+      { "name": "EVS", "obtained": null, "total": 10 }
     ],
     "attendance": 90
   },
@@ -118,10 +118,10 @@
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
-      { "name": "Hindi", "obtained": 94, "total": 100, "grade": "A" },
-      { "name": "English", "obtained": 91, "total": 100, "grade": "A" },
-      { "name": "Mathematics", "obtained": 96, "total": 100, "grade": "A" },
-      { "name": "EVS", "obtained": 93, "total": 100, "grade": "A" }
+      { "name": "Hindi", "obtained": 6, "total": 10 },
+      { "name": "English", "obtained": null, "total": 10 },
+      { "name": "Mathematics", "obtained": 4, "total": 10 },
+      { "name": "EVS", "obtained": null, "total": 10 }
     ],
     "attendance": 98
   },
@@ -132,10 +132,10 @@
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
-      { "name": "Hindi", "obtained": 86, "total": 100, "grade": "A" },
-      { "name": "English", "obtained": 83, "total": 100, "grade": "A" },
-      { "name": "Mathematics", "obtained": 89, "total": 100, "grade": "A" },
-      { "name": "EVS", "obtained": 85, "total": 100, "grade": "A" }
+      { "name": "Hindi", "obtained": 8, "total": 10 },
+      { "name": "English", "obtained": 5, "total": 10 },
+      { "name": "Mathematics", "obtained": 7, "total": 10 },
+      { "name": "EVS", "obtained": null, "total": 10 }
     ],
     "attendance": 93
   },
@@ -146,10 +146,10 @@
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
-      { "name": "Hindi", "obtained": 80, "total": 100, "grade": "A" },
-      { "name": "English", "obtained": 76, "total": 100, "grade": "B" },
-      { "name": "Mathematics", "obtained": 84, "total": 100, "grade": "A" },
-      { "name": "EVS", "obtained": 81, "total": 100, "grade": "A" }
+      { "name": "Hindi", "obtained": 7, "total": 10 },
+      { "name": "English", "obtained": 6, "total": 10 },
+      { "name": "Mathematics", "obtained": 5, "total": 10 },
+      { "name": "EVS", "obtained": null, "total": 10 }
     ],
     "attendance": 91
   },
@@ -160,10 +160,10 @@
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
-      { "name": "Hindi", "obtained": 72, "total": 100, "grade": "B" },
-      { "name": "English", "obtained": 70, "total": 100, "grade": "B" },
-      { "name": "Mathematics", "obtained": 76, "total": 100, "grade": "B" },
-      { "name": "EVS", "obtained": 74, "total": 100, "grade": "B" }
+      { "name": "Hindi", "obtained": 10, "total": 10 },
+      { "name": "English", "obtained": 10, "total": 10 },
+      { "name": "Mathematics", "obtained": 10, "total": 10 },
+      { "name": "EVS", "obtained": null, "total": 10 }
     ],
     "attendance": 88
   },
@@ -174,10 +174,10 @@
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
-      { "name": "Hindi", "obtained": 91, "total": 100, "grade": "A" },
-      { "name": "English", "obtained": 89, "total": 100, "grade": "A" },
-      { "name": "Mathematics", "obtained": 93, "total": 100, "grade": "A" },
-      { "name": "EVS", "obtained": 90, "total": 100, "grade": "A" }
+      { "name": "Hindi", "obtained": 9, "total": 10 },
+      { "name": "English", "obtained": 7, "total": 10 },
+      { "name": "Mathematics", "obtained": 9, "total": 10 },
+      { "name": "EVS", "obtained": null, "total": 10 }
     ],
     "attendance": 96
   },
@@ -188,10 +188,10 @@
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
-      { "name": "Hindi", "obtained": 84, "total": 100, "grade": "A" },
-      { "name": "English", "obtained": 81, "total": 100, "grade": "A" },
-      { "name": "Mathematics", "obtained": 87, "total": 100, "grade": "A" },
-      { "name": "EVS", "obtained": 84, "total": 100, "grade": "A" }
+      { "name": "Hindi", "obtained": 7, "total": 10 },
+      { "name": "English", "obtained": 7, "total": 10 },
+      { "name": "Mathematics", "obtained": 10, "total": 10 },
+      { "name": "EVS", "obtained": null, "total": 10 }
     ],
     "attendance": 94
   },
@@ -202,10 +202,10 @@
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
-      { "name": "Hindi", "obtained": 77, "total": 100, "grade": "B" },
-      { "name": "English", "obtained": 74, "total": 100, "grade": "B" },
-      { "name": "Mathematics", "obtained": 81, "total": 100, "grade": "A" },
-      { "name": "EVS", "obtained": 78, "total": 100, "grade": "B" }
+      { "name": "Hindi", "obtained": 1, "total": 10 },
+      { "name": "English", "obtained": 3, "total": 10 },
+      { "name": "Mathematics", "obtained": 3, "total": 10 },
+      { "name": "EVS", "obtained": null, "total": 10 }
     ],
     "attendance": 90
   },
@@ -216,10 +216,10 @@
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
-      { "name": "Hindi", "obtained": 89, "total": 100, "grade": "A" },
-      { "name": "English", "obtained": 86, "total": 100, "grade": "A" },
-      { "name": "Mathematics", "obtained": 91, "total": 100, "grade": "A" },
-      { "name": "EVS", "obtained": 88, "total": 100, "grade": "A" }
+      { "name": "Hindi", "obtained": 10, "total": 10 },
+      { "name": "English", "obtained": 10, "total": 10 },
+      { "name": "Mathematics", "obtained": 9, "total": 10 },
+      { "name": "EVS", "obtained": null, "total": 10 }
     ],
     "attendance": 95
   },
@@ -230,10 +230,10 @@
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
-      { "name": "Hindi", "obtained": 93, "total": 100, "grade": "A" },
-      { "name": "English", "obtained": 90, "total": 100, "grade": "A" },
-      { "name": "Mathematics", "obtained": 95, "total": 100, "grade": "A" },
-      { "name": "EVS", "obtained": 92, "total": 100, "grade": "A" }
+      { "name": "Hindi", "obtained": 5, "total": 10 },
+      { "name": "English", "obtained": 6, "total": 10 },
+      { "name": "Mathematics", "obtained": 9, "total": 10 },
+      { "name": "EVS", "obtained": null, "total": 10 }
     ],
     "attendance": 97
   },
@@ -244,10 +244,10 @@
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
-      { "name": "Hindi", "obtained": 68, "total": 100, "grade": "C" },
-      { "name": "English", "obtained": 65, "total": 100, "grade": "C" },
-      { "name": "Mathematics", "obtained": 72, "total": 100, "grade": "B" },
-      { "name": "EVS", "obtained": 70, "total": 100, "grade": "B" }
+      { "name": "Hindi", "obtained": 7, "total": 10 },
+      { "name": "English", "obtained": null, "total": 10 },
+      { "name": "Mathematics", "obtained": 9, "total": 10 },
+      { "name": "EVS", "obtained": null, "total": 10 }
     ],
     "attendance": 87
   },
@@ -258,10 +258,10 @@
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
-      { "name": "Hindi", "obtained": 87, "total": 100, "grade": "A" },
-      { "name": "English", "obtained": 84, "total": 100, "grade": "A" },
-      { "name": "Mathematics", "obtained": 90, "total": 100, "grade": "A" },
-      { "name": "EVS", "obtained": 86, "total": 100, "grade": "A" }
+      { "name": "Hindi", "obtained": 10, "total": 10 },
+      { "name": "English", "obtained": 5, "total": 10 },
+      { "name": "Mathematics", "obtained": 6, "total": 10 },
+      { "name": "EVS", "obtained": null, "total": 10 }
     ],
     "attendance": 94
   },
@@ -272,10 +272,10 @@
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
-      { "name": "Hindi", "obtained": 81, "total": 100, "grade": "A" },
-      { "name": "English", "obtained": 79, "total": 100, "grade": "B" },
-      { "name": "Mathematics", "obtained": 85, "total": 100, "grade": "A" },
-      { "name": "EVS", "obtained": 82, "total": 100, "grade": "A" }
+      { "name": "Hindi", "obtained": 10, "total": 10 },
+      { "name": "English", "obtained": 10, "total": 10 },
+      { "name": "Mathematics", "obtained": 9, "total": 10 },
+      { "name": "EVS", "obtained": null, "total": 10 }
     ],
     "attendance": 92
   },
@@ -286,10 +286,10 @@
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
-      { "name": "Hindi", "obtained": 74, "total": 100, "grade": "B" },
-      { "name": "English", "obtained": 71, "total": 100, "grade": "B" },
-      { "name": "Mathematics", "obtained": 78, "total": 100, "grade": "B" },
-      { "name": "EVS", "obtained": 75, "total": 100, "grade": "B" }
+      { "name": "Hindi", "obtained": 10, "total": 10 },
+      { "name": "English", "obtained": 6, "total": 10 },
+      { "name": "Mathematics", "obtained": 7, "total": 10 },
+      { "name": "EVS", "obtained": null, "total": 10 }
     ],
     "attendance": 89
   },
@@ -300,10 +300,10 @@
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
-      { "name": "Hindi", "obtained": 90, "total": 100, "grade": "A" },
-      { "name": "English", "obtained": 88, "total": 100, "grade": "A" },
-      { "name": "Mathematics", "obtained": 92, "total": 100, "grade": "A" },
-      { "name": "EVS", "obtained": 89, "total": 100, "grade": "A" }
+      { "name": "Hindi", "obtained": 7, "total": 10 },
+      { "name": "English", "obtained": 6, "total": 10 },
+      { "name": "Mathematics", "obtained": 8, "total": 10 },
+      { "name": "EVS", "obtained": null, "total": 10 }
     ],
     "attendance": 96
   },
@@ -314,10 +314,10 @@
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
-      { "name": "Hindi", "obtained": 85, "total": 100, "grade": "A" },
-      { "name": "English", "obtained": 82, "total": 100, "grade": "A" },
-      { "name": "Mathematics", "obtained": 88, "total": 100, "grade": "A" },
-      { "name": "EVS", "obtained": 84, "total": 100, "grade": "A" }
+      { "name": "Hindi", "obtained": 10, "total": 10 },
+      { "name": "English", "obtained": 9, "total": 10 },
+      { "name": "Mathematics", "obtained": 8, "total": 10 },
+      { "name": "EVS", "obtained": null, "total": 10 }
     ],
     "attendance": 93
   },
@@ -328,10 +328,10 @@
     "session": "2023-24",
     "exam_type": "Annual Exam",
     "subjects": [
-      { "name": "Hindi", "obtained": 79, "total": 100, "grade": "B" },
-      { "name": "English", "obtained": 76, "total": 100, "grade": "B" },
-      { "name": "Mathematics", "obtained": 83, "total": 100, "grade": "A" },
-      { "name": "EVS", "obtained": 80, "total": 100, "grade": "A" }
+      { "name": "Hindi", "obtained": null, "total": 10 },
+      { "name": "English", "obtained": null, "total": 10 },
+      { "name": "Mathematics", "obtained": null, "total": 10 },
+      { "name": "EVS", "obtained": null, "total": 10 }
     ],
     "attendance": 91
   }

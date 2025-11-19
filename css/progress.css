@@ -726,6 +726,7 @@
 .grade.B { background: #dbeafe; color: #1e40af; }
 .grade.C { background: #fef3c7; color: #92400e; }
 .grade.D { background: #fee2e2; color: #991b1b; }
+.grade.F { background: #fecaca; color: #7f1d1d; font-weight: 800; }
 
 .performance-summary {
     display: grid;

@@ -1,8 +1,26 @@
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js')
-      .then(reg => console.log('SW registered'))
+      .then(reg => {
+        console.log('SW registered');
+        reg.addEventListener('updatefound', () => {
+          const newWorker = reg.installing;
+          newWorker.addEventListener('statechange', () => {
+            if (newWorker.state === 'activated' && navigator.serviceWorker.controller) {
+              console.log('New version available, reloading...');
+              window.location.reload();
+            }
+          });
+        });
+      })
       .catch(err => console.log('SW error:', err));
+  });
+  
+  navigator.serviceWorker.addEventListener('message', event => {
+    if (event.data && event.data.type === 'FORCE_RELOAD') {
+      console.log('Force reload triggered by SW');
+      window.location.reload();
+    }
   });
 }
 
