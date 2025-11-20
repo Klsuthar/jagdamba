@@ -1,111 +1,122 @@
-// Class-wise student data - will be loaded from JSON
 let classData = {
     class_1: { title: 'Class 1 Students', students: [] },
     class_2: { title: 'Class 2 Students', students: [] },
     class_3: { title: 'Class 3 Students', students: [] }
 };
 
-// Student results data
 let studentsData = {};
+let studentExams = {};
 let classResults = { class_1: [], class_2: [], class_3: [] };
+let examConfig = null;
 
-// Load student data and results from JSON files
 async function loadStudentData() {
     try {
-        const [class1Response, class2Response, class3Response, class1ResultsResponse, class2ResultsResponse, class3ResultsResponse] = await Promise.all([
-            fetch('../json/class1_result.json'),
-            fetch('../json/class2_students.json'),
-            fetch('../json/class3_students.json'),
-            fetch('../json/class1_results.json'),
-            fetch('../json/class2_results.json'),
-            fetch('../json/class3_results.json')
+        const configResponse = await fetch('../json/exam_config.json');
+        examConfig = await configResponse.json();
+        
+        const [class1Students, class2Students, class3Students] = await Promise.all([
+            fetch('../json/class1/class1_students.json').then(r => r.json()),
+            fetch('../json/class2/class2_students.json').then(r => r.json()),
+            fetch('../json/class3/class3_students.json').then(r => r.json())
         ]);
         
-        const class1Students = await class1Response.json();
-        const class2Students = await class2Response.json();
-        const class3Students = await class3Response.json();
-        const class1Results = await class1ResultsResponse.json();
-        const class2Results = await class2ResultsResponse.json();
-        const class3Results = await class3ResultsResponse.json();
-        
-        console.log('Class 1 Students:', class1Students.length);
-        console.log('Class 2 Students:', class2Students.length);
-        console.log('Class 3 Students:', class3Students.length);
-        
-        // Map student list data
-        classData.class_1.students = class1Students.map(student => ({
-            id: `STU1_${student.roll_no.toString().padStart(2, '0')}`,
-            name: student.student_name,
-            rollNo: student.roll_no.toString().padStart(2, '0'),
-            photo: `../images/students/${student.image}`
+        classData.class_1.students = class1Students.map(s => ({
+            id: `STU1_${s.roll_no.toString().padStart(2, '0')}`,
+            name: s.student_name,
+            rollNo: s.roll_no.toString().padStart(2, '0'),
+            photo: `../images/students/${s.image}`
         }));
         
-        classData.class_2.students = class2Students.map(student => ({
-            id: `STU2_${student.roll_no.toString().padStart(2, '0')}`,
-            name: student.student_name,
-            rollNo: student.roll_no.toString().padStart(2, '0'),
-            photo: `../images/students/${student.image}`
+        classData.class_2.students = class2Students.map(s => ({
+            id: `STU2_${s.roll_no.toString().padStart(2, '0')}`,
+            name: s.student_name,
+            rollNo: s.roll_no.toString().padStart(2, '0'),
+            photo: `../images/students/${s.image}`
         }));
         
-        classData.class_3.students = class3Students.map(student => ({
-            id: `STU3_${student.roll_no.toString().padStart(2, '0')}`,
-            name: student.student_name,
-            rollNo: student.roll_no.toString().padStart(2, '0'),
-            photo: `../images/students/${student.image}`
+        classData.class_3.students = class3Students.map(s => ({
+            id: `STU3_${s.roll_no.toString().padStart(2, '0')}`,
+            name: s.student_name,
+            rollNo: s.roll_no.toString().padStart(2, '0'),
+            photo: `../images/students/${s.image}`
         }));
         
-        // Map results data
-        class1Results.forEach(result => {
-            const data = {
-                name: result.student_name,
-                class: 'Class 1',
-                rollNo: result.roll_no.toString().padStart(2, '0'),
-                session: result.session,
-                examType: result.exam_type,
-                photo: `../images/students/class_1/${result.roll_no.toString().padStart(2, '0')}_class1.webp`,
-                subjects: result.subjects,
-                attendance: result.attendance
-            };
-            studentsData[result.student_id] = data;
-            classResults.class_1.push({ id: result.student_id, ...data });
-        });
-        
-        class2Results.forEach(result => {
-            const data = {
-                name: result.student_name,
-                class: 'Class 2',
-                rollNo: result.roll_no.toString().padStart(2, '0'),
-                session: result.session,
-                examType: result.exam_type,
-                photo: `../images/students/class_2/${result.roll_no.toString().padStart(2, '0')}_class2.webp`,
-                subjects: result.subjects,
-                attendance: result.attendance
-            };
-            studentsData[result.student_id] = data;
-            classResults.class_2.push({ id: result.student_id, ...data });
-        });
-        
-        class3Results.forEach(result => {
-            const data = {
-                name: result.student_name,
-                class: 'Class 3',
-                rollNo: result.roll_no.toString().padStart(2, '0'),
-                session: result.session,
-                examType: result.exam_type,
-                photo: `../images/students/class_3/${result.roll_no.toString().padStart(2, '0')}_class3.webp`,
-                subjects: result.subjects,
-                attendance: result.attendance
-            };
-            studentsData[result.student_id] = data;
-            classResults.class_3.push({ id: result.student_id, ...data });
-        });
+        await loadExamResults('class1', 'class_1', 'Class 1', 'STU1_');
+        await loadExamResults('class2', 'class_2', 'Class 2', 'STU2_');
+        await loadExamResults('class3', 'class_3', 'Class 3', 'STU3_');
         
         console.log('Data loaded successfully');
-        console.log('Class 1 students count:', classData.class_1.students.length);
-        console.log('Class 2 students count:', classData.class_2.students.length);
-        console.log('Class 3 students count:', classData.class_3.students.length);
     } catch (error) {
         console.error('Error loading student data:', error);
+    }
+}
+
+async function loadExamResults(configKey, classKey, className, idPrefix) {
+    const classConfig = examConfig.classes[configKey];
+    const exams = classConfig.exams || [];
+    const tests = classConfig.tests || [];
+    
+    for (const exam of [...tests, ...exams]) {
+        if (exam.file) {
+            try {
+                const results = await fetch(`../${exam.file}`).then(r => r.json());
+                
+                results.forEach(result => {
+                    const studentId = result.student_id || `${idPrefix}${result.roll_no.toString().padStart(2, '0')}`;
+                    
+                    let subjects = [];
+                    if (result.subjects && Array.isArray(result.subjects) && result.subjects.length > 0) {
+                        subjects = result.subjects;
+                    } else if ('hindi' in result || 'english' in result) {
+                        subjects = [
+                            { name: 'Hindi', obtained: result.hindi, total: 10, grade: 'A' },
+                            { name: 'English', obtained: result.english, total: 5, grade: 'A' },
+                            { name: 'Mathematics', obtained: result.mathematics, total: 10, grade: 'A' },
+                            { name: 'EVS', obtained: result.evs, total: 10, grade: 'A' }
+                        ];
+                    } else if ('hindi_written' in result || 'hindi_oral' in result) {
+                        const hw = result.hindi_written;
+                        const ho = result.hindi_oral;
+                        const ew = result.english_written;
+                        const eo = result.english_oral;
+                        const mw = result.math_written;
+                        const mo = result.math_oral;
+                        const evw = result.evs_written;
+                        const evo = result.evs_oral;
+                        
+                        subjects = [
+                            { name: 'Hindi', written: hw, oral: ho, obtained: ((hw||0) + (ho||0)) || null, total: 100, grade: 'A' },
+                            { name: 'English', written: ew, oral: eo, obtained: ((ew||0) + (eo||0)) || null, total: 50, grade: 'A' },
+                            { name: 'Mathematics', written: mw, oral: mo, obtained: ((mw||0) + (mo||0)) || null, total: 100, grade: 'A' },
+                            { name: 'EVS', written: evw, oral: evo, obtained: ((evw||0) + (evo||0)) || null, total: 100, grade: 'A' }
+                        ];
+                    }
+                    
+                    const data = {
+                        name: result.student_name,
+                        class: className,
+                        rollNo: result.roll_no.toString().padStart(2, '0'),
+                        session: examConfig.session,
+                        examType: exam.name,
+                        photo: `../images/students/${classKey}/${result.roll_no.toString().padStart(2, '0')}_${classKey}.webp`,
+                        subjects: subjects,
+                        attendance: result.attendance || 0
+                    };
+                    
+                    if (!studentExams[studentId]) {
+                        studentExams[studentId] = [];
+                    }
+                    studentExams[studentId].push(data);
+                    
+                    studentsData[studentId] = data;
+                    if (!classResults[classKey].find(s => s.id === studentId)) {
+                        classResults[classKey].push({ id: studentId, ...data });
+                    }
+                });
+            } catch (error) {
+                console.error(`Error loading ${exam.file}:`, error);
+            }
+        }
     }
 }
 
@@ -142,18 +153,18 @@ function selectClass(className) {
 }
 
 function showStudentReport(studentId) {
-    const student = studentsData[studentId];
-    const reportCard = document.getElementById('reportCard');
+    const exams = studentExams[studentId];
     const studentsList = document.getElementById('studentsList');
-    const backButton = document.getElementById('backButton');
+    const reportCard = document.getElementById('reportCard');
 
-    if (student) {
-        displayReport(student, studentId);
-        studentsList.style.display = 'none';
-        reportCard.classList.add('show');
-    } else {
+    if (!exams || exams.length === 0) {
         alert('Progress report for this student is not available yet');
+        return;
     }
+
+    displayAllExams(exams[0], studentId, exams);
+    studentsList.style.display = 'none';
+    reportCard.classList.add('show');
 }
 
 function goBack() {
@@ -168,8 +179,7 @@ function goBack() {
     classSelection.style.display = 'block';
 }
 
-function displayReport(student, studentId) {
-    // Basic info
+function displayAllExams(student, studentId, allExams) {
     const photoElement = document.getElementById('studentPhoto');
     photoElement.src = student.photo;
     photoElement.onerror = function() {
@@ -181,45 +191,68 @@ function displayReport(student, studentId) {
     document.getElementById('displayId').textContent = studentId;
     document.getElementById('rollNo').textContent = student.rollNo;
     document.getElementById('session').textContent = student.session;
-    document.getElementById('examType').textContent = student.examType;
+    document.getElementById('attendance').textContent = `${student.attendance}%`;
 
-    // Subjects table
-    const subjectsBody = document.getElementById('subjectsBody');
-    subjectsBody.innerHTML = '';
+    const container = document.getElementById('allExamsContainer');
     
-    let totalObtained = 0;
-    let totalMax = 0;
-
-    student.subjects.forEach(subject => {
-        const obtained = subject.obtained !== null ? subject.obtained : 0;
-        totalObtained += obtained;
-        totalMax += subject.total;
-        
-        const displayObtained = subject.obtained !== null ? obtained : 'AB';
-
-        const row = `
-            <tr>
-                <td>${subject.name}</td>
-                <td>${displayObtained}</td>
-                <td>${subject.total}</td>
-            </tr>
-        `;
-        subjectsBody.innerHTML += row;
+    if (!allExams[0].subjects || allExams[0].subjects.length === 0) {
+        container.innerHTML = '<p style="text-align: center; color: #999; margin-top: 2rem;">No exam data available</p>';
+        return;
+    }
+    
+    const subjects = allExams[0].subjects.map(s => s.name);
+    let headerCols = '<th style="padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: 600;">Subject</th>';
+    let colspanCount = [];
+    allExams.forEach(exam => {
+        const hasWrittenOral = exam.examType.includes('Yearly') || exam.examType.includes('Half Yearly');
+        const colspan = hasWrittenOral ? 4 : 2;
+        colspanCount.push(hasWrittenOral);
+        headerCols += `<th colspan="${colspan}" style="padding: 8px; border: 1px solid #ddd; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; font-size: 0.9rem;">${exam.examType}</th>`;
     });
-
-    // Performance summary
-    const percentage = totalMax > 0 ? ((totalObtained / totalMax) * 100).toFixed(2) : 0;
-    document.getElementById('totalMarks').textContent = `${totalObtained}/${totalMax}`;
-    document.getElementById('percentage').textContent = `${percentage}%`;
-    document.getElementById('rank').textContent = calculateRank(studentId, percentage);
-
-    // Attendance with gradient bar
-    const attendanceFill = document.getElementById('attendanceFill');
-    setTimeout(() => {
-        const attendance = student.attendance;
-        attendanceFill.style.width = `${attendance}%`;
-        attendanceFill.textContent = `${attendance}%`;
-    }, 300);
+    
+    let subHeaderCols = '<th style="padding: 6px; border: 1px solid #ddd; background: #f8f9fa;"></th>';
+    colspanCount.forEach(hasWrittenOral => {
+        if (hasWrittenOral) {
+            subHeaderCols += '<th style="padding: 6px; border: 1px solid #ddd; background: #f0f0f0; font-size: 0.85rem;">W</th><th style="padding: 6px; border: 1px solid #ddd; background: #f0f0f0; font-size: 0.85rem;">O</th><th style="padding: 6px; border: 1px solid #ddd; background: #f0f0f0; font-size: 0.85rem;">T</th><th style="padding: 6px; border: 1px solid #ddd; background: #f0f0f0; font-size: 0.85rem;">Max</th>';
+        } else {
+            subHeaderCols += '<th style="padding: 6px; border: 1px solid #ddd; background: #f0f0f0; font-size: 0.85rem;">Obt</th><th style="padding: 6px; border: 1px solid #ddd; background: #f0f0f0; font-size: 0.85rem;">Max</th>';
+        }
+    });
+    
+    let rows = '';
+    subjects.forEach((subject, idx) => {
+        let row = `<tr><td style="padding: 8px; border: 1px solid #ddd; font-weight: 500;">${subject}</td>`;
+        allExams.forEach((exam, examIdx) => {
+            const sub = exam.subjects[idx];
+            if (colspanCount[examIdx]) {
+                const w = sub.written !== undefined ? (sub.written || '') : '';
+                const o = sub.oral !== undefined ? (sub.oral || '') : '';
+                const t = sub.obtained !== null && sub.obtained !== 0 ? sub.obtained : '';
+                row += `<td style="padding: 8px; border: 1px solid #ddd; text-align: center;">${w}</td>`;
+                row += `<td style="padding: 8px; border: 1px solid #ddd; text-align: center;">${o}</td>`;
+                row += `<td style="padding: 8px; border: 1px solid #ddd; text-align: center; font-weight: 600;">${t}</td>`;
+                row += `<td style="padding: 8px; border: 1px solid #ddd; text-align: center; color: #666;">${sub.total}</td>`;
+            } else {
+                const obt = sub.obtained !== null && sub.obtained !== 0 ? sub.obtained : '';
+                row += `<td style="padding: 8px; border: 1px solid #ddd; text-align: center; font-weight: 600;">${obt}</td>`;
+                row += `<td style="padding: 8px; border: 1px solid #ddd; text-align: center; color: #666;">${sub.total}</td>`;
+            }
+        });
+        row += '</tr>';
+        rows += row;
+    });
+    
+    container.innerHTML = `
+        <div style="margin-top: 1.5rem; overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <thead>
+                    <tr>${headerCols}</tr>
+                    <tr>${subHeaderCols}</tr>
+                </thead>
+                <tbody>${rows}</tbody>
+            </table>
+        </div>
+    `;
 }
 
 function calculateRank(studentId, percentage) {

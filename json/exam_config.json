@@ -1,0 +1,118 @@
+{
+  "session": "2024-25",
+  "classes": {
+    "class1": {
+      "exams": [
+        {
+          "id": "half_yearly",
+          "name": "Half Yearly Exam",
+          "file": "json/class1/half_yearly.json",
+          "subjects": {
+            "hindi": { "written": 30, "oral": 70 },
+            "english": { "written": 15, "oral": 35 },
+            "mathematics": { "written": 30, "oral": 70 },
+            "evs": { "written": 30, "oral": 70 }
+          }
+        },
+        {
+          "id": "yearly",
+          "name": "Yearly Exam",
+          "file": "json/class1/yearly.json",
+          "subjects": {
+            "hindi": { "written": 30, "oral": 70 },
+            "english": { "written": 15, "oral": 35 },
+            "mathematics": { "written": 30, "oral": 70 },
+            "evs": { "written": 30, "oral": 70 }
+          }
+        }
+      ]
+    },
+    "class2": {
+      "exams": [
+        {
+          "id": "half_yearly",
+          "name": "Half Yearly Exam",
+          "file": "json/class2/half_yearly.json",
+          "subjects": {
+            "hindi": { "written": 30, "oral": 70 },
+            "english": { "written": 15, "oral": 35 },
+            "mathematics": { "written": 30, "oral": 70 },
+            "evs": { "written": 30, "oral": 70 }
+          }
+        },
+        {
+          "id": "yearly",
+          "name": "Yearly Exam",
+          "file": "json/class2/yearly.json",
+          "subjects": {
+            "hindi": { "written": 30, "oral": 70 },
+            "english": { "written": 15, "oral": 35 },
+            "mathematics": { "written": 30, "oral": 70 },
+            "evs": { "written": 30, "oral": 70 }
+          }
+        }
+      ]
+    },
+    "class3": {
+      "tests": [
+        {
+          "id": "test1",
+          "name": "Class Test 1",
+          "file": "json/class3/test1.json",
+          "max_marks": {
+            "hindi": 10,
+            "english": 5,
+            "mathematics": 10,
+            "evs": 10
+          }
+        },
+        {
+          "id": "test2",
+          "name": "Class Test 2",
+          "file": "json/class3/test2.json",
+          "max_marks": {
+            "hindi": 10,
+            "english": 5,
+            "mathematics": 10,
+            "evs": 10
+          }
+        },
+        {
+          "id": "test3",
+          "name": "Class Test 3",
+          "file": "json/class3/test3.json",
+          "max_marks": {
+            "hindi": 10,
+            "english": 5,
+            "mathematics": 10,
+            "evs": 10
+          }
+        }
+      ],
+      "exams": [
+        {
+          "id": "half_yearly",
+          "name": "Half Yearly Exam",
+          "file": "json/class3/half_yearly.json",
+          "subjects": {
+            "hindi": { "written": 50, "oral": 20 },
+            "english": { "written": 25, "oral": 10 },
+            "mathematics": { "written": 50, "oral": 20 },
+            "evs": { "written": 50, "oral": 20 }
+          }
+        },
+        {
+          "id": "yearly",
+          "name": "Yearly Exam",
+          "file": "json/class3/yearly.json",
+          "subjects": {
+            "hindi": { "written": 60, "oral": 40 },
+            "english": { "written": 30, "oral": 20 },
+            "mathematics": { "written": 60, "oral": 40 },
+            "evs": { "written": 60, "oral": 40 }
+          }
+        }
+      ]
+    }
+  }
+}
