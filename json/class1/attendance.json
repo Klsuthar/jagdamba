@@ -1,0 +1,17 @@
+[
+  { "student_id": "STU1_01", "roll_no": 1, "student_name": "ANKIT JANGIR", "attendance": 88 },
+  { "student_id": "STU1_02", "roll_no": 2, "student_name": "ANUSHKA KANWAR", "attendance": 94 },
+  { "student_id": "STU1_03", "roll_no": 3, "student_name": "DEEPIKA", "attendance": 90 },
+  { "student_id": "STU1_04", "roll_no": 4, "student_name": "DHARMENDRA", "attendance": 85 },
+  { "student_id": "STU1_05", "roll_no": 5, "student_name": "DHARNA", "attendance": 92 },
+  { "student_id": "STU1_06", "roll_no": 6, "student_name": "MAHIR SINGH", "attendance": 87 },
+  { "student_id": "STU1_07", "roll_no": 7, "student_name": "POONAM", "attendance": 91 },
+  { "student_id": "STU1_08", "roll_no": 8, "student_name": "RADHIKA", "attendance": 95 },
+  { "student_id": "STU1_09", "roll_no": 9, "student_name": "RAKSHA NEHARA", "attendance": 89 },
+  { "student_id": "STU1_10", "roll_no": 10, "student_name": "ROHIT NYOL", "attendance": 86 },
+  { "student_id": "STU1_11", "roll_no": 11, "student_name": "SHIV KUMAR", "attendance": 83 },
+  { "student_id": "STU1_12", "roll_no": 12, "student_name": "TEENA SWAMI", "attendance": 93 },
+  { "student_id": "STU1_13", "roll_no": 13, "student_name": "VISHAKHA", "attendance": 90 },
+  { "student_id": "STU1_14", "roll_no": 14, "student_name": "YUVRAJ SINGH", "attendance": 88 },
+  { "student_id": "STU1_15", "roll_no": 15, "student_name": "DIVYA SUTHAR", "attendance": 96 }
+]

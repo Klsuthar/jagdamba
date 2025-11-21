@@ -8,10 +8,26 @@ const aboutContent = `
 
     <div class="container">
         <div class="stats-grid">
-            <div class="stat-card"><div class="stat-number" data-target="120">0</div><div class="stat-label">Students</div></div>
-            <div class="stat-card"><div class="stat-number" data-target="4">0</div><div class="stat-label">Teachers</div></div>
-            <div class="stat-card"><div class="stat-number" data-target="4">0</div><div class="stat-label">Classes</div></div>
-            <div class="stat-card"><div class="stat-number" data-target="100">0</div><div class="stat-label">Success Rate</div></div>
+            <div class="stat-card">
+                <i class="fas fa-users"></i>
+                <div class="stat-number" data-target="120">0</div>
+                <div class="stat-label">Students</div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <div class="stat-number" data-target="4">0</div>
+                <div class="stat-label">Teachers</div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-school"></i>
+                <div class="stat-number" data-target="4">0</div>
+                <div class="stat-label">Classes</div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-trophy"></i>
+                <div class="stat-number" data-target="100">0</div>
+                <div class="stat-label">Success Rate</div>
+            </div>
         </div>
 
         <div class="mission-vision">

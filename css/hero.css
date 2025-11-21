@@ -198,14 +198,25 @@
     line-height: 1.5;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+@media (min-width: 768px) {
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-badge,
+    .hero-title,
+    .hero-subtitle,
+    .hero-buttons {
+        animation: none;
+    }
 }
 
 @media (min-width: 768px) {
     .hero-section {
-        background-attachment: fixed;
+        background-attachment: scroll;
     }
 
     .features-section {

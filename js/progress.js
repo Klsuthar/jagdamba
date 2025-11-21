@@ -8,17 +8,25 @@ let studentsData = {};
 let studentExams = {};
 let classResults = { class_1: [], class_2: [], class_3: [] };
 let examConfig = null;
+let attendanceData = { class_1: {}, class_2: {}, class_3: {} };
 
 async function loadStudentData() {
     try {
         const configResponse = await fetch('../json/exam_config.json');
         examConfig = await configResponse.json();
         
-        const [class1Students, class2Students, class3Students] = await Promise.all([
+        const [class1Students, class2Students, class3Students, class1Attendance, class2Attendance, class3Attendance] = await Promise.all([
             fetch('../json/class1/class1_students.json').then(r => r.json()),
             fetch('../json/class2/class2_students.json').then(r => r.json()),
-            fetch('../json/class3/class3_students.json').then(r => r.json())
+            fetch('../json/class3/class3_students.json').then(r => r.json()),
+            fetch('../json/class1/attendance.json').then(r => r.json()),
+            fetch('../json/class2/attendance.json').then(r => r.json()),
+            fetch('../json/class3/attendance.json').then(r => r.json())
         ]);
+        
+        class1Attendance.forEach(a => attendanceData.class_1[a.student_id] = a.attendance);
+        class2Attendance.forEach(a => attendanceData.class_2[a.student_id] = a.attendance);
+        class3Attendance.forEach(a => attendanceData.class_3[a.student_id] = a.attendance);
         
         classData.class_1.students = class1Students.map(s => ({
             id: `STU1_${s.roll_no.toString().padStart(2, '0')}`,
@@ -92,6 +100,8 @@ async function loadExamResults(configKey, classKey, className, idPrefix) {
                         ];
                     }
                     
+                    const attendance = attendanceData[classKey][studentId] || result.attendance || 0;
+                    
                     const data = {
                         name: result.student_name,
                         class: className,
@@ -100,7 +110,7 @@ async function loadExamResults(configKey, classKey, className, idPrefix) {
                         examType: exam.name,
                         photo: `../images/students/${classKey}/${result.roll_no.toString().padStart(2, '0')}_${classKey}.webp`,
                         subjects: subjects,
-                        attendance: result.attendance || 0
+                        attendance: attendance
                     };
                     
                     if (!studentExams[studentId]) {
@@ -121,7 +131,18 @@ async function loadExamResults(configKey, classKey, className, idPrefix) {
 }
 
 // Initialize data on page load
-document.addEventListener('DOMContentLoaded', loadStudentData);
+document.addEventListener('DOMContentLoaded', () => {
+    loadStudentData();
+    
+    // Handle browser back button
+    window.addEventListener('popstate', (e) => {
+        e.preventDefault();
+        goBack();
+    });
+    
+    // Push initial state
+    history.pushState({ page: 'class-selection' }, '', '');
+});
 
 function selectClass(className) {
     const classInfo = classData[className];
@@ -150,6 +171,7 @@ function selectClass(className) {
     classSelection.style.display = 'none';
     studentsList.style.display = 'block';
     backButton.style.display = 'block';
+    history.pushState({ page: 'student-list' }, '', '');
 }
 
 function showStudentReport(studentId) {
@@ -166,6 +188,7 @@ function showStudentReport(studentId) {
     studentsList.style.display = 'none';
     reportCard.classList.add('show');
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    history.pushState({ page: 'report-card' }, '', '');
 }
 
 function goBack() {
@@ -177,10 +200,12 @@ function goBack() {
     if (reportCard.classList.contains('show')) {
         reportCard.classList.remove('show');
         studentsList.style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (studentsList.style.display === 'block') {
         studentsList.style.display = 'none';
         classSelection.style.display = 'block';
         backButton.style.display = 'none';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 }
 
@@ -207,41 +232,45 @@ function displayAllExams(student, studentId, allExams) {
     }
     
     const subjects = allExams[0].subjects.map(s => s.name);
-    let headerCols = '<th style="padding: 8px; border: 1px solid #ddd; background: #f8f9fa; font-weight: 600;">Subject</th>';
+    let headerCols = '<th class="subject-col">Subject</th>';
     let colspanCount = [];
     allExams.forEach(exam => {
         const hasWrittenOral = exam.examType.includes('Yearly') || exam.examType.includes('Half Yearly');
         const colspan = hasWrittenOral ? 4 : 2;
         colspanCount.push(hasWrittenOral);
-        headerCols += `<th colspan="${colspan}" style="padding: 8px; border: 1px solid #ddd; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; font-size: 0.9rem;">${exam.examType}</th>`;
+        headerCols += `<th colspan="${colspan}" class="exam-header">${exam.examType}</th>`;
     });
     
-    let subHeaderCols = '<th style="padding: 6px; border: 1px solid #ddd; background: #f8f9fa;"></th>';
+    let subHeaderCols = '<th class="subject-col"></th>';
     colspanCount.forEach(hasWrittenOral => {
         if (hasWrittenOral) {
-            subHeaderCols += '<th style="padding: 6px; border: 1px solid #ddd; background: #f0f0f0; font-size: 0.85rem;">W</th><th style="padding: 6px; border: 1px solid #ddd; background: #f0f0f0; font-size: 0.85rem;">O</th><th style="padding: 6px; border: 1px solid #ddd; background: #f0f0f0; font-size: 0.85rem;">T</th><th style="padding: 6px; border: 1px solid #ddd; background: #f0f0f0; font-size: 0.85rem;">Max</th>';
+            subHeaderCols += '<th class="sub-header">W</th><th class="sub-header">O</th><th class="sub-header">T</th><th class="sub-header">Max</th>';
         } else {
-            subHeaderCols += '<th style="padding: 6px; border: 1px solid #ddd; background: #f0f0f0; font-size: 0.85rem;">Obt</th><th style="padding: 6px; border: 1px solid #ddd; background: #f0f0f0; font-size: 0.85rem;">Max</th>';
+            subHeaderCols += '<th class="sub-header">Obt</th><th class="sub-header">Max</th>';
         }
     });
     
     let rows = '';
     subjects.forEach((subject, idx) => {
-        let row = `<tr><td style="padding: 8px; border: 1px solid #ddd; font-weight: 500;">${subject}</td>`;
+        let row = `<tr><td class="subject-name">${subject}</td>`;
         allExams.forEach((exam, examIdx) => {
             const sub = exam.subjects[idx];
             if (colspanCount[examIdx]) {
-                const w = sub.written !== undefined ? (sub.written || '') : '';
-                const o = sub.oral !== undefined ? (sub.oral || '') : '';
-                const t = sub.obtained !== null && sub.obtained !== 0 ? sub.obtained : '';
-                row += `<td style="padding: 8px; border: 1px solid #ddd; text-align: center;">${w}</td>`;
-                row += `<td style="padding: 8px; border: 1px solid #ddd; text-align: center;">${o}</td>`;
-                row += `<td style="padding: 8px; border: 1px solid #ddd; text-align: center; font-weight: 600;">${t}</td>`;
-                row += `<td style="padding: 8px; border: 1px solid #ddd; text-align: center; color: #666;">${sub.total}</td>`;
+                const w = sub.written !== undefined ? (sub.written || 0) : 0;
+                const o = sub.oral !== undefined ? (sub.oral || 0) : 0;
+                const t = sub.obtained !== null ? sub.obtained : 0;
+                const wClass = w < (sub.total * 0.4 / 2) ? 'low' : w >= (sub.total * 0.75 / 2) ? 'high' : '';
+                const oClass = o < (sub.total * 0.4 / 2) ? 'low' : o >= (sub.total * 0.75 / 2) ? 'high' : '';
+                const tClass = t < (sub.total * 0.4) ? 'low' : t >= (sub.total * 0.75) ? 'high' : '';
+                row += `<td class="mark-cell ${wClass}">${w || ''}</td>`;
+                row += `<td class="mark-cell ${oClass}">${o || ''}</td>`;
+                row += `<td class="mark-cell total ${tClass}">${t || ''}</td>`;
+                row += `<td class="mark-cell max">${sub.total}</td>`;
             } else {
-                const obt = sub.obtained !== null && sub.obtained !== 0 ? sub.obtained : '';
-                row += `<td style="padding: 8px; border: 1px solid #ddd; text-align: center; font-weight: 600;">${obt}</td>`;
-                row += `<td style="padding: 8px; border: 1px solid #ddd; text-align: center; color: #666;">${sub.total}</td>`;
+                const obt = sub.obtained !== null ? sub.obtained : 0;
+                const obtClass = obt < (sub.total * 0.4) ? 'low' : obt >= (sub.total * 0.75) ? 'high' : '';
+                row += `<td class="mark-cell total ${obtClass}">${obt || ''}</td>`;
+                row += `<td class="mark-cell max">${sub.total}</td>`;
             }
         });
         row += '</tr>';
@@ -249,14 +278,16 @@ function displayAllExams(student, studentId, allExams) {
     });
     
     container.innerHTML = `
-        <div style="margin-top: 1.5rem; overflow-x: auto;">
-            <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                <thead>
-                    <tr>${headerCols}</tr>
-                    <tr>${subHeaderCols}</tr>
-                </thead>
-                <tbody>${rows}</tbody>
-            </table>
+        <div class="exams-container">
+            <div class="table-wrapper">
+                <table class="marks-table">
+                    <thead>
+                        <tr>${headerCols}</tr>
+                        <tr>${subHeaderCols}</tr>
+                    </thead>
+                    <tbody>${rows}</tbody>
+                </table>
+            </div>
         </div>
     `;
 }
