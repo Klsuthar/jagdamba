@@ -165,6 +165,7 @@ function showStudentReport(studentId) {
     displayAllExams(exams[0], studentId, exams);
     studentsList.style.display = 'none';
     reportCard.classList.add('show');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function goBack() {
@@ -173,15 +174,20 @@ function goBack() {
     const reportCard = document.getElementById('reportCard');
     const backButton = document.getElementById('backButton');
 
-    reportCard.classList.remove('show');
-    studentsList.style.display = 'none';
-    backButton.style.display = 'none';
-    classSelection.style.display = 'block';
+    if (reportCard.classList.contains('show')) {
+        reportCard.classList.remove('show');
+        studentsList.style.display = 'block';
+    } else if (studentsList.style.display === 'block') {
+        studentsList.style.display = 'none';
+        classSelection.style.display = 'block';
+        backButton.style.display = 'none';
+    }
 }
 
 function displayAllExams(student, studentId, allExams) {
     const photoElement = document.getElementById('studentPhoto');
-    photoElement.src = student.photo;
+    const studentData = classData.class_1.students.concat(classData.class_2.students, classData.class_3.students).find(s => s.id === studentId);
+    photoElement.src = studentData ? studentData.photo : student.photo;
     photoElement.onerror = function() {
         this.onerror = null;
         this.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(student.name)}&background=2563eb&color=fff&size=200`;
