@@ -1,32 +1,23 @@
 const aboutSection = document.querySelector('.about-section');
 
 const aboutContent = `
-    <div class="about-hero">
+    <div class="page-header">
         <h1>About Us</h1>
         <p>Empowering Young Minds Since Inception</p>
     </div>
-
     <div class="container">
         <div class="stats-grid">
             <div class="stat-card">
-                <i class="fas fa-users"></i>
-                <div class="stat-number" data-target="120">0</div>
-                <div class="stat-label">Students</div>
+                <img src="../images/stikers/students_120.png" alt="120+ Students" class="stat-image">
             </div>
             <div class="stat-card">
-                <i class="fas fa-chalkboard-teacher"></i>
-                <div class="stat-number" data-target="4">0</div>
-                <div class="stat-label">Teachers</div>
+                <img src="../images/stikers/teachers_4.png" alt="4+ Teachers" class="stat-image">
             </div>
             <div class="stat-card">
-                <i class="fas fa-school"></i>
-                <div class="stat-number" data-target="4">0</div>
-                <div class="stat-label">Classes</div>
+                <img src="../images/stikers/classes_4.png" alt="4+ Classes" class="stat-image">
             </div>
             <div class="stat-card">
-                <i class="fas fa-trophy"></i>
-                <div class="stat-number" data-target="100">0</div>
-                <div class="stat-label">Success Rate</div>
+                <img src="../images/stikers/sucess_100.png" alt="100% Success Rate" class="stat-image">
             </div>
         </div>
 

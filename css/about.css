@@ -1,62 +1,39 @@
 .about-section {
-    padding: 0;
+    padding: 80px 0 0;
     background: var(--bg);
     min-height: calc(100vh - 140px);
+    margin-bottom: 0;
 }
 
-.about-hero {
-    background: linear-gradient(135deg, #1e40af 0%, #7c3aed 50%, #db2777 100%);
-    color: white;
+.page-header {
     text-align: center;
-    padding: 5rem 1rem 2.5rem;
-    margin-bottom: 2rem;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
+    padding: 2rem 1rem;
+    background: var(--bg);
+    color: var(--text);
 }
 
-@media (min-width: 768px) {
-    .about-hero::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
-        animation: rotate 20s linear infinite;
-    }
-
-    @keyframes rotate {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-    }
-}
-
-.about-hero h1 {
-    font-size: clamp(1.8rem, 5vw, 3rem);
+.page-header h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: 0.5rem;
     font-weight: 700;
-    position: relative;
-    z-index: 1;
+    color: var(--primary);
 }
 
-.about-hero p {
+.page-header p {
     font-size: clamp(1rem, 2.5vw, 1.3rem);
-    opacity: 0.95;
-    position: relative;
-    z-index: 1;
+    opacity: 0.8;
+    color: var(--text);
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem 0;
+    padding: 0 1rem;
 }
 
 .feature-image {
     width: 100vw;
-    margin: 3rem 0 0 0;
+    margin: 0;
     padding: 0;
     line-height: 0;
     position: relative;
@@ -107,78 +84,54 @@
     margin: 0;
 }
 
+.stats-section {
+    background: linear-gradient(135deg, #FF9933 0%, #FFFFFF 35%, #FFFFFF 65%, #138808 100%);
+    padding: 4rem 0 5rem;
+    margin-bottom: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255, 153, 51, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(19, 136, 8, 0.2) 0%, transparent 50%);
+    pointer-events: none;
+}
+
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
 }
 
 .stat-card {
-    padding: 2rem 1.5rem;
+    padding: 0;
     border-radius: 20px;
     text-align: center;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     border: 2px solid transparent;
     position: relative;
     overflow: hidden;
+    background: #1a1a2e;
+    aspect-ratio: 1;
 }
 
-.stat-card:nth-child(1) {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
 
-.stat-card:nth-child(2) {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-}
-
-.stat-card:nth-child(3) {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-}
-
-.stat-card:nth-child(4) {
-    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-}
-
-.stat-card > * {
-    position: relative;
-    z-index: 1;
-}
-
-.stat-card i,
-.stat-card .stat-number,
-.stat-card .stat-label {
-    color: white;
-    background: none;
-    -webkit-text-fill-color: white;
-}
 
 @media (min-width: 768px) {
     .stat-card {
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.3s ease;
     }
     
     .stat-card:hover {
-        transform: translateY(-10px) scale(1.03);
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-        filter: brightness(1.1);
+        transform: translateY(-5px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
     }
-    
-    .stat-card:hover i {
-        transform: scale(1.2) rotate(5deg);
-    }
-    
-    .stat-card:hover .stat-number {
-        transform: scale(1.1);
-    }
-}
-
-.stat-card i {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.stat-number {
-    transition: transform 0.3s ease;
 }
 
 .stat-card i {
@@ -186,6 +139,14 @@
     margin-bottom: 1rem;
     display: block;
     filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+}
+
+.stat-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
 }
 
 .stat-number {
@@ -205,8 +166,8 @@
 
 .mission-vision {
     display: grid;
-    gap: 1.5rem;
-    margin-bottom: 3rem;
+    gap: 2rem;
+    margin: 3rem 0;
 }
 
 .mv-card {
@@ -816,12 +777,10 @@
 }
 
 @media (min-width: 768px) {
-    .about-hero {
-        padding: 6rem 2rem 3.5rem;
-    }
+
 
     .container {
-        padding: 0 2rem 0;
+        padding: 0 2rem;
     }
 
     .school-footer {
@@ -847,12 +806,14 @@
     }
     
     .stat-card {
-        padding: 2.5rem 2rem;
+        padding: 0;
     }
     
     .stat-card i {
         font-size: 3rem;
     }
+
+
 
     .stat-number {
         font-size: 3.5rem;
@@ -862,21 +823,7 @@
         font-size: 1rem;
     }
     
-    .stat-card:nth-child(1):hover {
-        box-shadow: 0 20px 50px rgba(102, 126, 234, 0.4);
-    }
-    
-    .stat-card:nth-child(2):hover {
-        box-shadow: 0 20px 50px rgba(240, 147, 251, 0.4);
-    }
-    
-    .stat-card:nth-child(3):hover {
-        box-shadow: 0 20px 50px rgba(79, 172, 254, 0.4);
-    }
-    
-    .stat-card:nth-child(4):hover {
-        box-shadow: 0 20px 50px rgba(67, 233, 123, 0.4);
-    }
+
 
     .mission-vision {
         grid-template-columns: repeat(2, 1fr);
