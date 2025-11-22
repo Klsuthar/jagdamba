@@ -4,8 +4,8 @@
   "description": "Shree Jagdamba Convent School - Quality Education",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#2d4558",
-  "theme_color": "#2d4558",
+  "background_color": "#ffffff",
+  "theme_color": "#6366f1",
   "orientation": "portrait-primary",
   "icons": [
     {
@@ -33,7 +33,10 @@
       "purpose": "maskable"
     }
   ],
-  "categories": ["education", "school"],
+  "categories": [
+    "education",
+    "school"
+  ],
   "screenshots": [
     {
       "src": "images/screenshot-mobile.png",

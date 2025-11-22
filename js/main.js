@@ -97,7 +97,7 @@ function preloadImages(eventIndex, currentIndex) {
     const images = window.eventImages[eventIndex] || window.galleryImages;
     const nextIndex = (currentIndex + 1) % images.length;
     const prevIndex = (currentIndex - 1 + images.length) % images.length;
-    
+
     [nextIndex, prevIndex].forEach(idx => {
         const img = new Image();
         img.src = images[idx];
