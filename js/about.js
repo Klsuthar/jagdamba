@@ -7,17 +7,53 @@ const aboutContent = `
     </div>
     <div class="container">
         <div class="stats-grid">
-            <div class="stat-card">
-                <img src="../images/stikers/students_120.png" alt="120+ Students" class="stat-image">
+            <div class="stat-card" onclick="this.classList.toggle('flipped')">
+                <div class="stat-card-inner">
+                    <div class="stat-card-front">
+                        <img src="../images/stikers/students_120.webp" alt="120+ Students" class="stat-image">
+                    </div>
+                    <div class="stat-card-back">
+                        <i class="fas fa-user-graduate"></i>
+                        <div class="stat-number">120+</div>
+                        <div class="stat-label">Students</div>
+                    </div>
+                </div>
             </div>
-            <div class="stat-card">
-                <img src="../images/stikers/teachers_4.png" alt="4+ Teachers" class="stat-image">
+            <div class="stat-card" onclick="this.classList.toggle('flipped')">
+                <div class="stat-card-inner">
+                    <div class="stat-card-front">
+                        <img src="../images/stikers/teachers_4.webp" alt="4+ Teachers" class="stat-image">
+                    </div>
+                    <div class="stat-card-back">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <div class="stat-number">4+</div>
+                        <div class="stat-label">Teachers</div>
+                    </div>
+                </div>
             </div>
-            <div class="stat-card">
-                <img src="../images/stikers/classes_4.png" alt="4+ Classes" class="stat-image">
+            <div class="stat-card" onclick="this.classList.toggle('flipped')">
+                <div class="stat-card-inner">
+                    <div class="stat-card-front">
+                        <img src="../images/stikers/classes_4.webp" alt="4+ Classes" class="stat-image">
+                    </div>
+                    <div class="stat-card-back">
+                        <i class="fas fa-school"></i>
+                        <div class="stat-number">4+</div>
+                        <div class="stat-label">Classes</div>
+                    </div>
+                </div>
             </div>
-            <div class="stat-card">
-                <img src="../images/stikers/sucess_100.png" alt="100% Success Rate" class="stat-image">
+            <div class="stat-card" onclick="this.classList.toggle('flipped')">
+                <div class="stat-card-inner">
+                    <div class="stat-card-front">
+                        <img src="../images/stikers/sucess_100.webp" alt="100% Success Rate" class="stat-image">
+                    </div>
+                    <div class="stat-card-back">
+                        <i class="fas fa-trophy"></i>
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Success</div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -136,41 +172,14 @@ const aboutContent2 = `
         </div>
 
         <div class="school-footer">
-            <img src="../images/logo.png" alt="School Logo" class="footer-logo">
-            <h3>Shree Jagdamba Convent School</h3>
-            <p>Excellence in Education</p>
+            <p style="font-size: clamp(1.1rem, 3vw, 1.4rem); margin: 0; font-weight: 600; line-height: 1.5; font-family: 'Quicksand', sans-serif; color: white;">Creating confident minds for a changing world.</p>
         </div>
     </div>
 `;
 
 document.querySelector('.container').insertAdjacentHTML('beforeend', aboutContent2);
 
-// Counter animation
-const animateCounter = (el) => {
-    const target = +el.dataset.target;
-    const increment = target / 100;
-    let current = 0;
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            el.textContent = target + (el.parentElement.querySelector('.stat-label').textContent === 'Success Rate' ? '%' : '+');
-            clearInterval(timer);
-        } else {
-            el.textContent = Math.ceil(current);
-        }
-    }, 20);
-};
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateCounter(entry.target);
-            observer.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-document.querySelectorAll('.stat-number').forEach(counter => observer.observe(counter));
 
 // Scroll animations
 const scrollObserver = new IntersectionObserver((entries) => {

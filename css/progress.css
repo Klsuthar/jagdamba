@@ -87,9 +87,10 @@
     color: white;
     margin-bottom: 0.5rem;
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 800;
     position: relative;
     z-index: 1;
+    font-family: 'Nunito', sans-serif;
 }
 
 .selection-header p {
@@ -266,8 +267,9 @@
 .list-header h3 {
     color: #2d3748;
     font-size: 1.3rem;
-    font-weight: 700;
+    font-weight: 800;
     margin-bottom: 0.5rem;
+    font-family: 'Nunito', sans-serif;
 }
 
 .list-header p {
@@ -414,12 +416,13 @@
 }
 
 .student-card h4 {
-    color: #1a202c;
+    color: #2d3748;
     margin-bottom: 0.5rem;
     font-size: 0.85rem;
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: 0.2px;
+    font-family: 'Nunito', sans-serif;
 }
 
 .student-card p {
@@ -660,6 +663,8 @@
     font-weight: 800;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     letter-spacing: 0.5px;
+    color: white;
+    font-family: 'Nunito', sans-serif;
 }
 
 @media (min-width: 768px) {
@@ -867,13 +872,24 @@
 }
 
 .subject-col {
-    background: #667eea;
+    background: #10b981;
     color: white;
     font-weight: 700;
     position: sticky;
     left: 0;
     z-index: 3;
     box-shadow: 2px 0 4px rgba(0, 0, 0, 0.05);
+    width: 100px;
+    min-width: 100px;
+    max-width: 100px;
+}
+
+@media (min-width: 768px) {
+    .subject-col {
+        width: auto;
+        min-width: auto;
+        max-width: none;
+    }
 }
 
 .exam-header {
@@ -894,12 +910,29 @@
     font-weight: 700;
     color: white;
     text-align: left;
-    padding-left: 0.8rem;
-    background: #667eea;
+    padding-left: 0.6rem;
+    padding-right: 0.4rem;
+    background: #10b981;
     position: sticky;
     left: 0;
     z-index: 2;
     box-shadow: 2px 0 4px rgba(0, 0, 0, 0.05);
+    width: 100px;
+    min-width: 100px;
+    max-width: 100px;
+    font-size: 0.72rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (min-width: 768px) {
+    .subject-name {
+        width: auto;
+        min-width: auto;
+        max-width: none;
+        font-size: inherit;
+    }
 }
 
 @media (min-width: 768px) {
@@ -1128,10 +1161,11 @@
     color: #718096;
     font-size: 0.65rem;
     margin-bottom: 0.5rem;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.3px;
     line-height: 1.2;
+    font-family: 'Nunito', sans-serif;
 }
 
 .summary-card .value {
@@ -1254,11 +1288,12 @@
     text-align: center;
     color: white;
     font-size: 1.6rem;
-    font-weight: 700;
+    font-weight: 800;
     margin-bottom: 1.5rem;
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     animation: fadeInUp 0.8s ease;
     letter-spacing: 0.5px;
+    font-family: 'Nunito', sans-serif;
 }
 
 @media (min-width: 768px) {

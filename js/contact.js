@@ -86,7 +86,7 @@ const contactContent = `
                         <div class="quick-info-icon"><i class="fas fa-envelope"></i></div>
                         <div class="quick-info-content">
                             <h4>Email</h4>
-                            <p>jagdamba.educationhub@gmail.com</p>
+                            <p>shreejagadamba.educationhub@gmail.com</p>
                         </div>
                     </a>
                     <div class="quick-info-item">
