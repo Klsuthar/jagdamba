@@ -1,4 +1,4 @@
-const CACHE_NAME = 'jagdamba-v6.2';
+const CACHE_NAME = 'jagdamba-v6.4';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -47,29 +47,32 @@ self.addEventListener('activate', e => {
             return caches.delete(key);
           })
       )
-    ).then(() => {
-      console.log('[SW] Claiming clients');
-      return self.clients.claim();
-    }).then(() => {
-      return self.clients.matchAll().then(clients => {
-        clients.forEach(client => {
-          console.log('[SW] Reloading client:', client.url);
-          client.postMessage({ type: 'FORCE_RELOAD' });
-        });
-      });
-    })
+    ).then(() => self.clients.claim())
   );
 });
 
 self.addEventListener('fetch', e => {
+  // Cache-first strategy for faster loading
   e.respondWith(
-    fetch(e.request)
-      .then(response => {
-        const clonedResponse = response.clone();
-        caches.open(CACHE_NAME).then(cache => cache.put(e.request, clonedResponse));
-        return response;
+    caches.match(e.request)
+      .then(cached => {
+        if (cached) return cached;
+        
+        return fetch(e.request)
+          .then(response => {
+            // Only cache successful responses
+            if (response && response.status === 200) {
+              const clonedResponse = response.clone();
+              caches.open(CACHE_NAME).then(cache => cache.put(e.request, clonedResponse));
+            }
+            return response;
+          })
+          .catch(() => {
+            // Fallback to index.html for navigation requests
+            if (e.request.mode === 'navigate') {
+              return caches.match('/index.html');
+            }
+          });
       })
-      .catch(() => caches.match(e.request))
-      .catch(() => caches.match('/index.html'))
   );
 });

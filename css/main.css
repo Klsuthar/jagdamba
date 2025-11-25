@@ -45,6 +45,7 @@ html {
     -ms-text-size-adjust: 100%;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -75,6 +76,8 @@ body {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -418,6 +421,21 @@ button:focus-visible {
 .lightbox {
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
+}
+
+/* Smooth scrolling optimizations */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+section {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+img, video {
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 img {
