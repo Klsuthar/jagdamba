@@ -250,62 +250,55 @@ function displayAllExams(student, studentId, allExams) {
     allExams.forEach(exam => {
         const hasWrittenOral = exam.examType.includes('Yearly') || exam.examType.includes('Half Yearly');
         const colspan = hasWrittenOral ? 4 : 2;
-        const isTest = exam.examType.includes('Test');
         colspanCount.push(hasWrittenOral);
-        headerCols += `<th colspan="${colspan}" class="exam-header ${isTest ? 'test-header' : 'exam-header-main'}">${exam.examType}</th>`;
+        headerCols += `<th colspan="${colspan}" class="exam-header">${exam.examType}</th>`;
     });
-    headerCols += '<th colspan="2" class="total-header">Grand Total</th>';
+    headerCols += '<th class="total-header">Grand Total</th>';
     
     let subHeaderCols = '<th class="subject-col"></th>';
-    allExams.forEach((exam, idx) => {
-        const hasWrittenOral = colspanCount[idx];
-        const isTest = exam.examType.includes('Test');
+    colspanCount.forEach(hasWrittenOral => {
         if (hasWrittenOral) {
-            subHeaderCols += `<th class="sub-header ${isTest ? 'test-sub' : ''}">W</th><th class="sub-header ${isTest ? 'test-sub' : ''}">O</th><th class="sub-header ${isTest ? 'test-sub' : ''}">T</th><th class="sub-header ${isTest ? 'test-sub' : ''}">Max</th>`;
+            subHeaderCols += '<th class="sub-header">W</th><th class="sub-header">O</th><th class="sub-header">T</th><th class="sub-header">Max</th>';
         } else {
-            subHeaderCols += `<th class="sub-header ${isTest ? 'test-sub' : ''}">Obt</th><th class="sub-header ${isTest ? 'test-sub' : ''}">Max</th>`;
+            subHeaderCols += '<th class="sub-header">Obt</th><th class="sub-header">Max</th>';
         }
     });
-    subHeaderCols += '<th class="sub-header">Total</th><th class="sub-header">Grade</th>';
+    subHeaderCols += '<th class="sub-header">Total</th>';
     
     let rows = '';
     let grandTotalObtained = 0;
     let grandTotalMax = 0;
     
     subjects.forEach((subject, idx) => {
-        const subjectClass = subject.toLowerCase().includes('hindi') ? 'hindi-subject' : 
-                            subject.toLowerCase().includes('english') ? 'english-subject' : 
-                            subject.toLowerCase().includes('math') ? 'math-subject' : 
-                            subject.toLowerCase().includes('evs') ? 'evs-subject' : '';
-        let row = `<tr><td class="subject-name ${subjectClass}">${subject}</td>`;
+        let row = `<tr><td class="subject-name">${subject}</td>`;
         let subjectTotal = 0;
         let subjectMax = 0;
         
         allExams.forEach((exam, examIdx) => {
             const sub = exam.subjects[idx];
             if (colspanCount[examIdx]) {
-                const w = sub.written !== undefined ? (sub.written || 0) : 0;
-                const o = sub.oral !== undefined ? (sub.oral || 0) : 0;
-                const t = sub.obtained !== null ? sub.obtained : 0;
+                const w = sub.written !== undefined ? sub.written : null;
+                const o = sub.oral !== undefined ? sub.oral : null;
+                const t = sub.obtained !== null ? sub.obtained : null;
                 const max = sub.total || 100;
                 
-                const wClass = w < (max * 0.33 / 2) ? 'fail' : w < (max * 0.6 / 2) ? 'low' : w >= (max * 0.75 / 2) ? 'high' : 'medium';
-                const oClass = o < (max * 0.33 / 2) ? 'fail' : o < (max * 0.6 / 2) ? 'low' : o >= (max * 0.75 / 2) ? 'high' : 'medium';
-                const tClass = t < (max * 0.33) ? 'fail' : t < (max * 0.6) ? 'low' : t >= (max * 0.75) ? 'high' : 'medium';
+                const wClass = w !== null && w < (max * 0.33 / 2) ? 'fail' : w !== null && w < (max * 0.6 / 2) ? 'low' : w !== null && w >= (max * 0.75 / 2) ? 'high' : 'medium';
+                const oClass = o !== null && o < (max * 0.33 / 2) ? 'fail' : o !== null && o < (max * 0.6 / 2) ? 'low' : o !== null && o >= (max * 0.75 / 2) ? 'high' : 'medium';
+                const tClass = t !== null && t < (max * 0.33) ? 'fail' : t !== null && t < (max * 0.6) ? 'low' : t !== null && t >= (max * 0.75) ? 'high' : 'medium';
                 
-                row += `<td class="mark-cell ${wClass}">${w || 0}</td>`;
-                row += `<td class="mark-cell ${oClass}">${o || 0}</td>`;
-                row += `<td class="mark-cell total-cell ${tClass}">${t || 0}</td>`;
+                row += `<td class="mark-cell ${wClass}">${w !== null ? w : ''}</td>`;
+                row += `<td class="mark-cell ${oClass}">${o !== null ? o : ''}</td>`;
+                row += `<td class="mark-cell total-cell ${tClass}">${t !== null ? t : ''}</td>`;
                 row += `<td class="mark-cell max-cell">${max}</td>`;
                 
                 subjectTotal += t;
                 subjectMax += max;
             } else {
-                const obt = sub.obtained !== null ? sub.obtained : 0;
+                const obt = sub.obtained !== null ? sub.obtained : null;
                 const max = sub.total || 10;
-                const obtClass = obt < (max * 0.33) ? 'fail' : obt < (max * 0.6) ? 'low' : obt >= (max * 0.75) ? 'high' : 'medium';
+                const obtClass = obt !== null && obt < (max * 0.33) ? 'fail' : obt !== null && obt < (max * 0.6) ? 'low' : obt !== null && obt >= (max * 0.75) ? 'high' : 'medium';
                 
-                row += `<td class="mark-cell total-cell ${obtClass}">${obt || 0}</td>`;
+                row += `<td class="mark-cell total-cell ${obtClass}">${obt !== null ? obt : ''}</td>`;
                 row += `<td class="mark-cell max-cell">${max}</td>`;
                 
                 subjectTotal += obt;
@@ -313,12 +306,9 @@ function displayAllExams(student, studentId, allExams) {
             }
         });
         
-        const percentage = subjectMax > 0 ? (subjectTotal / subjectMax) * 100 : 0;
-        const grade = getGrade(percentage);
-        const gradeClass = grade === 'F' ? 'fail' : grade === 'A' || grade === 'A+' ? 'high' : grade === 'D' ? 'low' : 'medium';
+        const gradeClass = subjectMax > 0 && (subjectTotal / subjectMax) * 100 < 33 ? 'fail' : subjectMax > 0 && (subjectTotal / subjectMax) * 100 < 60 ? 'low' : subjectMax > 0 && (subjectTotal / subjectMax) * 100 >= 75 ? 'high' : 'medium';
         
         row += `<td class="mark-cell grand-total ${gradeClass}">${subjectTotal}</td>`;
-        row += `<td class="mark-cell grade-cell grade-${grade}">${grade}</td>`;
         row += '</tr>';
         rows += row;
         
@@ -326,9 +316,7 @@ function displayAllExams(student, studentId, allExams) {
         grandTotalMax += subjectMax;
     });
     
-    const overallPercentage = grandTotalMax > 0 ? (grandTotalObtained / grandTotalMax) * 100 : 0;
-    const overallGrade = getGrade(overallPercentage);
-    const overallClass = overallPercentage < 33 ? 'fail' : overallPercentage < 60 ? 'low' : overallPercentage >= 75 ? 'high' : 'medium';
+    const overallClass = grandTotalMax > 0 && (grandTotalObtained / grandTotalMax) * 100 < 33 ? 'fail' : grandTotalMax > 0 && (grandTotalObtained / grandTotalMax) * 100 < 60 ? 'low' : grandTotalMax > 0 && (grandTotalObtained / grandTotalMax) * 100 >= 75 ? 'high' : 'medium';
     
     rows += `
         <tr class="total-row">
@@ -348,26 +336,11 @@ function displayAllExams(student, studentId, allExams) {
                     `<td class="mark-cell total-cell ${examClass}">${examTotal}</td><td class="mark-cell max-cell">${examMax}</td>`;
             }).join('')}
             <td class="mark-cell grand-total ${overallClass}">${grandTotalObtained}</td>
-            <td class="mark-cell grade-cell grade-${overallGrade}">${overallGrade}</td>
         </tr>
     `;
     
     container.innerHTML = `
         <div class="exams-container">
-            <div class="performance-summary">
-                <div class="summary-card">
-                    <h4>Total Marks</h4>
-                    <div class="value">${grandTotalObtained}/${grandTotalMax}</div>
-                </div>
-                <div class="summary-card">
-                    <h4>Percentage</h4>
-                    <div class="value ${overallClass}">${overallPercentage.toFixed(1)}%</div>
-                </div>
-                <div class="summary-card">
-                    <h4>Overall Grade</h4>
-                    <div class="value grade-${overallGrade}">${overallGrade}</div>
-                </div>
-            </div>
             <div class="table-wrapper">
                 <table class="marks-table">
                     <thead>
