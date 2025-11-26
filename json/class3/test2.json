@@ -1,5 +1,5 @@
 [
-  { "roll_no": 1, "student_name": "AANAND SINGH", "hindi": 1, "english": 5, "mathematics": 4, "evs": 6 },
+  { "roll_no": 1, "student_name": "AANAND SINGH", "hindi": null, "english": null, "mathematics": null, "evs": null },
   { "roll_no": 2, "student_name": "ANURADHA", "hindi": 4, "english": null, "mathematics": null, "evs": null },
   { "roll_no": 3, "student_name": "ARAV SINWAL", "hindi": null, "english": null, "mathematics": null, "evs": null },
   { "roll_no": 4, "student_name": "ARVIND JAT", "hindi": null, "english": null, "mathematics": null, "evs": null },

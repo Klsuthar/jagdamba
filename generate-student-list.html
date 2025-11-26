@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Student List Excel</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; max-width: 800px; margin: 0 auto; }
+        button { background: #2563eb; color: white; border: none; padding: 15px 30px; font-size: 16px; cursor: pointer; border-radius: 5px; }
+        button:hover { background: #1d4ed8; }
+        .status { margin-top: 20px; padding: 15px; border-radius: 5px; }
+        .success { background: #d1fae5; color: #065f46; }
+        .error { background: #fee2e2; color: #991b1b; }
+    </style>
+</head>
+<body>
+    <h1>📊 Generate Student List Excel</h1>
+    <p>Click the button below to generate an Excel file with roll numbers and student names for all classes.</p>
+    <button onclick="generateExcel()">Generate Excel File</button>
+    <div id="status"></div>
+
+    <script>
+        // Embedded student data
+        const class1 = [{"roll_no":1,"student_name":"ANKIT JANGIR"},{"roll_no":2,"student_name":"ANUSHKA KANWAR"},{"roll_no":3,"student_name":"DEEPIKA"},{"roll_no":4,"student_name":"DHARMENDRA"},{"roll_no":5,"student_name":"DHARNA"},{"roll_no":6,"student_name":"MAHIR SINGH"},{"roll_no":7,"student_name":"POONAM"},{"roll_no":8,"student_name":"RADHIKA"},{"roll_no":9,"student_name":"RAKSHA NEHARA"},{"roll_no":10,"student_name":"ROHIT NYOL"},{"roll_no":11,"student_name":"SHIV KUMAR"},{"roll_no":12,"student_name":"TEENA SWAMI"},{"roll_no":13,"student_name":"VISHAKHA"},{"roll_no":14,"student_name":"YUVRAJ SINGH"},{"roll_no":15,"student_name":"DIVYA SUTHAR"}];
+
+        const class2 = [{"roll_no":1,"student_name":"AAKANSHA"},{"roll_no":2,"student_name":"AANAND SUTHAR"},{"roll_no":3,"student_name":"ARADHYA"},{"roll_no":4,"student_name":"ARCHANA"},{"roll_no":5,"student_name":"BABULAL"},{"roll_no":6,"student_name":"BHARATI"},{"roll_no":7,"student_name":"DEVENDRA"},{"roll_no":8,"student_name":"DHIRAJ"},{"roll_no":9,"student_name":"DHIRAJ"},{"roll_no":10,"student_name":"DIKSHEET"},{"roll_no":11,"student_name":"GAJANAND"},{"roll_no":12,"student_name":"HARDIK"},{"roll_no":13,"student_name":"JAYPRAKASH"},{"roll_no":14,"student_name":"KARTIKDAN"},{"roll_no":15,"student_name":"MUKESH"},{"roll_no":16,"student_name":"NAITTIK"},{"roll_no":17,"student_name":"NAVEEN"},{"roll_no":18,"student_name":"NEHA"},{"roll_no":19,"student_name":"PANKAJ"},{"roll_no":20,"student_name":"RIYAAS PAL"},{"roll_no":21,"student_name":"SHIVRAJ"},{"roll_no":22,"student_name":"SUNITA"},{"roll_no":23,"student_name":"VIJAY"}];
+
+        const class3 = [{"roll_no":1,"student_name":"AANAND SINGH"},{"roll_no":2,"student_name":"ANURADHA"},{"roll_no":3,"student_name":"ARAV SINWAL"},{"roll_no":4,"student_name":"ARVIND JAT"},{"roll_no":5,"student_name":"DINDAYAL"},{"roll_no":6,"student_name":"DINESH"},{"roll_no":7,"student_name":"DINESH SIMAR"},{"roll_no":8,"student_name":"DIVYA"},{"roll_no":9,"student_name":"GOURI"},{"roll_no":10,"student_name":"HEJAL PAL"},{"roll_no":11,"student_name":"KANAK"},{"roll_no":12,"student_name":"KAUSHALYA"},{"roll_no":13,"student_name":"LAXMI"},{"roll_no":14,"student_name":"MAHESH BAJYA"},{"roll_no":15,"student_name":"MANISHA NEHRA"},{"roll_no":16,"student_name":"MANSI"},{"roll_no":17,"student_name":"MANVENDRA SINGH"},{"roll_no":18,"student_name":"NARESH SUTHAR"},{"roll_no":19,"student_name":"NAVEEN"},{"roll_no":20,"student_name":"NISHTHA SUTHAR"},{"roll_no":21,"student_name":"PRAVEENA"},{"roll_no":22,"student_name":"RAVI PRAKASH"},{"roll_no":23,"student_name":"SARSWATI KANWAR"},{"roll_no":24,"student_name":"SONAKSHI"}];
+
+        function generateExcel() {
+            const statusDiv = document.getElementById('status');
+            statusDiv.innerHTML = '<div class="status">Generating Excel file...</div>';
+
+            try {
+
+                // Create workbook
+                const wb = XLSX.utils.book_new();
+
+                // Create Class 1 sheet
+                const class1Data = [['Roll No', 'Student Name']];
+                class1.forEach(s => class1Data.push([s.roll_no, s.student_name]));
+                const ws1 = XLSX.utils.aoa_to_sheet(class1Data);
+                ws1['!cols'] = [{wch: 10}, {wch: 30}];
+                XLSX.utils.book_append_sheet(wb, ws1, 'Class 1');
+
+                // Create Class 2 sheet
+                const class2Data = [['Roll No', 'Student Name']];
+                class2.forEach(s => class2Data.push([s.roll_no, s.student_name]));
+                const ws2 = XLSX.utils.aoa_to_sheet(class2Data);
+                ws2['!cols'] = [{wch: 10}, {wch: 30}];
+                XLSX.utils.book_append_sheet(wb, ws2, 'Class 2');
+
+                // Create Class 3 sheet
+                const class3Data = [['Roll No', 'Student Name']];
+                class3.forEach(s => class3Data.push([s.roll_no, s.student_name]));
+                const ws3 = XLSX.utils.aoa_to_sheet(class3Data);
+                ws3['!cols'] = [{wch: 10}, {wch: 30}];
+                XLSX.utils.book_append_sheet(wb, ws3, 'Class 3');
+
+                // Create All Students sheet
+                const allData = [['Class', 'Roll No', 'Student Name']];
+                class1.forEach(s => allData.push(['Class 1', s.roll_no, s.student_name]));
+                class2.forEach(s => allData.push(['Class 2', s.roll_no, s.student_name]));
+                class3.forEach(s => allData.push(['Class 3', s.roll_no, s.student_name]));
+                const wsAll = XLSX.utils.aoa_to_sheet(allData);
+                wsAll['!cols'] = [{wch: 10}, {wch: 10}, {wch: 30}];
+                XLSX.utils.book_append_sheet(wb, wsAll, 'All Students');
+
+                // Generate Excel file
+                XLSX.writeFile(wb, 'Student_List_All_Classes.xlsx');
+
+                statusDiv.innerHTML = `
+                    <div class="status success">
+                        <strong>✅ Success!</strong><br>
+                        Excel file generated: <strong>Student_List_All_Classes.xlsx</strong><br><br>
+                        <strong>Summary:</strong><br>
+                        • Class 1: ${class1.length} students<br>
+                        • Class 2: ${class2.length} students<br>
+                        • Class 3: ${class3.length} students<br>
+                        • Total: ${class1.length + class2.length + class3.length} students<br><br>
+                        The file contains 4 sheets: Class 1, Class 2, Class 3, and All Students
+                    </div>
+                `;
+            } catch (error) {
+                statusDiv.innerHTML = `<div class="status error"><strong>❌ Error:</strong> ${error.message}</div>`;
+            }
+        }
+    </script>
+</body>
+</html>

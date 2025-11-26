@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Student Progress - Shree Jagdamba Convent School</title>
     <meta name="theme-color" content="#2d4558">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -93,6 +93,7 @@
                 </div>
 
                 <div class="report-card" id="reportCard">
+                    <div id="reportCardTop"></div>
                     <div class="report-header">
                         <img src="" alt="Student Photo" class="student-photo" id="studentPhoto">
                         <h2 id="studentName"></h2>
@@ -120,6 +121,22 @@
                         </div>
 
                         <div id="allExamsContainer"></div>
+                    </div>
+
+                    <div class="student-navigation">
+                        <button class="nav-btn prev-btn" id="prevStudentBtn" onclick="navigateStudent('prev')">
+                            <i class="fas fa-chevron-left"></i>
+                            <span>Previous</span>
+                        </button>
+                        <button class="nav-btn next-btn" id="nextStudentBtn" onclick="navigateStudent('next')">
+                            <span>Next</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="students-horizontal-list">
+                        <h4><i class="fas fa-users"></i> Quick Navigate</h4>
+                        <div class="horizontal-scroll" id="horizontalStudentList"></div>
                     </div>
                 </div>
 

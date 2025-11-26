@@ -4,30 +4,10 @@
     "roll_no": 1,
     "student_name": "ANKIT JANGIR",
     "subjects": [
-      {
-        "name": "Hindi",
-        "obtained": 82,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "English",
-        "obtained": 75,
-        "total": 100,
-        "grade": "B"
-      },
-      {
-        "name": "Mathematics",
-        "obtained": 14,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "EVS",
-        "obtained": 80,
-        "total": 100,
-        "grade": "A"
-      }
+      {"name": "Mathematics", "written": 14, "oral": 45, "obtained": 59, "total": 100},
+      {"name": "Hindi", "written": 17, "oral": 50, "obtained": 67, "total": 100},
+      {"name": "English", "written": 9, "oral": 30, "obtained": 39, "total": 100},
+      {"name": "EVS", "obtained": null, "total": 50}
     ],
     "attendance": 94
   },
@@ -36,30 +16,10 @@
     "roll_no": 2,
     "student_name": "ANUSHKA KANWAR",
     "subjects": [
-      {
-        "name": "Hindi",
-        "obtained": 90,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "English",
-        "obtained": 87,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "Mathematics",
-        "obtained": 14,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "EVS",
-        "obtained": 89,
-        "total": 100,
-        "grade": "A"
-      }
+      {"name": "Mathematics", "written": 14, "oral": 45, "obtained": 59, "total": 100},
+      {"name": "Hindi", "written": 25, "oral": 65, "obtained": 30, "total": 100},
+      {"name": "English", "written": 6, "oral": 25, "obtained": 31, "total": 100},
+      {"name": "EVS", "obtained": null, "total": 50}
     ],
     "attendance": 97
   },
@@ -68,30 +28,10 @@
     "roll_no": 3,
     "student_name": "DEEPIKA",
     "subjects": [
-      {
-        "name": "Hindi",
-        "obtained": 78,
-        "total": 100,
-        "grade": "B"
-      },
-      {
-        "name": "English",
-        "obtained": 72,
-        "total": 100,
-        "grade": "B"
-      },
-      {
-        "name": "Mathematics",
-        "obtained": 25,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "EVS",
-        "obtained": 76,
-        "total": 100,
-        "grade": "B"
-      }
+      {"name": "Mathematics", "written": 25, "oral": 68, "obtained": 93, "total": 100},
+      {"name": "Hindi", "written": 24, "oral": 65, "obtained": 89, "total": 100},
+      {"name": "English", "written": 14, "oral": 34, "obtained": 48, "total": 100},
+      {"name": "EVS", "obtained": null, "total": 50}
     ],
     "attendance": 91
   },
@@ -100,30 +40,10 @@
     "roll_no": 4,
     "student_name": "DHARMENDRA",
     "subjects": [
-      {
-        "name": "Hindi",
-        "obtained": 85,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "English",
-        "obtained": 80,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "Mathematics",
-        "obtained": 27,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "EVS",
-        "obtained": 83,
-        "total": 100,
-        "grade": "A"
-      }
+      {"name": "Mathematics", "written": 27, "oral": 68, "obtained": 35, "total": 100},
+      {"name": "Hindi", "written": 30, "oral": 70, "obtained": 30, "total": 100},
+      {"name": "English", "written": 15, "oral": 35, "obtained": 50, "total": 100},
+      {"name": "EVS", "obtained": null, "total": 50}
     ],
     "attendance": 95
   },
@@ -132,30 +52,10 @@
     "roll_no": 5,
     "student_name": "DHARNA",
     "subjects": [
-      {
-        "name": "Hindi",
-        "obtained": 88,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "English",
-        "obtained": 84,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "Mathematics",
-        "obtained": 19,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "EVS",
-        "obtained": 86,
-        "total": 100,
-        "grade": "A"
-      }
+      {"name": "Mathematics", "written": 19, "oral": 55, "obtained": 74, "total": 100},
+      {"name": "Hindi", "written": 27, "oral": 70, "obtained": 97, "total": 100},
+      {"name": "English", "written": 13, "oral": 34, "obtained": 47, "total": 100},
+      {"name": "EVS", "obtained": null, "total": 50}
     ],
     "attendance": 96
   },
@@ -164,30 +64,10 @@
     "roll_no": 6,
     "student_name": "MAHIR SINGH",
     "subjects": [
-      {
-        "name": "Hindi",
-        "obtained": 73,
-        "total": 100,
-        "grade": "B"
-      },
-      {
-        "name": "English",
-        "obtained": 68,
-        "total": 100,
-        "grade": "C"
-      },
-      {
-        "name": "Mathematics",
-        "obtained": 23,
-        "total": 100,
-        "grade": "B"
-      },
-      {
-        "name": "EVS",
-        "obtained": 71,
-        "total": 100,
-        "grade": "B"
-      }
+      {"name": "Mathematics", "written": 23, "oral": 67, "obtained": 90, "total": 100},
+      {"name": "Hindi", "written": 28, "oral": 70, "obtained": 98, "total": 100},
+      {"name": "English", "written": 15, "oral": 35, "obtained": 50, "total": 100},
+      {"name": "EVS", "obtained": null, "total": 50}
     ],
     "attendance": 88
   },
@@ -196,30 +76,10 @@
     "roll_no": 7,
     "student_name": "POONAM",
     "subjects": [
-      {
-        "name": "Hindi",
-        "obtained": 91,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "English",
-        "obtained": 88,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "Mathematics",
-        "obtained": 17,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "EVS",
-        "obtained": 90,
-        "total": 100,
-        "grade": "A"
-      }
+      {"name": "Mathematics", "written": 17, "oral": 50, "obtained": 67, "total": 100},
+      {"name": "Hindi", "written": 30, "oral": 70, "obtained": 100, "total": 100},
+      {"name": "English", "written": 14, "oral": 35, "obtained": 49, "total": 100},
+      {"name": "EVS", "obtained": null, "total": 50}
     ],
     "attendance": 98
   },
@@ -228,30 +88,10 @@
     "roll_no": 8,
     "student_name": "RADHIKA",
     "subjects": [
-      {
-        "name": "Hindi",
-        "obtained": 80,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "English",
-        "obtained": 77,
-        "total": 100,
-        "grade": "B"
-      },
-      {
-        "name": "Mathematics",
-        "obtained": 16,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "EVS",
-        "obtained": 79,
-        "total": 100,
-        "grade": "B"
-      }
+      {"name": "Mathematics", "written": 1, "oral": 60, "obtained": 61, "total": 100},
+      {"name": "Hindi", "written": 28, "oral": 65, "obtained": 93, "total": 100},
+      {"name": "English", "written": 13, "oral": 34, "obtained": 47, "total": 100},
+      {"name": "EVS", "obtained": null, "total": 50}
     ],
     "attendance": 92
   },
@@ -260,30 +100,10 @@
     "roll_no": 9,
     "student_name": "RAKSHA NEHARA",
     "subjects": [
-      {
-        "name": "Hindi",
-        "obtained": 86,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "English",
-        "obtained": 82,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "Mathematics",
-        "obtained": 20,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "EVS",
-        "obtained": 85,
-        "total": 100,
-        "grade": "A"
-      }
+      {"name": "Mathematics", "written": 20, "oral": 65, "obtained": 85, "total": 100},
+      {"name": "Hindi", "written": 20, "oral": 50, "obtained": 70, "total": 100},
+      {"name": "English", "written": 15, "oral": 35, "obtained": 50, "total": 100},
+      {"name": "EVS", "obtained": null, "total": 50}
     ],
     "attendance": 95
   },
@@ -292,30 +112,10 @@
     "roll_no": 10,
     "student_name": "ROHIT NYOL",
     "subjects": [
-      {
-        "name": "Hindi",
-        "obtained": 75,
-        "total": 100,
-        "grade": "B"
-      },
-      {
-        "name": "English",
-        "obtained": 70,
-        "total": 100,
-        "grade": "B"
-      },
-      {
-        "name": "Mathematics",
-        "obtained": 17,
-        "total": 100,
-        "grade": "B"
-      },
-      {
-        "name": "EVS",
-        "obtained": 74,
-        "total": 100,
-        "grade": "B"
-      }
+      {"name": "Mathematics", "written": 17, "oral": 50, "obtained": 67, "total": 100},
+      {"name": "Hindi", "written": 30, "oral": 70, "obtained": 100, "total": 100},
+      {"name": "English", "written": 13, "oral": 34, "obtained": 47, "total": 100},
+      {"name": "EVS", "obtained": null, "total": 50}
     ],
     "attendance": 89
   },
@@ -324,30 +124,10 @@
     "roll_no": 11,
     "student_name": "SHIV KUMAR",
     "subjects": [
-      {
-        "name": "Hindi",
-        "obtained": 84,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "English",
-        "obtained": 81,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "Mathematics",
-        "obtained": 4,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "EVS",
-        "obtained": 83,
-        "total": 100,
-        "grade": "A"
-      }
+      {"name": "Mathematics", "written": 4, "oral": 35, "obtained": 39, "total": 100},
+      {"name": "Hindi", "written": 27, "oral": 65, "obtained": 92, "total": 100},
+      {"name": "English", "written": 8, "oral": 30, "obtained": 38, "total": 100},
+      {"name": "EVS", "obtained": null, "total": 50}
     ],
     "attendance": 94
   },
@@ -356,30 +136,10 @@
     "roll_no": 12,
     "student_name": "TEENA SWAMI",
     "subjects": [
-      {
-        "name": "Hindi",
-        "obtained": 93,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "English",
-        "obtained": 90,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "Mathematics",
-        "obtained": 20,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "EVS",
-        "obtained": 92,
-        "total": 100,
-        "grade": "A"
-      }
+      {"name": "Mathematics", "written": 20, "oral": 65, "obtained": 85, "total": 100},
+      {"name": "Hindi", "written": 27, "oral": 65, "obtained": 92, "total": 100},
+      {"name": "English", "written": 15, "oral": 35, "obtained": 50, "total": 100},
+      {"name": "EVS", "obtained": null, "total": 50}
     ],
     "attendance": 98
   },
@@ -388,30 +148,10 @@
     "roll_no": 13,
     "student_name": "VISHAKHA",
     "subjects": [
-      {
-        "name": "Hindi",
-        "obtained": 79,
-        "total": 100,
-        "grade": "B"
-      },
-      {
-        "name": "English",
-        "obtained": 74,
-        "total": 100,
-        "grade": "B"
-      },
-      {
-        "name": "Mathematics",
-        "obtained": 18,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "EVS",
-        "obtained": 77,
-        "total": 100,
-        "grade": "B"
-      }
+      {"name": "Mathematics", "written": 18, "oral": 50, "obtained": 68, "total": 100},
+      {"name": "Hindi", "written": 29, "oral": 70, "obtained": 99, "total": 100},
+      {"name": "English", "written": 15, "oral": 35, "obtained": 50, "total": 100},
+      {"name": "EVS", "obtained": null, "total": 50}
     ],
     "attendance": 90
   },
@@ -420,30 +160,10 @@
     "roll_no": 14,
     "student_name": "YUVRAJ SINGH",
     "subjects": [
-      {
-        "name": "Hindi",
-        "obtained": 87,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "English",
-        "obtained": 83,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "Mathematics",
-        "obtained": 13,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "EVS",
-        "obtained": 86,
-        "total": 100,
-        "grade": "A"
-      }
+      {"name": "Mathematics", "written": 13, "oral": 45, "obtained": 58, "total": 100},
+      {"name": "Hindi", "written": 30, "oral": 70, "obtained": 100, "total": 100},
+      {"name": "English", "written": 11, "oral": 30, "obtained": 41, "total": 100},
+      {"name": "EVS", "obtained": null, "total": 50}
     ],
     "attendance": 96
   },
@@ -452,30 +172,10 @@
     "roll_no": 15,
     "student_name": "DIVYA SUTHAR",
     "subjects": [
-      {
-        "name": "Hindi",
-        "obtained": 81,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "English",
-        "obtained": 78,
-        "total": 100,
-        "grade": "B"
-      },
-      {
-        "name": "Mathematics",
-        "obtained": 12,
-        "total": 100,
-        "grade": "A"
-      },
-      {
-        "name": "EVS",
-        "obtained": 80,
-        "total": 100,
-        "grade": "A"
-      }
+      {"name": "Mathematics", "written": 12, "oral": 45, "obtained": 57, "total": 100},
+      {"name": "Hindi", "written": 21, "oral": 60, "obtained": 81, "total": 100},
+      {"name": "English", "written": 9, "oral": 30, "obtained": 39, "total": 100},
+      {"name": "EVS", "obtained": null, "total": 50}
     ],
     "attendance": 93
   }

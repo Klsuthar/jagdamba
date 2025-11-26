@@ -11,7 +11,7 @@
             "hindi": { "written": 30, "oral": 70 },
             "english": { "written": 15, "oral": 35 },
             "mathematics": { "written": 30, "oral": 70 },
-            "evs": { "written": 30, "oral": 70 }
+            "evs": { "written": 50 }
           }
         },
         {
@@ -22,7 +22,7 @@
             "hindi": { "written": 30, "oral": 70 },
             "english": { "written": 15, "oral": 35 },
             "mathematics": { "written": 30, "oral": 70 },
-            "evs": { "written": 30, "oral": 70 }
+            "evs": { "written": 50 }
           }
         }
       ]
@@ -37,7 +37,7 @@
             "hindi": { "written": 30, "oral": 70 },
             "english": { "written": 15, "oral": 35 },
             "mathematics": { "written": 30, "oral": 70 },
-            "evs": { "written": 30, "oral": 70 }
+            "evs": { "written": 50 }
           }
         },
         {
@@ -48,7 +48,7 @@
             "hindi": { "written": 30, "oral": 70 },
             "english": { "written": 15, "oral": 35 },
             "mathematics": { "written": 30, "oral": 70 },
-            "evs": { "written": 30, "oral": 70 }
+            "evs": { "written": 50 }
           }
         }
       ]

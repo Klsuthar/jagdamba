@@ -152,6 +152,7 @@ function selectClass(className) {
     const backButton = document.getElementById('backButton');
     const classSelection = document.querySelector('.class-selection');
 
+    currentClassStudents = classInfo.students;
     classTitle.textContent = classInfo.title;
     studentsGrid.innerHTML = '';
 
@@ -174,6 +175,9 @@ function selectClass(className) {
     history.pushState({ page: 'student-list' }, '', '');
 }
 
+let currentStudentId = null;
+let currentClassStudents = [];
+
 function showStudentReport(studentId) {
     const exams = studentExams[studentId];
     const studentsList = document.getElementById('studentsList');
@@ -184,10 +188,19 @@ function showStudentReport(studentId) {
         return;
     }
 
+    currentStudentId = studentId;
     displayAllExams(exams[0], studentId, exams);
+    updateNavigationButtons();
+    renderHorizontalStudentList();
     studentsList.style.display = 'none';
     reportCard.classList.add('show');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    setTimeout(() => {
+        const reportCard = document.getElementById('reportCard');
+        const offset = reportCard.offsetTop - 80;
+        window.scrollTo({ top: offset, behavior: 'smooth' });
+    }, 100);
+    
     history.pushState({ page: 'report-card' }, '', '');
 }
 
@@ -311,6 +324,59 @@ function calculateRank(studentId, percentage) {
     if (rank === 2) return '🥈 2nd';
     if (rank === 3) return '🥉 3rd';
     return `${rank}th`;
+}
+
+function navigateStudent(direction) {
+    const currentIndex = currentClassStudents.findIndex(s => s.id === currentStudentId);
+    let newIndex;
+    
+    if (direction === 'prev') {
+        newIndex = currentIndex > 0 ? currentIndex - 1 : currentClassStudents.length - 1;
+    } else {
+        newIndex = currentIndex < currentClassStudents.length - 1 ? currentIndex + 1 : 0;
+    }
+    
+    showStudentReport(currentClassStudents[newIndex].id);
+}
+
+function updateNavigationButtons() {
+    const prevBtn = document.getElementById('prevStudentBtn');
+    const nextBtn = document.getElementById('nextStudentBtn');
+    
+    if (currentClassStudents.length <= 1) {
+        prevBtn.disabled = true;
+        nextBtn.disabled = true;
+    } else {
+        prevBtn.disabled = false;
+        nextBtn.disabled = false;
+    }
+}
+
+function renderHorizontalStudentList() {
+    const container = document.getElementById('horizontalStudentList');
+    container.innerHTML = '';
+    
+    currentClassStudents.forEach(student => {
+        const card = document.createElement('div');
+        card.className = `horizontal-student-card ${student.id === currentStudentId ? 'active' : ''}`;
+        card.onclick = () => showStudentReport(student.id);
+        
+        card.innerHTML = `
+            <img src="${student.photo}" alt="${student.name}" 
+                 onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(student.name)}&background=667eea&color=fff&size=80'">
+            <p>${student.name}</p>
+        `;
+        
+        container.appendChild(card);
+    });
+    
+    // Scroll active card into view
+    setTimeout(() => {
+        const activeCard = container.querySelector('.active');
+        if (activeCard) {
+            activeCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+    }, 100);
 }
 
 
