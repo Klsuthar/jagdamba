@@ -856,7 +856,11 @@
 }
 
 .marks-table tbody tr:nth-child(odd) {
-    background: #fafbfc;
+    background: linear-gradient(145deg, #fafbfc 0%, #f8fafc 100%);
+}
+
+.marks-table tbody tr:nth-child(even) {
+    background: white;
 }
 
 @media (min-width: 768px) {
@@ -872,13 +876,13 @@
 }
 
 .subject-col {
-    background: #10b981;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     font-weight: 700;
     position: sticky;
     left: 0;
     z-index: 3;
-    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
     width: 100px;
     min-width: 100px;
     max-width: 100px;
@@ -893,17 +897,31 @@
 }
 
 .exam-header {
-    background: #667eea;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     font-weight: 700;
     font-size: 0.8rem;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.exam-header.test-header {
+    background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+}
+
+.exam-header.exam-header-main {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .sub-header {
-    background: #f3f4f6;
+    background: linear-gradient(145deg, #f8fafc 0%, #e5e7eb 100%);
     font-size: 0.7rem;
     font-weight: 700;
     color: #4b5563;
+}
+
+.sub-header.test-sub {
+    background: linear-gradient(145deg, #cffafe 0%, #a5f3fc 100%);
+    color: #0e7490;
 }
 
 .subject-name {
@@ -912,11 +930,11 @@
     text-align: left;
     padding-left: 0.6rem;
     padding-right: 0.4rem;
-    background: #10b981;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     position: sticky;
     left: 0;
     z-index: 2;
-    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
     width: 100px;
     min-width: 100px;
     max-width: 100px;
@@ -924,6 +942,22 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.subject-name.hindi-subject {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.subject-name.english-subject {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+.subject-name.math-subject {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.subject-name.evs-subject {
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
 }
 
 @media (min-width: 768px) {
@@ -953,39 +987,154 @@
     color: #1f2937;
     font-weight: 600;
     background: white;
+    transition: all 0.3s ease;
+}
+
+.mark-cell.fail {
+    color: #dc2626;
+    font-weight: 800;
+    background: linear-gradient(145deg, #fee2e2 0%, #fecaca 100%);
+    box-shadow: inset 0 1px 3px rgba(220, 38, 38, 0.1);
 }
 
 .mark-cell.low {
-    color: #dc2626;
-    font-weight: 800;
+    color: #ea580c;
+    font-weight: 700;
+    background: linear-gradient(145deg, #ffedd5 0%, #fed7aa 100%);
+    box-shadow: inset 0 1px 3px rgba(234, 88, 12, 0.1);
+}
+
+.mark-cell.medium {
+    color: #0891b2;
+    font-weight: 700;
+    background: linear-gradient(145deg, #cffafe 0%, #a5f3fc 100%);
+    box-shadow: inset 0 1px 3px rgba(8, 145, 178, 0.1);
 }
 
 .mark-cell.high {
     color: #059669;
     font-weight: 800;
+    background: linear-gradient(145deg, #d1fae5 0%, #a7f3d0 100%);
+    box-shadow: inset 0 1px 3px rgba(5, 150, 105, 0.1);
 }
 
-.mark-cell.total {
+.mark-cell.total-cell {
     font-weight: 800;
     font-size: 0.85rem;
     background: #eff6ff;
 }
 
-.mark-cell.total.low {
-    color: #dc2626;
-    background: white;
+.mark-cell.total-cell.fail {
+    background: linear-gradient(145deg, #fee2e2 0%, #fecaca 100%);
+    border-left: 3px solid #dc2626;
 }
 
-.mark-cell.total.high {
-    color: #059669;
-    background: white;
+.mark-cell.total-cell.low {
+    background: linear-gradient(145deg, #ffedd5 0%, #fed7aa 100%);
+    border-left: 3px solid #ea580c;
 }
 
-.mark-cell.max {
+.mark-cell.total-cell.medium {
+    background: linear-gradient(145deg, #cffafe 0%, #a5f3fc 100%);
+    border-left: 3px solid #0891b2;
+}
+
+.mark-cell.total-cell.high {
+    background: linear-gradient(145deg, #d1fae5 0%, #a7f3d0 100%);
+    border-left: 3px solid #059669;
+}
+
+.mark-cell.max-cell {
     color: #d97706;
     font-weight: 700;
     font-size: 0.7rem;
     background: #fffbeb;
+}
+
+.mark-cell.grand-total {
+    font-weight: 900;
+    font-size: 0.95rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.mark-cell.grand-total.fail {
+    background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+}
+
+.mark-cell.grand-total.low {
+    background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+}
+
+.mark-cell.grand-total.medium {
+    background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+}
+
+.mark-cell.grand-total.high {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+}
+
+.mark-cell.grade-cell {
+    font-weight: 900;
+    font-size: 1rem;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.grade-A\+, .mark-cell.grade-A\+ {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+}
+
+.grade-A, .mark-cell.grade-A {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+}
+
+.grade-B, .mark-cell.grade-B {
+    background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+    color: white;
+}
+
+.grade-C, .mark-cell.grade-C {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+}
+
+.grade-D, .mark-cell.grade-D {
+    background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+    color: white;
+}
+
+.grade-F, .mark-cell.grade-F {
+    background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+    color: white;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+.total-row {
+    background: linear-gradient(145deg, #f8fafc 0%, #e5e7eb 100%);
+    font-weight: 800;
+}
+
+.total-row .subject-name {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.total-header {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    font-weight: 800;
+    font-size: 0.85rem;
 }
 
 @media (min-width: 768px) {
@@ -1076,11 +1225,12 @@
     }
 }
 
-.grade.A { background: #d1fae5; color: #065f46; }
-.grade.B { background: #dbeafe; color: #1e40af; }
-.grade.C { background: #fef3c7; color: #92400e; }
-.grade.D { background: #fee2e2; color: #991b1b; }
-.grade.F { background: #fecaca; color: #7f1d1d; font-weight: 800; }
+.grade.A\+, .grade-A\+ { background: linear-gradient(135deg, #10b981, #059669); color: white; }
+.grade.A, .grade-A { background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; }
+.grade.B, .grade-B { background: linear-gradient(135deg, #0891b2, #0e7490); color: white; }
+.grade.C, .grade-C { background: linear-gradient(135deg, #f59e0b, #d97706); color: white; }
+.grade.D, .grade-D { background: linear-gradient(135deg, #ea580c, #c2410c); color: white; }
+.grade.F, .grade-F { background: linear-gradient(135deg, #dc2626, #991b1b); color: white; font-weight: 800; }
 
 .performance-summary {
     display: grid;

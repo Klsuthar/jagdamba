@@ -1,4 +1,4 @@
-const CACHE_NAME = 'jagdamba-v6.4';
+const CACHE_NAME = 'jagdamba-v7.0-optimized';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -7,15 +7,20 @@ const urlsToCache = [
   '/pages/contact.html',
   '/sections/progress.html',
   '/css/main.css',
+  '/css/header.css',
   '/css/hero.css',
   '/css/home.css',
-  '/css/modern-ui.css',
   '/css/footer.css',
   '/css/about.css',
   '/css/gallery.css',
   '/css/contact.css',
   '/css/progress.css',
+  '/css/animations.css',
+  '/css/flip-card.css',
+  '/css/principal-card.css',
+  '/js/pwa.js',
   '/js/main.js',
+  '/js/header.js',
   '/js/hero.js',
   '/js/home.js',
   '/js/footer.js',
@@ -23,6 +28,8 @@ const urlsToCache = [
   '/js/gallery.js',
   '/js/contact.js',
   '/js/progress.js',
+  '/js/scroll-optimization.js',
+  '/js/scroll-animation.js',
   '/images/logo.png',
   '/images/favicon.ico'
 ];
