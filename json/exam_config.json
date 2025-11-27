@@ -57,7 +57,7 @@
       "tests": [
         {
           "id": "test1",
-          "name": "Class Test 1",
+          "name": "First Test",
           "file": "json/class3/test1.json",
           "max_marks": {
             "hindi": 10,
@@ -68,7 +68,7 @@
         },
         {
           "id": "test2",
-          "name": "Class Test 2",
+          "name": "Second Test",
           "file": "json/class3/test2.json",
           "max_marks": {
             "hindi": 10,
@@ -79,7 +79,7 @@
         },
         {
           "id": "test3",
-          "name": "Class Test 3",
+          "name": "Third Test",
           "file": "json/class3/test3.json",
           "max_marks": {
             "hindi": 10,

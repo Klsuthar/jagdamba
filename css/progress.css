@@ -852,7 +852,7 @@
 .marks-table td {
     padding: 0.8rem 0.5rem;
     text-align: center;
-    border: 1px solid #e5e7eb;
+    border: 1px solid #d1d5db;
 }
 
 .marks-table tbody tr:nth-child(odd) {

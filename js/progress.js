@@ -76,11 +76,12 @@ async function loadExamResults(configKey, classKey, className, idPrefix) {
                     if (result.subjects && Array.isArray(result.subjects) && result.subjects.length > 0) {
                         subjects = result.subjects;
                     } else if ('hindi' in result || 'english' in result) {
+                        const maxMarks = exam.max_marks || {};
                         subjects = [
-                            { name: 'Hindi', obtained: result.hindi, total: 10, grade: 'A' },
-                            { name: 'English', obtained: result.english, total: 5, grade: 'A' },
-                            { name: 'Mathematics', obtained: result.mathematics, total: 10, grade: 'A' },
-                            { name: 'EVS', obtained: result.evs, total: 10, grade: 'A' }
+                            { name: 'Hindi', obtained: result.hindi, total: maxMarks.hindi || 10, grade: 'A' },
+                            { name: 'English', obtained: result.english, total: maxMarks.english || 5, grade: 'A' },
+                            { name: 'Mathematics', obtained: result.mathematics, total: maxMarks.mathematics || 10, grade: 'A' },
+                            { name: 'EVS', obtained: result.evs, total: maxMarks.evs || 10, grade: 'A' }
                         ];
                     } else if ('hindi_written' in result || 'hindi_oral' in result) {
                         const hw = result.hindi_written;
@@ -92,11 +93,17 @@ async function loadExamResults(configKey, classKey, className, idPrefix) {
                         const evw = result.evs_written;
                         const evo = result.evs_oral;
                         
+                        const subjectConfig = exam.subjects || {};
+                        const hindiTotal = (subjectConfig.hindi?.written || 0) + (subjectConfig.hindi?.oral || 0);
+                        const englishTotal = (subjectConfig.english?.written || 0) + (subjectConfig.english?.oral || 0);
+                        const mathTotal = (subjectConfig.mathematics?.written || 0) + (subjectConfig.mathematics?.oral || 0);
+                        const evsTotal = (subjectConfig.evs?.written || 0) + (subjectConfig.evs?.oral || 0);
+                        
                         subjects = [
-                            { name: 'Hindi', written: hw, oral: ho, obtained: ((hw||0) + (ho||0)) || null, total: 100, grade: 'A' },
-                            { name: 'English', written: ew, oral: eo, obtained: ((ew||0) + (eo||0)) || null, total: 50, grade: 'A' },
-                            { name: 'Mathematics', written: mw, oral: mo, obtained: ((mw||0) + (mo||0)) || null, total: 100, grade: 'A' },
-                            { name: 'EVS', written: evw, oral: evo, obtained: ((evw||0) + (evo||0)) || null, total: 100, grade: 'A' }
+                            { name: 'Hindi', written: hw, oral: ho, obtained: ((hw||0) + (ho||0)) || null, total: hindiTotal, grade: 'A' },
+                            { name: 'English', written: ew, oral: eo, obtained: ((ew||0) + (eo||0)) || null, total: englishTotal, grade: 'A' },
+                            { name: 'Mathematics', written: mw, oral: mo, obtained: ((mw||0) + (mo||0)) || null, total: mathTotal, grade: 'A' },
+                            { name: 'EVS', written: evw, oral: evo, obtained: ((evw||0) + (evo||0)) || null, total: evsTotal, grade: 'A' }
                         ];
                     }
                     
@@ -280,13 +287,9 @@ function displayAllExams(student, studentId, allExams) {
                 const t = sub.obtained !== null ? sub.obtained : null;
                 const max = sub.total || 100;
                 
-                const wClass = w !== null && w < (max * 0.33 / 2) ? 'fail' : w !== null && w < (max * 0.6 / 2) ? 'low' : w !== null && w >= (max * 0.75 / 2) ? 'high' : 'medium';
-                const oClass = o !== null && o < (max * 0.33 / 2) ? 'fail' : o !== null && o < (max * 0.6 / 2) ? 'low' : o !== null && o >= (max * 0.75 / 2) ? 'high' : 'medium';
-                const tClass = t !== null && t < (max * 0.33) ? 'fail' : t !== null && t < (max * 0.6) ? 'low' : t !== null && t >= (max * 0.75) ? 'high' : 'medium';
-                
-                row += `<td class="mark-cell ${wClass}">${w !== null ? w : ''}</td>`;
-                row += `<td class="mark-cell ${oClass}">${o !== null ? o : ''}</td>`;
-                row += `<td class="mark-cell total-cell ${tClass}">${t !== null ? t : ''}</td>`;
+                row += `<td class="mark-cell">${w !== null ? w : ''}</td>`;
+                row += `<td class="mark-cell">${o !== null ? o : ''}</td>`;
+                row += `<td class="mark-cell total-cell">${t !== null ? t : ''}</td>`;
                 row += `<td class="mark-cell max-cell">${max}</td>`;
                 
                 subjectTotal += t;
@@ -294,9 +297,8 @@ function displayAllExams(student, studentId, allExams) {
             } else {
                 const obt = sub.obtained !== null ? sub.obtained : null;
                 const max = sub.total || 10;
-                const obtClass = obt !== null && obt < (max * 0.33) ? 'fail' : obt !== null && obt < (max * 0.6) ? 'low' : obt !== null && obt >= (max * 0.75) ? 'high' : 'medium';
                 
-                row += `<td class="mark-cell total-cell ${obtClass}">${obt !== null ? obt : ''}</td>`;
+                row += `<td class="mark-cell total-cell">${obt !== null ? obt : ''}</td>`;
                 row += `<td class="mark-cell max-cell">${max}</td>`;
                 
                 subjectTotal += obt;
