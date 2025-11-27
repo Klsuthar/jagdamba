@@ -253,7 +253,6 @@ function displayAllExams(student, studentId, allExams) {
         colspanCount.push(hasWrittenOral);
         headerCols += `<th colspan="${colspan}" class="exam-header">${exam.examType}</th>`;
     });
-    headerCols += '<th class="total-header">Grand Total</th>';
     
     let subHeaderCols = '<th class="subject-col"></th>';
     colspanCount.forEach(hasWrittenOral => {
@@ -263,7 +262,6 @@ function displayAllExams(student, studentId, allExams) {
             subHeaderCols += '<th class="sub-header">Obt</th><th class="sub-header">Max</th>';
         }
     });
-    subHeaderCols += '<th class="sub-header">Total</th>';
     
     let rows = '';
     let grandTotalObtained = 0;
@@ -306,38 +304,12 @@ function displayAllExams(student, studentId, allExams) {
             }
         });
         
-        const gradeClass = subjectMax > 0 && (subjectTotal / subjectMax) * 100 < 33 ? 'fail' : subjectMax > 0 && (subjectTotal / subjectMax) * 100 < 60 ? 'low' : subjectMax > 0 && (subjectTotal / subjectMax) * 100 >= 75 ? 'high' : 'medium';
-        
-        row += `<td class="mark-cell grand-total ${gradeClass}">${subjectTotal}</td>`;
         row += '</tr>';
         rows += row;
         
         grandTotalObtained += subjectTotal;
         grandTotalMax += subjectMax;
     });
-    
-    const overallClass = grandTotalMax > 0 && (grandTotalObtained / grandTotalMax) * 100 < 33 ? 'fail' : grandTotalMax > 0 && (grandTotalObtained / grandTotalMax) * 100 < 60 ? 'low' : grandTotalMax > 0 && (grandTotalObtained / grandTotalMax) * 100 >= 75 ? 'high' : 'medium';
-    
-    rows += `
-        <tr class="total-row">
-            <td class="subject-name">TOTAL</td>
-            ${allExams.map((exam, idx) => {
-                let examTotal = 0;
-                let examMax = 0;
-                subjects.forEach((_, subIdx) => {
-                    const sub = exam.subjects[subIdx];
-                    examTotal += sub.obtained || 0;
-                    examMax += sub.total || 0;
-                });
-                const examPerc = examMax > 0 ? (examTotal / examMax) * 100 : 0;
-                const examClass = examPerc < 33 ? 'fail' : examPerc < 60 ? 'low' : examPerc >= 75 ? 'high' : 'medium';
-                return colspanCount[idx] ? 
-                    `<td colspan="3" class="mark-cell total-cell ${examClass}">${examTotal}</td><td class="mark-cell max-cell">${examMax}</td>` :
-                    `<td class="mark-cell total-cell ${examClass}">${examTotal}</td><td class="mark-cell max-cell">${examMax}</td>`;
-            }).join('')}
-            <td class="mark-cell grand-total ${overallClass}">${grandTotalObtained}</td>
-        </tr>
-    `;
     
     container.innerHTML = `
         <div class="exams-container">
