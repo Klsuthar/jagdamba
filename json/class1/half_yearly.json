@@ -88,7 +88,7 @@
     "roll_no": 8,
     "student_name": "RADHIKA",
     "subjects": [
-      {"name": "Mathematics", "written": 1, "oral": 60, "obtained": 61, "total": 100},
+      {"name": "Mathematics", "written": 16, "oral": 60, "obtained": 61, "total": 100},
       {"name": "Hindi", "written": 28, "oral": 65, "obtained": 93, "total": 100},
       {"name": "English", "written": 13, "oral": 34, "obtained": 47, "total": 100},
       {"name": "EVS", "obtained": null, "total": 50}
