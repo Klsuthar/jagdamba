@@ -2,7 +2,7 @@
 const gallerySection = document.querySelector('.gallery-section');
 window.eventImages = [];
 
-fetch('../json/gallery_events.json')
+fetch('../json/gallery_events.json?v=' + Date.now())
     .then(response => {
         if (!response.ok) throw new Error('JSON not found');
         return response.json();
