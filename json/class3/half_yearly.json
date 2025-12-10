@@ -8,7 +8,7 @@
   { "roll_no": 7, "student_name": "DINESH SIMAR", "hindi_written": 31, "hindi_oral": 15, "english_written": null, "english_oral": null, "math_written": 27, "math_oral": 12, "evs_written": 30, "evs_oral": 13 },
   { "roll_no": 8, "student_name": "DIVYA", "hindi_written": 29, "hindi_oral": 10, "english_written": null, "english_oral": null, "math_written": 45, "math_oral": 19, "evs_written": 33, "evs_oral": 14 },
   { "roll_no": 9, "student_name": "GOURI", "hindi_written": 20, "hindi_oral": 10, "english_written": null, "english_oral": null, "math_written": 30, "math_oral": 14, "evs_written": 35, "evs_oral": 15 },
-  { "roll_no": 10, "student_name": "HEJAL PAL", "hindi_written": null, "hindi_oral": null, "english_written": null, "english_oral": null, "math_written": null, "math_oral": null, "evs_written": null, "evs_oral": null },
+  { "roll_no": 10, "student_name": "HEJAL PAL", "hindi_written": 41, "hindi_oral": 20, "english_written": null, "english_oral": null, "math_written": 27, "math_oral": 18, "evs_written": null, "evs_oral": null },
   { "roll_no": 11, "student_name": "KANAK", "hindi_written": 25, "hindi_oral": 10, "english_written": null, "english_oral": null, "math_written": 40, "math_oral": 15, "evs_written": 29, "evs_oral": 10 },
   { "roll_no": 12, "student_name": "KAUSHALYA", "hindi_written": 40, "hindi_oral": 20, "english_written": null, "english_oral": null, "math_written": 44, "math_oral": 18, "evs_written": 45, "evs_oral": 20 },
   { "roll_no": 13, "student_name": "LAXMI", "hindi_written": 26, "hindi_oral": 10, "english_written": null, "english_oral": null, "math_written": 40, "math_oral": 15, "evs_written": 31, "evs_oral": 13 },

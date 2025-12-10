@@ -18,7 +18,7 @@
   { "roll_no": 17, "student_name": "NAVEEN", "hindi_written": 26, "hindi_oral": 65, "english_written": 11, "english_oral": 32, "math_written": 18, "math_oral": 55, "evs_written": 34 },
   { "roll_no": 18, "student_name": "NEHA", "hindi_written": 28, "hindi_oral": 68, "english_written": 15, "english_oral": 34, "math_written": 19, "math_oral": 50, "evs_written": 38 },
   { "roll_no": 19, "student_name": "PANKAJ", "hindi_written": 25, "hindi_oral": 65, "english_written": 14, "english_oral": 35, "math_written": 25, "math_oral": 65, "evs_written": 34 },
-  { "roll_no": 20, "student_name": "RIYAAS PAL", "hindi_written": null, "hindi_oral": null, "english_written": null, "english_oral": null, "math_written": null, "math_oral": null, "evs_written": null },
+  { "roll_no": 20, "student_name": "RIYAAS PAL", "hindi_written": null, "hindi_oral": null, "english_written": null, "english_oral": null, "math_written": 23, "math_oral": 60, "evs_written": null },
   { "roll_no": 21, "student_name": "SHIVRAJ", "hindi_written": 21, "hindi_oral": 61, "english_written": 15, "english_oral": 35, "math_written": 29, "math_oral": 62, "evs_written": 30 },
   { "roll_no": 22, "student_name": "SUNITA", "hindi_written": 26, "hindi_oral": 65, "english_written": 13, "english_oral": 34, "math_written": 15, "math_oral": 50, "evs_written": 38 },
   { "roll_no": 23, "student_name": "VIJAY", "hindi_written": 26, "hindi_oral": 65, "english_written": 14, "english_oral": 34, "math_written": 27, "math_oral": 65, "evs_written": 42 }
