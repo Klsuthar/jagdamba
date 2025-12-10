@@ -34,7 +34,7 @@ fetch('../json/gallery_events.json?v=' + Date.now())
                     </div>
                     <div class="gallery-info">
                         <h3>${event.eventName}</h3>
-                        <p><i class="fas fa-calendar"></i> School Event</p>
+                        <p class="photo-count"><i class="fas fa-images"></i> ${event.images.length} Photos</p>
                     </div>
                 </div>`;
         });
