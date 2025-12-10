@@ -12,16 +12,16 @@ let attendanceData = { class_1: {}, class_2: {}, class_3: {} };
 
 async function loadStudentData() {
     try {
-        const configResponse = await fetch('../json/exam_config.json');
+        const configResponse = await fetch('../json/exam_config.json?v=' + Date.now());
         examConfig = await configResponse.json();
         
         const [class1Students, class2Students, class3Students, class1Attendance, class2Attendance, class3Attendance] = await Promise.all([
-            fetch('../json/class1/class1_students.json').then(r => r.json()),
-            fetch('../json/class2/class2_students.json').then(r => r.json()),
-            fetch('../json/class3/class3_students.json').then(r => r.json()),
-            fetch('../json/class1/attendance.json').then(r => r.json()),
-            fetch('../json/class2/attendance.json').then(r => r.json()),
-            fetch('../json/class3/attendance.json').then(r => r.json())
+            fetch('../json/class1/class1_students.json?v=' + Date.now()).then(r => r.json()),
+            fetch('../json/class2/class2_students.json?v=' + Date.now()).then(r => r.json()),
+            fetch('../json/class3/class3_students.json?v=' + Date.now()).then(r => r.json()),
+            fetch('../json/class1/attendance.json?v=' + Date.now()).then(r => r.json()),
+            fetch('../json/class2/attendance.json?v=' + Date.now()).then(r => r.json()),
+            fetch('../json/class3/attendance.json?v=' + Date.now()).then(r => r.json())
         ]);
         
         class1Attendance.forEach(a => attendanceData.class_1[a.student_id] = a.attendance);
@@ -67,7 +67,7 @@ async function loadExamResults(configKey, classKey, className, idPrefix) {
     for (const exam of [...tests, ...exams]) {
         if (exam.file) {
             try {
-                const results = await fetch(`../${exam.file}`).then(r => r.json());
+                const results = await fetch(`../${exam.file}?v=${Date.now()}`).then(r => r.json());
                 
                 results.forEach(result => {
                     const studentId = result.student_id || `${idPrefix}${result.roll_no.toString().padStart(2, '0')}`;
@@ -229,7 +229,16 @@ function goBack() {
     }
 }
 
+let currentExamConfigs = [];
+
 function displayAllExams(student, studentId, allExams) {
+    currentExamConfigs = allExams.map(exam => {
+        const classKey = student.class.includes('1') ? 'class1' : student.class.includes('2') ? 'class2' : 'class3';
+        const examType = exam.examType.toLowerCase();
+        const configExams = examConfig.classes[classKey].exams || [];
+        const configTests = examConfig.classes[classKey].tests || [];
+        return [...configTests, ...configExams].find(e => e.name === exam.examType) || {};
+    });
     const photoElement = document.getElementById('studentPhoto');
     const studentData = classData.class_1.students.concat(classData.class_2.students, classData.class_3.students).find(s => s.id === studentId);
     photoElement.src = studentData ? studentData.photo : student.photo;
@@ -256,7 +265,7 @@ function displayAllExams(student, studentId, allExams) {
     let colspanCount = [];
     allExams.forEach(exam => {
         const hasWrittenOral = exam.examType.includes('Yearly') || exam.examType.includes('Half Yearly');
-        const colspan = hasWrittenOral ? 4 : 2;
+        const colspan = hasWrittenOral ? 3 : 1;
         colspanCount.push(hasWrittenOral);
         headerCols += `<th colspan="${colspan}" class="exam-header">${exam.examType}</th>`;
     });
@@ -264,9 +273,9 @@ function displayAllExams(student, studentId, allExams) {
     let subHeaderCols = '<th class="subject-col"></th>';
     colspanCount.forEach(hasWrittenOral => {
         if (hasWrittenOral) {
-            subHeaderCols += '<th class="sub-header">W</th><th class="sub-header">O</th><th class="sub-header">T</th><th class="sub-header">Max</th>';
+            subHeaderCols += '<th class="sub-header">Written</th><th class="sub-header">Oral</th><th class="sub-header">Total</th>';
         } else {
-            subHeaderCols += '<th class="sub-header">Obt</th><th class="sub-header">Max</th>';
+            subHeaderCols += '<th class="sub-header">Marks</th>';
         }
     });
     
@@ -287,10 +296,14 @@ function displayAllExams(student, studentId, allExams) {
                 const t = sub.obtained !== null ? sub.obtained : null;
                 const max = sub.total || 100;
                 
-                row += `<td class="mark-cell">${w !== null ? w : ''}</td>`;
-                row += `<td class="mark-cell">${o !== null ? o : ''}</td>`;
-                row += `<td class="mark-cell total-cell">${t !== null ? t : ''}</td>`;
-                row += `<td class="mark-cell max-cell">${max}</td>`;
+                const examCfg = currentExamConfigs[examIdx];
+                const subKey = subject.toLowerCase();
+                const subCfg = examCfg.subjects?.[subKey] || {};
+                const wMax = subCfg.written || '';
+                const oMax = subCfg.oral || '';
+                row += `<td class="mark-cell"><div class="mark-fraction"><span class="mark-obtained">${w !== null ? w : ''}</span><div class="mark-divider"></div><span class="mark-max">${wMax}</span></div></td>`;
+                row += `<td class="mark-cell"><div class="mark-fraction"><span class="mark-obtained">${o !== null ? o : ''}</span><div class="mark-divider"></div><span class="mark-max">${oMax}</span></div></td>`;
+                row += `<td class="mark-cell total-cell"><div class="mark-fraction"><span class="mark-obtained">${t !== null ? t : ''}</span><div class="mark-divider"></div><span class="mark-max">${max}</span></div></td>`;
                 
                 subjectTotal += t;
                 subjectMax += max;
@@ -298,8 +311,7 @@ function displayAllExams(student, studentId, allExams) {
                 const obt = sub.obtained !== null ? sub.obtained : null;
                 const max = sub.total || 10;
                 
-                row += `<td class="mark-cell total-cell">${obt !== null ? obt : ''}</td>`;
-                row += `<td class="mark-cell max-cell">${max}</td>`;
+                row += `<td class="mark-cell total-cell"><div class="mark-fraction"><span class="mark-obtained">${obt !== null ? obt : ''}</span><div class="mark-divider"></div><span class="mark-max">${max}</span></div></td>`;
                 
                 subjectTotal += obt;
                 subjectMax += max;
