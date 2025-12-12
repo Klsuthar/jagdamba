@@ -1,182 +1,512 @@
 [
-  {
-    "student_id": "STU1_01",
-    "roll_no": 1,
-    "student_name": "ANKIT JANGIR",
-    "subjects": [
-      {"name": "Mathematics", "written": 14, "oral": 45, "obtained": 59, "total": 100},
-      {"name": "Hindi", "written": 17, "oral": 50, "obtained": 67, "total": 100},
-      {"name": "English", "written": 9, "oral": 30, "obtained": 39, "total": 100},
-      {"name": "EVS", "obtained": null, "total": 50}
-    ],
-    "attendance": 94
-  },
-  {
-    "student_id": "STU1_02",
-    "roll_no": 2,
-    "student_name": "ANUSHKA KANWAR",
-    "subjects": [
-      {"name": "Mathematics", "written": 14, "oral": 45, "obtained": 59, "total": 100},
-      {"name": "Hindi", "written": 25, "oral": 65, "obtained": 30, "total": 100},
-      {"name": "English", "written": 6, "oral": 25, "obtained": 31, "total": 100},
-      {"name": "EVS", "obtained": null, "total": 50}
-    ],
-    "attendance": 97
-  },
-  {
-    "student_id": "STU1_03",
-    "roll_no": 3,
-    "student_name": "DEEPIKA",
-    "subjects": [
-      {"name": "Mathematics", "written": 25, "oral": 68, "obtained": 93, "total": 100},
-      {"name": "Hindi", "written": 24, "oral": 65, "obtained": 89, "total": 100},
-      {"name": "English", "written": 14, "oral": 34, "obtained": 48, "total": 100},
-      {"name": "EVS", "obtained": null, "total": 50}
-    ],
-    "attendance": 91
-  },
-  {
-    "student_id": "STU1_04",
-    "roll_no": 4,
-    "student_name": "DHARMENDRA",
-    "subjects": [
-      {"name": "Mathematics", "written": 27, "oral": 68, "obtained": 35, "total": 100},
-      {"name": "Hindi", "written": 30, "oral": 70, "obtained": 30, "total": 100},
-      {"name": "English", "written": 15, "oral": 35, "obtained": 50, "total": 100},
-      {"name": "EVS", "obtained": null, "total": 50}
-    ],
-    "attendance": 95
-  },
-  {
-    "student_id": "STU1_05",
-    "roll_no": 5,
-    "student_name": "DHARNA",
-    "subjects": [
-      {"name": "Mathematics", "written": 19, "oral": 55, "obtained": 74, "total": 100},
-      {"name": "Hindi", "written": 27, "oral": 70, "obtained": 97, "total": 100},
-      {"name": "English", "written": 13, "oral": 34, "obtained": 47, "total": 100},
-      {"name": "EVS", "obtained": null, "total": 50}
-    ],
-    "attendance": 96
-  },
-  {
-    "student_id": "STU1_06",
-    "roll_no": 6,
-    "student_name": "MAHIR SINGH",
-    "subjects": [
-      {"name": "Mathematics", "written": 23, "oral": 67, "obtained": 90, "total": 100},
-      {"name": "Hindi", "written": 28, "oral": 70, "obtained": 98, "total": 100},
-      {"name": "English", "written": 15, "oral": 35, "obtained": 50, "total": 100},
-      {"name": "EVS", "obtained": null, "total": 50}
-    ],
-    "attendance": 88
-  },
-  {
-    "student_id": "STU1_07",
-    "roll_no": 7,
-    "student_name": "POONAM",
-    "subjects": [
-      {"name": "Mathematics", "written": 17, "oral": 50, "obtained": 67, "total": 100},
-      {"name": "Hindi", "written": 30, "oral": 70, "obtained": 100, "total": 100},
-      {"name": "English", "written": 14, "oral": 35, "obtained": 49, "total": 100},
-      {"name": "EVS", "obtained": null, "total": 50}
-    ],
-    "attendance": 98
-  },
-  {
-    "student_id": "STU1_08",
-    "roll_no": 8,
-    "student_name": "RADHIKA",
-    "subjects": [
-      {"name": "Mathematics", "written": 16, "oral": 60, "obtained": 61, "total": 100},
-      {"name": "Hindi", "written": 28, "oral": 65, "obtained": 93, "total": 100},
-      {"name": "English", "written": 13, "oral": 34, "obtained": 47, "total": 100},
-      {"name": "EVS", "obtained": null, "total": 50}
-    ],
-    "attendance": 92
-  },
-  {
-    "student_id": "STU1_09",
-    "roll_no": 9,
-    "student_name": "RAKSHA NEHARA",
-    "subjects": [
-      {"name": "Mathematics", "written": 20, "oral": 65, "obtained": 85, "total": 100},
-      {"name": "Hindi", "written": 20, "oral": 50, "obtained": 70, "total": 100},
-      {"name": "English", "written": 15, "oral": 35, "obtained": 50, "total": 100},
-      {"name": "EVS", "obtained": null, "total": 50}
-    ],
-    "attendance": 95
-  },
-  {
-    "student_id": "STU1_10",
-    "roll_no": 10,
-    "student_name": "ROHIT NYOL",
-    "subjects": [
-      {"name": "Mathematics", "written": 17, "oral": 50, "obtained": 67, "total": 100},
-      {"name": "Hindi", "written": 30, "oral": 70, "obtained": 100, "total": 100},
-      {"name": "English", "written": 13, "oral": 34, "obtained": 47, "total": 100},
-      {"name": "EVS", "obtained": null, "total": 50}
-    ],
-    "attendance": 89
-  },
-  {
-    "student_id": "STU1_11",
-    "roll_no": 11,
-    "student_name": "SHIV KUMAR",
-    "subjects": [
-      {"name": "Mathematics", "written": 4, "oral": 35, "obtained": 39, "total": 100},
-      {"name": "Hindi", "written": 27, "oral": 65, "obtained": 92, "total": 100},
-      {"name": "English", "written": 8, "oral": 30, "obtained": 38, "total": 100},
-      {"name": "EVS", "obtained": null, "total": 50}
-    ],
-    "attendance": 94
-  },
-  {
-    "student_id": "STU1_12",
-    "roll_no": 12,
-    "student_name": "TEENA SWAMI",
-    "subjects": [
-      {"name": "Mathematics", "written": 20, "oral": 65, "obtained": 85, "total": 100},
-      {"name": "Hindi", "written": 27, "oral": 65, "obtained": 92, "total": 100},
-      {"name": "English", "written": 15, "oral": 35, "obtained": 50, "total": 100},
-      {"name": "EVS", "obtained": null, "total": 50}
-    ],
-    "attendance": 98
-  },
-  {
-    "student_id": "STU1_13",
-    "roll_no": 13,
-    "student_name": "VISHAKHA",
-    "subjects": [
-      {"name": "Mathematics", "written": 18, "oral": 50, "obtained": 68, "total": 100},
-      {"name": "Hindi", "written": 29, "oral": 70, "obtained": 99, "total": 100},
-      {"name": "English", "written": 15, "oral": 35, "obtained": 50, "total": 100},
-      {"name": "EVS", "obtained": null, "total": 50}
-    ],
-    "attendance": 90
-  },
-  {
-    "student_id": "STU1_14",
-    "roll_no": 14,
-    "student_name": "YUVRAJ SINGH",
-    "subjects": [
-      {"name": "Mathematics", "written": 13, "oral": 45, "obtained": 58, "total": 100},
-      {"name": "Hindi", "written": 30, "oral": 70, "obtained": 100, "total": 100},
-      {"name": "English", "written": 11, "oral": 30, "obtained": 41, "total": 100},
-      {"name": "EVS", "obtained": null, "total": 50}
-    ],
-    "attendance": 96
-  },
-  {
-    "student_id": "STU1_15",
-    "roll_no": 15,
-    "student_name": "DIVYA SUTHAR",
-    "subjects": [
-      {"name": "Mathematics", "written": 12, "oral": 45, "obtained": 57, "total": 100},
-      {"name": "Hindi", "written": 21, "oral": 60, "obtained": 81, "total": 100},
-      {"name": "English", "written": 9, "oral": 30, "obtained": 39, "total": 100},
-      {"name": "EVS", "obtained": null, "total": 50}
-    ],
-    "attendance": 93
-  }
+    {
+        "student_id":  "STU1_01",
+        "roll_no":  1,
+        "student_name":  "ANKIT JANGIR",
+        "subjects":  [
+                         {
+                             "name":  "Mathematics",
+                             "written":  14,
+                             "oral":  60,
+                             "obtained":  74,
+                             "total":  100
+                         },
+                         {
+                             "name":  "Hindi",
+                             "written":  17,
+                             "oral":  62,
+                             "obtained":  79,
+                             "total":  100
+                         },
+                         {
+                             "name":  "English",
+                             "written":  9,
+                             "oral":  30,
+                             "obtained":  39,
+                             "total":  100
+                         },
+                         {
+                             "name":  "EVS",
+                             "obtained":  null,
+                             "total":  50
+                         }
+                     ],
+        "attendance":  94
+    },
+    {
+        "student_id":  "STU1_02",
+        "roll_no":  2,
+        "student_name":  "ANUSHKA KANWAR",
+        "subjects":  [
+                         {
+                             "name":  "Mathematics",
+                             "written":  14,
+                             "oral":  60,
+                             "obtained":  74,
+                             "total":  100
+                         },
+                         {
+                             "name":  "Hindi",
+                             "written":  25,
+                             "oral":  66,
+                             "obtained":  91,
+                             "total":  100
+                         },
+                         {
+                             "name":  "English",
+                             "written":  6,
+                             "oral":  25,
+                             "obtained":  31,
+                             "total":  100
+                         },
+                         {
+                             "name":  "EVS",
+                             "obtained":  null,
+                             "total":  50
+                         }
+                     ],
+        "attendance":  97
+    },
+    {
+        "student_id":  "STU1_03",
+        "roll_no":  3,
+        "student_name":  "DEEPIKA",
+        "subjects":  [
+                         {
+                             "name":  "Mathematics",
+                             "written":  25,
+                             "oral":  68,
+                             "obtained":  93,
+                             "total":  100
+                         },
+                         {
+                             "name":  "Hindi",
+                             "written":  24,
+                             "oral":  66,
+                             "obtained":  90,
+                             "total":  100
+                         },
+                         {
+                             "name":  "English",
+                             "written":  14,
+                             "oral":  34,
+                             "obtained":  48,
+                             "total":  100
+                         },
+                         {
+                             "name":  "EVS",
+                             "obtained":  null,
+                             "total":  50
+                         }
+                     ],
+        "attendance":  91
+    },
+    {
+        "student_id":  "STU1_04",
+        "roll_no":  4,
+        "student_name":  "DHARMENDRA",
+        "subjects":  [
+                         {
+                             "name":  "Mathematics",
+                             "written":  27,
+                             "oral":  69,
+                             "obtained":  96,
+                             "total":  100
+                         },
+                         {
+                             "name":  "Hindi",
+                             "written":  30,
+                             "oral":  70,
+                             "obtained":  100,
+                             "total":  100
+                         },
+                         {
+                             "name":  "English",
+                             "written":  15,
+                             "oral":  35,
+                             "obtained":  50,
+                             "total":  100
+                         },
+                         {
+                             "name":  "EVS",
+                             "obtained":  null,
+                             "total":  50
+                         }
+                     ],
+        "attendance":  95
+    },
+    {
+        "student_id":  "STU1_05",
+        "roll_no":  5,
+        "student_name":  "DHARNA",
+        "subjects":  [
+                         {
+                             "name":  "Mathematics",
+                             "written":  19,
+                             "oral":  63,
+                             "obtained":  82,
+                             "total":  100
+                         },
+                         {
+                             "name":  "Hindi",
+                             "written":  27,
+                             "oral":  70,
+                             "obtained":  97,
+                             "total":  100
+                         },
+                         {
+                             "name":  "English",
+                             "written":  13,
+                             "oral":  34,
+                             "obtained":  47,
+                             "total":  100
+                         },
+                         {
+                             "name":  "EVS",
+                             "obtained":  null,
+                             "total":  50
+                         }
+                     ],
+        "attendance":  96
+    },
+    {
+        "student_id":  "STU1_06",
+        "roll_no":  6,
+        "student_name":  "MAHIR SINGH",
+        "subjects":  [
+                         {
+                             "name":  "Mathematics",
+                             "written":  23,
+                             "oral":  67,
+                             "obtained":  90,
+                             "total":  100
+                         },
+                         {
+                             "name":  "Hindi",
+                             "written":  28,
+                             "oral":  70,
+                             "obtained":  98,
+                             "total":  100
+                         },
+                         {
+                             "name":  "English",
+                             "written":  15,
+                             "oral":  35,
+                             "obtained":  50,
+                             "total":  100
+                         },
+                         {
+                             "name":  "EVS",
+                             "obtained":  null,
+                             "total":  50
+                         }
+                     ],
+        "attendance":  88
+    },
+    {
+        "student_id":  "STU1_07",
+        "roll_no":  7,
+        "student_name":  "POONAM",
+        "subjects":  [
+                         {
+                             "name":  "Mathematics",
+                             "written":  17,
+                             "oral":  60,
+                             "obtained":  77,
+                             "total":  100
+                         },
+                         {
+                             "name":  "Hindi",
+                             "written":  30,
+                             "oral":  70,
+                             "obtained":  100,
+                             "total":  100
+                         },
+                         {
+                             "name":  "English",
+                             "written":  14,
+                             "oral":  35,
+                             "obtained":  49,
+                             "total":  100
+                         },
+                         {
+                             "name":  "EVS",
+                             "obtained":  null,
+                             "total":  50
+                         }
+                     ],
+        "attendance":  98
+    },
+    {
+        "student_id":  "STU1_08",
+        "roll_no":  8,
+        "student_name":  "RADHIKA",
+        "subjects":  [
+                         {
+                             "name":  "Mathematics",
+                             "written":  16,
+                             "oral":  64,
+                             "obtained":  80,
+                             "total":  100
+                         },
+                         {
+                             "name":  "Hindi",
+                             "written":  28,
+                             "oral":  65,
+                             "obtained":  93,
+                             "total":  100
+                         },
+                         {
+                             "name":  "English",
+                             "written":  13,
+                             "oral":  34,
+                             "obtained":  47,
+                             "total":  100
+                         },
+                         {
+                             "name":  "EVS",
+                             "obtained":  null,
+                             "total":  50
+                         }
+                     ],
+        "attendance":  92
+    },
+    {
+        "student_id":  "STU1_09",
+        "roll_no":  9,
+        "student_name":  "RAKSHA NEHARA",
+        "subjects":  [
+                         {
+                             "name":  "Mathematics",
+                             "written":  20,
+                             "oral":  68,
+                             "obtained":  88,
+                             "total":  100
+                         },
+                         {
+                             "name":  "Hindi",
+                             "written":  20,
+                             "oral":  60,
+                             "obtained":  80,
+                             "total":  100
+                         },
+                         {
+                             "name":  "English",
+                             "written":  15,
+                             "oral":  35,
+                             "obtained":  50,
+                             "total":  100
+                         },
+                         {
+                             "name":  "EVS",
+                             "obtained":  null,
+                             "total":  50
+                         }
+                     ],
+        "attendance":  95
+    },
+    {
+        "student_id":  "STU1_10",
+        "roll_no":  10,
+        "student_name":  "ROHIT NYOL",
+        "subjects":  [
+                         {
+                             "name":  "Mathematics",
+                             "written":  17,
+                             "oral":  64,
+                             "obtained":  81,
+                             "total":  100
+                         },
+                         {
+                             "name":  "Hindi",
+                             "written":  30,
+                             "oral":  70,
+                             "obtained":  100,
+                             "total":  100
+                         },
+                         {
+                             "name":  "English",
+                             "written":  13,
+                             "oral":  34,
+                             "obtained":  47,
+                             "total":  100
+                         },
+                         {
+                             "name":  "EVS",
+                             "obtained":  null,
+                             "total":  50
+                         }
+                     ],
+        "attendance":  89
+    },
+    {
+        "student_id":  "STU1_11",
+        "roll_no":  11,
+        "student_name":  "SHIV KUMAR",
+        "subjects":  [
+                         {
+                             "name":  "Mathematics",
+                             "written":  4,
+                             "oral":  60,
+                             "obtained":  64,
+                             "total":  100
+                         },
+                         {
+                             "name":  "Hindi",
+                             "written":  27,
+                             "oral":  65,
+                             "obtained":  92,
+                             "total":  100
+                         },
+                         {
+                             "name":  "English",
+                             "written":  8,
+                             "oral":  30,
+                             "obtained":  38,
+                             "total":  100
+                         },
+                         {
+                             "name":  "EVS",
+                             "obtained":  null,
+                             "total":  50
+                         }
+                     ],
+        "attendance":  94
+    },
+    {
+        "student_id":  "STU1_12",
+        "roll_no":  12,
+        "student_name":  "TEENA SWAMI",
+        "subjects":  [
+                         {
+                             "name":  "Mathematics",
+                             "written":  20,
+                             "oral":  66,
+                             "obtained":  86,
+                             "total":  100
+                         },
+                         {
+                             "name":  "Hindi",
+                             "written":  27,
+                             "oral":  68,
+                             "obtained":  95,
+                             "total":  100
+                         },
+                         {
+                             "name":  "English",
+                             "written":  15,
+                             "oral":  35,
+                             "obtained":  50,
+                             "total":  100
+                         },
+                         {
+                             "name":  "EVS",
+                             "obtained":  null,
+                             "total":  50
+                         }
+                     ],
+        "attendance":  98
+    },
+    {
+        "student_id":  "STU1_13",
+        "roll_no":  13,
+        "student_name":  "VISHAKHA",
+        "subjects":  [
+                         {
+                             "name":  "Mathematics",
+                             "written":  18,
+                             "oral":  62,
+                             "obtained":  80,
+                             "total":  100
+                         },
+                         {
+                             "name":  "Hindi",
+                             "written":  29,
+                             "oral":  70,
+                             "obtained":  99,
+                             "total":  100
+                         },
+                         {
+                             "name":  "English",
+                             "written":  15,
+                             "oral":  35,
+                             "obtained":  50,
+                             "total":  100
+                         },
+                         {
+                             "name":  "EVS",
+                             "obtained":  null,
+                             "total":  50
+                         }
+                     ],
+        "attendance":  90
+    },
+    {
+        "student_id":  "STU1_14",
+        "roll_no":  14,
+        "student_name":  "YUVRAJ SINGH",
+        "subjects":  [
+                         {
+                             "name":  "Mathematics",
+                             "written":  13,
+                             "oral":  65,
+                             "obtained":  78,
+                             "total":  100
+                         },
+                         {
+                             "name":  "Hindi",
+                             "written":  30,
+                             "oral":  70,
+                             "obtained":  100,
+                             "total":  100
+                         },
+                         {
+                             "name":  "English",
+                             "written":  11,
+                             "oral":  30,
+                             "obtained":  41,
+                             "total":  100
+                         },
+                         {
+                             "name":  "EVS",
+                             "obtained":  null,
+                             "total":  50
+                         }
+                     ],
+        "attendance":  96
+    },
+    {
+        "student_id":  "STU1_15",
+        "roll_no":  15,
+        "student_name":  "DIVYA SUTHAR",
+        "subjects":  [
+                         {
+                             "name":  "Mathematics",
+                             "written":  12,
+                             "oral":  62,
+                             "obtained":  74,
+                             "total":  100
+                         },
+                         {
+                             "name":  "Hindi",
+                             "written":  21,
+                             "oral":  62,
+                             "obtained":  83,
+                             "total":  100
+                         },
+                         {
+                             "name":  "English",
+                             "written":  9,
+                             "oral":  30,
+                             "obtained":  39,
+                             "total":  100
+                         },
+                         {
+                             "name":  "EVS",
+                             "obtained":  null,
+                             "total":  50
+                         }
+                     ],
+        "attendance":  93
+    }
 ]
