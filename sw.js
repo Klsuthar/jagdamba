@@ -1,4 +1,4 @@
-const CACHE_NAME = 'jagdamba-v9.1-optimized';
+const CACHE_NAME = 'jagdamba-v9.2-optimized';
 const urlsToCache = [
   '/',
   '/index.html',
