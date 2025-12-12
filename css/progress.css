@@ -824,12 +824,14 @@
     margin-top: 2rem;
     margin-left: -1rem;
     margin-right: -1rem;
+    contain: layout style paint;
 }
 
 .table-wrapper {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     background: white;
+    will-change: scroll-position;
 }
 
 @media (min-width: 768px) {
@@ -850,6 +852,7 @@
     background: white;
     font-size: 0.75rem;
     min-width: 600px;
+    table-layout: fixed;
 }
 
 .marks-table th,
@@ -1752,4 +1755,20 @@
     .mark-max {
         font-size: 0.9rem;
     }
+}
+
+
+/* Performance optimizations for table rendering */
+.report-body {
+    content-visibility: auto;
+}
+
+.marks-table tbody tr {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 60px;
+}
+
+.mark-cell {
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }

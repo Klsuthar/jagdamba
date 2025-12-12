@@ -254,6 +254,7 @@ function displayAllExams(student, studentId, allExams) {
     document.getElementById('attendance').textContent = `${student.attendance}%`;
 
     const container = document.getElementById('allExamsContainer');
+    container.style.minHeight = '400px';
     
     if (!allExams[0].subjects || allExams[0].subjects.length === 0) {
         container.innerHTML = '<p style="text-align: center; color: #999; margin-top: 2rem;">No exam data available</p>';
@@ -325,19 +326,22 @@ function displayAllExams(student, studentId, allExams) {
         grandTotalMax += subjectMax;
     });
     
-    container.innerHTML = `
-        <div class="exams-container">
-            <div class="table-wrapper">
-                <table class="marks-table">
-                    <thead>
-                        <tr>${headerCols}</tr>
-                        <tr>${subHeaderCols}</tr>
-                    </thead>
-                    <tbody>${rows}</tbody>
-                </table>
+    requestAnimationFrame(() => {
+        container.innerHTML = `
+            <div class="exams-container">
+                <div class="table-wrapper">
+                    <table class="marks-table">
+                        <thead>
+                            <tr>${headerCols}</tr>
+                            <tr>${subHeaderCols}</tr>
+                        </thead>
+                        <tbody>${rows}</tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-    `;
+        `;
+        container.style.minHeight = 'auto';
+    });
 }
 
 function getGrade(percentage) {
