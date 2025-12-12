@@ -1772,3 +1772,24 @@
     transform: translateZ(0);
     backface-visibility: hidden;
 }
+
+
+/* Force stable table layout on mobile */
+@media (max-width: 767px) {
+    .marks-table {
+        border-collapse: separate !important;
+        border-spacing: 0 !important;
+    }
+    
+    .subject-col,
+    .subject-name {
+        width: 100px !important;
+        min-width: 100px !important;
+        max-width: 100px !important;
+    }
+    
+    .marks-table th,
+    .marks-table td {
+        box-sizing: border-box !important;
+    }
+}

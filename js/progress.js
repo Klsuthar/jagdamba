@@ -254,7 +254,6 @@ function displayAllExams(student, studentId, allExams) {
     document.getElementById('attendance').textContent = `${student.attendance}%`;
 
     const container = document.getElementById('allExamsContainer');
-    container.style.minHeight = '400px';
     
     if (!allExams[0].subjects || allExams[0].subjects.length === 0) {
         container.innerHTML = '<p style="text-align: center; color: #999; margin-top: 2rem;">No exam data available</p>';
@@ -281,13 +280,8 @@ function displayAllExams(student, studentId, allExams) {
     });
     
     let rows = '';
-    let grandTotalObtained = 0;
-    let grandTotalMax = 0;
-    
     subjects.forEach((subject, idx) => {
         let row = `<tr><td class="subject-name">${subject}</td>`;
-        let subjectTotal = 0;
-        let subjectMax = 0;
         
         allExams.forEach((exam, examIdx) => {
             const sub = exam.subjects[idx];
@@ -305,43 +299,32 @@ function displayAllExams(student, studentId, allExams) {
                 row += `<td class="mark-cell"><div class="mark-fraction"><span class="mark-obtained">${w !== null ? w : ''}</span><div class="mark-divider"></div><span class="mark-max">${wMax}</span></div></td>`;
                 row += `<td class="mark-cell"><div class="mark-fraction"><span class="mark-obtained">${o !== null ? o : ''}</span><div class="mark-divider"></div><span class="mark-max">${oMax}</span></div></td>`;
                 row += `<td class="mark-cell total-cell"><div class="mark-fraction"><span class="mark-obtained">${t !== null ? t : ''}</span><div class="mark-divider"></div><span class="mark-max">${max}</span></div></td>`;
-                
-                subjectTotal += t;
-                subjectMax += max;
             } else {
                 const obt = sub.obtained !== null ? sub.obtained : null;
                 const max = sub.total || 10;
-                
                 row += `<td class="mark-cell total-cell"><div class="mark-fraction"><span class="mark-obtained">${obt !== null ? obt : ''}</span><div class="mark-divider"></div><span class="mark-max">${max}</span></div></td>`;
-                
-                subjectTotal += obt;
-                subjectMax += max;
             }
         });
         
         row += '</tr>';
         rows += row;
-        
-        grandTotalObtained += subjectTotal;
-        grandTotalMax += subjectMax;
     });
     
-    requestAnimationFrame(() => {
-        container.innerHTML = `
-            <div class="exams-container">
-                <div class="table-wrapper">
-                    <table class="marks-table">
-                        <thead>
-                            <tr>${headerCols}</tr>
-                            <tr>${subHeaderCols}</tr>
-                        </thead>
-                        <tbody>${rows}</tbody>
-                    </table>
-                </div>
+    const tableHTML = `
+        <div class="exams-container">
+            <div class="table-wrapper">
+                <table class="marks-table">
+                    <thead>
+                        <tr>${headerCols}</tr>
+                        <tr>${subHeaderCols}</tr>
+                    </thead>
+                    <tbody>${rows}</tbody>
+                </table>
             </div>
-        `;
-        container.style.minHeight = 'auto';
-    });
+        </div>
+    `;
+    
+    container.innerHTML = tableHTML;
 }
 
 function getGrade(percentage) {
