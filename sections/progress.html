@@ -94,6 +94,20 @@
 
                 <div class="report-card" id="reportCard">
                     <div id="reportCardTop"></div>
+                    <div class="print-only-header" style="display: none;">
+                        <div class="print-logo-container">
+                            <img src="../images/logo.png" alt="School Logo" style="width: 90px; height: 90px; object-fit: contain;">
+                        </div>
+                        <div class="print-school-details">
+                            <h1 style="color: #2d3748; font-weight: 900; margin: 0 0 5px; font-size: 22px;">SHREE JAGDAMBA CONVENT SCHOOL</h1>
+                            <p style="font-weight: 600; margin: 0 0 5px; font-size: 14px; color: #4a5568;">An English Medium Co-Educational School</p>
+                            <h3 style="border: 2px solid #2d3748; display: inline-block; padding: 4px 15px; border-radius: 20px; font-size: 15px; margin: 0;">PROGRESS REPORT</h3>
+                        </div>
+                        <div class="print-photo-container">
+                            <img src="" alt="Student Photo" id="printPhoto" style="width: 80px; height: 100px; object-fit: cover; border: 2px solid #2d3748; padding: 2px;">
+                        </div>
+                        <div style="width: 100%; height: 2px; background: #2d3748; margin-top: 15px; flex-basis: 100%;"></div>
+                    </div>
                     <div class="report-header">
                         <img src="" alt="Student Photo" class="student-photo" id="studentPhoto">
                         <h2 id="studentName"></h2>
@@ -103,12 +117,16 @@
                     <div class="report-body">
                         <div class="info-grid">
                             <div class="info-item">
-                                <span class="info-label">Student ID:</span>
-                                <span class="info-value" id="displayId"></span>
-                            </div>
-                            <div class="info-item">
                                 <span class="info-label">Roll Number:</span>
                                 <span class="info-value" id="rollNo"></span>
+                            </div>
+                            <div class="info-item print-only-item">
+                                <span class="info-label">Father Name:</span>
+                                <span class="info-value" id="fatherName"></span>
+                            </div>
+                            <div class="info-item print-only-item">
+                                <span class="info-label">Mother Name:</span>
+                                <span class="info-value" id="motherName"></span>
                             </div>
                             <div class="info-item">
                                 <span class="info-label">Session:</span>
@@ -117,6 +135,14 @@
                             <div class="info-item">
                                 <span class="info-label">Attendance:</span>
                                 <span class="info-value" id="attendance"></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Percentage:</span>
+                                <span class="info-value" id="percentage"></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Rank:</span>
+                                <span class="info-value" id="rank"></span>
                             </div>
                         </div>
 
@@ -127,6 +153,10 @@
                         <button class="nav-btn prev-btn" id="prevStudentBtn" onclick="navigateStudent('prev')">
                             <i class="fas fa-chevron-left"></i>
                             <span>Previous</span>
+                        </button>
+                        <button class="nav-btn download-btn" onclick="printMarksheet()" style="background: linear-gradient(135deg, #48bb78 0%, #38a169 100%); color: white;">
+                            <i class="fas fa-download"></i>
+                            <span>Download</span>
                         </button>
                         <button class="nav-btn next-btn" id="nextStudentBtn" onclick="navigateStudent('next')">
                             <span>Next</span>

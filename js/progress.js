@@ -240,18 +240,40 @@ function displayAllExams(student, studentId, allExams) {
         return [...configTests, ...configExams].find(e => e.name === exam.examType) || {};
     });
     const photoElement = document.getElementById('studentPhoto');
+    const printPhotoElement = document.getElementById('printPhoto');
     const studentData = classData.class_1.students.concat(classData.class_2.students, classData.class_3.students).find(s => s.id === studentId);
+    
     photoElement.src = studentData ? studentData.photo : student.photo;
-    photoElement.onerror = function() {
+    printPhotoElement.src = studentData ? studentData.photo : student.photo;
+    
+    photoElement.onerror = printPhotoElement.onerror = function() {
         this.onerror = null;
         this.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(student.name)}&background=2563eb&color=fff&size=200`;
     };
+    
     document.getElementById('studentName').textContent = student.name;
     document.getElementById('studentClass').textContent = student.class;
-    document.getElementById('displayId').textContent = studentId;
     document.getElementById('rollNo').textContent = student.rollNo;
+    document.getElementById('fatherName').textContent = student.fatherName || '';
+    document.getElementById('motherName').textContent = student.motherName || '';
     document.getElementById('session').textContent = student.session;
     document.getElementById('attendance').textContent = `${student.attendance}%`;
+
+    let totalObtained = 0;
+    let totalMax = 0;
+    allExams.forEach(exam => {
+        exam.subjects.forEach(sub => {
+            totalObtained += sub.obtained !== null ? sub.obtained : 0;
+            totalMax += sub.total || 0;
+        });
+    });
+    
+    let percentage = 0;
+    if (totalMax > 0) {
+        percentage = (totalObtained / totalMax) * 100;
+    }
+    document.getElementById('percentage').textContent = `${percentage.toFixed(2)}%`;
+    document.getElementById('rank').textContent = calculateRank(studentId, percentage);
 
     const container = document.getElementById('allExamsContainer');
     
@@ -408,6 +430,10 @@ function renderHorizontalStudentList() {
             activeCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
         }
     }, 100);
+}
+
+function printMarksheet() {
+    window.print();
 }
 
 
