@@ -40,7 +40,7 @@
     <link rel="stylesheet" href="../css/progress.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/animations.css">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&family=Oswald:wght@500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -94,23 +94,29 @@
 
                 <div class="report-card" id="reportCard">
                     <div id="reportCardTop"></div>
-                    <div class="print-only-header" style="display: none; position: relative;">
-                        <!-- Very faint background decorative elements can go here -->
-                        <div class="print-logo-container" style="flex: 0 0 100px;">
-                            <img src="../images/logo.png" alt="School Logo" style="width: 110px; height: 110px; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));">
-                        </div>
-                        <div class="print-school-details" style="flex: 1; text-align: center; padding: 0 20px;">
-                            <h1 style="color: #1e3a8a; font-family: 'Times New Roman', serif; font-weight: 900; margin: 0 0 8px; font-size: 28px; text-transform: uppercase; letter-spacing: 1.5px; text-shadow: 1px 1px 0px rgba(0,0,0,0.1);">SHREE JAGDAMBA CONVENT SCHOOL</h1>
-                            <p style="font-weight: 700; margin: 0 0 10px; font-size: 15px; color: #b45309; text-transform: uppercase; letter-spacing: 2px;">An English Medium Co-Educational School</p>
-                            <div style="margin-top: 5px;">
-                                <h3 style="background: #1e3a8a; color: white; display: inline-block; padding: 8px 30px; border-radius: 4px; font-size: 16px; margin: 0; font-weight: bold; letter-spacing: 3px; border: 2px solid #ca8a04; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">PROGRESS REPORT</h3>
+                    <div class="print-only-header" style="display: none;">
+                        <!-- Decorative top corners -->
+                        <div class="print-corner print-corner-tl"></div>
+                        <div class="print-corner print-corner-tr"></div>
+                        
+                        <div class="print-header-content">
+                            <div class="print-logo-container">
+                                <img src="../images/logo.png" alt="School Logo" class="print-logo-img">
                             </div>
-                            <p id="printStudentName" style="margin: 10px 0 0; font-size: 18px; font-weight: 800; color: #1e3a8a; font-family: 'Times New Roman', serif; text-transform: uppercase; letter-spacing: 1px;"></p>
+                            <div class="print-school-details">
+                                <h1 class="print-school-name">Shree Jagdamba Convent School</h1>
+                                <p class="print-school-subtitle">An English Medium Co-Educational School</p>
+                                <div class="print-divider-line"></div>
+                                <div class="print-report-badge">
+                                    <span>✦</span> PROGRESS REPORT <span>✦</span>
+                                </div>
+                                <p id="printStudentName" class="print-student-name"></p>
+                            </div>
+                            <div class="print-photo-container">
+                                <img src="" alt="Student Photo" id="printPhoto" class="print-student-photo">
+                            </div>
                         </div>
-                        <div class="print-photo-container" style="flex: 0 0 100px; display: flex; justify-content: flex-end;">
-                            <img src="" alt="Student Photo" id="printPhoto" style="width: 90px; height: 110px; object-fit: cover; border: 3px solid #1e3a8a; padding: 3px; background: white; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                        </div>
-                        <div style="position: absolute; bottom: -25px; left: 0; width: 100%; height: 4px; background: linear-gradient(to right, #1e3a8a, #ca8a04, #1e3a8a); border-radius: 2px;"></div>
+                        <div class="print-header-bottom-line"></div>
                     </div>
                     <div class="report-header">
                         <img src="" alt="Student Photo" class="student-photo" id="studentPhoto">
@@ -155,18 +161,25 @@
                         <!-- Print-only footer: Grade Scale, Remarks, Signatures -->
                         <div class="print-only-footer" style="display: none;">
                             <div class="print-grade-scale">
-                                <h4>Grading Scale</h4>
+                                <h4>📊 Grading Scale</h4>
                                 <table class="grade-scale-table">
-                                    <tr>
-                                        <th>Grade</th><th>A+</th><th>A</th><th>B</th><th>C</th><th>D</th><th>F</th>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Marks %</strong></td><td>90-100</td><td>75-89</td><td>60-74</td><td>45-59</td><td>33-44</td><td>Below 33</td>
-                                    </tr>
+                                    <thead>
+                                        <tr>
+                                            <th>Grade</th><th>A+</th><th>A</th><th>B</th><th>C</th><th>D</th><th>F</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="grade-label-cell">Marks %</td><td>90–100</td><td>75–89</td><td>60–74</td><td>45–59</td><td>33–44</td><td>&lt;33</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="grade-label-cell">Remark</td><td>Outstanding</td><td>Excellent</td><td>Very Good</td><td>Good</td><td>Needs Work</td><td>Fail</td>
+                                        </tr>
+                                    </tbody>
                                 </table>
                             </div>
                             <div class="print-remarks">
-                                <strong>Remarks:</strong>
+                                <strong>Teacher's Remarks:</strong>
                                 <div class="remarks-line"></div>
                                 <div class="remarks-line"></div>
                             </div>
@@ -183,6 +196,9 @@
                                     <div class="signature-line"></div>
                                     <p>Parent / Guardian</p>
                                 </div>
+                            </div>
+                            <div class="print-date-line">
+                                <p>Date: _______________</p>
                             </div>
                         </div>
                     </div>
