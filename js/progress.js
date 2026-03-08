@@ -252,6 +252,7 @@ function displayAllExams(student, studentId, allExams) {
     };
     
     document.getElementById('studentName').textContent = student.name;
+    document.getElementById('printStudentName').textContent = student.name;
     document.getElementById('studentClass').textContent = student.class;
     document.getElementById('rollNo').textContent = student.rollNo;
     document.getElementById('fatherName').textContent = student.fatherName || '';
@@ -435,9 +436,20 @@ function renderHorizontalStudentList() {
 function printMarksheet() {
     // Scroll to top so print captures from the beginning
     window.scrollTo(0, 0);
+    
+    // Set document title to StudentName_Class for PDF filename
+    const originalTitle = document.title;
+    const studentName = document.getElementById('studentName').textContent.trim();
+    const studentClass = document.getElementById('studentClass').textContent.trim();
+    document.title = studentName + '_' + studentClass;
+    
     // Small delay to let the layout settle
     setTimeout(function() {
         window.print();
+        // Restore original title after print dialog closes
+        setTimeout(function() {
+            document.title = originalTitle;
+        }, 1000);
     }, 300);
 }
 

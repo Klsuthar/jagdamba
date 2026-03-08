@@ -105,6 +105,7 @@
                             <div style="margin-top: 5px;">
                                 <h3 style="background: #1e3a8a; color: white; display: inline-block; padding: 8px 30px; border-radius: 4px; font-size: 16px; margin: 0; font-weight: bold; letter-spacing: 3px; border: 2px solid #ca8a04; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">PROGRESS REPORT</h3>
                             </div>
+                            <p id="printStudentName" style="margin: 10px 0 0; font-size: 18px; font-weight: 800; color: #1e3a8a; font-family: 'Times New Roman', serif; text-transform: uppercase; letter-spacing: 1px;"></p>
                         </div>
                         <div class="print-photo-container" style="flex: 0 0 100px; display: flex; justify-content: flex-end;">
                             <img src="" alt="Student Photo" id="printPhoto" style="width: 90px; height: 110px; object-fit: cover; border: 3px solid #1e3a8a; padding: 3px; background: white; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
@@ -150,6 +151,40 @@
                         </div>
 
                         <div id="allExamsContainer"></div>
+
+                        <!-- Print-only footer: Grade Scale, Remarks, Signatures -->
+                        <div class="print-only-footer" style="display: none;">
+                            <div class="print-grade-scale">
+                                <h4>Grading Scale</h4>
+                                <table class="grade-scale-table">
+                                    <tr>
+                                        <th>Grade</th><th>A+</th><th>A</th><th>B</th><th>C</th><th>D</th><th>F</th>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Marks %</strong></td><td>90-100</td><td>75-89</td><td>60-74</td><td>45-59</td><td>33-44</td><td>Below 33</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="print-remarks">
+                                <strong>Remarks:</strong>
+                                <div class="remarks-line"></div>
+                                <div class="remarks-line"></div>
+                            </div>
+                            <div class="print-signatures">
+                                <div class="signature-block">
+                                    <div class="signature-line"></div>
+                                    <p>Class Teacher</p>
+                                </div>
+                                <div class="signature-block">
+                                    <div class="signature-line"></div>
+                                    <p>Principal</p>
+                                </div>
+                                <div class="signature-block">
+                                    <div class="signature-line"></div>
+                                    <p>Parent / Guardian</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="student-navigation">
