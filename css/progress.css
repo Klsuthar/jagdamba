@@ -1805,83 +1805,146 @@
 }
 
 @media print {
-    /* Hide everything in body */
-    body > * {
+    @page {
+        size: A4 portrait;
+        margin: 8mm 10mm;
+    }
+
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        box-sizing: border-box !important;
+    }
+
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    header, nav, footer,
+    #header-placeholder, #footer-placeholder,
+    .mobile-nav, .student-navigation,
+    .students-horizontal-list, .back-button-top,
+    .search-container, .class-selection,
+    .students-list, .selection-header,
+    .class-buttons, .performance-summary {
         display: none !important;
     }
 
-    /* Except for main and its necessary descendants */
-    body > main, 
-    main > .progress-section, 
-    .progress-section > .container,
-    .container > .report-card.show {
-        display: block !important;
-        visibility: visible !important;
+    html {
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
     }
 
     body {
         background: white !important;
-        color: black !important;
         margin: 0 !important;
         padding: 0 !important;
+        padding-bottom: 0 !important;
         height: auto !important;
         min-height: 0 !important;
+        width: 100% !important;
+        overflow: visible !important;
+        max-width: none !important;
+    }
+
+    main {
+        display: block !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        min-height: 0 !important;
+        height: auto !important;
+    }
+
+    .progress-section {
+        display: block !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: none !important;
+        min-height: 0 !important;
+        height: auto !important;
         overflow: visible !important;
         position: static !important;
-        zoom: 0.9 !important;
     }
-    .report-card, .report-card.show {
+
+    .progress-section .container {
+        display: block !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        min-height: 0 !important;
+        height: auto !important;
+        position: static !important;
+    }
+
+    .progress-section::before, .progress-section::after,
+    .report-body::before, .report-body::after,
+    .info-item::before, .info-item::after,
+    .info-label::before, .report-header::before,
+    .report-header::after, .summary-card::before,
+    .class-selection::before, .class-selection::after {
+        display: none !important;
+        content: none !important;
+    }
+
+    .report-card {
+        display: none !important;
+    }
+
+    .report-card.show {
+        display: block !important;
         visibility: visible !important;
         position: relative !important;
-        left: 0 !important;
-        top: 0 !important;
         width: 100% !important;
         margin: 0 !important;
-        padding: 40px 30px !important;
+        padding: 15px 18px !important;
         box-shadow: none !important;
-        border: 2px solid #ca8a04 !important;
-        outline: 6px solid #1e3a8a !important;
-        outline-offset: -12px !important;
-        background: #fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="p" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="40" fill="%23e0e7ff" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23p)"/></svg>') center center repeat !important;
-        display: block !important;
+        border: 3px solid #ca8a04 !important;
+        outline: 5px solid #1e3a8a !important;
+        outline-offset: -10px !important;
+        background: white !important;
         max-width: none !important;
-        page-break-inside: avoid !important;
-        break-inside: avoid !important;
-        box-sizing: border-box !important;
+        font-size: 11px !important;
     }
 
     .print-only-header {
         display: flex !important;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 35px;
-        text-align: center;
+        align-items: center !important;
+        justify-content: space-between !important;
+        margin-bottom: 12px !important;
+        padding-bottom: 10px !important;
+        border-bottom: 3px solid #1e3a8a !important;
     }
 
     .report-header {
         display: none !important;
     }
 
+    .report-body {
+        padding: 0 !important;
+        background: transparent !important;
+    }
+
     .info-grid {
+        display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 0 !important;
+        margin-bottom: 12px !important;
         border: 2px solid #1e3a8a !important;
-        margin-bottom: 35px !important;
-        display: grid !important;
-        background: rgba(255, 255, 255, 0.95) !important;
-        box-shadow: 0 0 0 1px #ca8a04 !important;
+        background: white !important;
     }
-    
+
     .info-item {
         background: transparent !important;
         border: none !important;
         border-bottom: 1px solid #94a3b8 !important;
         border-right: 1px solid #1e3a8a !important;
         box-shadow: none !important;
-        padding: 10px 15px !important;
+        padding: 5px 8px !important;
         display: flex !important;
         align-items: center !important;
         border-radius: 0 !important;
+        transform: none !important;
     }
 
     .info-item:nth-child(2n) {
@@ -1891,139 +1954,171 @@
     .info-item:nth-last-child(-n+2) {
         border-bottom: none !important;
     }
-    
-    .info-item::before {
-        display: none !important;
-    }
-    
+
     .info-label {
-        color: #2d3748 !important;
+        color: #1e3a8a !important;
         font-weight: 800 !important;
-        font-size: 13px !important;
-        width: 110px !important;
-        flex-shrink: 0;
-        text-transform: uppercase;
+        font-size: 10px !important;
+        width: 90px !important;
+        flex-shrink: 0 !important;
+        text-transform: uppercase !important;
+        -webkit-text-fill-color: #1e3a8a !important;
     }
-    
-    .info-label::before {
-        display: none !important;
-    }
-    
+
     .info-value {
         color: #1a202c !important;
-        font-weight: 600 !important;
-        font-size: 14px !important;
-        flex-grow: 1;
-        border-bottom: 1px dashed #cbd5e1;
-        padding-bottom: 2px;
-    }
-
-    .table-wrapper {
-        box-shadow: none !important;
-        background: rgba(255, 255, 255, 0.95) !important;
-        border-radius: 0 !important;
-        overflow: visible !important;
-        border: 2px solid #1e3a8a !important;
-        box-shadow: 0 0 0 1px #ca8a04 !important;
-    }
-
-    .marks-table {
-        border-collapse: collapse !important;
-        width: 100% !important;
-        background: transparent !important;
-    }
-
-    .marks-table th, .marks-table td {
-        border: 1px solid #1e3a8a !important;
-        color: #1a202c !important;
-        background: transparent !important;
-        box-shadow: none !important;
-        padding: 10px 8px !important;
-        box-sizing: border-box !important;
-        text-align: center;
-    }
-
-    .exam-header {
-        background: #1e3a8a !important;
-        color: #ffffff !important;
-        font-weight: 800 !important;
-        font-size: 15px !important;
-        border-bottom: 2px solid #ca8a04 !important;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-    }
-
-    .sub-header {
-        background: #e0e7ff !important;
-        color: #1e3a8a !important;
-        font-weight: 800 !important;
-        font-size: 12px !important;
-        border-bottom: 2px solid #1e3a8a !important;
-    }
-
-    .subject-col {
-        background: #1e3a8a !important;
-        color: #ffffff !important;
-        border-bottom: 2px solid #ca8a04 !important;
-        font-weight: 800 !important;
-        letter-spacing: 1px;
-    }
-    
-    .subject-name {
-        background: #f8fafc !important;
-        font-weight: 800 !important;
-        text-align: left !important;
-        font-size: 13px !important;
-        color: #1e3a8a !important;
-        border-right: 2px solid #1e3a8a !important;
-    }
-
-    .mark-fraction {
-        display: inline-block !important;
-        padding: 0 !important;
-        min-height: auto !important;
-        font-size: 14px !important;
-        font-weight: 800 !important;
-    }
-
-    .mark-obtained {
-        color: #1e3a8a !important;
-        font-size: 15px !important;
-        display: inline-block !important;
-    }
-
-    .mark-max {
-        color: #64748b !important;
-        font-size: 13px !important;
-        display: inline-block !important;
-    }
-
-    .mark-divider {
-        display: inline-block !important;
-        width: 8px !important;
-        height: 1.5px !important;
-        background: #ca8a04 !important;
-        margin: 0 3px !important;
-        transform: rotate(-60deg) !important;
+        font-weight: 700 !important;
+        font-size: 11px !important;
+        flex-grow: 1 !important;
+        -webkit-text-fill-color: #1a202c !important;
+        border-bottom: 1px dashed #cbd5e1 !important;
+        background: none !important;
     }
 
     .print-only-item {
         display: flex !important;
     }
 
-    tr:nth-child(even) {
+    .exams-container {
+        margin: 0 !important;
+    }
+
+    .table-wrapper {
+        overflow: visible !important;
+        box-shadow: none !important;
+        border: 2px solid #1e3a8a !important;
+        border-radius: 0 !important;
+        background: white !important;
+        margin-bottom: 10px !important;
+        padding: 0 !important;
+    }
+
+    .marks-table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        min-width: 0 !important;
+        font-size: 10px !important;
+        background: white !important;
+        table-layout: auto !important;
+        border-spacing: 0 !important;
+    }
+
+    .marks-table th,
+    .marks-table td {
+        border: 1px solid #94a3b8 !important;
+        padding: 5px 4px !important;
+        text-align: center !important;
+        color: #1a202c !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        position: static !important;
+    }
+
+    .exam-header {
+        background: #1e3a8a !important;
+        color: #ffffff !important;
+        font-weight: 800 !important;
+        font-size: 11px !important;
+        border-bottom: 2px solid #ca8a04 !important;
+        letter-spacing: 0.5px !important;
+        text-transform: uppercase !important;
+    }
+
+    .sub-header {
+        background: #dbeafe !important;
+        color: #1e3a8a !important;
+        font-weight: 700 !important;
+        font-size: 10px !important;
+    }
+
+    .subject-col {
+        background: #1e3a8a !important;
+        color: #ffffff !important;
+        font-weight: 800 !important;
+        position: static !important;
+    }
+
+    .subject-name {
         background: #f1f5f9 !important;
+        font-weight: 700 !important;
+        text-align: left !important;
+        font-size: 10px !important;
+        color: #1e3a8a !important;
+        padding-left: 6px !important;
+        position: static !important;
+    }
+
+    .mark-fraction {
+        display: inline !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
+    }
+
+    .mark-obtained {
+        color: #1e3a8a !important;
+        font-size: 11px !important;
+        display: inline !important;
+    }
+
+    .mark-max {
+        color: #64748b !important;
+        font-size: 9px !important;
+        display: inline !important;
+    }
+
+    .mark-divider {
+        display: inline-block !important;
+        width: 5px !important;
+        height: 1px !important;
+        background: #ca8a04 !important;
+        margin: 0 2px !important;
+        transform: rotate(-60deg) !important;
+        vertical-align: middle !important;
+    }
+
+    .marks-table tbody tr:nth-child(even) {
+        background: #f8fafc !important;
+    }
+
+    .marks-table tbody tr:nth-child(odd) {
+        background: white !important;
     }
 
     .total-cell {
         background: #1e3a8a !important;
         color: #ffffff !important;
         font-weight: 900 !important;
-        letter-spacing: 0.5px;
     }
 
-    @page { 
-        margin: 10mm;
-        size: A4;
+    .total-row .subject-name {
+        background: #1e3a8a !important;
+        color: white !important;
+    }
+
+    .mark-cell.grand-total,
+    .mark-cell.total-cell,
+    .mark-cell.fail, .mark-cell.low,
+    .mark-cell.medium, .mark-cell.high,
+    .mark-cell.grade-A\+, .mark-cell.grade-A,
+    .mark-cell.grade-B, .mark-cell.grade-C,
+    .mark-cell.grade-D, .mark-cell.grade-F {
+        box-shadow: none !important;
+    }
+
+    .grade {
+        background: none !important;
+        color: #1a202c !important;
+        font-weight: 800 !important;
+        padding: 0 !important;
+    }
+
+    .exam-section-header {
+        background: #1e3a8a !important;
+        color: white !important;
+        padding: 5px 8px !important;
+        font-size: 11px !important;
+        font-weight: 800 !important;
+        margin-bottom: 0 !important;
     }
 }
+

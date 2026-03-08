@@ -433,7 +433,12 @@ function renderHorizontalStudentList() {
 }
 
 function printMarksheet() {
-    window.print();
+    // Scroll to top so print captures from the beginning
+    window.scrollTo(0, 0);
+    // Small delay to let the layout settle
+    setTimeout(function() {
+        window.print();
+    }, 300);
 }
 
 

@@ -456,3 +456,19 @@ img {
 lottie-player {
     aspect-ratio: 1;
 }
+
+/* Print: remove full-height body and nav padding */
+@media print {
+    body {
+        min-height: 0 !important;
+        height: auto !important;
+        padding-bottom: 0 !important;
+        padding-top: 0 !important;
+        overflow: visible !important;
+        background: white !important;
+    }
+
+    .mobile-nav {
+        display: none !important;
+    }
+}
