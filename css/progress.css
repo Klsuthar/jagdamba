@@ -848,22 +848,38 @@
 
 .marks-table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     background: white;
     font-size: 0.75rem;
     min-width: 600px;
     table-layout: fixed;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .marks-table th,
 .marks-table td {
-    padding: 0.8rem 0.5rem;
+    padding: 1rem 0.6rem;
     text-align: center;
-    border: 1px solid #d1d5db;
+    border-bottom: 1px solid #e2e8f0;
+    border-right: 1px solid #f1f5f9;
 }
 
-.marks-table tbody tr:nth-child(odd) {
-    background: #fafbfc;
+.marks-table th:last-child,
+.marks-table td:last-child {
+    border-right: none;
+}
+
+.marks-table tbody tr {
+    transition: all 0.2s ease-in-out;
+    background: #ffffff;
+}
+
+.marks-table tbody tr:hover {
+    background-color: #f8fafc;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
 }
 
 @media (min-width: 768px) {
@@ -1823,10 +1839,10 @@
         margin: 0 !important;
         padding: 40px 30px !important;
         box-shadow: none !important;
-        border: 2px solid #2d3748 !important;
-        outline: 5px double #2d3748 !important;
+        border: 2px solid #ca8a04 !important;
+        outline: 6px solid #1e3a8a !important;
         outline-offset: -12px !important;
-        background: #fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="p" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="40" fill="%23f8fafc" opacity="0.4"/></pattern></defs><rect width="100" height="100" fill="url(%23p)"/></svg>') center center repeat !important;
+        background: #fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="p" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="40" fill="%23e0e7ff" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23p)"/></svg>') center center repeat !important;
         display: block !important;
         max-width: none !important;
         page-break-inside: avoid !important;
@@ -1838,7 +1854,7 @@
         display: flex !important;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 25px;
+        margin-bottom: 35px;
         text-align: center;
     }
 
@@ -1849,19 +1865,20 @@
     .info-grid {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 0 !important;
-        border: 2px solid #2d3748 !important;
-        margin-bottom: 30px !important;
+        border: 2px solid #1e3a8a !important;
+        margin-bottom: 35px !important;
         display: grid !important;
-        background: rgba(255, 255, 255, 0.9) !important;
+        background: rgba(255, 255, 255, 0.95) !important;
+        box-shadow: 0 0 0 1px #ca8a04 !important;
     }
     
     .info-item {
         background: transparent !important;
         border: none !important;
-        border-bottom: 1px solid #718096 !important;
-        border-right: 1px solid #718096 !important;
+        border-bottom: 1px solid #94a3b8 !important;
+        border-right: 1px solid #1e3a8a !important;
         box-shadow: none !important;
-        padding: 8px 15px !important;
+        padding: 10px 15px !important;
         display: flex !important;
         align-items: center !important;
         border-radius: 0 !important;
@@ -1903,10 +1920,11 @@
 
     .table-wrapper {
         box-shadow: none !important;
-        background: rgba(255, 255, 255, 0.9) !important;
+        background: rgba(255, 255, 255, 0.95) !important;
         border-radius: 0 !important;
         overflow: visible !important;
-        border: 2px solid #2d3748 !important;
+        border: 2px solid #1e3a8a !important;
+        box-shadow: 0 0 0 1px #ca8a04 !important;
     }
 
     .marks-table {
@@ -1916,41 +1934,48 @@
     }
 
     .marks-table th, .marks-table td {
-        border: 1px solid #718096 !important;
+        border: 1px solid #1e3a8a !important;
         color: #1a202c !important;
         background: transparent !important;
         box-shadow: none !important;
         padding: 10px 8px !important;
         box-sizing: border-box !important;
+        text-align: center;
     }
 
     .exam-header {
-        background: #e2e8f0 !important;
-        color: #1a202c !important;
+        background: #1e3a8a !important;
+        color: #ffffff !important;
         font-weight: 800 !important;
-        font-size: 14px !important;
-        border-bottom: 2px solid #2d3748 !important;
+        font-size: 15px !important;
+        border-bottom: 2px solid #ca8a04 !important;
+        letter-spacing: 1px;
+        text-transform: uppercase;
     }
 
     .sub-header {
-        background: #f1f5f9 !important;
-        color: #2d3748 !important;
-        font-weight: 700 !important;
+        background: #e0e7ff !important;
+        color: #1e3a8a !important;
+        font-weight: 800 !important;
         font-size: 12px !important;
+        border-bottom: 2px solid #1e3a8a !important;
     }
 
     .subject-col {
-        background: #e2e8f0 !important;
-        color: #1a202c !important;
-        border-bottom: 2px solid #2d3748 !important;
+        background: #1e3a8a !important;
+        color: #ffffff !important;
+        border-bottom: 2px solid #ca8a04 !important;
         font-weight: 800 !important;
+        letter-spacing: 1px;
     }
     
     .subject-name {
         background: #f8fafc !important;
-        font-weight: bold !important;
+        font-weight: 800 !important;
         text-align: left !important;
         font-size: 13px !important;
+        color: #1e3a8a !important;
+        border-right: 2px solid #1e3a8a !important;
     }
 
     .mark-fraction {
@@ -1958,18 +1983,18 @@
         padding: 0 !important;
         min-height: auto !important;
         font-size: 14px !important;
-        font-weight: 700 !important;
+        font-weight: 800 !important;
     }
 
     .mark-obtained {
-        color: #1a202c !important;
-        font-size: 14px !important;
+        color: #1e3a8a !important;
+        font-size: 15px !important;
         display: inline-block !important;
     }
 
     .mark-max {
-        color: #4a5568 !important;
-        font-size: 12px !important;
+        color: #64748b !important;
+        font-size: 13px !important;
         display: inline-block !important;
     }
 
@@ -1977,7 +2002,7 @@
         display: inline-block !important;
         width: 8px !important;
         height: 1.5px !important;
-        background: #2d3748 !important;
+        background: #ca8a04 !important;
         margin: 0 3px !important;
         transform: rotate(-60deg) !important;
     }
@@ -1991,8 +2016,10 @@
     }
 
     .total-cell {
-        background: #e2e8f0 !important;
-        font-weight: 800 !important;
+        background: #1e3a8a !important;
+        color: #ffffff !important;
+        font-weight: 900 !important;
+        letter-spacing: 0.5px;
     }
 
     @page { 
