@@ -36,6 +36,7 @@ const contactContent = `
                                 <option value="1">Class 1</option>
                                 <option value="2">Class 2</option>
                                 <option value="3">Class 3</option>
+                                <option value="4">Class 4</option>
                             </select>
                         </div>
                     </div>

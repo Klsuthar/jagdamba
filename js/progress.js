@@ -1,66 +1,97 @@
-let classData = {
-    class_1: { title: 'Class 1 Students', students: [] },
-    class_2: { title: 'Class 2 Students', students: [] },
-    class_3: { title: 'Class 3 Students', students: [] }
-};
+const CLASS_CONFIGS = [
+    { number: 1, classKey: 'class_1', configKey: 'class1', className: 'Class 1', idPrefix: 'STU1_' },
+    { number: 2, classKey: 'class_2', configKey: 'class2', className: 'Class 2', idPrefix: 'STU2_' },
+    { number: 3, classKey: 'class_3', configKey: 'class3', className: 'Class 3', idPrefix: 'STU3_' },
+    { number: 4, classKey: 'class_4', configKey: 'class4', className: 'Class 4', idPrefix: 'STU4_' }
+];
+
+let classData = CLASS_CONFIGS.reduce((acc, cfg) => {
+    acc[cfg.classKey] = { title: `${cfg.className} Students`, students: [] };
+    return acc;
+}, {});
 
 let studentsData = {};
 let studentExams = {};
-let classResults = { class_1: [], class_2: [], class_3: [] };
+let classResults = CLASS_CONFIGS.reduce((acc, cfg) => {
+    acc[cfg.classKey] = [];
+    return acc;
+}, {});
 let examConfig = null;
-let attendanceData = { class_1: {}, class_2: {}, class_3: {} };
+let attendanceData = CLASS_CONFIGS.reduce((acc, cfg) => {
+    acc[cfg.classKey] = {};
+    return acc;
+}, {});
+
+async function safeFetchJson(path, fallback = []) {
+    try {
+        const response = await fetch(`${path}?v=${Date.now()}`);
+        if (!response.ok) {
+            throw new Error(`Failed to fetch ${path}: ${response.status}`);
+        }
+        return await response.json();
+    } catch (error) {
+        console.warn(`Using fallback for ${path}`, error);
+        return fallback;
+    }
+}
+
+function getClassConfigByStudentId(studentId) {
+    return CLASS_CONFIGS.find(cfg => studentId.startsWith(cfg.idPrefix)) || null;
+}
 
 async function loadStudentData() {
     try {
-        const configResponse = await fetch('../json/exam_config.json?v=' + Date.now());
-        examConfig = await configResponse.json();
-        
-        const [class1Students, class2Students, class3Students, class1Attendance, class2Attendance, class3Attendance] = await Promise.all([
-            fetch('../json/class1/class1_students.json?v=' + Date.now()).then(r => r.json()),
-            fetch('../json/class2/class2_students.json?v=' + Date.now()).then(r => r.json()),
-            fetch('../json/class3/class3_students.json?v=' + Date.now()).then(r => r.json()),
-            fetch('../json/class1/attendance.json?v=' + Date.now()).then(r => r.json()),
-            fetch('../json/class2/attendance.json?v=' + Date.now()).then(r => r.json()),
-            fetch('../json/class3/attendance.json?v=' + Date.now()).then(r => r.json())
-        ]);
-        
-        class1Attendance.forEach(a => attendanceData.class_1[a.student_id] = a.attendance);
-        class2Attendance.forEach(a => attendanceData.class_2[a.student_id] = a.attendance);
-        class3Attendance.forEach(a => attendanceData.class_3[a.student_id] = a.attendance);
-        
-        classData.class_1.students = class1Students.map(s => ({
-            id: `STU1_${s.roll_no.toString().padStart(2, '0')}`,
-            name: s.student_name,
-            rollNo: s.roll_no.toString().padStart(2, '0'),
-            photo: `../images/students/${s.image}`
-        }));
-        
-        classData.class_2.students = class2Students.map(s => ({
-            id: `STU2_${s.roll_no.toString().padStart(2, '0')}`,
-            name: s.student_name,
-            rollNo: s.roll_no.toString().padStart(2, '0'),
-            photo: `../images/students/${s.image}`
-        }));
-        
-        classData.class_3.students = class3Students.map(s => ({
-            id: `STU3_${s.roll_no.toString().padStart(2, '0')}`,
-            name: s.student_name,
-            rollNo: s.roll_no.toString().padStart(2, '0'),
-            photo: `../images/students/${s.image}`
-        }));
-        
-        await loadExamResults('class1', 'class_1', 'Class 1', 'STU1_');
-        await loadExamResults('class2', 'class_2', 'Class 2', 'STU2_');
-        await loadExamResults('class3', 'class_3', 'Class 3', 'STU3_');
-        
+        examConfig = await safeFetchJson('../json/exam_config.json', { session: '', classes: {} });
+
+        const studentRequests = CLASS_CONFIGS.map(cfg =>
+            safeFetchJson(`../json/class${cfg.number}/class${cfg.number}_students.json`, [])
+        );
+        const attendanceRequests = CLASS_CONFIGS.map(cfg =>
+            safeFetchJson(`../json/class${cfg.number}/attendance.json`, [])
+        );
+
+        const studentsByClass = await Promise.all(studentRequests);
+        const attendanceByClass = await Promise.all(attendanceRequests);
+
+        CLASS_CONFIGS.forEach((cfg, index) => {
+            const classStudents = studentsByClass[index] || [];
+            const classAttendance = attendanceByClass[index] || [];
+
+            classAttendance.forEach(a => {
+                if (a && a.student_id) {
+                    attendanceData[cfg.classKey][a.student_id] = a.attendance;
+                }
+            });
+
+            classData[cfg.classKey].students = classStudents.map(s => ({
+                id: `${cfg.idPrefix}${s.roll_no.toString().padStart(2, '0')}`,
+                name: s.student_name,
+                rollNo: s.roll_no.toString().padStart(2, '0'),
+                fatherName: s.father_name || '',
+                motherName: s.mother_name || '',
+                dob: s.dob || '',
+                photo: `../images/students/${s.image}`
+            }));
+        });
+
+        for (const cfg of CLASS_CONFIGS) {
+            if (examConfig.classes && examConfig.classes[cfg.configKey]) {
+                await loadExamResults(cfg);
+            }
+        }
+
         console.log('Data loaded successfully');
     } catch (error) {
         console.error('Error loading student data:', error);
     }
 }
 
-async function loadExamResults(configKey, classKey, className, idPrefix) {
+async function loadExamResults(classCfg) {
+    const { configKey, classKey, className, idPrefix } = classCfg;
     const classConfig = examConfig.classes[configKey];
+    if (!classConfig) {
+        return;
+    }
     const exams = classConfig.exams || [];
     const tests = classConfig.tests || [];
     
@@ -108,6 +139,8 @@ async function loadExamResults(configKey, classKey, className, idPrefix) {
                     }
                     
                     const attendance = attendanceData[classKey][studentId] || result.attendance || 0;
+
+                    const studentMeta = classData[classKey].students.find(s => s.id === studentId);
                     
                     const data = {
                         name: result.student_name,
@@ -115,6 +148,8 @@ async function loadExamResults(configKey, classKey, className, idPrefix) {
                         rollNo: result.roll_no.toString().padStart(2, '0'),
                         session: examConfig.session,
                         examType: exam.name,
+                        fatherName: result.father_name || studentMeta?.fatherName || '',
+                        motherName: result.mother_name || studentMeta?.motherName || '',
                         photo: `../images/students/${classKey}/${result.roll_no.toString().padStart(2, '0')}_${classKey}.webp`,
                         subjects: subjects,
                         attendance: attendance
@@ -232,16 +267,19 @@ function goBack() {
 let currentExamConfigs = [];
 
 function displayAllExams(student, studentId, allExams) {
+    const classCfg = getClassConfigByStudentId(studentId);
+    if (!classCfg) {
+        return;
+    }
+
     currentExamConfigs = allExams.map(exam => {
-        const classKey = student.class.includes('1') ? 'class1' : student.class.includes('2') ? 'class2' : 'class3';
-        const examType = exam.examType.toLowerCase();
-        const configExams = examConfig.classes[classKey].exams || [];
-        const configTests = examConfig.classes[classKey].tests || [];
+        const configExams = examConfig.classes[classCfg.configKey].exams || [];
+        const configTests = examConfig.classes[classCfg.configKey].tests || [];
         return [...configTests, ...configExams].find(e => e.name === exam.examType) || {};
     });
     const photoElement = document.getElementById('studentPhoto');
     const printPhotoElement = document.getElementById('printPhoto');
-    const studentData = classData.class_1.students.concat(classData.class_2.students, classData.class_3.students).find(s => s.id === studentId);
+    const studentData = Object.values(classData).flatMap(c => c.students).find(s => s.id === studentId);
     
     photoElement.src = studentData ? studentData.photo : student.photo;
     printPhotoElement.src = studentData ? studentData.photo : student.photo;
@@ -255,8 +293,8 @@ function displayAllExams(student, studentId, allExams) {
     document.getElementById('printStudentName').textContent = student.name;
     document.getElementById('studentClass').textContent = student.class;
     document.getElementById('rollNo').textContent = student.rollNo;
-    document.getElementById('fatherName').textContent = student.fatherName || '';
-    document.getElementById('motherName').textContent = student.motherName || '';
+    document.getElementById('fatherName').textContent = studentData?.fatherName || student.fatherName || '';
+    document.getElementById('motherName').textContent = studentData?.motherName || student.motherName || '';
     document.getElementById('session').textContent = student.session;
     document.getElementById('attendance').textContent = `${student.attendance}%`;
 
@@ -360,8 +398,11 @@ function getGrade(percentage) {
 }
 
 function calculateRank(studentId, percentage) {
-    const classKey = studentId.startsWith('STU1_') ? 'class_1' : 
-                     studentId.startsWith('STU2_') ? 'class_2' : 'class_3';
+    const classCfg = getClassConfigByStudentId(studentId);
+    if (!classCfg) {
+        return '-';
+    }
+    const classKey = classCfg.classKey;
     
     const rankings = classResults[classKey].map(student => {
         let total = 0, max = 0;
@@ -452,5 +493,3 @@ function printMarksheet() {
         }, 1000);
     }, 300);
 }
-
-

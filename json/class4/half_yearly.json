@@ -1,0 +1,86 @@
+[
+    {
+        "roll_no":  1,
+        "student_name":  "DINDAYAL",
+        "hindi_written":  41,
+        "hindi_oral":  19,
+        "english_written":  13,
+        "english_oral":  9,
+        "math_written":  44,
+        "math_oral":  19,
+        "evs_written":  34,
+        "evs_oral":  18
+    },
+    {
+        "roll_no":  2,
+        "student_name":  "DINESH SIMAR",
+        "hindi_written":  31,
+        "hindi_oral":  18,
+        "english_written":  16,
+        "english_oral":  9,
+        "math_written":  17,
+        "math_oral":  44,
+        "evs_written":  17,
+        "evs_oral":  47
+    },
+    {
+        "roll_no":  3,
+        "student_name":  "KAUSHALYA",
+        "hindi_written":  40,
+        "hindi_oral":  19,
+        "english_written":  24,
+        "english_oral":  10,
+        "math_written":  44,
+        "math_oral":  20,
+        "evs_written":  45,
+        "evs_oral":  19
+    },
+    {
+        "roll_no":  4,
+        "student_name":  "LAXMI",
+        "hindi_written":  26,
+        "hindi_oral":  17,
+        "english_written":  16,
+        "english_oral":  9,
+        "math_written":  40,
+        "math_oral":  19,
+        "evs_written":  31,
+        "evs_oral":  17
+    },
+    {
+        "roll_no":  5,
+        "student_name":  "MANISHA",
+        "hindi_written":  10,
+        "hindi_oral":  17,
+        "english_written":  7,
+        "english_oral":  9,
+        "math_written":  29,
+        "math_oral":  17,
+        "evs_written":  12,
+        "evs_oral":  17
+    },
+    {
+        "roll_no":  6,
+        "student_name":  "NAVEEN SIMAR",
+        "hindi_written":  42,
+        "hindi_oral":  19,
+        "english_written":  18,
+        "english_oral":  10,
+        "math_written":  30,
+        "math_oral":  17,
+        "evs_written":  26,
+        "evs_oral":  17
+    },
+    {
+        "roll_no":  7,
+        "student_name":  "SONAKSHI KANWAR",
+        "hindi_written":  27,
+        "hindi_oral":  18,
+        "english_written":  8,
+        "english_oral":  9,
+        "math_written":  32,
+        "math_oral":  18,
+        "evs_written":  29,
+        "evs_oral":  17
+    }
+]

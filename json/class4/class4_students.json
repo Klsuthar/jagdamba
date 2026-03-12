@@ -1,0 +1,58 @@
+[
+  {
+    "roll_no": 1,
+    "student_name": "DINDAYAL",
+    "father_name": "SANWAR MAL",
+    "mother_name": "SUNITA DEVI",
+    "dob": "2/1/2017",
+    "image": "class_4/01_class4.webp"
+  },
+  {
+    "roll_no": 2,
+    "student_name": "DINESH SIMAR",
+    "father_name": "MOHANRAM MEGHWAL",
+    "mother_name": "SAROJ DEVI",
+    "dob": "2/1/2018",
+    "image": "class_4/02_class4.webp"
+  },
+  {
+    "roll_no": 3,
+    "student_name": "KAUSHALYA",
+    "father_name": "RAKESH",
+    "mother_name": "ANURADHA",
+    "dob": "12/14/2016",
+    "image": "class_4/03_class4.webp"
+  },
+  {
+    "roll_no": 4,
+    "student_name": "LAXMI",
+    "father_name": "RAKESH SUTHAR",
+    "mother_name": "CHUKI DEVI",
+    "dob": "7/2/2015",
+    "image": "class_4/04_class4.webp"
+  },
+  {
+    "roll_no": 5,
+    "student_name": "MANISHA",
+    "father_name": "MEGHARAM NEHARA",
+    "mother_name": "MANGI DEVI",
+    "dob": "4/29/2015",
+    "image": "class_4/05_class4.webp"
+  },
+  {
+    "roll_no": 6,
+    "student_name": "NAVEEN SIMAR",
+    "father_name": "BHANI RAM",
+    "mother_name": "RUKAMANI DEVI",
+    "dob": "4/10/2016",
+    "image": "class_4/06_class4.webp"
+  },
+  {
+    "roll_no": 7,
+    "student_name": "SONAKSHI KANWAR",
+    "father_name": "JITENDRA SINGH",
+    "mother_name": "RITU NIRWAN",
+    "dob": "6/6/2016",
+    "image": "class_4/07_class4.webp"
+  }
+]
