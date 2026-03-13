@@ -109,13 +109,14 @@
                                 <img src="../images/logo.png" alt="School Logo" class="print-logo-img">
                             </div>
                             <div class="print-school-details">
-                                <h1 class="print-school-name">Shree Jagdamba Convent School</h1>
+                                <h1 class="print-school-name">SHREE JAGDAMBA UPPER PRIMARY SCHOOL</h1>
                                 <p class="print-school-subtitle">An English Medium Co-Educational School</p>
                                 <div class="print-divider-line"></div>
                                 <div class="print-report-badge">
                                     <span>✦</span> PROGRESS REPORT <span>✦</span>
                                 </div>
                                 <p id="printStudentName" class="print-student-name"></p>
+                                <p id="printStudentClass" class="print-student-class"></p>
                             </div>
                             <div class="print-photo-container">
                                 <img src="" alt="Student Photo" id="printPhoto" class="print-student-photo">
@@ -162,6 +163,13 @@
                         </div>
 
                         <div id="allExamsContainer"></div>
+
+                        <div class="download-report-container">
+                            <button class="download-report-btn" onclick="printMarksheet()">
+                                <i class="fas fa-download"></i>
+                                <span>Download PDF Report</span>
+                            </button>
+                        </div>
 
                         <!-- Print-only footer: Grade Scale, Remarks, Signatures -->
                         <div class="print-only-footer" style="display: none;">
@@ -213,15 +221,12 @@
                             <i class="fas fa-chevron-left"></i>
                             <span>Previous</span>
                         </button>
-                        <button class="nav-btn download-btn" onclick="printMarksheet()" style="background: linear-gradient(135deg, #48bb78 0%, #38a169 100%); color: white;">
-                            <i class="fas fa-download"></i>
-                            <span>Download</span>
-                        </button>
                         <button class="nav-btn next-btn" id="nextStudentBtn" onclick="navigateStudent('next')">
                             <span>Next</span>
                             <i class="fas fa-chevron-right"></i>
                         </button>
                     </div>
+
 
                     <div class="students-horizontal-list">
                         <h4><i class="fas fa-users"></i> Quick Navigate</h4>

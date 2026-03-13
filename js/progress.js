@@ -292,6 +292,7 @@ function displayAllExams(student, studentId, allExams) {
     document.getElementById('studentName').textContent = student.name;
     document.getElementById('printStudentName').textContent = student.name;
     document.getElementById('studentClass').textContent = student.class;
+    document.getElementById('printStudentClass').textContent = student.class;
     document.getElementById('rollNo').textContent = student.rollNo;
     document.getElementById('fatherName').textContent = studentData?.fatherName || student.fatherName || '';
     document.getElementById('motherName').textContent = studentData?.motherName || student.motherName || '';
