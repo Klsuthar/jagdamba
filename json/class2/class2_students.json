@@ -113,50 +113,42 @@
   },
   {
     "roll_no": 15,
-    "student_name": "RAMDEV SUTHAR",
-    "father_name": "RAJURAM",
-    "mother_name": "PANNA DEVI",
-    "dob": "4/2/2018",
-    "image": "class_2/15_class2.webp"
-  },
-  {
-    "roll_no": 16,
     "student_name": "RIYANS PAL",
     "father_name": "RAGHVENDRA PAL",
     "mother_name": "YARSHA PAL",
     "dob": "10/22/2017",
-    "image": "class_2/16_class2.webp"
+    "image": "class_2/15_class2.webp"
   },
   {
-    "roll_no": 17,
+    "roll_no": 16,
     "student_name": "SUNITA KHERIYA",
     "father_name": "DEVENDRA KUMAR",
     "mother_name": "SHANTI DEVI",
     "dob": "7/22/2018",
-    "image": "class_2/17_class2.webp"
+    "image": "class_2/16_class2.webp"
   },
   {
-    "roll_no": 18,
+    "roll_no": 17,
     "student_name": "VIJAY KHERIYA",
     "father_name": "BHAGURAM KHERIYA",
     "mother_name": "DHAPU",
     "dob": "7/11/2018",
-    "image": "class_2/18_class2.webp"
+    "image": "class_2/17_class2.webp"
   },
   {
-    "roll_no": 19,
+    "roll_no": 18,
     "student_name": "YOGENDRA SINGH",
     "father_name": "KARANI SINGH",
     "mother_name": "RATAN KANWAR",
     "dob": "8/28/2018",
-    "image": "class_2/19_class2.webp"
+    "image": "class_2/18_class2.webp"
   },
   {
-    "roll_no": 20,
+    "roll_no": 19,
     "student_name": "NIHARIKA",
     "father_name": "ARJUN RAM",
     "mother_name": "",
     "dob": "",
-    "image": "class_2/20_class2.webp"
+    "image": "class_2/19_class2.webp"
   }
 ]
