@@ -6,8 +6,8 @@
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
-        "math_written":  null,
-        "math_oral":  null,
+        "math_written":  21,
+        "math_oral":  60,
         "evs_written":  null
     },
     {
@@ -17,8 +17,8 @@
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
-        "math_written":  null,
-        "math_oral":  null,
+        "math_written":  27,
+        "math_oral":  66,
         "evs_written":  null
     },
     {
@@ -28,8 +28,8 @@
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
-        "math_written":  null,
-        "math_oral":  null,
+        "math_written":  30,
+        "math_oral":  70,
         "evs_written":  null
     },
     {
@@ -39,8 +39,8 @@
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
-        "math_written":  null,
-        "math_oral":  null,
+        "math_written":  21,
+        "math_oral":  62,
         "evs_written":  null
     },
     {
@@ -50,8 +50,8 @@
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
-        "math_written":  null,
-        "math_oral":  null,
+        "math_written":  29,
+        "math_oral":  69,
         "evs_written":  null
     },
     {
@@ -61,8 +61,8 @@
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
-        "math_written":  null,
-        "math_oral":  null,
+        "math_written":  26,
+        "math_oral":  66,
         "evs_written":  null
     },
     {
@@ -72,8 +72,8 @@
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
-        "math_written":  null,
-        "math_oral":  null,
+        "math_written":  28,
+        "math_oral":  68,
         "evs_written":  null
     },
     {
@@ -94,8 +94,8 @@
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
-        "math_written":  null,
-        "math_oral":  null,
+        "math_written":  10,
+        "math_oral":  60,
         "evs_written":  null
     },
     {
@@ -105,8 +105,8 @@
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
-        "math_written":  null,
-        "math_oral":  null,
+        "math_written":  25,
+        "math_oral":  65,
         "evs_written":  null
     },
     {
@@ -116,8 +116,8 @@
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
-        "math_written":  null,
-        "math_oral":  null,
+        "math_written":  27,
+        "math_oral":  67,
         "evs_written":  null
     },
     {
@@ -127,8 +127,8 @@
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
-        "math_written":  null,
-        "math_oral":  null,
+        "math_written":  30,
+        "math_oral":  70,
         "evs_written":  null
     },
     {
@@ -138,8 +138,8 @@
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
-        "math_written":  null,
-        "math_oral":  null,
+        "math_written":  25,
+        "math_oral":  65,
         "evs_written":  null
     },
     {
@@ -149,19 +149,8 @@
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
-        "math_written":  null,
-        "math_oral":  null,
-        "evs_written":  null
-    },
-    {
-        "roll_no":  15,
-        "student_name":  "RAMDEV SUTHAR",
-        "hindi_written":  null,
-        "hindi_oral":  null,
-        "english_written":  null,
-        "english_oral":  null,
-        "math_written":  null,
-        "math_oral":  null,
+        "math_written":  29,
+        "math_oral":  69,
         "evs_written":  null
     },
     {
@@ -171,8 +160,8 @@
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
-        "math_written":  null,
-        "math_oral":  null,
+        "math_written":  29,
+        "math_oral":  69,
         "evs_written":  null
     },
     {
@@ -182,8 +171,8 @@
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
-        "math_written":  null,
-        "math_oral":  null,
+        "math_written":  24,
+        "math_oral":  64,
         "evs_written":  null
     },
     {
@@ -193,8 +182,8 @@
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
-        "math_written":  null,
-        "math_oral":  null,
+        "math_written":  28,
+        "math_oral":  68,
         "evs_written":  null
     },
     {
@@ -215,8 +204,8 @@
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
-        "math_written":  null,
-        "math_oral":  null,
+        "math_written":  30,
+        "math_oral":  68,
         "evs_written":  null
     }
 ]
