@@ -1,1 +1,9 @@
-[]
+[
+  { "student_id": "STU4_01", "roll_no": 1, "student_name": "DINDAYAL", "attendance": 85 },
+  { "student_id": "STU4_02", "roll_no": 2, "student_name": "DINESH SIMAR", "attendance": 82 },
+  { "student_id": "STU4_03", "roll_no": 3, "student_name": "KAUSHALYA", "attendance": 90 },
+  { "student_id": "STU4_04", "roll_no": 4, "student_name": "LAXMI", "attendance": 88 },
+  { "student_id": "STU4_05", "roll_no": 5, "student_name": "MANISHA", "attendance": 80 },
+  { "student_id": "STU4_06", "roll_no": 6, "student_name": "NAVEEN SIMAR", "attendance": 84 },
+  { "student_id": "STU4_07", "roll_no": 7, "student_name": "SONAKSHI KANWAR", "attendance": 86 }
+]
