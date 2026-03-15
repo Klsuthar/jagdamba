@@ -57,31 +57,68 @@
                 
                 <h2 class="section-title">Student Progress</h2>
                 
-                <div class="class-selection">
+                <div class="class-selection" aria-busy="true">
                     <div class="selection-header">
+                        <span class="selection-kicker">Academic Dashboard</span>
                         <i class="fas fa-graduation-cap"></i>
                         <h3>Select Your Class</h3>
                         <p>Choose a class to view student progress reports</p>
                     </div>
+                    <div class="progress-loader" id="progressLoader" role="status" aria-live="polite">
+                        <div class="loader-visual" aria-hidden="true">
+                            <div class="loader-orbit orbit-one"></div>
+                            <div class="loader-orbit orbit-two"></div>
+                            <div class="loader-orbit orbit-three"></div>
+                            <div class="loader-core">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <span class="loader-dot dot-one"></span>
+                            <span class="loader-dot dot-two"></span>
+                            <span class="loader-dot dot-three"></span>
+                        </div>
+                        <div class="loader-copy">
+                            <p class="progress-status" id="progressStatus">Loading student progress data...</p>
+                            <p class="progress-substatus" id="progressSubstatus">Preparing records for all classes</p>
+                            <div class="progress-track" aria-hidden="true">
+                                <div class="progress-fill" id="progressFill"></div>
+                            </div>
+                            <div class="progress-meta">
+                                <span class="progress-percent" id="progressPercent">0%</span>
+                                <span class="progress-step" id="progressStep">Starting...</span>
+                            </div>
+                        </div>
+                    </div>
                     <div class="class-buttons">
-                        <button class="class-btn" onclick="selectClass('class_1')">
+                        <button class="class-btn" type="button" onclick="selectClass('class_1')" disabled>
                             <div class="btn-icon"><i class="fas fa-book-reader"></i></div>
-                            <span class="btn-text">Class 1</span>
+                            <span class="btn-content">
+                                <span class="btn-text">Class 1</span>
+                                <span class="btn-subtext">Open student reports</span>
+                            </span>
                             <div class="btn-shine"></div>
                         </button>
-                        <button class="class-btn" onclick="selectClass('class_2')">
+                        <button class="class-btn" type="button" onclick="selectClass('class_2')" disabled>
                             <div class="btn-icon"><i class="fas fa-book-open"></i></div>
-                            <span class="btn-text">Class 2</span>
+                            <span class="btn-content">
+                                <span class="btn-text">Class 2</span>
+                                <span class="btn-subtext">Check marks and attendance</span>
+                            </span>
                             <div class="btn-shine"></div>
                         </button>
-                        <button class="class-btn" onclick="selectClass('class_3')">
+                        <button class="class-btn" type="button" onclick="selectClass('class_3')" disabled>
                             <div class="btn-icon"><i class="fas fa-user-graduate"></i></div>
-                            <span class="btn-text">Class 3</span>
+                            <span class="btn-content">
+                                <span class="btn-text">Class 3</span>
+                                <span class="btn-subtext">See exams and results</span>
+                            </span>
                             <div class="btn-shine"></div>
                         </button>
-                        <button class="class-btn" onclick="selectClass('class_4')">
+                        <button class="class-btn" type="button" onclick="selectClass('class_4')" disabled>
                             <div class="btn-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-                            <span class="btn-text">Class 4</span>
+                            <span class="btn-content">
+                                <span class="btn-text">Class 4</span>
+                                <span class="btn-subtext">View full progress report</span>
+                            </span>
                             <div class="btn-shine"></div>
                         </button>
                     </div>

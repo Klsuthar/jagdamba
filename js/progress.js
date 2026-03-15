@@ -21,6 +21,9 @@ let attendanceData = CLASS_CONFIGS.reduce((acc, cfg) => {
     acc[cfg.classKey] = {};
     return acc;
 }, {});
+let studentDataLoadPromise = null;
+let isStudentDataReady = false;
+let studentDataLoadProgress = { completed: 0, total: 1 };
 
 async function safeFetchJson(path, fallback = []) {
     try {
@@ -39,16 +42,130 @@ function getClassConfigByStudentId(studentId) {
     return CLASS_CONFIGS.find(cfg => studentId.startsWith(cfg.idPrefix)) || null;
 }
 
+function setProgressStatus(message = '', state = 'info') {
+    const statusElement = document.getElementById('progressStatus');
+    const loaderElement = document.getElementById('progressLoader');
+    if (!statusElement) {
+        return;
+    }
+
+    statusElement.textContent = message;
+    if (loaderElement) {
+        loaderElement.dataset.state = state;
+        loaderElement.style.display = message ? 'grid' : 'none';
+    }
+}
+
+function updateLoadingProgress(detail = 'Loading records...') {
+    const fillElement = document.getElementById('progressFill');
+    const percentElement = document.getElementById('progressPercent');
+    const substatusElement = document.getElementById('progressSubstatus');
+    const stepElement = document.getElementById('progressStep');
+    const total = Math.max(studentDataLoadProgress.total, 1);
+    const completed = Math.min(studentDataLoadProgress.completed, total);
+    const percent = Math.round((completed / total) * 100);
+
+    if (fillElement) {
+        fillElement.style.width = `${percent}%`;
+    }
+
+    if (percentElement) {
+        percentElement.textContent = `${percent}%`;
+    }
+
+    if (substatusElement) {
+        substatusElement.textContent = detail;
+    }
+
+    if (stepElement) {
+        stepElement.textContent = `${completed}/${total} completed`;
+    }
+}
+
+function resetLoadingProgress(total, detail) {
+    studentDataLoadProgress = { completed: 0, total: Math.max(total, 1) };
+    updateLoadingProgress(detail);
+}
+
+function setLoadingTotal(total, detail) {
+    studentDataLoadProgress.total = Math.max(total, 1);
+    updateLoadingProgress(detail);
+}
+
+function markLoadingStep(detail) {
+    studentDataLoadProgress.completed += 1;
+    updateLoadingProgress(detail);
+}
+
+function setClassButtonsDisabled(disabled) {
+    const classSelection = document.querySelector('.class-selection');
+    document.querySelectorAll('.class-btn').forEach(button => {
+        button.disabled = disabled;
+    });
+
+    if (classSelection) {
+        classSelection.setAttribute('aria-busy', disabled ? 'true' : 'false');
+    }
+}
+
+async function ensureStudentDataLoaded() {
+    if (isStudentDataReady) {
+        return true;
+    }
+
+    if (!studentDataLoadPromise) {
+        setClassButtonsDisabled(true);
+        setProgressStatus('Loading student progress data, please wait...', 'loading');
+
+        studentDataLoadPromise = loadStudentData()
+            .then(() => {
+                isStudentDataReady = true;
+                setProgressStatus('');
+                return true;
+            })
+            .catch(error => {
+                setProgressStatus('Could not load student progress data. Please refresh and try again.', 'error');
+                throw error;
+            })
+            .finally(() => {
+                setClassButtonsDisabled(!isStudentDataReady);
+            });
+    }
+
+    return studentDataLoadPromise;
+}
+
 async function loadStudentData() {
     try {
+        resetLoadingProgress(1, 'Loading exam setup');
         examConfig = await safeFetchJson('../json/exam_config.json', { session: '', classes: {} });
+
+        const examFileCount = CLASS_CONFIGS.reduce((count, cfg) => {
+            const classConfig = examConfig.classes?.[cfg.configKey];
+            if (!classConfig) {
+                return count;
+            }
+
+            return count + (classConfig.tests?.length || 0) + (classConfig.exams?.length || 0);
+        }, 0);
 
         const studentRequests = CLASS_CONFIGS.map(cfg =>
             safeFetchJson(`../json/class${cfg.number}/class${cfg.number}_students.json`, [])
+                .then(data => {
+                    markLoadingStep(`${cfg.className} student list ready`);
+                    return data;
+                })
         );
         const attendanceRequests = CLASS_CONFIGS.map(cfg =>
             safeFetchJson(`../json/class${cfg.number}/attendance.json`, [])
+                .then(data => {
+                    markLoadingStep(`${cfg.className} attendance ready`);
+                    return data;
+                })
         );
+
+        setLoadingTotal(1 + studentRequests.length + attendanceRequests.length + examFileCount, 'Loading class records');
+        markLoadingStep('Exam setup loaded');
 
         const studentsByClass = await Promise.all(studentRequests);
         const attendanceByClass = await Promise.all(attendanceRequests);
@@ -81,8 +198,10 @@ async function loadStudentData() {
         }
 
         console.log('Data loaded successfully');
+        return true;
     } catch (error) {
         console.error('Error loading student data:', error);
+        throw error;
     }
 }
 
@@ -98,7 +217,8 @@ async function loadExamResults(classCfg) {
     for (const exam of [...tests, ...exams]) {
         if (exam.file) {
             try {
-                const results = await fetch(`../${exam.file}?v=${Date.now()}`).then(r => r.json());
+                const results = await safeFetchJson(`../${exam.file}`, []);
+                markLoadingStep(`${className} ${exam.name} ready`);
                 
                 results.forEach(result => {
                     const studentId = result.student_id || `${idPrefix}${result.roll_no.toString().padStart(2, '0')}`;
@@ -174,7 +294,7 @@ async function loadExamResults(classCfg) {
 
 // Initialize data on page load
 document.addEventListener('DOMContentLoaded', () => {
-    loadStudentData();
+    ensureStudentDataLoaded();
     
     // Handle browser back button
     window.addEventListener('popstate', (e) => {
@@ -186,7 +306,13 @@ document.addEventListener('DOMContentLoaded', () => {
     history.pushState({ page: 'class-selection' }, '', '');
 });
 
-function selectClass(className) {
+async function selectClass(className) {
+    try {
+        await ensureStudentDataLoaded();
+    } catch (error) {
+        return;
+    }
+
     const classInfo = classData[className];
     const studentsList = document.getElementById('studentsList');
     const classTitle = document.getElementById('classTitle');
@@ -220,7 +346,13 @@ function selectClass(className) {
 let currentStudentId = null;
 let currentClassStudents = [];
 
-function showStudentReport(studentId) {
+async function showStudentReport(studentId) {
+    try {
+        await ensureStudentDataLoaded();
+    } catch (error) {
+        return;
+    }
+
     const exams = studentExams[studentId];
     const studentsList = document.getElementById('studentsList');
     const reportCard = document.getElementById('reportCard');
