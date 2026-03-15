@@ -1,7 +1,9 @@
-const CACHE_NAME = 'jagdamba-v9.2-optimized';
+const CACHE_NAME = 'jagdamba-v10.0.0-pwa-icons';
 const urlsToCache = [
   '/',
   '/index.html',
+  '/manifest.json',
+  '/site.webmanifest',
   '/pages/about.html',
   '/pages/gallery.html',
   '/pages/contact.html',
@@ -31,7 +33,10 @@ const urlsToCache = [
   '/js/scroll-optimization.js',
   '/js/scroll-animation.js',
   '/images/logo.png',
-  '/images/favicon.ico'
+  '/images/favicon.ico',
+  '/apple-touch-icon.png',
+  '/android-chrome-192x192.png',
+  '/android-chrome-512x512.png'
 ];
 
 self.addEventListener('install', e => {

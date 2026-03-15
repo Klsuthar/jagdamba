@@ -1,6 +1,55 @@
 {
   "events": [
     {
+      "eventName": "Birthday Celebration",
+      "images": [
+        {
+          "path": "../images/events/birthday_dharna/dharna_cover.webp",
+          "alt": "Birthday Celebration Cover"
+        },
+        {
+          "path": "../images/events/birthday_dharna/dharna_1.webp",
+          "alt": "Birthday Celebration 1"
+        },
+        {
+          "path": "../images/events/birthday_dharna/dharna_2.webp",
+          "alt": "Birthday Celebration 2"
+        },
+        {
+          "path": "../images/events/birthday_dharna/dharna_3.webp",
+          "alt": "Birthday Celebration 3"
+        },
+        {
+          "path": "../images/events/birthday_dharna/dharna_4.webp",
+          "alt": "Birthday Celebration 4"
+        },
+        {
+          "path": "../images/events/birthday_dharna/dharna_5.webp",
+          "alt": "Birthday Celebration 5"
+        },
+        {
+          "path": "../images/events/birthday_dharna/dharna_6.webp",
+          "alt": "Birthday Celebration 6"
+        },
+        {
+          "path": "../images/events/birthday_dharna/dharna_7.webp",
+          "alt": "Birthday Celebration 7"
+        },
+        {
+          "path": "../images/events/birthday_dharna/dharna_8.webp",
+          "alt": "Birthday Celebration 8"
+        },
+        {
+          "path": "../images/events/birthday_dharna/dharna_9.webp",
+          "alt": "Birthday Celebration 9"
+        },
+        {
+          "path": "../images/events/birthday_dharna/dharna_10.webp",
+          "alt": "Birthday Celebration 10"
+        }
+      ]
+    },
+    {
       "eventName": "Bikaner Tour 2025",
       "images": [
         {

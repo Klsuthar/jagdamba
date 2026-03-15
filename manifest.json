@@ -2,32 +2,35 @@
   "name": "Shree Jagdamba Convent School",
   "short_name": "Jagdamba",
   "description": "Shree Jagdamba Convent School - Quality Education",
-  "start_url": "/",
+  "id": "/",
+  "start_url": "/?source=pwa",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "transparent",
-  "theme_color": "#6366f1",
+  "background_color": "#ffffff",
+  "theme_color": "#2d3748",
   "orientation": "portrait-primary",
+  "version": "10.0.0",
   "icons": [
     {
-      "src": "images/logo.png",
+      "src": "/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "images/logo.png",
+      "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "images/logo.png",
+      "src": "/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "images/logo.png",
+      "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
@@ -36,19 +39,5 @@
   "categories": [
     "education",
     "school"
-  ],
-  "screenshots": [
-    {
-      "src": "images/screenshot-mobile.png",
-      "sizes": "540x720",
-      "type": "image/png",
-      "form_factor": "narrow"
-    },
-    {
-      "src": "images/screenshot-desktop.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide"
-    }
   ]
 }

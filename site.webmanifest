@@ -1,21 +1,26 @@
 {
   "name": "Shree Jagdamba Convent School",
   "short_name": "Jagdamba School",
+  "id": "/",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "theme_color": "#2d3748",
-  "background_color": "#2d3748",
+  "background_color": "#ffffff",
   "display": "standalone",
-  "start_url": "/",
-  "scope": "/"
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "orientation": "portrait-primary",
+  "version": "10.0.0"
 }
