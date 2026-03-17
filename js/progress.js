@@ -5,6 +5,22 @@ const CLASS_CONFIGS = [
     { number: 4, classKey: 'class_4', configKey: 'class4', className: 'Class 4', idPrefix: 'STU4_' }
 ];
 
+const ADDITIONAL_ACTIVITY_HEADERS = [
+    'Subject',
+    'First Evalution',
+    'Second Evalution',
+    'Third Evalution',
+    'Fourth Evalution',
+    'Fifth Evalution',
+    'Overall'
+];
+
+const ADDITIONAL_ACTIVITY_ROWS = [
+    ['Work Experience', 'A+', 'A+', 'A+', 'A+', 'A+', 'A+'],
+    ['Arts Education', 'A+', 'A+', 'A+', 'A+', 'A+', 'A+'],
+    ['Heath & Physical Education', 'A+', 'A+', 'A+', 'A+', 'A+', 'A+']
+];
+
 let classData = CLASS_CONFIGS.reduce((acc, cfg) => {
     acc[cfg.classKey] = { title: `${cfg.className} Students`, students: [] };
     return acc;
@@ -398,6 +414,33 @@ function goBack() {
 
 let currentExamConfigs = [];
 
+function renderAdditionalActivityTable() {
+    const headerCells = ADDITIONAL_ACTIVITY_HEADERS.map((header, index) => {
+        const cellClass = index === 0 ? 'subject-col' : 'exam-header';
+        return `<th class="${cellClass}">${header}</th>`;
+    }).join('');
+
+    const rows = ADDITIONAL_ACTIVITY_ROWS.map(row => `
+        <tr>
+            <td class="subject-name">${row[0]}</td>
+            ${row.slice(1).map(value => `<td class="mark-cell total-cell activity-grade-cell">${value}</td>`).join('')}
+        </tr>
+    `).join('');
+
+    return `
+        <div class="exams-container supplementary-table-section">
+            <div class="table-wrapper">
+                <table class="marks-table activity-table">
+                    <thead>
+                        <tr>${headerCells}</tr>
+                    </thead>
+                    <tbody>${rows}</tbody>
+                </table>
+            </div>
+        </div>
+    `;
+}
+
 function displayAllExams(student, studentId, allExams) {
     const classCfg = getClassConfigByStudentId(studentId);
     if (!classCfg) {
@@ -445,12 +488,18 @@ function displayAllExams(student, studentId, allExams) {
         percentage = (totalObtained / totalMax) * 100;
     }
     document.getElementById('percentage').textContent = `${percentage.toFixed(2)}%`;
+    document.getElementById('totalMarks').textContent = `${totalObtained}/${totalMax}`;
     document.getElementById('rank').textContent = calculateRank(studentId, percentage);
 
     const container = document.getElementById('allExamsContainer');
     
-    if (!allExams[0].subjects || allExams[0].subjects.length === 0) {
-        container.innerHTML = '<p style="text-align: center; color: #999; margin-top: 2rem;">No exam data available</p>';
+    const additionalActivityTableHTML = renderAdditionalActivityTable();
+
+    if (!allExams.length || !allExams[0].subjects || allExams[0].subjects.length === 0) {
+        container.innerHTML = `
+            <p style="text-align: center; color: #999; margin-top: 2rem;">No exam data available</p>
+            ${additionalActivityTableHTML}
+        `;
         return;
     }
     
@@ -518,7 +567,7 @@ function displayAllExams(student, studentId, allExams) {
         </div>
     `;
     
-    container.innerHTML = tableHTML;
+    container.innerHTML = tableHTML + additionalActivityTableHTML;
 }
 
 function getGrade(percentage) {
