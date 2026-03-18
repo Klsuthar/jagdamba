@@ -527,7 +527,7 @@ function displayAllExams(student, studentId, allExams) {
         let row = `<tr><td class="subject-name">${subject}</td>`;
         
         allExams.forEach((exam, examIdx) => {
-            const sub = exam.subjects[idx];
+            const sub = exam.subjects.find(s => s.name === subject) || {};
             if (colspanCount[examIdx]) {
                 const w = sub.written !== undefined ? sub.written : null;
                 const o = sub.oral !== undefined ? sub.oral : null;

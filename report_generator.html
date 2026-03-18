@@ -748,7 +748,7 @@
                     subjectNames.forEach((subj, idx) => {
                         let row = `<tr><td class="subj-name">${subj}</td>`;
                         studentExams.forEach((ex, exIdx) => {
-                            const sub = ex.subjects[idx];
+                            const sub = ex.subjects.find(s => s.name === subj) || {};
                             if (hasWrittenOral[exIdx]) {
                                 const w = sub.written !== undefined ? sub.written : null;
                                 const o = sub.oral !== undefined ? sub.oral : null;
