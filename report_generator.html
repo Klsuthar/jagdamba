@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Generator - Jagdamba School</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* ==========================================
+           SCREEN UI STYLES
+           ========================================== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        .generator-panel {
+            max-width: 650px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.97);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 24px 54px rgba(0,0,0,0.2);
+        }
+
+        .panel-header {
+            background: linear-gradient(135deg, #4f46e5 0%, #6d28d9 55%, #7c3aed 100%);
+            padding: 2rem 1.5rem;
+            color: white;
+            text-align: center;
+        }
+
+        .panel-header i { font-size: 2.5rem; margin-bottom: 0.8rem; display: block; }
+        .panel-header h1 { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.4rem; }
+        .panel-header p { font-size: 0.95rem; opacity: 0.9; }
+
+        .panel-body { padding: 1.5rem; }
+
+        .class-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .class-option {
+            padding: 1.2rem;
+            border: 3px solid #e2e8f0;
+            border-radius: 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .class-option:hover {
+            border-color: #667eea;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(102,126,234,0.2);
+        }
+
+        .class-option.selected {
+            border-color: #4f46e5;
+            background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+            box-shadow: 0 4px 16px rgba(79,70,229,0.3);
+        }
+
+        .class-option i { font-size: 1.8rem; display: block; margin-bottom: 0.5rem; color: #4f46e5; }
+        .class-option span { font-weight: 700; font-size: 1.1rem; color: #1e293b; }
+
+        .generate-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .generate-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(79,70,229,0.4); }
+        .generate-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
+
+        .status-msg {
+            text-align: center;
+            margin-top: 1rem;
+            font-weight: 700;
+            color: #4338ca;
+            font-size: 0.95rem;
+            min-height: 1.4rem;
+        }
+
+        /* ==========================================
+           PRINT REPORT PAGE — EACH STUDENT
+           ========================================== */
+        .report-page {
+            display: none;
+        }
+
+        @media print {
+            @page { size: A4 portrait; margin: 0; }
+
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                box-sizing: border-box !important;
+            }
+
+            *, *::before, *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+
+            body {
+                background: white !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                min-height: 0 !important;
+            }
+
+            .generator-panel { display: none !important; }
+
+            .report-page {
+                display: flex !important;
+                flex-direction: column;
+                position: relative;
+                width: 210mm;
+                height: 297mm;
+                padding: 5mm;
+                box-sizing: border-box;
+                background: white;
+                overflow: hidden;
+                page-break-after: always;
+                font-family: 'Nunito', sans-serif;
+                font-size: 12px;
+            }
+
+            .report-page:last-child {
+                page-break-after: auto;
+            }
+
+            /* Outer decorative borders */
+            .report-page::before {
+                content: '';
+                position: absolute;
+                top: 5mm; left: 5mm; right: 5mm; bottom: 5mm;
+                border: 4px solid #1e3a8a;
+                pointer-events: none;
+                z-index: 10;
+            }
+
+            .report-page::after {
+                content: '';
+                position: absolute;
+                top: calc(5mm + 4px); left: calc(5mm + 4px);
+                right: calc(5mm + 4px); bottom: calc(5mm + 4px);
+                border: 2px solid #ca8a04;
+                pointer-events: none;
+                z-index: 10;
+            }
+
+            /* HEADER */
+            .rpt-header {
+                padding: 12px 18px 8px;
+            }
+
+            .rpt-corner {
+                position: absolute;
+                width: 30px; height: 30px;
+                z-index: 11;
+            }
+
+            .rpt-corner-tl { top: 10px; left: 10px; border-top: 3px solid #ca8a04; border-left: 3px solid #ca8a04; }
+            .rpt-corner-tr { top: 10px; right: 10px; border-top: 3px solid #ca8a04; border-right: 3px solid #ca8a04; }
+
+            .rpt-header-content {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .rpt-logo-box { flex: 0 0 78px; }
+            .rpt-logo-box img { width: 78px; height: 78px; object-fit: contain; }
+
+            .rpt-school-info {
+                flex: 1;
+                text-align: center;
+                padding: 0 15px;
+            }
+
+            .rpt-school-name {
+                color: #1e3a8a;
+                font-family: 'Playfair Display', serif;
+                font-weight: 900;
+                font-size: 21px;
+                margin: 0 0 3px;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+                line-height: 1.1;
+            }
+
+            .rpt-school-sub {
+                font-family: 'Nunito', sans-serif;
+                font-weight: 700;
+                font-size: 10px;
+                color: #92400e;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                margin: 0 0 4px;
+            }
+
+            .rpt-divider {
+                width: 60%;
+                height: 2px;
+                background: linear-gradient(to right, transparent, #ca8a04, #1e3a8a, #ca8a04, transparent);
+                margin: 5px auto;
+            }
+
+            .rpt-badge {
+                display: inline-block;
+                background: #1e3a8a;
+                color: white;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 800;
+                font-size: 11px;
+                padding: 4px 20px;
+                letter-spacing: 3.5px;
+                border: 2px solid #ca8a04;
+                margin: 3px 0 0;
+            }
+
+            .rpt-badge span { color: #ca8a04; font-size: 10px; }
+
+            .rpt-student-name {
+                font-family: 'Playfair Display', serif;
+                font-size: 14px;
+                font-weight: 700;
+                color: #1e3a8a;
+                margin: 6px 0 0;
+                text-transform: uppercase;
+                letter-spacing: 1.2px;
+            }
+
+            .rpt-student-class {
+                font-family: 'Nunito', sans-serif;
+                font-size: 11px;
+                font-weight: 700;
+                color: #ca8a04;
+                margin: 2px 0 0;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+            }
+
+            .rpt-photo-box {
+                flex: 0 0 78px;
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            .rpt-photo-box img {
+                width: 74px;
+                height: 92px;
+                object-fit: cover;
+                border: 3px solid #1e3a8a;
+                padding: 2px;
+                background: white;
+            }
+
+            .rpt-header-line {
+                height: 3px;
+                background: linear-gradient(to right, #1e3a8a, #ca8a04, #1e3a8a);
+                margin: 8px 0 0;
+            }
+
+            /* BODY */
+            .rpt-body {
+                padding: 8px 18px 10px;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+            }
+
+            /* Info Grid */
+            .rpt-info-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                border: 2px solid #1e3a8a;
+                background: white;
+                margin-bottom: 10px;
+            }
+
+            .rpt-info-item {
+                display: flex;
+                align-items: center;
+                padding: 5px 10px;
+                border-bottom: 1px solid #cbd5e1;
+                border-right: 1px solid #1e3a8a;
+            }
+
+            .rpt-info-item:nth-child(odd) { background: #f8fafc; }
+            .rpt-info-item:nth-child(2n) { border-right: none; }
+            .rpt-info-item:nth-last-child(-n+2) { border-bottom: none; }
+
+            .rpt-info-label {
+                color: #1e3a8a;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 800;
+                font-size: 10px;
+                width: 95px;
+                flex-shrink: 0;
+                text-transform: uppercase;
+                letter-spacing: 0.3px;
+            }
+
+            .rpt-info-value {
+                color: #1a202c;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 700;
+                font-size: 12px;
+                flex-grow: 1;
+                border-bottom: 1px dashed #94a3b8;
+                padding-bottom: 1px;
+            }
+
+            /* Marks Table */
+            .rpt-table-wrapper {
+                border: 2px solid #1e3a8a;
+                background: white;
+                margin-bottom: 10px;
+                page-break-inside: avoid;
+            }
+
+            .rpt-marks-table {
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 10px;
+                font-family: 'Nunito', sans-serif;
+            }
+
+            .rpt-marks-table th,
+            .rpt-marks-table td {
+                border: 1px solid #94a3b8;
+                padding: 5px 4px;
+                text-align: center;
+                color: #1a202c;
+            }
+
+            .rpt-marks-table .exam-hdr {
+                background: #1e3a8a;
+                color: #ffffff;
+                font-weight: 800;
+                font-size: 10px;
+                border-bottom: 2px solid #ca8a04;
+                letter-spacing: 0.4px;
+                text-transform: uppercase;
+                padding: 6px 4px;
+            }
+
+            .rpt-marks-table .sub-hdr {
+                background: #dbeafe;
+                color: #1e3a8a;
+                font-weight: 700;
+                font-size: 9px;
+                padding: 5px 3px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+
+            .rpt-marks-table .subj-col {
+                background: #1e3a8a;
+                color: #ffffff;
+                font-weight: 800;
+                font-size: 10px;
+            }
+
+            .rpt-marks-table .subj-name {
+                background: #f1f5f9;
+                font-weight: 700;
+                text-align: left;
+                font-size: 10px;
+                color: #1e3a8a;
+                padding-left: 6px;
+            }
+
+            .rpt-marks-table tbody tr:nth-child(even) { background: #f0f4ff; }
+            .rpt-marks-table tbody tr:nth-child(odd) { background: white; }
+
+            .rpt-marks-table .total-cell {
+                background: #dbeafe;
+                color: #1e3a8a;
+                font-weight: 900;
+            }
+
+            .mark-f {
+                display: inline;
+                font-size: 11px;
+                font-weight: 700;
+            }
+
+            .mark-o {
+                color: #1e3a8a;
+                font-size: 12px;
+                font-weight: 800;
+                display: inline;
+            }
+
+            .mark-m {
+                color: #64748b;
+                font-size: 9px;
+                display: inline;
+            }
+
+            .mark-d {
+                display: inline-block;
+                width: 6px;
+                height: 1px;
+                background: #ca8a04;
+                margin: 0 1px;
+                transform: rotate(-60deg);
+                vertical-align: middle;
+            }
+
+            /* Activity Table */
+            .rpt-activity-table .subj-col,
+            .rpt-activity-table .subj-name {
+                width: 160px; min-width: 160px; max-width: 160px;
+                white-space: normal; overflow: visible;
+                line-height: 1.25;
+            }
+
+            .rpt-activity-table .exam-hdr { font-size: 9px; padding: 7px 3px; }
+            .rpt-activity-table .act-grade { font-size: 10px; font-weight: 800; }
+
+            /* Footer */
+            .rpt-footer {
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+                margin-top: 8px;
+            }
+
+            .rpt-grade-scale { margin-bottom: 8px; }
+
+            .rpt-grade-scale h4 {
+                font-family: 'Nunito', sans-serif;
+                font-size: 11px;
+                font-weight: 800;
+                color: #1e3a8a;
+                margin-bottom: 5px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            .rpt-grade-table {
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 9px;
+                font-family: 'Nunito', sans-serif;
+            }
+
+            .rpt-grade-table th,
+            .rpt-grade-table td {
+                border: 1px solid #94a3b8;
+                padding: 4px 6px;
+                text-align: center;
+            }
+
+            .rpt-grade-table th {
+                background: #1e3a8a;
+                color: white;
+                font-weight: 700;
+                font-size: 10px;
+            }
+
+            .rpt-grade-table td {
+                background: white;
+                color: #1a202c;
+                font-weight: 600;
+            }
+
+            .rpt-grade-table .grade-lbl {
+                background: #f0f4ff;
+                font-weight: 700;
+                color: #1e3a8a;
+            }
+
+            .rpt-remarks {
+                margin: 8px 0;
+                font-size: 11px;
+                color: #1e3a8a;
+            }
+
+            .rpt-remarks strong {
+                font-family: 'Nunito', sans-serif;
+                font-size: 11px;
+                color: #1e3a8a;
+                letter-spacing: 0.5px;
+            }
+
+            .rpt-remark-line {
+                border-bottom: 1px dashed #94a3b8;
+                height: 16px;
+                margin-top: 3px;
+            }
+
+            .rpt-signatures {
+                display: flex;
+                justify-content: space-between;
+                margin-top: auto;
+                padding: 0 10px;
+            }
+
+            .rpt-sig-block {
+                text-align: center;
+                width: 28%;
+            }
+
+            .rpt-sig-line {
+                border-bottom: 2px solid #1e3a8a;
+                margin-bottom: 5px;
+                height: 1px;
+            }
+
+            .rpt-sig-block p {
+                font-family: 'Nunito', sans-serif;
+                font-size: 10px;
+                font-weight: 800;
+                color: #1e3a8a;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin: 0;
+            }
+
+            .rpt-date-line {
+                margin-top: 10px;
+                text-align: left;
+            }
+
+            .rpt-date-line p {
+                font-family: 'Nunito', sans-serif;
+                font-size: 11px;
+                font-weight: 700;
+                color: #1e3a8a;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SCREEN UI -->
+    <div class="generator-panel">
+        <div class="panel-header">
+            <i class="fas fa-file-pdf"></i>
+            <h1>Bulk Report Generator</h1>
+            <p>Generate all student reports for a class in one PDF</p>
+        </div>
+        <div class="panel-body">
+            <div class="class-grid">
+                <div class="class-option" onclick="selectGen(this, 1)">
+                    <i class="fas fa-book-reader"></i>
+                    <span>Class 1</span>
+                </div>
+                <div class="class-option" onclick="selectGen(this, 2)">
+                    <i class="fas fa-book-open"></i>
+                    <span>Class 2</span>
+                </div>
+                <div class="class-option" onclick="selectGen(this, 3)">
+                    <i class="fas fa-user-graduate"></i>
+                    <span>Class 3</span>
+                </div>
+                <div class="class-option" onclick="selectGen(this, 4)">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>Class 4</span>
+                </div>
+            </div>
+            <button class="generate-btn" id="generateBtn" disabled onclick="generateReports()">
+                <i class="fas fa-print"></i> Generate All Reports
+            </button>
+            <div class="status-msg" id="statusMsg"></div>
+        </div>
+    </div>
+
+    <!-- PRINT PAGES CONTAINER -->
+    <div id="reportPages"></div>
+
+    <script>
+        const CLASS_CONFIGS = [
+            { number: 1, configKey: 'class1', className: 'Class 1', idPrefix: 'STU1_' },
+            { number: 2, configKey: 'class2', className: 'Class 2', idPrefix: 'STU2_' },
+            { number: 3, configKey: 'class3', className: 'Class 3', idPrefix: 'STU3_' },
+            { number: 4, configKey: 'class4', className: 'Class 4', idPrefix: 'STU4_' }
+        ];
+
+        const ACTIVITY_HEADERS = ['Subject','First Evalution','Second Evalution','Third Evalution','Fourth Evalution','Fifth Evalution','Overall'];
+        const ACTIVITY_ROWS = [
+            ['Work Experience','A+','A+','A+','A+','A+','A+'],
+            ['Arts Education','A+','A+','A+','A+','A+','A+'],
+            ['Heath & Physical Education','A+','A+','A+','A+','A+','A+']
+        ];
+
+        let selectedClass = null;
+        let examConfig = null;
+
+        async function safeFetch(path) {
+            try {
+                const res = await fetch(`${path}?v=${Date.now()}`);
+                if (!res.ok) throw new Error();
+                return await res.json();
+            } catch { return []; }
+        }
+
+        function selectGen(el, classNum) {
+            document.querySelectorAll('.class-option').forEach(o => o.classList.remove('selected'));
+            el.classList.add('selected');
+            selectedClass = classNum;
+            document.getElementById('generateBtn').disabled = false;
+            document.getElementById('statusMsg').textContent = '';
+        }
+
+        function markFraction(obtained, max) {
+            const obt = obtained !== null && obtained !== undefined ? obtained : '';
+            return `<span class="mark-f"><span class="mark-o">${obt}</span><span class="mark-d"></span><span class="mark-m">${max}</span></span>`;
+        }
+
+        function calculateRank(studentId, percentage, allStudents, allExams, cfg) {
+            const rankings = allStudents.map(s => {
+                const sid = `${cfg.idPrefix}${s.roll_no.toString().padStart(2,'0')}`;
+                const exams = allExams[sid] || [];
+                let total = 0, max = 0;
+                exams.forEach(e => e.subjects.forEach(sub => {
+                    total += sub.obtained !== null ? sub.obtained : 0;
+                    max += sub.total || 0;
+                }));
+                return { id: sid, pct: max > 0 ? (total / max) * 100 : 0 };
+            }).sort((a, b) => b.pct - a.pct);
+            const rank = rankings.findIndex(r => r.id === studentId) + 1;
+            if (rank === 1) return '1st';
+            if (rank === 2) return '2nd';
+            if (rank === 3) return '3rd';
+            return `${rank}th`;
+        }
+
+        async function generateReports() {
+            if (!selectedClass) return;
+            const btn = document.getElementById('generateBtn');
+            const status = document.getElementById('statusMsg');
+            const container = document.getElementById('reportPages');
+            btn.disabled = true;
+            status.textContent = 'Loading data...';
+            container.innerHTML = '';
+
+            try {
+                const cfg = CLASS_CONFIGS.find(c => c.number === selectedClass);
+                examConfig = await safeFetch('json/exam_config.json');
+                const students = await safeFetch(`json/class${cfg.number}/class${cfg.number}_students.json`);
+                const attendance = await safeFetch(`json/class${cfg.number}/attendance.json`);
+
+                const attendanceMap = {};
+                attendance.forEach(a => { if (a && a.student_id) attendanceMap[a.student_id] = a.attendance; });
+
+                const classConfig = examConfig.classes?.[cfg.configKey] || {};
+                const tests = classConfig.tests || [];
+                const exams = classConfig.exams || [];
+                const allExamDefs = [...tests, ...exams];
+
+                // Load all exam result files
+                const allResults = {};
+                for (const exam of allExamDefs) {
+                    if (exam.file) {
+                        const results = await safeFetch(exam.file);
+                        results.forEach(r => {
+                            const sid = `${cfg.idPrefix}${r.roll_no.toString().padStart(2,'0')}`;
+                            if (!allResults[sid]) allResults[sid] = [];
+
+                            let subjects = [];
+                            if ('hindi_written' in r || 'hindi_oral' in r) {
+                                const sc = exam.subjects || {};
+                                subjects = [
+                                    { name:'Hindi', written:r.hindi_written, oral:r.hindi_oral, obtained:((r.hindi_written||0)+(r.hindi_oral||0))||null, total:(sc.hindi?.written||0)+(sc.hindi?.oral||0) },
+                                    { name:'English', written:r.english_written, oral:r.english_oral, obtained:((r.english_written||0)+(r.english_oral||0))||null, total:(sc.english?.written||0)+(sc.english?.oral||0) },
+                                    { name:'Mathematics', written:r.math_written, oral:r.math_oral, obtained:((r.math_written||0)+(r.math_oral||0))||null, total:(sc.mathematics?.written||0)+(sc.mathematics?.oral||0) },
+                                    { name:'EVS', written:r.evs_written, oral:r.evs_oral, obtained:((r.evs_written||0)+(r.evs_oral||0))||null, total:(sc.evs?.written||0)+(sc.evs?.oral||0) }
+                                ];
+                            } else {
+                                const mm = exam.max_marks || {};
+                                subjects = [
+                                    { name:'Hindi', obtained:r.hindi, total:mm.hindi||10 },
+                                    { name:'English', obtained:r.english, total:mm.english||5 },
+                                    { name:'Mathematics', obtained:r.mathematics, total:mm.mathematics||10 },
+                                    { name:'EVS', obtained:r.evs, total:mm.evs||10 }
+                                ];
+                            }
+
+                            allResults[sid].push({ examName: exam.name, examDef: exam, subjects });
+                        });
+                    }
+                }
+
+                // Sort students by roll number
+                students.sort((a, b) => a.roll_no - b.roll_no);
+
+                status.textContent = `Building ${students.length} reports...`;
+
+                students.forEach(student => {
+                    const sid = `${cfg.idPrefix}${student.roll_no.toString().padStart(2,'0')}`;
+                    const rollNo = student.roll_no.toString().padStart(2, '0');
+                    const studentExams = allResults[sid] || [];
+                    const att = attendanceMap[sid] || 0;
+                    const photoUrl = `images/students/class_${cfg.number}/${rollNo}_class${cfg.number}.webp`;
+
+                    // Calculate totals
+                    let totalObt = 0, totalMax = 0;
+                    studentExams.forEach(e => e.subjects.forEach(s => {
+                        totalObt += s.obtained !== null ? s.obtained : 0;
+                        totalMax += s.total || 0;
+                    }));
+                    const pct = totalMax > 0 ? ((totalObt / totalMax) * 100).toFixed(2) : '0.00';
+                    const rank = calculateRank(sid, parseFloat(pct), students, allResults, cfg);
+
+                    // Build marks table
+                    const subjectNames = studentExams.length > 0 ? studentExams[0].subjects.map(s => s.name) : [];
+                    let headerCols = '<th class="subj-col">Subject</th>';
+                    let subHeaderCols = '<th class="subj-col"></th>';
+                    let hasWrittenOral = [];
+
+                    studentExams.forEach(ex => {
+                        const isExam = ex.examName.includes('Yearly') || ex.examName.includes('Half Yearly');
+                        hasWrittenOral.push(isExam);
+                        headerCols += `<th colspan="${isExam ? 3 : 1}" class="exam-hdr">${ex.examName}</th>`;
+                        if (isExam) {
+                            subHeaderCols += '<th class="sub-hdr">Written</th><th class="sub-hdr">Oral</th><th class="sub-hdr">Total</th>';
+                        } else {
+                            subHeaderCols += '<th class="sub-hdr">Marks</th>';
+                        }
+                    });
+
+                    let rows = '';
+                    subjectNames.forEach((subj, idx) => {
+                        let row = `<tr><td class="subj-name">${subj}</td>`;
+                        studentExams.forEach((ex, exIdx) => {
+                            const sub = ex.subjects[idx];
+                            if (hasWrittenOral[exIdx]) {
+                                const w = sub.written !== undefined ? sub.written : null;
+                                const o = sub.oral !== undefined ? sub.oral : null;
+                                const t = sub.obtained !== null ? sub.obtained : null;
+                                const maxT = sub.total || 100;
+                                const examDef = ex.examDef;
+                                const subKey = subj.toLowerCase();
+                                const subCfg = examDef.subjects?.[subKey] || {};
+                                const wMax = subCfg.written || '';
+                                const oMax = subCfg.oral || '';
+                                row += `<td>${markFraction(w, wMax)}</td>`;
+                                row += `<td>${markFraction(o, oMax)}</td>`;
+                                row += `<td class="total-cell">${markFraction(t, maxT)}</td>`;
+                            } else {
+                                const obt = sub.obtained !== null ? sub.obtained : null;
+                                const max = sub.total || 10;
+                                row += `<td class="total-cell">${markFraction(obt, max)}</td>`;
+                            }
+                        });
+                        row += '</tr>';
+                        rows += row;
+                    });
+
+                    // Activity table
+                    const actHeaderCells = ACTIVITY_HEADERS.map((h, i) =>
+                        `<th class="${i===0?'subj-col':'exam-hdr'}">${h}</th>`
+                    ).join('');
+                    const actRows = ACTIVITY_ROWS.map(r =>
+                        `<tr><td class="subj-name">${r[0]}</td>${r.slice(1).map(v=>`<td class="total-cell act-grade">${v}</td>`).join('')}</tr>`
+                    ).join('');
+
+                    const pageHTML = `
+                    <div class="report-page">
+                        <div class="rpt-corner rpt-corner-tl"></div>
+                        <div class="rpt-corner rpt-corner-tr"></div>
+
+                        <div class="rpt-header">
+                            <div class="rpt-header-content">
+                                <div class="rpt-logo-box">
+                                    <img src="images/logo.png" alt="Logo">
+                                </div>
+                                <div class="rpt-school-info">
+                                    <h1 class="rpt-school-name">Shree Jagdamba English Medium School Dhadheru Churu</h1>
+                                    <p class="rpt-school-sub">An English Medium Co-Educational School</p>
+                                    <div class="rpt-divider"></div>
+                                    <div class="rpt-badge"><span>✦</span> PROGRESS REPORT <span>✦</span></div>
+                                    <p class="rpt-student-name">${student.student_name}</p>
+                                    <p class="rpt-student-class">${cfg.className}</p>
+                                </div>
+                                <div class="rpt-photo-box">
+                                    <img src="${photoUrl}" alt="${student.student_name}"
+                                         onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(student.student_name)}&background=2563eb&color=fff&size=200'">
+                                </div>
+                            </div>
+                            <div class="rpt-header-line"></div>
+                        </div>
+
+                        <div class="rpt-body">
+                            <div class="rpt-info-grid">
+                                <div class="rpt-info-item"><span class="rpt-info-label">Roll Number:</span><span class="rpt-info-value">${rollNo}</span></div>
+                                <div class="rpt-info-item"><span class="rpt-info-label">Father Name:</span><span class="rpt-info-value">${student.father_name || ''}</span></div>
+                                <div class="rpt-info-item"><span class="rpt-info-label">Mother Name:</span><span class="rpt-info-value">${student.mother_name || ''}</span></div>
+                                <div class="rpt-info-item"><span class="rpt-info-label">Session:</span><span class="rpt-info-value">${examConfig.session || ''}</span></div>
+                                <div class="rpt-info-item"><span class="rpt-info-label">Attendance:</span><span class="rpt-info-value">${att}%</span></div>
+                                <div class="rpt-info-item"><span class="rpt-info-label">Percentage:</span><span class="rpt-info-value">${pct}%</span></div>
+                                <div class="rpt-info-item"><span class="rpt-info-label">Marks Obtained:</span><span class="rpt-info-value">${totalObt}/${totalMax}</span></div>
+                                <div class="rpt-info-item"><span class="rpt-info-label">Rank:</span><span class="rpt-info-value">${rank}</span></div>
+                            </div>
+
+                            ${studentExams.length > 0 ? `
+                            <div class="rpt-table-wrapper">
+                                <table class="rpt-marks-table">
+                                    <thead>
+                                        <tr>${headerCols}</tr>
+                                        <tr>${subHeaderCols}</tr>
+                                    </thead>
+                                    <tbody>${rows}</tbody>
+                                </table>
+                            </div>
+                            ` : '<p style="text-align:center;color:#999;margin:1rem 0;">No exam data available</p>'}
+
+                            <div class="rpt-table-wrapper">
+                                <table class="rpt-marks-table rpt-activity-table">
+                                    <thead><tr>${actHeaderCells}</tr></thead>
+                                    <tbody>${actRows}</tbody>
+                                </table>
+                            </div>
+
+                            <div class="rpt-footer">
+                                <div class="rpt-grade-scale">
+                                    <h4>📊 Grading Scale</h4>
+                                    <table class="rpt-grade-table">
+                                        <thead>
+                                            <tr><th>Grade</th><th>A+</th><th>A</th><th>B</th><th>C</th><th>D</th><th>F</th></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td class="grade-lbl">Marks %</td><td>90–100</td><td>75–89</td><td>60–74</td><td>45–59</td><td>33–44</td><td>&lt;33</td></tr>
+                                            <tr><td class="grade-lbl">Remark</td><td>Outstanding</td><td>Excellent</td><td>Very Good</td><td>Good</td><td>Needs Work</td><td>Fail</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="rpt-remarks">
+                                    <strong>Teacher's Remarks:</strong>
+                                    <div class="rpt-remark-line"></div>
+                                    <div class="rpt-remark-line"></div>
+                                </div>
+
+                                <div class="rpt-signatures">
+                                    <div class="rpt-sig-block"><div class="rpt-sig-line"></div><p>Class Teacher</p></div>
+                                    <div class="rpt-sig-block"><div class="rpt-sig-line"></div><p>Exam Incharge</p></div>
+                                    <div class="rpt-sig-block"><div class="rpt-sig-line"></div><p>Principal</p></div>
+                                </div>
+                                <div class="rpt-date-line"><p>Date: _______________</p></div>
+                            </div>
+                        </div>
+                    </div>`;
+
+                    container.innerHTML += pageHTML;
+                });
+
+                status.textContent = `✅ ${students.length} reports ready! Opening print dialog...`;
+
+                const originalTitle = document.title;
+                document.title = `${cfg.className}_All_Reports`;
+
+                setTimeout(() => {
+                    window.print();
+                    setTimeout(() => {
+                        document.title = originalTitle;
+                        btn.disabled = false;
+                        status.textContent = `✅ ${students.length} reports generated successfully!`;
+                    }, 1000);
+                }, 500);
+
+            } catch (error) {
+                console.error('Error generating reports:', error);
+                status.textContent = '❌ Error generating reports. Please try again.';
+                btn.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>
