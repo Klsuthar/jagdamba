@@ -204,7 +204,7 @@ async function loadStudentData() {
                 motherName: s.mother_name || '',
                 dob: s.dob || '',
                 photo: `../images/students/${s.image}`
-            }));
+            })).sort((a, b) => parseInt(a.rollNo) - parseInt(b.rollNo));
         });
 
         for (const cfg of CLASS_CONFIGS) {
