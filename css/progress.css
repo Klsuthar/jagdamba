@@ -2854,7 +2854,9 @@
        PRINT FOOTER: Grade Scale + Signatures
        ========================================== */
     .print-only-footer {
-        display: block !important;
+        display: flex !important;
+        flex-direction: column !important;
+        flex: 1 !important;
         margin-top: 8px !important;
         page-break-inside: avoid !important;
     }
@@ -2933,7 +2935,7 @@
     .print-signatures {
         display: flex !important;
         justify-content: space-between !important;
-        margin-top: 22px !important;
+        margin-top: auto !important;
         padding: 0 10px !important;
     }
 
