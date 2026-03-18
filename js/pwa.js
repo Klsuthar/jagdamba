@@ -1,4 +1,4 @@
-const PWA_VERSION = '10.0.0';
+const PWA_VERSION = '10.0.1';
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {

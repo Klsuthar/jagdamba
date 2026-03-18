@@ -1,4 +1,4 @@
-const CACHE_NAME = 'jagdamba-v10.0.0-pwa-icons';
+const CACHE_NAME = 'jagdamba-v10.0.1-pwa-icons';
 const urlsToCache = [
   '/',
   '/index.html',
