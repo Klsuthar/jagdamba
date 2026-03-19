@@ -611,6 +611,51 @@
         let selectedClass = null;
         let examConfig = null;
 
+        function normalizeRollNo(value) {
+            const digits = String(value ?? '').replace(/\D/g, '');
+            return digits ? digits.padStart(2, '0') : '';
+        }
+
+        function buildStudentId(cfg, rollNo) {
+            const normalizedRollNo = normalizeRollNo(rollNo);
+            return normalizedRollNo ? `${cfg.idPrefix}${normalizedRollNo}` : '';
+        }
+
+        function buildPhotoUrl(cfg, rollNo, imagePath = '') {
+            if (imagePath) {
+                return `images/students/${imagePath}`;
+            }
+
+            const normalizedRollNo = normalizeRollNo(rollNo);
+            return normalizedRollNo
+                ? `images/students/class_${cfg.number}/${normalizedRollNo}_class${cfg.number}.webp`
+                : '';
+        }
+
+        function buildSubjectsFromResult(result, exam) {
+            if (Array.isArray(result.subjects) && result.subjects.length > 0) {
+                return result.subjects;
+            }
+
+            if ('hindi_written' in result || 'hindi_oral' in result) {
+                const sc = exam.subjects || {};
+                return [
+                    { name:'Hindi', written:result.hindi_written, oral:result.hindi_oral, obtained:((result.hindi_written||0)+(result.hindi_oral||0))||null, total:(sc.hindi?.written||0)+(sc.hindi?.oral||0) },
+                    { name:'English', written:result.english_written, oral:result.english_oral, obtained:((result.english_written||0)+(result.english_oral||0))||null, total:(sc.english?.written||0)+(sc.english?.oral||0) },
+                    { name:'Mathematics', written:result.math_written, oral:result.math_oral, obtained:((result.math_written||0)+(result.math_oral||0))||null, total:(sc.mathematics?.written||0)+(sc.mathematics?.oral||0) },
+                    { name:'EVS', written:result.evs_written, oral:result.evs_oral, obtained:((result.evs_written||0)+(result.evs_oral||0))||null, total:(sc.evs?.written||0)+(sc.evs?.oral||0) }
+                ];
+            }
+
+            const mm = exam.max_marks || {};
+            return [
+                { name:'Hindi', obtained:result.hindi, total:mm.hindi||10 },
+                { name:'English', obtained:result.english, total:mm.english||5 },
+                { name:'Mathematics', obtained:result.mathematics, total:mm.mathematics||10 },
+                { name:'EVS', obtained:result.evs, total:mm.evs||10 }
+            ];
+        }
+
         async function safeFetch(path) {
             try {
                 const res = await fetch(`${path}?v=${Date.now()}`);
@@ -634,7 +679,7 @@
 
         function calculateRank(studentId, percentage, allStudents, allExams, cfg) {
             const rankings = allStudents.map(s => {
-                const sid = `${cfg.idPrefix}${s.roll_no.toString().padStart(2,'0')}`;
+                const sid = buildStudentId(cfg, s.roll_no);
                 const exams = allExams[sid] || [];
                 let total = 0, max = 0;
                 exams.forEach(e => e.subjects.forEach(sub => {
@@ -679,28 +724,10 @@
                     if (exam.file) {
                         const results = await safeFetch(exam.file);
                         results.forEach(r => {
-                            const sid = `${cfg.idPrefix}${r.roll_no.toString().padStart(2,'0')}`;
+                            const sid = r.student_id || buildStudentId(cfg, r.roll_no);
+                            if (!sid) return;
                             if (!allResults[sid]) allResults[sid] = [];
-
-                            let subjects = [];
-                            if ('hindi_written' in r || 'hindi_oral' in r) {
-                                const sc = exam.subjects || {};
-                                subjects = [
-                                    { name:'Hindi', written:r.hindi_written, oral:r.hindi_oral, obtained:((r.hindi_written||0)+(r.hindi_oral||0))||null, total:(sc.hindi?.written||0)+(sc.hindi?.oral||0) },
-                                    { name:'English', written:r.english_written, oral:r.english_oral, obtained:((r.english_written||0)+(r.english_oral||0))||null, total:(sc.english?.written||0)+(sc.english?.oral||0) },
-                                    { name:'Mathematics', written:r.math_written, oral:r.math_oral, obtained:((r.math_written||0)+(r.math_oral||0))||null, total:(sc.mathematics?.written||0)+(sc.mathematics?.oral||0) },
-                                    { name:'EVS', written:r.evs_written, oral:r.evs_oral, obtained:((r.evs_written||0)+(r.evs_oral||0))||null, total:(sc.evs?.written||0)+(sc.evs?.oral||0) }
-                                ];
-                            } else {
-                                const mm = exam.max_marks || {};
-                                subjects = [
-                                    { name:'Hindi', obtained:r.hindi, total:mm.hindi||10 },
-                                    { name:'English', obtained:r.english, total:mm.english||5 },
-                                    { name:'Mathematics', obtained:r.mathematics, total:mm.mathematics||10 },
-                                    { name:'EVS', obtained:r.evs, total:mm.evs||10 }
-                                ];
-                            }
-
+                            const subjects = buildSubjectsFromResult(r, exam);
                             allResults[sid].push({ examName: exam.name, examDef: exam, subjects });
                         });
                     }
@@ -712,11 +739,11 @@
                 status.textContent = `Building ${students.length} reports...`;
 
                 students.forEach(student => {
-                    const sid = `${cfg.idPrefix}${student.roll_no.toString().padStart(2,'0')}`;
-                    const rollNo = student.roll_no.toString().padStart(2, '0');
+                    const sid = buildStudentId(cfg, student.roll_no);
+                    const rollNo = normalizeRollNo(student.roll_no);
                     const studentExams = allResults[sid] || [];
                     const att = attendanceMap[sid] || 0;
-                    const photoUrl = `images/students/class_${cfg.number}/${rollNo}_class${cfg.number}.webp`;
+                    const photoUrl = buildPhotoUrl(cfg, student.roll_no, student.image);
 
                     // Calculate totals
                     let totalObt = 0, totalMax = 0;

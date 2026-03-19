@@ -41,6 +41,48 @@ let studentDataLoadPromise = null;
 let isStudentDataReady = false;
 let studentDataLoadProgress = { completed: 0, total: 1 };
 
+function normalizeRollNo(value) {
+    const digits = String(value ?? '').replace(/\D/g, '');
+    return digits ? digits.padStart(2, '0') : '';
+}
+
+function buildStudentId(classCfg, rollNo) {
+    const normalizedRollNo = normalizeRollNo(rollNo);
+    return normalizedRollNo ? `${classCfg.idPrefix}${normalizedRollNo}` : '';
+}
+
+function buildStudentPhotoPath(classCfg, rollNo, imagePath = '') {
+    if (imagePath) {
+        return `../images/students/${imagePath}`;
+    }
+
+    const normalizedRollNo = normalizeRollNo(rollNo);
+    return normalizedRollNo
+        ? `../images/students/class_${classCfg.number}/${normalizedRollNo}_class${classCfg.number}.webp`
+        : '';
+}
+
+function syncClassStudentsWithResults(classCfg) {
+    const classKey = classCfg.classKey;
+    const existingStudents = classData[classKey].students || [];
+    const existingIds = new Set(existingStudents.map(student => student.id));
+    const derivedStudents = (classResults[classKey] || [])
+        .filter(student => student.id && !existingIds.has(student.id))
+        .map(student => ({
+            id: student.id,
+            name: student.name,
+            rollNo: normalizeRollNo(student.rollNo),
+            fatherName: student.fatherName || '',
+            motherName: student.motherName || '',
+            dob: student.dob || '',
+            photo: student.photo || buildStudentPhotoPath(classCfg, student.rollNo)
+        }));
+
+    classData[classKey].students = [...existingStudents, ...derivedStudents]
+        .filter(student => student.id && student.rollNo)
+        .sort((a, b) => parseInt(a.rollNo, 10) - parseInt(b.rollNo, 10));
+}
+
 async function safeFetchJson(path, fallback = []) {
     try {
         const response = await fetch(`${path}?v=${Date.now()}`);
@@ -196,21 +238,33 @@ async function loadStudentData() {
                 }
             });
 
-            classData[cfg.classKey].students = classStudents.map(s => ({
-                id: `${cfg.idPrefix}${s.roll_no.toString().padStart(2, '0')}`,
-                name: s.student_name,
-                rollNo: s.roll_no.toString().padStart(2, '0'),
-                fatherName: s.father_name || '',
-                motherName: s.mother_name || '',
-                dob: s.dob || '',
-                photo: `../images/students/${s.image}`
-            })).sort((a, b) => parseInt(a.rollNo) - parseInt(b.rollNo));
+            classData[cfg.classKey].students = classStudents
+                .map(s => {
+                    const rollNo = normalizeRollNo(s.roll_no);
+                    if (!rollNo) {
+                        return null;
+                    }
+
+                    return {
+                        id: buildStudentId(cfg, rollNo),
+                        name: s.student_name || 'Student',
+                        rollNo,
+                        fatherName: s.father_name || '',
+                        motherName: s.mother_name || '',
+                        dob: s.dob || '',
+                        photo: buildStudentPhotoPath(cfg, rollNo, s.image)
+                    };
+                })
+                .filter(Boolean)
+                .sort((a, b) => parseInt(a.rollNo, 10) - parseInt(b.rollNo, 10));
         });
 
         for (const cfg of CLASS_CONFIGS) {
             if (examConfig.classes && examConfig.classes[cfg.configKey]) {
                 await loadExamResults(cfg);
             }
+
+            syncClassStudentsWithResults(cfg);
         }
 
         console.log('Data loaded successfully');
@@ -237,7 +291,11 @@ async function loadExamResults(classCfg) {
                 markLoadingStep(`${className} ${exam.name} ready`);
                 
                 results.forEach(result => {
-                    const studentId = result.student_id || `${idPrefix}${result.roll_no.toString().padStart(2, '0')}`;
+                    const rollNo = normalizeRollNo(result.roll_no);
+                    const studentId = result.student_id || buildStudentId(classCfg, rollNo);
+                    if (!studentId) {
+                        return;
+                    }
                     
                     let subjects = [];
                     if (result.subjects && Array.isArray(result.subjects) && result.subjects.length > 0) {
@@ -279,14 +337,14 @@ async function loadExamResults(classCfg) {
                     const studentMeta = classData[classKey].students.find(s => s.id === studentId);
                     
                     const data = {
-                        name: result.student_name,
+                        name: result.student_name || studentMeta?.name || 'Student',
                         class: className,
-                        rollNo: result.roll_no.toString().padStart(2, '0'),
+                        rollNo: studentMeta?.rollNo || rollNo,
                         session: examConfig.session,
                         examType: exam.name,
                         fatherName: result.father_name || studentMeta?.fatherName || '',
                         motherName: result.mother_name || studentMeta?.motherName || '',
-                        photo: `../images/students/${classKey}/${result.roll_no.toString().padStart(2, '0')}_${classKey}.webp`,
+                        photo: studentMeta?.photo || buildStudentPhotoPath(classCfg, rollNo, result.image),
                         subjects: subjects,
                         attendance: attendance
                     };
