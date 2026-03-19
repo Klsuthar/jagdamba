@@ -8,7 +8,7 @@
         "english_oral": null,
         "math_written": 30,
         "math_oral": 70,
-        "evs_written": null
+        "evs_written": 45
     },
     {
         "roll_no": 2,
@@ -19,7 +19,7 @@
         "english_oral": null,
         "math_written": 30,
         "math_oral": 70,
-        "evs_written": null
+        "evs_written": 45
     },
     {
         "roll_no": 3,
@@ -30,7 +30,7 @@
         "english_oral": null,
         "math_written": 30,
         "math_oral": 70,
-        "evs_written": null
+        "evs_written": 46
     },
     {
         "roll_no": 4,
@@ -41,7 +41,7 @@
         "english_oral": null,
         "math_written": 28,
         "math_oral": 68,
-        "evs_written": null
+        "evs_written": 43
     },
     {
         "roll_no": 5,
@@ -52,7 +52,7 @@
         "english_oral": null,
         "math_written": 29,
         "math_oral": 69,
-        "evs_written": null
+        "evs_written": 45
     },
     {
         "roll_no": 6,
@@ -63,7 +63,7 @@
         "english_oral": null,
         "math_written": 24,
         "math_oral": 68,
-        "evs_written": null
+        "evs_written": 42
     },
     {
         "roll_no": 7,
@@ -74,7 +74,7 @@
         "english_oral": null,
         "math_written": 21,
         "math_oral": 68,
-        "evs_written": null
+        "evs_written": 42
     },
     {
         "roll_no": 8,
@@ -85,7 +85,7 @@
         "english_oral": null,
         "math_written": 28,
         "math_oral": 70,
-        "evs_written": null
+        "evs_written": 44
     },
     {
         "roll_no": 9,
@@ -96,7 +96,7 @@
         "english_oral": null,
         "math_written": 25,
         "math_oral": 69,
-        "evs_written": null
+        "evs_written": 44
     },
     {
         "roll_no": 10,
@@ -118,7 +118,7 @@
         "english_oral": null,
         "math_written": 24,
         "math_oral": 69,
-        "evs_written": null
+        "evs_written": 43
     },
     {
         "roll_no": 12,
@@ -129,7 +129,7 @@
         "english_oral": null,
         "math_written": 23,
         "math_oral": 69,
-        "evs_written": null
+        "evs_written": 42
     },
     {
         "roll_no": 13,
@@ -140,7 +140,7 @@
         "english_oral": null,
         "math_written": 20,
         "math_oral": 69,
-        "evs_written": null
+        "evs_written": 44
     },
     {
         "roll_no": 14,
@@ -151,6 +151,6 @@
         "english_oral": null,
         "math_written": null,
         "math_oral": 70,
-        "evs_written": null
+        "evs_written": 43
     }
 ]
