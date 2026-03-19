@@ -67,7 +67,7 @@
         "english_written":  23,
         "english_oral":  9,
         "math_written":  54,
-        "math_oral":  null,
+        "math_oral":  19,
         "evs_written":  null,
         "evs_oral":  null
     },
@@ -78,8 +78,8 @@
         "hindi_oral":  null,
         "english_written":  19,
         "english_oral":  9,
-        "math_written":  64,
-        "math_oral":  null,
+        "math_written":  54,
+        "math_oral":  19,
         "evs_written":  null,
         "evs_oral":  null
     },
@@ -91,7 +91,7 @@
         "english_written":  12,
         "english_oral":  9,
         "math_written":  46,
-        "math_oral":  null,
+        "math_oral":  19,
         "evs_written":  null,
         "evs_oral":  null
     },
@@ -115,7 +115,7 @@
         "english_written":  19,
         "english_oral":  10,
         "math_written":  45,
-        "math_oral":  20,
+        "math_oral":  18,
         "evs_written":  33,
         "evs_oral":  18
     },
@@ -282,8 +282,8 @@
         "hindi_oral":  null,
         "english_written":  23,
         "english_oral":  9,
-        "math_written":  68,
-        "math_oral":  null,
+        "math_written":  58,
+        "math_oral":  19,
         "evs_written":  null,
         "evs_oral":  null
     }

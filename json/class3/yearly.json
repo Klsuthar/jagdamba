@@ -33,7 +33,7 @@
         "math_written":  44,
         "math_oral":  39,
         "evs_written":  40,
-        "evs_oral":  null
+        "evs_oral":  37
     },
     {
         "roll_no":  4,
@@ -68,8 +68,8 @@
         "english_oral":  17,
         "math_written":  60,
         "math_oral":  40,
-        "evs_written":  null,
-        "evs_oral":  null
+        "evs_written":  31,
+        "evs_oral":  37
     },
     {
         "roll_no":  7,
@@ -80,8 +80,8 @@
         "english_oral":  18,
         "math_written":  58,
         "math_oral":  39,
-        "evs_written":  null,
-        "evs_oral":  null
+        "evs_written":  31,
+        "evs_oral":  38
     },
     {
         "roll_no":  8,
@@ -89,11 +89,11 @@
         "hindi_written":  null,
         "hindi_oral":  null,
         "english_written":  16,
-        "english_oral":  null,
+        "english_oral":  18,
         "math_written":  60,
         "math_oral":  40,
-        "evs_written":  null,
-        "evs_oral":  null
+        "evs_written":  27,
+        "evs_oral":  37
     },
     {
         "roll_no":  9,
@@ -151,9 +151,9 @@
         "english_written":  22,
         "english_oral":  18,
         "math_written":  29,
-        "math_oral":  null,
-        "evs_written":  null,
-        "evs_oral":  null
+        "math_oral":  36,
+        "evs_written":  35,
+        "evs_oral":  37
     },
     {
         "roll_no":  14,
@@ -224,8 +224,8 @@
         "english_oral":  18,
         "math_written":  42,
         "math_oral":  38,
-        "evs_written":  null,
-        "evs_oral":  null
+        "evs_written":  19,
+        "evs_oral":  36
     },
     {
         "roll_no":  20,
@@ -283,8 +283,8 @@
         "english_written":  28,
         "english_oral":  19,
         "math_written":  59,
-        "math_oral":  null,
-        "evs_written":  null,
-        "evs_oral":  null
+        "math_oral":  40,
+        "evs_written":  37,
+        "evs_oral":  38
     }
 ]
