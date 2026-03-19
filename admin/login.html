@@ -4,131 +4,483 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://www.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; connect-src 'self' https:; script-src 'self' 'unsafe-inline' https://www.gstatic.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;">
     <title>Admin Login - Shree Jagdamba School</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #eef4ff;
+            --panel: rgba(255, 255, 255, 0.94);
+            --panel-border: rgba(148, 163, 184, 0.22);
+            --primary: #1d4ed8;
+            --primary-deep: #1e3a8a;
+            --accent: #d4a017;
+            --text: #14213d;
+            --muted: #5b6b87;
+            --input: #cbd5e1;
+            --success-bg: #f0fdf4;
+            --success-text: #166534;
+            --error-bg: #fef2f2;
+            --error-text: #b91c1c;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
+            padding: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(29, 78, 216, 0.12), transparent 28%),
+                radial-gradient(circle at bottom right, rgba(212, 160, 23, 0.12), transparent 24%),
+                linear-gradient(180deg, #f8fbff 0%, var(--bg) 100%);
         }
-        .login-container {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+
+        .home-link {
+            position: fixed;
+            top: 22px;
+            right: 22px;
+            z-index: 10;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--primary-deep);
+            background: rgba(255, 255, 255, 0.88);
+            border: 1px solid rgba(148, 163, 184, 0.24);
+            box-shadow: 0 14px 28px rgba(15, 23, 42, 0.12);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .home-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 18px 34px rgba(15, 23, 42, 0.16);
+        }
+
+        .login-shell {
             width: 100%;
-            max-width: 400px;
+            max-width: 980px;
+            display: grid;
+            grid-template-columns: minmax(300px, 1fr) minmax(340px, 420px);
+            background: var(--panel);
+            border: 1px solid var(--panel-border);
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 30px 70px rgba(15, 23, 42, 0.14);
+            backdrop-filter: blur(12px);
         }
-        .logo { text-align: center; margin-bottom: 30px; }
-        .logo i { font-size: 60px; color: #667eea; }
-        h1 { text-align: center; color: #333; margin-bottom: 10px; font-size: 24px; }
-        p { text-align: center; color: #666; margin-bottom: 30px; font-size: 14px; }
-        .form-group { margin-bottom: 20px; position: relative; }
-        label { display: block; margin-bottom: 8px; color: #333; font-weight: 500; }
+
+        .brand-panel {
+            position: relative;
+            padding: 52px 48px;
+            background:
+                linear-gradient(160deg, rgba(30, 58, 138, 0.96) 0%, rgba(29, 78, 216, 0.92) 100%);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .brand-panel::before {
+            content: "";
+            position: absolute;
+            inset: auto -70px -70px auto;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .brand-mark,
+        .brand-copy,
+        .brand-footer {
+            position: relative;
+            z-index: 1;
+        }
+
+        .brand-mark {
+            width: 78px;
+            height: 78px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 24px;
+            margin-bottom: 24px;
+            font-size: 30px;
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+        }
+
+        .brand-copy h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(2rem, 3vw, 2.75rem);
+            line-height: 1.1;
+            margin-bottom: 14px;
+            letter-spacing: -0.02em;
+        }
+
+        .brand-copy p {
+            max-width: 460px;
+            font-size: 1rem;
+            line-height: 1.75;
+            color: rgba(255, 255, 255, 0.86);
+        }
+
+        .brand-footer {
+            margin-top: 36px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.18);
+            font-size: 0.92rem;
+            color: rgba(255, 255, 255, 0.78);
+        }
+
+        .form-panel {
+            padding: 48px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.98));
+        }
+
+        .form-wrap {
+            width: 100%;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: #dbeafe;
+            color: var(--primary-deep);
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .form-wrap h2 {
+            font-size: 2rem;
+            color: var(--text);
+            margin-bottom: 10px;
+            letter-spacing: -0.03em;
+        }
+
+        .form-intro {
+            font-size: 0.97rem;
+            line-height: 1.65;
+            color: var(--muted);
+            margin-bottom: 24px;
+        }
+
+        .status-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-height: 48px;
+            padding: 12px 14px;
+            margin-bottom: 18px;
+            border-radius: 14px;
+            background: #eff6ff;
+            color: var(--primary-deep);
+            border: 1px solid #bfdbfe;
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+
+        .status-box.ready {
+            background: var(--success-bg);
+            color: var(--success-text);
+            border-color: #bbf7d0;
+        }
+
+        .status-box.error {
+            background: var(--error-bg);
+            color: var(--error-text);
+            border-color: #fecaca;
+        }
+
+        .status-spinner {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 2px solid rgba(29, 78, 216, 0.18);
+            border-top-color: var(--primary);
+            animation: spin 0.8s linear infinite;
+            flex-shrink: 0;
+        }
+
+        .status-box.ready .status-spinner,
+        .status-box.error .status-spinner {
+            animation: none;
+            border-color: currentColor;
+            border-top-color: currentColor;
+        }
+
+        .error {
+            display: none;
+            margin-bottom: 18px;
+            padding: 12px 14px;
+            border-radius: 14px;
+            background: var(--error-bg);
+            border: 1px solid #fecaca;
+            color: var(--error-text);
+            font-size: 0.92rem;
+        }
+
+        .error.show { display: block; }
+
+        .form-group {
+            margin-bottom: 18px;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        label i {
+            width: 18px;
+            color: var(--primary);
+        }
+
         input {
             width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 14px;
-            transition: all 0.3s;
+            padding: 14px 16px;
+            border-radius: 14px;
+            border: 1px solid var(--input);
+            font-size: 15px;
+            color: var(--text);
+            background: #fff;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
+
+        input::placeholder {
+            color: #94a3b8;
+        }
+
         input:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.12);
         }
+
         .password-toggle {
             position: absolute;
-            right: 15px;
-            top: 42px;
+            right: 16px;
+            top: 45px;
+            color: #94a3b8;
             cursor: pointer;
-            color: #999;
-            transition: color 0.3s;
+            transition: color 0.2s ease;
         }
-        .password-toggle:hover { color: #667eea; }
+
+        .password-toggle:hover {
+            color: var(--primary);
+        }
+
+        .remember-row {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .remember-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0;
+            font-weight: 500;
+            color: var(--muted);
+            cursor: pointer;
+        }
+
+        .remember-label input {
+            width: 18px;
+            height: 18px;
+            margin: 0;
+            accent-color: var(--primary);
+            box-shadow: none;
+            cursor: pointer;
+        }
+
         .btn {
             width: 100%;
-            padding: 14px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            padding: 15px;
             border: none;
-            border-radius: 8px;
+            border-radius: 16px;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 700;
+            color: #fff;
             cursor: pointer;
-            transition: transform 0.2s;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-deep) 100%);
+            box-shadow: 0 16px 30px rgba(29, 78, 216, 0.22);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
         }
-        .btn:hover { transform: translateY(-2px); }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 36px rgba(29, 78, 216, 0.26);
+        }
+
         .btn:disabled {
-            opacity: 0.6;
+            opacity: 0.65;
             cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
         }
-        .error {
-            background: #fee;
-            color: #c33;
-            padding: 12px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            display: none;
-            font-size: 14px;
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
-        .error.show { display: block; }
+
+        @media (max-width: 900px) {
+            body { padding: 16px; }
+
+            .login-shell {
+                grid-template-columns: 1fr;
+            }
+
+            .brand-panel,
+            .form-panel {
+                padding: 32px 24px;
+            }
+
+            .brand-footer {
+                margin-top: 24px;
+            }
+        }
+
+        @media (max-width: 560px) {
+            body {
+                padding: 12px;
+                align-items: flex-start;
+            }
+
+            .home-link {
+                top: 14px;
+                right: 14px;
+                width: 42px;
+                height: 42px;
+            }
+
+            .login-shell {
+                border-radius: 22px;
+            }
+
+            .brand-panel,
+            .form-panel {
+                padding: 24px 18px;
+            }
+
+            .brand-mark {
+                width: 64px;
+                height: 64px;
+                font-size: 26px;
+                margin-bottom: 18px;
+            }
+
+            .form-wrap h2 {
+                font-size: 1.7rem;
+            }
+
+            .remember-row {
+                margin-bottom: 20px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <a href="../index.html" style="position: absolute; top: 20px; right: 20px; color: white; font-size: 24px; text-decoration: none; background: rgba(255,255,255,0.2); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">
-            <i class="fas fa-home"></i>
-        </a>
-        <div class="logo"><i class="fas fa-user-shield"></i></div>
-        <h1>Admin Login</h1>
-        <p>Shree Jagdamba School</p>
-        
-        <div class="error" id="error"></div>
-        
-        <form id="loginForm">
-            <div class="form-group">
-                <label for="email"><i class="fas fa-envelope"></i> Email</label>
-                <input type="email" id="email" name="email" autocomplete="username" required placeholder="admin@school.com">
-            </div>
-            <div class="form-group">
-                <label for="password"><i class="fas fa-lock"></i> Password</label>
-                <input type="password" id="password" name="password" autocomplete="current-password" required placeholder="••••••••">
-                <i class="fas fa-eye password-toggle" id="togglePassword"></i>
-            </div>
-            <div class="form-group" style="margin-bottom: 25px;">
-                <label style="display: flex; align-items: center; cursor: pointer; font-weight: 400;">
-                    <input type="checkbox" id="rememberMe" style="width: auto; margin-right: 8px; cursor: pointer;">
-                    <span style="color: #666; font-size: 14px;">Remember me</span>
-                </label>
-            </div>
-            <button type="submit" class="btn" id="loginBtn">
-                <i class="fas fa-sign-in-alt"></i> Login
-            </button>
-        </form>
-    </div>
+    <a href="../index.html" class="home-link" aria-label="Go to home page">
+        <i class="fas fa-home"></i>
+    </a>
 
-    <script>
-        // Check if user is already logged in - BEFORE loading anything
-        const savedEmail = localStorage.getItem('adminEmail');
-        const savedPassword = localStorage.getItem('adminPassword');
-        
-        if (savedEmail && savedPassword) {
-            // Immediate redirect without showing login page
-            window.location.replace('dashboard.html');
-        }
-    </script>
+    <main class="login-shell">
+        <section class="brand-panel" aria-label="School information">
+            <div class="brand-mark">
+                <i class="fas fa-school"></i>
+            </div>
+            <div class="brand-copy">
+                <h1>Shree Jagdamba School</h1>
+                <p>Administrative access for the school dashboard. Use your approved credentials to continue to the management panel.</p>
+            </div>
+            <div class="brand-footer">
+                Admin Portal
+            </div>
+        </section>
+
+        <section class="form-panel">
+            <div class="form-wrap">
+                <div class="eyebrow">
+                    <i class="fas fa-lock"></i>
+                    <span>Admin Login</span>
+                </div>
+                <h2>Welcome back</h2>
+                <p class="form-intro">Sign in to access the admin dashboard.</p>
+
+                <div class="status-box" id="bootState" aria-live="polite">
+                    <span class="status-spinner" aria-hidden="true"></span>
+                    <span id="bootStateText">Initializing login service...</span>
+                </div>
+
+                <div class="error" id="error"></div>
+
+                <form id="loginForm" novalidate>
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                        <input type="email" id="email" name="email" autocomplete="username" required placeholder="admin@jagdamba.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password"><i class="fas fa-lock"></i> Password</label>
+                        <input type="password" id="password" name="password" autocomplete="current-password" required placeholder="Enter your password">
+                        <i class="fas fa-eye password-toggle" id="togglePassword" aria-hidden="true"></i>
+                    </div>
+
+                    <div class="remember-row">
+                        <label class="remember-label" for="rememberMe">
+                            <input type="checkbox" id="rememberMe">
+                            <span>Remember my email</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn" id="loginBtn" disabled>
+                        <i class="fas fa-spinner fa-spin"></i> Loading...
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <noscript>
+        <div style="position: fixed; left: 16px; right: 16px; bottom: 16px; background: #fff7ed; color: #9a3412; border: 1px solid #fdba74; padding: 12px 14px; border-radius: 12px; font-family: Arial, sans-serif; z-index: 20;">
+            JavaScript is required to load the admin login page.
+        </div>
+    </noscript>
 
     <script type="module">
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
-        import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+        import {
+            browserLocalPersistence,
+            browserSessionPersistence,
+            getAuth,
+            onAuthStateChanged,
+            setPersistence,
+            signInWithEmailAndPassword
+        } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
 
         const firebaseConfig = {
             apiKey: "AIzaSyCDD4bEr2ILayjw6PNJp2k0Hd-q1Lb_Q_8",
@@ -146,11 +498,37 @@
         const error = document.getElementById('error');
         const btn = document.getElementById('loginBtn');
         const rememberMe = document.getElementById('rememberMe');
-
-        // Password toggle
-        const togglePassword = document.getElementById('togglePassword');
+        const emailInput = document.getElementById('email');
         const passwordInput = document.getElementById('password');
-        
+        const togglePassword = document.getElementById('togglePassword');
+        const bootState = document.getElementById('bootState');
+        const bootStateText = document.getElementById('bootStateText');
+        let isAuthReady = false;
+
+        function setBootState(message, state = 'loading') {
+            bootState.classList.remove('ready', 'error');
+            if (state === 'ready') bootState.classList.add('ready');
+            if (state === 'error') bootState.classList.add('error');
+            bootStateText.textContent = message;
+        }
+
+        function setButtonState(disabled, html) {
+            btn.disabled = disabled;
+            btn.innerHTML = html;
+        }
+
+        function hydrateSavedLogin() {
+            const savedEmail = localStorage.getItem('adminEmail') || '';
+            const rememberPreference = localStorage.getItem('adminRemember') === 'true';
+
+            emailInput.value = savedEmail;
+            rememberMe.checked = rememberPreference;
+            localStorage.removeItem('adminPassword');
+        }
+
+        hydrateSavedLogin();
+        setBootState('Checking current session...');
+
         togglePassword.addEventListener('click', () => {
             const type = passwordInput.type === 'password' ? 'text' : 'password';
             passwordInput.type = type;
@@ -160,32 +538,55 @@
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            error.classList.remove('show');
-            btn.disabled = true;
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging in...';
 
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
+            if (!isAuthReady) {
+                setBootState('Login service is still loading. Please wait a moment.', 'loading');
+                return;
+            }
+
+            error.classList.remove('show');
+            setButtonState(true, '<i class="fas fa-spinner fa-spin"></i> Signing in...');
+
+            const email = emailInput.value.trim();
+            const password = passwordInput.value;
 
             try {
+                await setPersistence(auth, rememberMe.checked ? browserLocalPersistence : browserSessionPersistence);
                 await signInWithEmailAndPassword(auth, email, password);
-                
-                // Save credentials if remember me is checked
+
                 if (rememberMe.checked) {
                     localStorage.setItem('adminEmail', email);
-                    localStorage.setItem('adminPassword', password);
+                    localStorage.setItem('adminRemember', 'true');
                 } else {
                     localStorage.removeItem('adminEmail');
-                    localStorage.removeItem('adminPassword');
+                    localStorage.removeItem('adminRemember');
                 }
-                
+
                 window.location.replace('dashboard.html');
             } catch (err) {
-                error.textContent = 'Invalid email or password';
+                error.textContent = 'Invalid email or password. Please check your admin credentials.';
                 error.classList.add('show');
-                btn.disabled = false;
-                btn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Login';
+                setButtonState(false, '<i class="fas fa-sign-in-alt"></i> Login');
             }
+        });
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setBootState('Active session found. Redirecting...', 'ready');
+                window.location.replace('dashboard.html');
+                return;
+            }
+
+            isAuthReady = true;
+            setBootState('Login is ready.', 'ready');
+            setButtonState(false, '<i class="fas fa-sign-in-alt"></i> Login');
+        }, (err) => {
+            console.error('Auth state error:', err);
+            isAuthReady = false;
+            setBootState('The login service could not be initialized. Please refresh the page.', 'error');
+            error.textContent = 'Unable to connect to the login service right now.';
+            error.classList.add('show');
+            setButtonState(true, '<i class="fas fa-triangle-exclamation"></i> Unavailable');
         });
     </script>
 </body>
