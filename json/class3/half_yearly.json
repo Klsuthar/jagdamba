@@ -66,7 +66,7 @@
         "hindi_oral":  null,
         "english_written":  23,
         "english_oral":  9,
-        "math_written":  54,
+        "math_written":  44,
         "math_oral":  19,
         "evs_written":  null,
         "evs_oral":  null
@@ -78,7 +78,7 @@
         "hindi_oral":  null,
         "english_written":  19,
         "english_oral":  9,
-        "math_written":  54,
+        "math_written":  48,
         "math_oral":  19,
         "evs_written":  null,
         "evs_oral":  null
@@ -90,7 +90,7 @@
         "hindi_oral":  null,
         "english_written":  12,
         "english_oral":  9,
-        "math_written":  46,
+        "math_written":  47,
         "math_oral":  19,
         "evs_written":  null,
         "evs_oral":  null
@@ -150,7 +150,7 @@
         "hindi_oral":  null,
         "english_written":  12,
         "english_oral":  9,
-        "math_written":  26,
+        "math_written":  46,
         "math_oral":  null,
         "evs_written":  null,
         "evs_oral":  null
@@ -174,10 +174,10 @@
         "hindi_oral":  null,
         "english_written":  15,
         "english_oral":  9,
-        "math_written":  null,
-        "math_oral":  null,
-        "evs_written":  null,
-        "evs_oral":  null
+        "math_written":  43,
+        "math_oral":  19,
+        "evs_written":  29,
+        "evs_oral":  17
     },
     {
         "roll_no":  16,
@@ -222,7 +222,7 @@
         "hindi_oral":  19,
         "english_written":  18,
         "english_oral":  10,
-        "math_written":  36,
+        "math_written":  46,
         "math_oral":  17,
         "evs_written":  26,
         "evs_oral":  17
@@ -282,7 +282,7 @@
         "hindi_oral":  null,
         "english_written":  23,
         "english_oral":  9,
-        "math_written":  58,
+        "math_written":  56,
         "math_oral":  19,
         "evs_written":  null,
         "evs_oral":  null
