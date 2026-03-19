@@ -156,13 +156,13 @@
     {
         "roll_no": 15,
         "student_name": "RIYANS PAL",
-        "hindi_written": null,
+        "hindi_written": 25,
         "hindi_oral": null,
-        "english_written": null,
+        "english_written": 13,
         "english_oral": null,
-        "math_written": null,
+        "math_written": 24,
         "math_oral": null,
-        "evs_written": 20
+        "evs_written": 30
     },
     {
         "roll_no": 16,
