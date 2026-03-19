@@ -16,9 +16,9 @@
         "student_name":  "ANKIT JANGIR",
         "hindi_written":  22,
         "hindi_oral":  null,
-        "english_written":  null,
+        "english_written":  20,
         "english_oral":  null,
-        "math_written":  null,
+        "math_written":  40,
         "math_oral":  null,
         "evs_written":  null,
         "evs_oral":  null
