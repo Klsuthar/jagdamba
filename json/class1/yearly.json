@@ -35,7 +35,7 @@
     {
         "roll_no": 4,
         "student_name": "DHARNA",
-        "hindi_written": null,
+        "hindi_written": 26,
         "hindi_oral": null,
         "english_written": null,
         "english_oral": null,
@@ -46,7 +46,7 @@
     {
         "roll_no": 5,
         "student_name": "MAHIR SINGH",
-        "hindi_written": null,
+        "hindi_written": 30,
         "hindi_oral": null,
         "english_written": null,
         "english_oral": null,
@@ -57,7 +57,7 @@
     {
         "roll_no": 6,
         "student_name": "POONAM",
-        "hindi_written": null,
+        "hindi_written": 30,
         "hindi_oral": null,
         "english_written": null,
         "english_oral": null,
@@ -68,7 +68,7 @@
     {
         "roll_no": 7,
         "student_name": "RADHIKA",
-        "hindi_written": null,
+        "hindi_written": 30,
         "hindi_oral": null,
         "english_written": null,
         "english_oral": null,
@@ -79,7 +79,7 @@
     {
         "roll_no": 8,
         "student_name": "RAKSHA NEHARA",
-        "hindi_written": null,
+        "hindi_written": 24,
         "hindi_oral": null,
         "english_written": null,
         "english_oral": null,
@@ -123,7 +123,7 @@
     {
         "roll_no": 12,
         "student_name": "YUVRAJ SINGH",
-        "hindi_written": null,
+        "hindi_written": 25,
         "hindi_oral": null,
         "english_written": null,
         "english_oral": null,
@@ -134,7 +134,7 @@
     {
         "roll_no": 13,
         "student_name": "DIVYA SUTHAR",
-        "hindi_written": null,
+        "hindi_written": 18,
         "hindi_oral": null,
         "english_written": null,
         "english_oral": null,

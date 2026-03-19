@@ -2,29 +2,29 @@
     {
         "roll_no":  1,
         "student_name":  "AANAND SUTHAR",
-        "hindi_written":  null,
+        "hindi_written":  12,
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
         "math_written":  21,
         "math_oral":  60,
-        "evs_written":  null
+        "evs_written":  34
     },
     {
         "roll_no":  2,
         "student_name":  "AKANKSHA",
-        "hindi_written":  null,
+        "hindi_written":  20,
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
         "math_written":  27,
         "math_oral":  66,
-        "evs_written":  null
+        "evs_written":  30
     },
     {
         "roll_no":  3,
         "student_name":  "ARADHYA",
-        "hindi_written":  null,
+        "hindi_written":  23,
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
@@ -35,7 +35,7 @@
     {
         "roll_no":  4,
         "student_name":  "ARCHANA",
-        "hindi_written":  null,
+        "hindi_written":  12,
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
@@ -46,7 +46,7 @@
     {
         "roll_no":  5,
         "student_name":  "BABU LAL",
-        "hindi_written":  null,
+        "hindi_written":  27,
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
@@ -57,7 +57,7 @@
     {
         "roll_no":  6,
         "student_name":  "BHARATI",
-        "hindi_written":  null,
+        "hindi_written":  12,
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
@@ -68,7 +68,7 @@
     {
         "roll_no":  7,
         "student_name":  "DEVENDRA",
-        "hindi_written":  null,
+        "hindi_written":  27,
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
@@ -79,18 +79,18 @@
     {
         "roll_no":  8,
         "student_name":  "GAJANAND",
-        "hindi_written":  null,
+        "hindi_written":  12,
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
-        "math_written":  null,
-        "math_oral":  null,
+        "math_written":  18,
+        "math_oral":  63,
         "evs_written":  null
     },
     {
         "roll_no":  9,
         "student_name":  "HARDIK SEN",
-        "hindi_written":  null,
+        "hindi_written":  13,
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
@@ -101,7 +101,7 @@
     {
         "roll_no":  10,
         "student_name":  "KARTIK DAN CHARAN",
-        "hindi_written":  null,
+        "hindi_written":  22,
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
@@ -123,7 +123,7 @@
     {
         "roll_no":  12,
         "student_name":  "NAITIK SONI",
-        "hindi_written":  null,
+        "hindi_written":  19,
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
@@ -134,7 +134,7 @@
     {
         "roll_no":  13,
         "student_name":  "NEHA BHAMBHU",
-        "hindi_written":  null,
+        "hindi_written":  17,
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
@@ -145,7 +145,7 @@
     {
         "roll_no":  14,
         "student_name":  "PANKAJ NEHRA",
-        "hindi_written":  null,
+        "hindi_written":  22,
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
@@ -156,18 +156,18 @@
     {
         "roll_no":  15,
         "student_name":  "RIYANS PAL",
-        "hindi_written":  null,
+        "hindi_written":  21,
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
         "math_written":  29,
         "math_oral":  69,
-        "evs_written":  null
+        "evs_written":  20
     },
     {
         "roll_no":  16,
         "student_name":  "SUNITA KHERIYA",
-        "hindi_written":  null,
+        "hindi_written":  20,
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
@@ -200,7 +200,7 @@
     {
         "roll_no":  19,
         "student_name":  "NIHARIKA",
-        "hindi_written":  null,
+        "hindi_written":  24,
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,

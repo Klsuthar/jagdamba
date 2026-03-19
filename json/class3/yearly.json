@@ -14,7 +14,7 @@
     {
         "roll_no":  2,
         "student_name":  "ANKIT JANGIR",
-        "hindi_written":  null,
+        "hindi_written":  22,
         "hindi_oral":  null,
         "english_written":  null,
         "english_oral":  null,
@@ -218,7 +218,7 @@
     {
         "roll_no":  19,
         "student_name":  "NAVEEN",
-        "hindi_written":  null,
+        "hindi_written":  42,
         "hindi_oral":  null,
         "english_written":  20,
         "english_oral":  18,
@@ -278,7 +278,7 @@
     {
         "roll_no":  24,
         "student_name":  "SHIVRAJ",
-        "hindi_written":  null,
+        "hindi_written":  52,
         "hindi_oral":  null,
         "english_written":  28,
         "english_oral":  19,

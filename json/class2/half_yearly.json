@@ -41,7 +41,7 @@
         "english_oral": 33,
         "math_written": 19,
         "math_oral": 60,
-        "evs_written": null
+        "evs_written": 22
     },
     {
         "roll_no": 5,
@@ -162,7 +162,7 @@
         "english_oral": null,
         "math_written": null,
         "math_oral": null,
-        "evs_written": null
+        "evs_written": 20
     },
     {
         "roll_no": 16,
@@ -204,8 +204,8 @@
         "hindi_oral": null,
         "english_written": null,
         "english_oral": null,
-        "math_written": null,
-        "math_oral": null,
-        "evs_written": null
+        "math_written": 34,
+        "math_oral": 68,
+        "evs_written": 38
     }
 ]
