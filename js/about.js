@@ -116,6 +116,17 @@ const aboutContent2 = `
             </div>
             <div class="teacher-card">
                 <div class="teacher-img">
+                    <img src="../images/teachers/suman.webp" alt="Suman Rani" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="teacher-initials" style="display:none;">SR</div>
+                </div>
+                <div class="teacher-content">
+                    <h3>SUMAN RANI</h3>
+                    <p class="teacher-subject">English Teacher</p>
+                    <p class="teacher-degree">BA</p>
+                </div>
+            </div>
+            <div class="teacher-card">
+                <div class="teacher-img">
                     <img src="../images/teachers/renu.webp" alt="Renu Noyal" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                     <div class="teacher-initials" style="display:none;">RN</div>
                 </div>
