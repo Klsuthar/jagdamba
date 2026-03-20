@@ -2,113 +2,113 @@
   {
     "roll_no": 1,
     "student_name": "ANUSHKA KANWAR",
-    "father_name": null,
-    "mother_name": null,
-    "dob": null,
+    "father_name": "RAJU SINGH",
+    "mother_name": "MAMTA KANWAR",
+    "dob": "01-09-2018",
     "image": "class_1/01_class1.webp"
   },
   {
     "roll_no": 2,
     "student_name": "DEEPIKA",
-    "father_name": null,
-    "mother_name": null,
-    "dob": null,
+    "father_name": "TARACHAND MEGHWAL",
+    "mother_name": "AMARI DEVI",
+    "dob": "13-11-2019",
     "image": "class_1/02_class1.webp"
   },
   {
     "roll_no": 3,
     "student_name": "DHARMENDRA",
-    "father_name": null,
-    "mother_name": null,
-    "dob": null,
+    "father_name": "BABU LAL PRAJAPAT",
+    "mother_name": "SUMAN",
+    "dob": "30-11-2018",
     "image": "class_1/03_class1.webp"
   },
   {
     "roll_no": 4,
     "student_name": "DHARNA",
-    "father_name": null,
-    "mother_name": null,
-    "dob": null,
+    "father_name": "BABU LAL",
+    "mother_name": "MANOHARI",
+    "dob": "11-03-2018",
     "image": "class_1/04_class1.webp"
   },
   {
     "roll_no": 5,
     "student_name": "MAHIR SINGH",
-    "father_name": null,
-    "mother_name": null,
-    "dob": null,
+    "father_name": "UMED SINGH",
+    "mother_name": "MUKESH KANWAR",
+    "dob": "08-09-2018",
     "image": "class_1/05_class1.webp"
   },
   {
     "roll_no": 6,
     "student_name": "POONAM",
-    "father_name": null,
-    "mother_name": null,
-    "dob": null,
+    "father_name": "MANOJ KUMAR BAJIYA",
+    "mother_name": "KIRAN DEVI",
+    "dob": "09-10-2018",
     "image": "class_1/06_class1.webp"
   },
   {
     "roll_no": 7,
     "student_name": "RADHIKA",
-    "father_name": null,
-    "mother_name": null,
-    "dob": null,
+    "father_name": "ASHU RAM",
+    "mother_name": "RANJU",
+    "dob": "31-08-2018",
     "image": "class_1/07_class1.webp"
   },
   {
     "roll_no": 8,
     "student_name": "RAKSHA NEHARA",
-    "father_name": null,
-    "mother_name": null,
-    "dob": null,
+    "father_name": "BAL RAM NEHARA",
+    "mother_name": "SUMAN",
+    "dob": "15-08-2019",
     "image": "class_1/08_class1.webp"
   },
   {
     "roll_no": 9,
     "student_name": "ROHIT NYOL",
-    "father_name": null,
-    "mother_name": null,
-    "dob": null,
+    "father_name": "SHYAM SUNDAR NYOL",
+    "mother_name": "KISTURI",
+    "dob": "01-08-2018",
     "image": "class_1/09_class1.webp"
   },
   {
     "roll_no": 10,
     "student_name": "SHIV KUMAR",
-    "father_name": null,
-    "mother_name": null,
-    "dob": null,
+    "father_name": "VIKRAM",
+    "mother_name": "SALOCHANA",
+    "dob": "24-09-2017",
     "image": "class_1/10_class1.webp"
   },
   {
     "roll_no": 11,
     "student_name": "VISHAKHA",
-    "father_name": null,
-    "mother_name": null,
-    "dob": null,
+    "father_name": "SHANKAR LAL NEHARA",
+    "mother_name": "MANOJ",
+    "dob": "24-08-2019",
     "image": "class_1/11_class1.webp"
   },
   {
     "roll_no": 12,
     "student_name": "YUVRAJ SINGH",
-    "father_name": null,
-    "mother_name": null,
-    "dob": null,
+    "father_name": "PEM SINGH",
+    "mother_name": "MEM KANWAR",
+    "dob": "13-12-2017",
     "image": "class_1/12_class1.webp"
   },
   {
     "roll_no": 13,
     "student_name": "DIVYA SUTHAR",
-    "father_name": null,
-    "mother_name": null,
-    "dob": null,
+    "father_name": "GIRDHARI LAL",
+    "mother_name": "KAMLA",
+    "dob": "17-11-2018",
     "image": "class_1/13_class1.webp"
   },
   {
     "roll_no": 14,
     "student_name": "ANUSHKA KANWAR",
-    "father_name": null,
-    "mother_name": null,
-    "dob": null,
+    "father_name": "KALU SINGH BHATI",
+    "mother_name": "BHAGWATI KANWAR",
+    "dob": "15-10-2019",
     "image": "class_1/14_class1.webp"
   }
 ]
