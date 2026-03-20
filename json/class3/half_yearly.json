@@ -123,13 +123,13 @@
         "roll_no":  11,
         "student_name":  "GOURI",
         "hindi_written":  20,
-        "hindi_oral":  17,
+        "hindi_oral":  19,
         "english_written":  15,
-        "english_oral":  9,
+        "english_oral":  10,
         "math_written":  30,
-        "math_oral":  18,
+        "math_oral":  20,
         "evs_written":  35,
-        "evs_oral":  17
+        "evs_oral":  19
     },
     {
         "roll_no":  12,

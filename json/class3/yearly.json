@@ -124,12 +124,12 @@
         "student_name":  "GOURI",
         "hindi_written":  55,
         "hindi_oral":  40,
-        "english_written":  19,
+        "english_written":  25,
         "english_oral":  19,
-        "math_written":  48,
-        "math_oral":  39,
+        "math_written":  52,
+        "math_oral":  40,
         "evs_written":  35,
-        "evs_oral":  37
+        "evs_oral":  38
     },
     {
         "roll_no":  12,
