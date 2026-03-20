@@ -677,22 +677,62 @@
             return `<span class="mark-f"><span class="mark-o">${obt}</span><span class="mark-d"></span><span class="mark-m">${max}</span></span>`;
         }
 
-        function calculateRank(studentId, percentage, allStudents, allExams, cfg) {
-            const rankings = allStudents.map(s => {
-                const sid = buildStudentId(cfg, s.roll_no);
-                const exams = allExams[sid] || [];
-                let total = 0, max = 0;
-                exams.forEach(e => e.subjects.forEach(sub => {
-                    total += sub.obtained !== null ? sub.obtained : 0;
-                    max += sub.total || 0;
-                }));
-                return { id: sid, pct: max > 0 ? (total / max) * 100 : 0 };
-            }).sort((a, b) => b.pct - a.pct);
-            const rank = rankings.findIndex(r => r.id === studentId) + 1;
-            if (rank === 1) return '1st';
-            if (rank === 2) return '2nd';
-            if (rank === 3) return '3rd';
+        function getStudentTotals(exams = []) {
+            let total = 0;
+            let max = 0;
+
+            exams.forEach(exam => exam.subjects.forEach(subject => {
+                total += subject.obtained !== null && subject.obtained !== undefined ? subject.obtained : 0;
+                max += subject.total || 0;
+            }));
+
+            return { total, max, pct: max > 0 ? (total / max) * 100 : 0 };
+        }
+
+        function formatRank(rank) {
+            const mod100 = rank % 100;
+            if (mod100 >= 11 && mod100 <= 13) return `${rank}th`;
+            const mod10 = rank % 10;
+            if (mod10 === 1) return `${rank}st`;
+            if (mod10 === 2) return `${rank}nd`;
+            if (mod10 === 3) return `${rank}rd`;
             return `${rank}th`;
+        }
+
+        function calculateRank(studentId, allStudents, allExams, cfg) {
+            const rankings = allStudents.map(student => {
+                const sid = buildStudentId(cfg, student.roll_no);
+                const totals = getStudentTotals(allExams[sid] || []);
+                return {
+                    id: sid,
+                    rollNo: normalizeRollNo(student.roll_no),
+                    total: totals.total,
+                    pct: totals.pct
+                };
+            }).sort((a, b) => {
+                if (b.pct !== a.pct) return b.pct - a.pct;
+                if (b.total !== a.total) return b.total - a.total;
+                return a.rollNo.localeCompare(b.rollNo, undefined, { numeric: true, sensitivity: 'base' });
+            });
+
+            let currentRank = 0;
+            let previousKey = '';
+
+            for (let index = 0; index < rankings.length; index += 1) {
+                const entry = rankings[index];
+                const key = `${entry.pct.toFixed(4)}-${entry.total}`;
+
+                if (key !== previousKey) {
+                    currentRank = index + 1;
+                    previousKey = key;
+                }
+
+                if (entry.id === studentId) {
+                    return formatRank(currentRank);
+                }
+            }
+
+            return '-';
         }
 
         async function generateReports() {
@@ -752,7 +792,7 @@
                         totalMax += s.total || 0;
                     }));
                     const pct = totalMax > 0 ? ((totalObt / totalMax) * 100).toFixed(2) : '0.00';
-                    const rank = calculateRank(sid, parseFloat(pct), students, allResults, cfg);
+                    const rank = calculateRank(sid, students, allResults, cfg);
 
                     // Build marks table
                     const subjectNames = studentExams.length > 0 ? studentExams[0].subjects.map(s => s.name) : [];

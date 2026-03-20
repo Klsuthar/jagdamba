@@ -547,7 +547,7 @@ function displayAllExams(student, studentId, allExams) {
     }
     document.getElementById('percentage').textContent = `${percentage.toFixed(2)}%`;
     document.getElementById('totalMarks').textContent = `${totalObtained}/${totalMax}`;
-    document.getElementById('rank').textContent = calculateRank(studentId, percentage);
+    document.getElementById('rank').textContent = calculateRank(studentId);
 
     const container = document.getElementById('allExamsContainer');
     
@@ -637,28 +637,80 @@ function getGrade(percentage) {
     return 'F';
 }
 
-function calculateRank(studentId, percentage) {
+function getStudentExamTotals(exams = []) {
+    let total = 0;
+    let max = 0;
+
+    exams.forEach(exam => {
+        (exam.subjects || []).forEach(subject => {
+            total += subject.obtained !== null && subject.obtained !== undefined ? subject.obtained : 0;
+            max += subject.total || 0;
+        });
+    });
+
+    return {
+        total,
+        max,
+        percentage: max > 0 ? (total / max) * 100 : 0
+    };
+}
+
+function formatRank(rank) {
+    if (rank === 1) return '🥇 1st';
+    if (rank === 2) return '🥈 2nd';
+    if (rank === 3) return '🥉 3rd';
+
+    const mod100 = rank % 100;
+    if (mod100 >= 11 && mod100 <= 13) return `${rank}th`;
+
+    const mod10 = rank % 10;
+    if (mod10 === 1) return `${rank}st`;
+    if (mod10 === 2) return `${rank}nd`;
+    if (mod10 === 3) return `${rank}rd`;
+    return `${rank}th`;
+}
+
+function calculateRank(studentId) {
     const classCfg = getClassConfigByStudentId(studentId);
     if (!classCfg) {
         return '-';
     }
-    const classKey = classCfg.classKey;
-    
-    const rankings = classResults[classKey].map(student => {
-        let total = 0, max = 0;
-        student.subjects.forEach(sub => {
-            total += sub.obtained !== null ? sub.obtained : 0;
-            max += sub.total;
+
+    const classStudents = classData[classCfg.classKey]?.students || [];
+    const rankings = classStudents
+        .map(student => {
+            const totals = getStudentExamTotals(studentExams[student.id] || []);
+            return {
+                id: student.id,
+                rollNo: parseInt(student.rollNo, 10) || Number.MAX_SAFE_INTEGER,
+                total: totals.total,
+                percentage: totals.percentage
+            };
+        })
+        .sort((a, b) => {
+            if (b.percentage !== a.percentage) return b.percentage - a.percentage;
+            if (b.total !== a.total) return b.total - a.total;
+            return a.rollNo - b.rollNo;
         });
-        return { id: student.id, percentage: max > 0 ? (total / max) * 100 : 0 };
-    }).sort((a, b) => b.percentage - a.percentage);
-    
-    const rank = rankings.findIndex(r => r.id === studentId) + 1;
-    
-    if (rank === 1) return '🥇 1st';
-    if (rank === 2) return '🥈 2nd';
-    if (rank === 3) return '🥉 3rd';
-    return `${rank}th`;
+
+    let currentRank = 0;
+    let previousKey = '';
+
+    for (let index = 0; index < rankings.length; index += 1) {
+        const entry = rankings[index];
+        const key = `${entry.percentage.toFixed(4)}-${entry.total}`;
+
+        if (key !== previousKey) {
+            currentRank = index + 1;
+            previousKey = key;
+        }
+
+        if (entry.id === studentId) {
+            return formatRank(currentRank);
+        }
+    }
+
+    return '-';
 }
 
 function navigateStudent(direction) {
