@@ -50,9 +50,9 @@
     {
         "roll_no":  7,
         "student_name":  "SONAKSHI KANWAR",
-        "hindi":  null,
+        "hindi":  6,
         "english":  3,
-        "mathematics":  null,
+        "mathematics":  6,
         "evs":  7
     }
 ]

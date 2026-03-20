@@ -10,8 +10,8 @@
     {
         "roll_no":  2,
         "student_name":  "DINESH SIMAR",
-        "hindi":  null,
-        "english":  null,
+        "hindi":  6,
+        "english":  4,
         "mathematics":  6,
         "evs":  8
     },
