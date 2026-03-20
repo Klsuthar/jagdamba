@@ -455,7 +455,7 @@
             },
             {
                 "name": "Hindi",
-                "written": null,
+                "written": 25,
                 "oral": 62,
                 "obtained": 83,
                 "total": 100
