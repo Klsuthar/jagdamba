@@ -448,7 +448,7 @@
         "subjects": [
             {
                 "name": "Mathematics",
-                "written": null,
+                "written": 27,
                 "oral": 65,
                 "obtained": 74,
                 "total": 100
@@ -462,7 +462,7 @@
             },
             {
                 "name": "English",
-                "written": null,
+                "written": 15,
                 "oral": 30,
                 "obtained": 39,
                 "total": 50
