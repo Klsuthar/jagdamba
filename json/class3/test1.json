@@ -10,10 +10,10 @@
     {
         "roll_no":  2,
         "student_name":  "ANKIT JANGIR",
-        "hindi":  null,
-        "english":  null,
-        "mathematics":  null,
-        "evs":  null
+        "hindi":  7,
+        "english":  3,
+        "mathematics":  7,
+        "evs":  6
     },
     {
         "roll_no":  3,
@@ -42,26 +42,26 @@
     {
         "roll_no":  6,
         "student_name":  "DHIRAJ",
-        "hindi":  null,
-        "english":  null,
-        "mathematics":  null,
-        "evs":  null
+        "hindi":  6,
+        "english":  4,
+        "mathematics":  6,
+        "evs":  5
     },
     {
         "roll_no":  7,
         "student_name":  "DHIRAJ",
-        "hindi":  null,
-        "english":  null,
-        "mathematics":  null,
-        "evs":  null
+        "hindi":  7,
+        "english":  4,
+        "mathematics":  7,
+        "evs":  6
     },
     {
         "roll_no":  8,
         "student_name":  "DIKSHEET CHARAN",
-        "hindi":  null,
-        "english":  null,
-        "mathematics":  null,
-        "evs":  null
+        "hindi":  6,
+        "english":  4,
+        "mathematics":  7,
+        "evs":  5
     },
     {
         "roll_no":  9,
@@ -69,7 +69,7 @@
         "hindi":  3,
         "english":  3,
         "mathematics":  8,
-        "evs":  null
+        "evs":  6
     },
     {
         "roll_no":  10,
@@ -91,17 +91,17 @@
         "roll_no":  12,
         "student_name":  "HEJAL PAL",
         "hindi":  8,
-        "english":  null,
+        "english":  4,
         "mathematics":  7,
         "evs":  6
     },
     {
         "roll_no":  13,
         "student_name":  "JAYPRAKASH",
-        "hindi":  null,
-        "english":  null,
-        "mathematics":  null,
-        "evs":  null
+        "hindi":  6,
+        "english":  4,
+        "mathematics":  6,
+        "evs":  6
     },
     {
         "roll_no":  14,
@@ -114,10 +114,10 @@
     {
         "roll_no":  15,
         "student_name":  "MAHESH BAJIYA",
-        "hindi":  null,
-        "english":  null,
-        "mathematics":  null,
-        "evs":  null
+        "hindi":  6,
+        "english":  5,
+        "mathematics":  7,
+        "evs":  6
     },
     {
         "roll_no":  16,
@@ -130,10 +130,10 @@
     {
         "roll_no":  17,
         "student_name":  "MANVENDRA SINGH",
-        "hindi":  null,
-        "english":  null,
-        "mathematics":  null,
-        "evs":  null
+        "hindi":  6,
+        "english":  4,
+        "mathematics":  6,
+        "evs":  6
     },
     {
         "roll_no":  18,
@@ -165,7 +165,7 @@
         "hindi":  10,
         "english":  4,
         "mathematics":  7,
-        "evs":  null
+        "evs":  7
     },
     {
         "roll_no":  22,
@@ -178,17 +178,17 @@
     {
         "roll_no":  23,
         "student_name":  "SARSWATI KANWAR",
-        "hindi":  null,
-        "english":  null,
-        "mathematics":  null,
-        "evs":  null
+        "hindi":  10,
+        "english":  5,
+        "mathematics":  10,
+        "evs":  8
     },
     {
         "roll_no":  24,
         "student_name":  "SHIVRAJ",
-        "hindi":  null,
-        "english":  null,
-        "mathematics":  null,
-        "evs":  null
+        "hindi":  6,
+        "english":  4,
+        "mathematics":  6,
+        "evs":  6
     }
 ]

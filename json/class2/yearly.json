@@ -30,7 +30,7 @@
         "english_oral":  35,
         "math_written":  30,
         "math_oral":  70,
-        "evs_written":  36
+        "evs_written":  46
     },
     {
         "roll_no":  4,
@@ -123,7 +123,7 @@
     {
         "roll_no":  12,
         "student_name":  "NAITIK SONI",
-        "hindi_written":  19,
+        "hindi_written":  25,
         "hindi_oral":  70,
         "english_written":  13,
         "english_oral":  34,

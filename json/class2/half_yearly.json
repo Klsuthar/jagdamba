@@ -200,10 +200,10 @@
     {
         "roll_no": 19,
         "student_name": "NIHARIKA",
-        "hindi_written": null,
-        "hindi_oral": null,
-        "english_written": null,
-        "english_oral": null,
+        "hindi_written": 23,
+        "hindi_oral": 65,
+        "english_written": 14,
+        "english_oral": 34,
         "math_written": 34,
         "math_oral": 68,
         "evs_written": 38
