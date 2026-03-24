@@ -22,5 +22,12 @@
   { "student_id": "STU3_21", "roll_no": 21, "student_name": "PRAVEENA", "attendance": 99 },
   { "student_id": "STU3_22", "roll_no": 22, "student_name": "RAVI PRAKASH", "attendance": 99 },
   { "student_id": "STU3_23", "roll_no": 23, "student_name": "SARSWATI KANWAR", "attendance": 99 },
-  { "student_id": "STU3_24", "roll_no": 24, "student_name": "SHIVRAJ", "attendance": 98 }
+  { "student_id": "STU3_24", "roll_no": 24, "student_name": "SHIVRAJ", "attendance": 98 },
+  { "student_id": "STU3_25", "roll_no": 25, "student_name": "DINDAYAL", "attendance": 99 },
+  { "student_id": "STU3_26", "roll_no": 26, "student_name": "DINESH SIMAR", "attendance": 99 },
+  { "student_id": "STU3_27", "roll_no": 27, "student_name": "KAUSHALYA", "attendance": 99 },
+  { "student_id": "STU3_28", "roll_no": 28, "student_name": "LAXMI", "attendance": 99 },
+  { "student_id": "STU3_29", "roll_no": 29, "student_name": "MANISHA", "attendance": 99 },
+  { "student_id": "STU3_30", "roll_no": 30, "student_name": "NAVEEN SIMAR", "attendance": 99 },
+  { "student_id": "STU3_31", "roll_no": 31, "student_name": "SONAKSHI KANWAR", "attendance": 99 }
 ]
