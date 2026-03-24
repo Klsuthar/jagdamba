@@ -190,5 +190,61 @@
         "english":  4,
         "mathematics":  7,
         "evs":  5
+    },
+    {
+        "roll_no":  25,
+        "student_name":  "DINDAYAL",
+        "hindi":  7,
+        "english":  5,
+        "mathematics":  7,
+        "evs":  8
+    },
+    {
+        "roll_no":  26,
+        "student_name":  "DINESH SIMAR",
+        "hindi":  6,
+        "english":  4,
+        "mathematics":  6,
+        "evs":  8
+    },
+    {
+        "roll_no":  27,
+        "student_name":  "KAUSHALYA",
+        "hindi":  8,
+        "english":  5,
+        "mathematics":  7,
+        "evs":  10
+    },
+    {
+        "roll_no":  28,
+        "student_name":  "LAXMI",
+        "hindi":  4,
+        "english":  4,
+        "mathematics":  10,
+        "evs":  7
+    },
+    {
+        "roll_no":  29,
+        "student_name":  "MANISHA",
+        "hindi":  2,
+        "english":  4,
+        "mathematics":  8,
+        "evs":  8
+    },
+    {
+        "roll_no":  30,
+        "student_name":  "NAVEEN SIMAR",
+        "hindi":  6,
+        "english":  5,
+        "mathematics":  6,
+        "evs":  8
+    },
+    {
+        "roll_no":  31,
+        "student_name":  "SONAKSHI KANWAR",
+        "hindi":  3,
+        "english":  2,
+        "mathematics":  6,
+        "evs":  8
     }
 ]
