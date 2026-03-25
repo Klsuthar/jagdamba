@@ -1,6 +1,59 @@
 {
   "events": [
     {
+      "eventName": "Annual Result Day 2025",
+      "images": [
+        {
+          "path": "../images/events/annual_result_day_2025/cover.webp",
+          "alt": "Annual Result Day 2025 Cover"
+        },
+        {
+          "path": "../images/events/annual_result_day_2025/1.webp",
+          "alt": "Annual Result Day 2025 1"
+        },
+        {
+          "path": "../images/events/annual_result_day_2025/2.webp",
+          "alt": "Annual Result Day 2025 2"
+        },
+        {
+          "path": "../images/events/annual_result_day_2025/3.webp",
+          "alt": "Annual Result Day 2025 3"
+        },
+        {
+          "path": "../images/events/annual_result_day_2025/4.webp",
+          "alt": "Annual Result Day 2025 4"
+        },
+        {
+          "path": "../images/events/annual_result_day_2025/5.webp",
+          "alt": "Annual Result Day 2025 5"
+        },
+        {
+          "path": "../images/events/annual_result_day_2025/6.webp",
+          "alt": "Annual Result Day 2025 6"
+        },
+        {
+          "path": "../images/events/annual_result_day_2025/7.webp",
+          "alt": "Annual Result Day 2025 7"
+        },
+        {
+          "path": "../images/events/annual_result_day_2025/8.webp",
+          "alt": "Annual Result Day 2025 8"
+        },
+        {
+          "path": "../images/events/annual_result_day_2025/9.webp",
+          "alt": "Annual Result Day 2025 9"
+        },
+        {
+          "path": "../images/events/annual_result_day_2025/10.webp",
+          "alt": "Annual Result Day 2025 10"
+        },
+        {
+          "path": "../images/events/annual_result_day_2025/11.webp",
+          "alt": "Annual Result Day 2025 11"
+        }
+      ]
+    },
+    {
       "eventName": "Birthday Celebration",
       "images": [
         {
