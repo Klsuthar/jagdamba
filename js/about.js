@@ -10,7 +10,7 @@ const aboutContent = `
             <div class="stat-card" onclick="this.classList.toggle('flipped')">
                 <div class="stat-card-inner">
                     <div class="stat-card-front">
-                        <img src="../images/stikers/students_120.webp" alt="120+ Students" class="stat-image">
+                        <img src="../images/stikers/students_120.webp" alt="120+ Students" class="stat-image" width="400" height="400" loading="lazy">
                     </div>
                     <div class="stat-card-back">
                         <i class="fas fa-user-graduate"></i>
@@ -22,7 +22,7 @@ const aboutContent = `
             <div class="stat-card" onclick="this.classList.toggle('flipped')">
                 <div class="stat-card-inner">
                     <div class="stat-card-front">
-                        <img src="../images/stikers/teachers_4.webp" alt="4+ Teachers" class="stat-image">
+                        <img src="../images/stikers/teachers_4.webp" alt="4+ Teachers" class="stat-image" width="400" height="400" loading="lazy">
                     </div>
                     <div class="stat-card-back">
                         <i class="fas fa-chalkboard-teacher"></i>
@@ -34,7 +34,7 @@ const aboutContent = `
             <div class="stat-card" onclick="this.classList.toggle('flipped')">
                 <div class="stat-card-inner">
                     <div class="stat-card-front">
-                        <img src="../images/stikers/classes_4.webp" alt="4+ Classes" class="stat-image">
+                        <img src="../images/stikers/classes_4.webp" alt="4+ Classes" class="stat-image" width="400" height="400" loading="lazy">
                     </div>
                     <div class="stat-card-back">
                         <i class="fas fa-school"></i>
@@ -46,7 +46,7 @@ const aboutContent = `
             <div class="stat-card" onclick="this.classList.toggle('flipped')">
                 <div class="stat-card-inner">
                     <div class="stat-card-front">
-                        <img src="../images/stikers/sucess_100.webp" alt="100% Success Rate" class="stat-image">
+                        <img src="../images/stikers/sucess_100.webp" alt="100% Success Rate" class="stat-image" width="400" height="400" loading="lazy">
                     </div>
                     <div class="stat-card-back">
                         <i class="fas fa-trophy"></i>
@@ -91,7 +91,7 @@ const aboutContent2 = `
             <div class="teacher-card">
                 <a href="https://klsuthar.github.io/KanhaiyalalSuthar/" target="_blank" class="teacher-link">
                     <div class="teacher-img">
-                        <img src="../images/teachers/kanhaiyalal.webp" alt="Kanhaiya lal" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <img src="../images/teachers/kanhaiyalal.webp" alt="Kanhaiya lal" width="708" height="838" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <div class="teacher-initials" style="display:none;">KL</div>
                     </div>
                     <div class="teacher-content">
@@ -104,7 +104,7 @@ const aboutContent2 = `
             </div>
             <div class="teacher-card">
                 <div class="teacher-img">
-                    <img src="../images/teachers/pooja.webp" alt="Pooja Bhamu" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <img src="../images/teachers/pooja.webp" alt="Pooja Bhamu" width="2160" height="3090" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                     <div class="teacher-initials" style="display:none;">PB</div>
                 </div>
                 <div class="teacher-content">
@@ -116,7 +116,7 @@ const aboutContent2 = `
             </div>
             <div class="teacher-card">
                 <div class="teacher-img">
-                    <img src="../images/teachers/suman.webp" alt="Suman Rani" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <img src="../images/teachers/suman.webp" alt="Suman Rani" width="960" height="1280" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                     <div class="teacher-initials" style="display:none;">SR</div>
                 </div>
                 <div class="teacher-content">
@@ -127,7 +127,7 @@ const aboutContent2 = `
             </div>
             <div class="teacher-card">
                 <div class="teacher-img">
-                    <img src="../images/teachers/renu.webp" alt="Renu Noyal" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <img src="../images/teachers/renu.webp" alt="Renu Noyal" width="682" height="862" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                     <div class="teacher-initials" style="display:none;">RN</div>
                 </div>
                 <div class="teacher-content">
@@ -179,7 +179,7 @@ const aboutContent2 = `
         </div>
 
         <div class="feature-image">
-            <img src="../images/stikers/student_with_teacher.webp" alt="Students with Teacher">
+            <img src="../images/stikers/student_with_teacher.webp" alt="Students with Teacher" width="1366" height="695" loading="lazy">
         </div>
 
         <div class="school-footer">

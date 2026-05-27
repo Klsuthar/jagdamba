@@ -23,7 +23,7 @@ fetch('../json/gallery_events.json?v=' + Date.now())
             htmlContent += `
                 <div class="gallery-item" onclick="openEventLightbox(${eventIndex}, 0)" role="button" tabindex="0" aria-label="View ${event.eventName} gallery">
                     <div class="gallery-image-wrapper">
-                        <img src="${event.images[0].path}" alt="${event.eventName}" loading="lazy">
+                        <img src="${event.images[0].path}" alt="${event.eventName}" width="1024" height="768" loading="lazy">
                         <div class="photo-badge">
                             <i class="fas fa-images"></i>
                             ${event.images.length}
