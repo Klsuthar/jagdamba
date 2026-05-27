@@ -3,13 +3,13 @@
   "short_name": "Jagdamba",
   "description": "Shree Jagdamba Convent School - Quality Education",
   "id": "/",
-  "start_url": "/?source=pwa",
+  "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#2d3748",
+  "background_color": "#09142f",
+  "theme_color": "#12306b",
   "orientation": "portrait-primary",
-  "version": "10.0.0",
+  "version": "10.0.3",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",

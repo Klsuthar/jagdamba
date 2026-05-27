@@ -10,10 +10,19 @@
         content="Shree Jagdamba School, Shree Jagdamba Convent School, best school, CBSE school, quality education, student progress, modern education, school admission">
     <meta name="author" content="Shree Jagdamba Convent School">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#2d3748">
+    <meta name="theme-color" content="#12306b">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Jagdamba School">
+    <script>
+        if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) {
+            document.documentElement.classList.add('pwa-splash-active');
+        }
+    </script>
+    <style>
+        [data-pwa-splash] { display: none !important; }
+        html.pwa-splash-active [data-pwa-splash]:not([hidden]) { display: flex !important; }
+    </style>
 
 
 
@@ -40,10 +49,10 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=10.0.0">
-    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png?v=10.0.0">
-    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png?v=10.0.0">
-    <link rel="manifest" href="manifest.json?v=10.0.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=10.0.3">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png?v=10.0.3">
+    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png?v=10.0.3">
+    <link rel="manifest" href="manifest.json?v=10.0.3">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="css/main.css">
@@ -183,6 +192,27 @@
 </head>
 
 <body>
+    <div class="pwa-splash-screen" data-pwa-splash aria-hidden="true" hidden>
+        <div class="pwa-splash-orbit orbit-a"></div>
+        <div class="pwa-splash-orbit orbit-b"></div>
+        <div class="pwa-splash-orbit orbit-c"></div>
+        <div class="pwa-splash-shell">
+            <div class="pwa-splash-brand">
+                <div class="pwa-splash-logo-wrap">
+                    <img src="images/logo.png" alt="" class="pwa-splash-logo">
+                </div>
+                <div class="pwa-splash-copy">
+                    <span class="pwa-splash-kicker">Welcome To</span>
+                    <h1>Shree Jagdamba School</h1>
+                    <p>Preparing your learning space with care and confidence.</p>
+                </div>
+            </div>
+            <div class="pwa-splash-progress-track">
+                <span class="pwa-splash-progress-fill" data-splash-progress></span>
+            </div>
+            <p class="pwa-splash-footnote">Launching your school app...</p>
+        </div>
+    </div>
 
     <header class="header" id="header" role="banner">
     <div class="header-container">

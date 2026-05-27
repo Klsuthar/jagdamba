@@ -49,6 +49,11 @@ html {
     -webkit-overflow-scrolling: touch;
 }
 
+html.pwa-splash-active,
+html.pwa-splash-active body {
+    overflow: hidden;
+}
+
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
@@ -84,6 +89,196 @@ body {
     -ms-user-select: none;
     user-select: none;
     touch-action: pan-y;
+}
+
+.pwa-splash-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 5000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    overflow: hidden;
+    color: #ffffff;
+    background:
+        radial-gradient(circle at top, rgba(236, 72, 153, 0.24), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(16, 185, 129, 0.22), transparent 28%),
+        linear-gradient(145deg, #09142f 0%, #12306b 54%, #0f766e 100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.45s ease, visibility 0.45s ease;
+}
+
+html.pwa-splash-active .pwa-splash-screen {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+
+.pwa-splash-screen.is-hiding {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.pwa-splash-orbit {
+    position: absolute;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    animation: pwaSplashFloat 8s ease-in-out infinite;
+}
+
+.pwa-splash-orbit.orbit-a {
+    width: 180px;
+    height: 180px;
+    top: 12%;
+    left: -40px;
+}
+
+.pwa-splash-orbit.orbit-b {
+    width: 220px;
+    height: 220px;
+    right: -60px;
+    bottom: 14%;
+    animation-delay: 1.3s;
+}
+
+.pwa-splash-orbit.orbit-c {
+    width: 120px;
+    height: 120px;
+    right: 18%;
+    top: 16%;
+    animation-delay: 2.4s;
+}
+
+.pwa-splash-shell {
+    position: relative;
+    width: min(100%, 460px);
+    padding: 28px 24px 22px;
+    border-radius: 32px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.08));
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 28px 80px rgba(3, 9, 30, 0.42);
+    text-align: center;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.pwa-splash-brand {
+    display: grid;
+    justify-items: center;
+    gap: 18px;
+}
+
+.pwa-splash-logo-wrap {
+    width: 104px;
+    height: 104px;
+    border-radius: 28px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.08));
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3), 0 18px 40px rgba(10, 16, 42, 0.28);
+}
+
+.pwa-splash-logo {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 18px rgba(15, 23, 42, 0.22));
+}
+
+.pwa-splash-copy {
+    display: grid;
+    gap: 8px;
+}
+
+.pwa-splash-kicker {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.pwa-splash-copy h1 {
+    color: #ffffff;
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    line-height: 1.05;
+    margin: 0;
+}
+
+.pwa-splash-copy p {
+    margin: 0;
+    font-size: 0.98rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.pwa-splash-progress-track {
+    width: 100%;
+    height: 10px;
+    margin-top: 24px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.14);
+    box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.24);
+}
+
+.pwa-splash-progress-fill {
+    display: block;
+    width: 18%;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #facc15 0%, #fb7185 45%, #38bdf8 100%);
+    box-shadow: 0 6px 22px rgba(56, 189, 248, 0.28);
+    transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pwa-splash-screen.is-ready .pwa-splash-progress-fill {
+    width: 100%;
+}
+
+.pwa-splash-footnote {
+    margin: 14px 0 0;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.74);
+}
+
+@keyframes pwaSplashFloat {
+    0%, 100% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate3d(0, -12px, 0) scale(1.04);
+    }
+}
+
+@media (max-width: 767px) {
+    .pwa-splash-shell {
+        padding: 24px 18px 20px;
+        border-radius: 26px;
+    }
+
+    .pwa-splash-logo-wrap {
+        width: 92px;
+        height: 92px;
+        border-radius: 24px;
+    }
+
+    .pwa-splash-logo {
+        width: 64px;
+        height: 64px;
+    }
+
+    .pwa-splash-copy p {
+        font-size: 0.92rem;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {

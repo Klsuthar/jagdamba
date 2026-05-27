@@ -85,7 +85,20 @@ self.addEventListener('install', e => {
   console.log('[SW] Installing new version:', CACHE_NAME);
   e.waitUntil(
     caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(urlsToCache))
+      .then(cache => Promise.all(
+        urlsToCache.map(url =>
+          fetch(url, { cache: 'no-store' })
+            .then(response => {
+              if (!response.ok) {
+                throw new Error(`Failed to cache ${url}: ${response.status}`);
+              }
+              return cache.put(url, response);
+            })
+            .catch(error => {
+              console.warn('[SW] Skipping cache entry:', url, error);
+            })
+        )
+      ))
       .then(() => self.skipWaiting())
   );
 });

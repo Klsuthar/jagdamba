@@ -16,11 +16,11 @@
       "purpose": "any maskable"
     }
   ],
-  "theme_color": "#2d3748",
-  "background_color": "#ffffff",
+  "theme_color": "#12306b",
+  "background_color": "#09142f",
   "display": "standalone",
-  "start_url": "/?source=pwa",
+  "start_url": "/",
   "scope": "/",
   "orientation": "portrait-primary",
-  "version": "10.0.0"
+  "version": "10.0.3"
 }
