@@ -48,13 +48,303 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div id="header-placeholder"></div>
+    <header class="header" id="header" role="banner">
+    <div class="header-container">
+        <a href="../index.html" class="logo" title="Shree Jagdamba School Home">
+            <img src="../images/logo.png" alt="Shree Jagdamba Convent School Logo" width="55" height="55" loading="eager">
+            <h2>Shree Jagdamba Convent School</h2>
+        </a>
+        <nav class="desktop-nav" role="navigation" aria-label="Main navigation">
+            <a href="../index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About Us</a>
+            <a href="gallery.html" class="nav-link">Gallery</a>
+            <a href="../sections/progress.html" class="nav-link">Student Progress</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle mobile menu" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</header>
+
 
     <main>
-        <section class="about-section"></section>
+        <section class="about-section">
+    <div class="page-header">
+        <h1>About Us</h1>
+        <p>Empowering Young Minds Since Inception</p>
+    </div>
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-card" onclick="this.classList.toggle('flipped')">
+                <div class="stat-card-inner">
+                    <div class="stat-card-front">
+                        <img src="../images/stikers/students_120.webp" alt="120+ Students" class="stat-image">
+                    </div>
+                    <div class="stat-card-back">
+                        <i class="fas fa-user-graduate"></i>
+                        <div class="stat-number">120+</div>
+                        <div class="stat-label">Students</div>
+                    </div>
+                </div>
+            </div>
+            <div class="stat-card" onclick="this.classList.toggle('flipped')">
+                <div class="stat-card-inner">
+                    <div class="stat-card-front">
+                        <img src="../images/stikers/teachers_4.webp" alt="4+ Teachers" class="stat-image">
+                    </div>
+                    <div class="stat-card-back">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <div class="stat-number">4+</div>
+                        <div class="stat-label">Teachers</div>
+                    </div>
+                </div>
+            </div>
+            <div class="stat-card" onclick="this.classList.toggle('flipped')">
+                <div class="stat-card-inner">
+                    <div class="stat-card-front">
+                        <img src="../images/stikers/classes_4.webp" alt="4+ Classes" class="stat-image">
+                    </div>
+                    <div class="stat-card-back">
+                        <i class="fas fa-school"></i>
+                        <div class="stat-number">4+</div>
+                        <div class="stat-label">Classes</div>
+                    </div>
+                </div>
+            </div>
+            <div class="stat-card" onclick="this.classList.toggle('flipped')">
+                <div class="stat-card-inner">
+                    <div class="stat-card-front">
+                        <img src="../images/stikers/sucess_100.webp" alt="100% Success Rate" class="stat-image">
+                    </div>
+                    <div class="stat-card-back">
+                        <i class="fas fa-trophy"></i>
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Success</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mission-vision">
+            <div class="mv-card">
+                <div class="mv-icon"><i class="fas fa-bullseye"></i></div>
+                <h3><span class="highlight-text">Our</span> Mission</h3>
+                <p>To provide quality education that nurtures intellectual curiosity, moral values, and prepares students for a successful future.</p>
+            </div>
+            <div class="mv-card">
+                <div class="mv-icon"><i class="fas fa-eye"></i></div>
+                <h3><span class="highlight-text">Our</span> Vision</h3>
+                <p>To be a leading educational institution that shapes confident, compassionate, and capable individuals ready to contribute to society.</p>
+            </div>
+        </div>
+
+        <!-- Leadership Cards -->
+        <div class="leadership-container">
+            <!-- Director Card -->
+            <div class="principal-card">
+                <div class="card-header director-bg">
+                    <div class="header-content">
+                        <div class="header-left">
+                            <div class="principal-image" onclick="openImageModal('../images/gopalji.jpg', 'Gopal Krishan Bhamu - Director')">
+                                <img src="../images/gopalji.jpg" alt="Director">
+                            </div>
+                        </div>
+                        <div class="header-right">
+                            <h3 class="principal-name">Gopal Krishan Bhamu</h3>
+                            <p class="principal-designation">Director</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <blockquote class="principal-message">
+                        "Education is the power that can transform lives. At Shree Jagdamba Convent School, we help every child reach their full potential."
+                    </blockquote>
+                </div>
+                <div class="card-footer">
+                    <a href="tel:+919828869462" class="social-icon phone-icon" title="Call Director">
+                        <i class="fas fa-phone-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Principal Card -->
+            <div class="principal-card">
+                <div class="card-header principal-bg">
+                    <div class="header-content">
+                        <div class="header-left">
+                            <div class="principal-image" onclick="openImageModal('../images/principal.jpg', 'Rakesh Jangir - Principal')">
+                                <img src="../images/principal.jpg" alt="Principal">
+                            </div>
+                        </div>
+                        <div class="header-right">
+                            <h3 class="principal-name">Rakesh Jangir</h3>
+                            <p class="principal-designation">Principal</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <blockquote class="principal-message">
+                        "Education is not the filling of a pail, but the lighting of a fire. At Shree Jagdamba Convent School, we nurture young minds to become responsible citizens and future leaders."
+                    </blockquote>
+                </div>
+                <div class="card-footer">
+                    <a href="tel:+919784394907" class="social-icon phone-icon" title="Call Principal">
+                        <i class="fas fa-phone-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Headmaster Card -->
+            <div class="principal-card">
+                <div class="card-header headmaster-bg">
+                    <div class="header-content">
+                        <div class="header-left">
+                            <div class="principal-image" onclick="openImageModal('../images/headmaster.webp', 'Ram Partap Guruwa - Headmaster')">
+                                <img src="../images/headmaster.webp" alt="Headmaster">
+                            </div>
+                        </div>
+                        <div class="header-right">
+                            <h3 class="principal-name">Ram Partap Guruwa</h3>
+                            <p class="principal-designation">Headmaster & English Teacher</p>
+                            <p class="principal-qualification">MA, BA and BEd<br><small style="font-size: 0.85em; opacity: 0.9;">from MGSU University</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <blockquote class="principal-message">
+                        "Our goal is not only to achieve academic excellence but also to develop moral values and life skills in children."
+                    </blockquote>
+                </div>
+                <div class="card-footer">
+                    <a href="tel:+919376362716" class="social-icon phone-icon" title="Call Headmaster">
+                        <i class="fas fa-phone-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image Modal -->
+        <div class="image-modal" id="imageModal" onclick="closeImageModal()">
+            <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+                <button class="modal-close" onclick="closeImageModal()">×</button>
+                <img src="" alt="" class="modal-image" id="modalImage">
+                <div class="modal-info" id="modalInfo"></div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Our Teachers</h2>
+        <div class="teachers-grid">
+            <div class="teacher-card">
+                <a href="https://klsuthar.github.io/KanhaiyalalSuthar/" target="_blank" class="teacher-link">
+                    <div class="teacher-img">
+                        <img src="../images/teachers/kanhaiyalal.webp" alt="Kanhaiya lal" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="teacher-initials" style="display:none;">KL</div>
+                    </div>
+                    <div class="teacher-content">
+                        <h3>Kanhaiya lal</h3>
+                        <p class="teacher-subject">Maths & Computer Teacher</p>
+                        <p class="teacher-degree">BSc in Maths & BEd</p>
+                        <p class="teacher-institute">Sadguru Institute of Education, Jaipur</p>
+                    </div>
+                </a>
+            </div>
+            <div class="teacher-card">
+                <div class="teacher-img">
+                    <img src="../images/teachers/pooja.webp" alt="Pooja Bhamu" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="teacher-initials" style="display:none;">PB</div>
+                </div>
+                <div class="teacher-content">
+                    <h3>Pooja Bhamu</h3>
+                    <p class="teacher-subject">Hindi Teacher</p>
+                    <p class="teacher-degree">BA & DLIS</p>
+                    <p class="teacher-institute">from VMOU</p>
+                </div>
+            </div>
+            <div class="teacher-card">
+                <div class="teacher-img">
+                    <img src="../images/teachers/suman.webp" alt="Suman Rani" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="teacher-initials" style="display:none;">SR</div>
+                </div>
+                <div class="teacher-content">
+                    <h3>SUMAN RANI</h3>
+                    <p class="teacher-subject">English Teacher</p>
+                    <p class="teacher-degree">BA</p>
+                </div>
+            </div>
+            <div class="teacher-card">
+                <div class="teacher-img">
+                    <img src="../images/teachers/renu.webp" alt="Renu Noyal" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="teacher-initials" style="display:none;">RN</div>
+                </div>
+                <div class="teacher-content">
+                    <h3>Renu Noyal</h3>
+                    <p class="teacher-subject">EVS Teacher</p>
+                    <p class="teacher-degree">BA and BEd</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Why Choose Us</h2>
+        <div class="excellence-grid">
+            <div class="excellence-card">
+                <div class="excellence-number">01</div>
+                <div class="excellence-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h3>Academic Excellence</h3>
+                <p>Modern teaching methods with traditional values</p>
+            </div>
+            <div class="excellence-card">
+                <div class="excellence-number">02</div>
+                <div class="excellence-icon"><i class="fas fa-users"></i></div>
+                <h3>Collaborative Environment</h3>
+                <p>Strong community of students, teachers & parents</p>
+            </div>
+            <div class="excellence-card">
+                <div class="excellence-number">03</div>
+                <div class="excellence-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>Holistic Development</h3>
+                <p>Balanced growth in academics, sports & arts</p>
+            </div>
+            <div class="excellence-card">
+                <div class="excellence-number">04</div>
+                <div class="excellence-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                <h3>Expert Faculty</h3>
+                <p>Experienced and dedicated teaching staff</p>
+            </div>
+            <div class="excellence-card">
+                <div class="excellence-number">05</div>
+                <div class="excellence-icon"><i class="fas fa-laptop"></i></div>
+                <h3>Smart Classes</h3>
+                <p>Technology-enabled learning environment</p>
+            </div>
+            <div class="excellence-card">
+                <div class="excellence-number">06</div>
+                <div class="excellence-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Safe Environment</h3>
+                <p>Secure campus with caring supervision</p>
+            </div>
+        </div>
+
+        <div class="feature-image">
+            <img src="../images/stikers/student_with_teacher.webp" alt="Students with Teacher">
+        </div>
+
+        <div class="school-footer">
+            <p style="font-size: clamp(1.1rem, 3vw, 1.4rem); margin: 0; font-weight: 600; line-height: 1.5; font-family: 'Quicksand', sans-serif; color: white;">Creating confident minds for a changing world.</p>
+        </div>
+    </div>
+</section>
     </main>
 
-    <div id="footer-placeholder"></div>
+    <footer class="footer">
+    <div style="margin-bottom: 1rem;">
+        <img src="../images/logo.png" alt="School Logo" style="width: 50px; height: 50px; margin: 0 auto 0.75rem; display: block;">
+        <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: white; font-weight: 700;">Shree Jagdamba Convent School, Dhadheru</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 0.3rem; opacity: 0.9;">Excellence in Education Since 2001</p>
+        <p style="font-size: 0.85rem; opacity: 0.8;">📍 Providing quality education with modern facilities</p>
+    </div>
+    <p>Made by <a href="https://klsuthar.github.io/KanhaiyalalSuthar/" target="_blank" style="background: #ffd700; color: #1a1a1a; padding: 0.25rem 0.75rem; border-radius: 5px; font-weight: 600;">@kanhaiyalal</a></p>
+</footer>
 
     <nav class="mobile-nav">
         <a href="../index.html" class="nav-item"><i class="fas fa-home"></i><span>Home</span></a>
@@ -69,11 +359,7 @@
     <script src="../js/header.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/about.js"></script>
-    <script src="../js/footer.js"></script>
-    <script>
-        fetch('../components/header.html')
-            .then(r => r.text())
-            .then(html => document.getElementById('header-placeholder').innerHTML = html);
-    </script>
+    <!-- Footer compiled statically -->
+    <!-- Header compiled statically -->
 </body>
 </html>

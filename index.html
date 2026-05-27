@@ -184,7 +184,25 @@
 
 <body>
 
-    <div id="header-placeholder"></div>
+    <header class="header" id="header" role="banner">
+    <div class="header-container">
+        <a href="index.html" class="logo" title="Shree Jagdamba School Home">
+            <img src="images/logo.png" alt="Shree Jagdamba Convent School Logo" width="55" height="55" loading="eager">
+            <h2>Shree Jagdamba Convent School</h2>
+        </a>
+        <nav class="desktop-nav" role="navigation" aria-label="Main navigation">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="pages/about.html" class="nav-link">About Us</a>
+            <a href="pages/gallery.html" class="nav-link">Gallery</a>
+            <a href="sections/progress.html" class="nav-link">Student Progress</a>
+            <a href="pages/contact.html" class="nav-link">Contact</a>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle mobile menu" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</header>
+
 
     <main role="main">
         <section class="hero-section" aria-labelledby="hero-title">
@@ -310,7 +328,15 @@
         <p style="font-size: clamp(0.85rem, 2vw, 1rem); margin: 0; color: white; font-weight: 600; line-height: 1.5; font-family: 'Quicksand', sans-serif;">Teaching that goes past classrooms and into real life</p>
     </div>
 
-    <div id="footer-placeholder"></div>
+    <footer class="footer">
+    <div style="margin-bottom: 1rem;">
+        <img src="images/logo.png" alt="School Logo" style="width: 50px; height: 50px; margin: 0 auto 0.75rem; display: block;">
+        <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: white; font-weight: 700;">Shree Jagdamba Convent School, Dhadheru</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 0.3rem; opacity: 0.9;">Excellence in Education Since 2001</p>
+        <p style="font-size: 0.85rem; opacity: 0.8;">📍 Providing quality education with modern facilities</p>
+    </div>
+    <p>Made by <a href="https://klsuthar.github.io/KanhaiyalalSuthar/" target="_blank" style="background: #ffd700; color: #1a1a1a; padding: 0.25rem 0.75rem; border-radius: 5px; font-weight: 600;">@kanhaiyalal</a></p>
+</footer>
 
     <nav class="mobile-nav" role="navigation" aria-label="Mobile navigation">
         <a href="index.html" class="nav-item active" aria-current="page" aria-label="Home"><i class="fas fa-home"
@@ -342,14 +368,8 @@
     <script src="js/main.js"></script>
     <script src="js/hero.js"></script>
     <script src="js/home.js"></script>
-    <script src="js/footer.js"></script>
-    <script>
-        fetch('components/header.html')
-            .then(r => r.text())
-            .then(html => {
-                document.getElementById('header-placeholder').innerHTML = html.replace(/\.\.\/images/g, 'images').replace(/\.\.\/pages/g, 'pages').replace(/\.\.\/sections/g, 'sections').replace(/\.\.\/index\.html/g, 'index.html');
-            });
-    </script>
+    <!-- Footer compiled statically -->
+    <!-- Header compiled statically -->
     <script>
         const container = document.getElementById('floatingSymbols');
         if (container) {
