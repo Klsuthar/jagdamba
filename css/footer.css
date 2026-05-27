@@ -1,7 +1,7 @@
 .footer {
     position: static;
     width: 100%;
-    background: rgba(45, 55, 72, 0.95);
+    background: rgba(15, 23, 42, 0.9);
     backdrop-filter: blur(10px);
     color: white;
     text-align: center;
@@ -12,19 +12,19 @@
 }
 
 .footer a {
-    color: #667eea;
+    color: var(--secondary);
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
 .footer a:hover {
-    color: #764ba2;
+    color: var(--white);
 }
 
 @media (min-width: 768px) {
     .footer {
-        background: var(--text);
+        background: rgba(15, 23, 42, 0.95);
         padding: 1.5rem;
         font-size: 0.9rem;
         margin-top: 2rem;
