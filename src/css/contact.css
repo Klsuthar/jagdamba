@@ -1,0 +1,692 @@
+/* ==========================================================================
+   CONTACT PAGE - LIGHT THEME & MOBILE OPTIMIZED
+   Shree Jagdamba Convent School
+   ========================================================================== */
+
+.contact-section {
+  padding-top: var(--header-height, 80px);
+  background: #f8fafc;
+  min-height: calc(100vh - 80px);
+  color: #0f172a;
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding-top: var(--header-height, 60px);
+    padding-bottom: calc(var(--mobile-nav-height, 76px) + 2rem);
+  }
+}
+
+/* ==========================================================================
+   1. HERO BANNER
+   ========================================================================== */
+.contact-hero {
+  background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 60%, #f8fafc 100%);
+  text-align: center;
+  padding: 3.5rem 1rem 2.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  position: relative;
+}
+
+.contact-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(79, 70, 229, 0.08);
+  color: #4f46e5;
+  border: 1px solid rgba(79, 70, 229, 0.2);
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.contact-hero-title {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 900;
+  color: #0f172a;
+  margin-bottom: 0.8rem;
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.2;
+}
+
+.contact-hero-title .highlight-text {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.contact-hero-subtitle {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  color: #475569;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. QUICK-ACTION 4 CARDS GRID
+   ========================================================================== */
+.contact-quick-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  margin-top: -1.5rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+@media (max-width: 1100px) {
+  .contact-quick-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-quick-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+    margin-top: 1.2rem;
+  }
+}
+
+.contact-quick-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.4rem 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  color: #0f172a;
+}
+
+.contact-quick-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(79, 70, 229, 0.12);
+  border-color: #4f46e5;
+}
+
+.quick-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(79, 70, 229, 0.08);
+  color: #4f46e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+
+.contact-quick-card.phone-card:hover .quick-card-icon {
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+.whatsapp-icon {
+  background: rgba(37, 211, 102, 0.1) !important;
+  color: #16a34a !important;
+}
+
+.contact-quick-card.whatsapp-card:hover {
+  border-color: #16a34a;
+  box-shadow: 0 14px 30px rgba(22, 163, 74, 0.14);
+}
+
+.contact-quick-card.whatsapp-card:hover .whatsapp-icon {
+  background: #16a34a !important;
+  color: #ffffff !important;
+}
+
+.email-icon {
+  background: rgba(124, 58, 237, 0.08) !important;
+  color: #7c3aed !important;
+}
+
+.contact-quick-card.email-card:hover .email-icon {
+  background: #7c3aed !important;
+  color: #ffffff !important;
+}
+
+.map-icon {
+  background: rgba(2, 132, 199, 0.08) !important;
+  color: #0284c7 !important;
+}
+
+.contact-quick-card.location-card:hover .map-icon {
+  background: #0284c7 !important;
+  color: #ffffff !important;
+}
+
+.quick-card-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.quick-card-label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #64748b;
+  margin-bottom: 0.25rem;
+}
+
+.quick-card-val {
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 0.35rem;
+  font-family: 'Nunito', sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.quick-card-val.email-text {
+  font-size: 0.85rem;
+}
+
+.quick-card-action {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #4f46e5;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: gap 0.2s;
+}
+
+.contact-quick-card:hover .quick-card-action {
+  gap: 0.5rem;
+}
+
+/* ==========================================================================
+   3. 2-COLUMN MAIN LAYOUT
+   ========================================================================== */
+.contact-main-layout {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  align-items: start;
+}
+
+@media (max-width: 960px) {
+  .contact-main-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* ==========================================================================
+   4. INQUIRY FORM (LEFT COLUMN)
+   ========================================================================== */
+.contact-form-wrapper {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2.2rem 2rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+@media (max-width: 600px) {
+  .contact-form-wrapper {
+    padding: 1.5rem 1.2rem;
+    border-radius: 16px;
+  }
+}
+
+.form-card-header {
+  margin-bottom: 1.5rem;
+}
+
+.form-title-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(79, 70, 229, 0.08);
+  color: #4f46e5;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  margin-bottom: 0.5rem;
+}
+
+.form-card-title {
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin: 0 0 0.35rem;
+  font-family: 'Nunito', sans-serif;
+}
+
+.form-card-desc {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.form-status-alert {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.form-status-alert.error {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.form-status-alert.success {
+  background: #f0fdf4;
+  color: #16a34a;
+  border: 1px solid #bbf7d0;
+}
+
+.contact-light-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.form-row-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .form-row-2col {
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+  }
+}
+
+.contact-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form-group label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.4rem;
+}
+
+.contact-form-group label .req-star {
+  color: #ef4444;
+}
+
+.input-icon-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon-wrap i {
+  position: absolute;
+  left: 14px;
+  color: #94a3b8;
+  font-size: 0.95rem;
+  pointer-events: none;
+  transition: color 0.2s;
+}
+
+.input-icon-wrap.textarea-wrap i {
+  top: 14px;
+}
+
+.input-icon-wrap input,
+.input-icon-wrap select,
+.input-icon-wrap textarea {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 40px;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  color: #0f172a;
+  font-family: inherit;
+  transition: all 0.25s ease;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input-icon-wrap select {
+  cursor: pointer;
+}
+
+.input-icon-wrap input:focus,
+.input-icon-wrap select:focus,
+.input-icon-wrap textarea:focus {
+  border-color: #4f46e5;
+  background: #ffffff;
+  box-shadow: 0 0 0 3.5px rgba(79, 70, 229, 0.12);
+}
+
+.input-icon-wrap:focus-within i {
+  color: #4f46e5;
+}
+
+.input-icon-wrap textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.contact-submit-btn {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 0.9rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.25);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  margin-top: 0.4rem;
+}
+
+.contact-submit-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #d97706 0%, #ea580c 100%);
+  box-shadow: 0 8px 24px rgba(217, 119, 6, 0.3);
+  transform: translateY(-2px);
+}
+
+.contact-submit-btn:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   5. SIDEBAR WIDGETS (RIGHT COLUMN)
+   ========================================================================== */
+.contact-sidebar-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.sidebar-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 1.4rem 1.5rem;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+}
+
+.sidebar-card-header,
+.map-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.1rem;
+}
+
+.sidebar-icon-pill {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(79, 70, 229, 0.08);
+  color: #4f46e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.sidebar-card-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+}
+
+.sidebar-card-sub {
+  font-size: 0.78rem;
+  color: #64748b;
+  display: block;
+  margin-top: 0.15rem;
+}
+
+/* Timings List */
+.timings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.timing-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.8rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #f1f5f9;
+  font-size: 0.88rem;
+}
+
+.timing-label {
+  color: #475569;
+  font-weight: 600;
+}
+
+.timing-val {
+  color: #0f172a;
+  font-weight: 800;
+}
+
+.timing-val.holiday {
+  color: #dc2626;
+  background: #fef2f2;
+  padding: 0.15rem 0.55rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+}
+
+/* Administrative Personnel List */
+.personnel-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.personnel-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.75rem 0.85rem;
+  background: #f8fafc;
+  border-radius: 10px;
+  border: 1px solid #f1f5f9;
+}
+
+.personnel-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e0e7ff;
+  color: #4f46e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.personnel-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.personnel-info strong {
+  font-size: 0.92rem;
+  color: #0f172a;
+}
+
+.personnel-info span {
+  font-size: 0.76rem;
+  color: #64748b;
+  margin-bottom: 0.2rem;
+}
+
+.personnel-tel {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #4f46e5;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.personnel-tel:hover {
+  text-decoration: underline;
+}
+
+/* Map Widget */
+.map-embed-card {
+  padding: 1.4rem 1.4rem 1.1rem;
+}
+
+.map-iframe-container {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 0.8rem;
+}
+
+.map-card-footer {
+  text-align: center;
+}
+
+.map-direction-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.65rem 1rem;
+  background: rgba(79, 70, 229, 0.08);
+  color: #4f46e5;
+  font-weight: 700;
+  font-size: 0.88rem;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 1px solid rgba(79, 70, 229, 0.2);
+  transition: all 0.2s;
+}
+
+.map-direction-btn:hover {
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   6. SUCCESS MODAL (LIGHT THEME)
+   ========================================================================== */
+.contact-success-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 1.25rem;
+}
+
+.contact-success-modal-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+  border: 1px solid #e2e8f0;
+  max-width: 440px;
+  width: 100%;
+  padding: 2.2rem 1.8rem;
+  text-align: center;
+}
+
+.modal-success-icon-wrap {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: #dcfce7;
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 1.2rem;
+}
+
+.modal-title {
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin: 0 0 0.5rem;
+  font-family: 'Nunito', sans-serif;
+}
+
+.modal-description {
+  font-size: 0.92rem;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0 0 1.5rem;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-close-btn {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.75rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(22, 163, 74, 0.3);
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.modal-close-btn:hover {
+  background: #15803d;
+  transform: translateY(-2px);
+}

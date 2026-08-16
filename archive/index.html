@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="description"
+        content="Shree Jagdamba Convent School | Shree Jagdamba School - Quality education with modern facilities, experienced teachers, and 100% success rate. Best CBSE school with transport, computer lab &amp; sports facilities.">
+    <meta name="keywords"
+        content="Shree Jagdamba School, Shree Jagdamba Convent School, best school, CBSE school, quality education, student progress, modern education, school admission">
+    <meta name="author" content="Shree Jagdamba Convent School">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0a0e1a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Jagdamba School">
+    <script>
+        if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) {
+            document.documentElement.classList.add('pwa-splash-active');
+        }
+    </script>
+    <style>
+        [data-pwa-splash] { display: none !important; }
+        html.pwa-splash-active [data-pwa-splash]:not([hidden]) { display: flex !important; }
+    </style>
+
+
+
+    <link rel="canonical" href="https://shree-jagdamba.web.app/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shree-jagdamba.web.app/">
+    <meta property="og:title" content="Shree Jagdamba Convent School | Shree Jagdamba School - Best Education">
+    <meta property="og:description"
+        content="Quality education with modern facilities, experienced teachers, and 100% success rate. Enroll your child at Shree Jagdamba School today!">
+    <meta property="og:image" content="https://shree-jagdamba.web.app/images/jagdamba-og.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://shree-jagdamba.web.app/">
+    <meta property="twitter:title" content="Shree Jagdamba Convent School | Shree Jagdamba School">
+    <meta property="twitter:description" content="Quality education with modern facilities and 100% success rate.">
+    <meta property="twitter:image" content="https://shree-jagdamba.web.app/images/jagdamba-og.jpg">
+
+    <title>Shree Jagdamba Convent School | Shree Jagdamba School - Best CBSE School</title>
+
+    <!-- Favicon optimized -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=10.0.3">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png?v=10.0.3">
+    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png?v=10.0.3">
+    <link rel="manifest" href="manifest.json?v=10.0.3">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <style>
+        /* Instant visual improvements */
+        :root {
+            --primary: #6366f1;
+            --secondary: #f59e0b;
+            --accent: #8b5cf6;
+            --success: #10b981;
+            --dark: #0a0e1a;
+            --light: #f8fafc;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.4) 0%, rgba(139, 92, 246, 0.4) 50%, rgba(236, 72, 153, 0.3) 100%), url('images/hero-bg.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .stat-card {
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-item {
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .floating-symbols {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .symbol {
+            position: absolute;
+            font-weight: 700;
+            will-change: transform;
+        }
+
+        @keyframes float1 {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-30px) rotate(180deg);
+            }
+        }
+
+        @keyframes float2 {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(20px);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.15;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .symbol {
+                font-size: 1.2rem !important;
+            }
+        }
+
+        /* Session Badge Enhancement */
+        .session-highlight {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: #a5b4fc;
+            margin-top: 1rem;
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 10px rgba(99, 102, 241, 0.1); }
+            50% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
+        }
+
+        /* Quote bar styling */
+        .quote-bar {
+            background: linear-gradient(135deg, #0a2463 0%, #1e3a8a 100%);
+            color: white;
+            text-align: center;
+            padding: 20px 15px;
+            margin: 0;
+            font-size: 1.3rem;
+            font-weight: 600;
+            font-family: 'Georgia', serif;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+            animation: shimmer 4s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .quote-bar-green {
+            background: linear-gradient(135deg, #064e3b 0%, #0d5e3a 100%);
+        }
+
+        .quote-bar-slate {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        }
+    </style>
+    <meta name="google-site-verification" content="-9-M6l5K41Hz9A8jzUSlKp8OboqLdQqRJEqyo5jNwvo" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBJ8C4HZ2V"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-HBJ8C4HZ2V');
+    </script>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Shree Jagdamba Convent School",
+      "alternateName": "Shree Jagdamba School",
+      "url": "https://shree-jagdamba.web.app",
+      "logo": "https://shree-jagdamba.web.app/images/logo.png",
+      "description": "Shree Jagdamba Convent School provides quality education with modern facilities, experienced teachers, and 100% success rate.",
+      "foundingDate": "2001",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://www.facebook.com/shreejagdambaschool",
+        "https://www.instagram.com/shreejagdambaschool"
+      ]
+    }
+    </script>
+</head>
+
+<body>
+    <div class="pwa-splash-screen" data-pwa-splash aria-hidden="true" hidden>
+        <div class="pwa-splash-orbit orbit-a"></div>
+        <div class="pwa-splash-orbit orbit-b"></div>
+        <div class="pwa-splash-orbit orbit-c"></div>
+        <div class="pwa-splash-shell">
+            <div class="pwa-splash-brand">
+                <div class="pwa-splash-logo-wrap">
+                    <img src="images/logo.png" alt="" class="pwa-splash-logo">
+                </div>
+                <div class="pwa-splash-copy">
+                    <span class="pwa-splash-kicker">Welcome To</span>
+                    <h1>Shree Jagdamba School</h1>
+                    <p>Preparing your learning space with care and confidence.</p>
+                </div>
+            </div>
+            <div class="pwa-splash-progress-track">
+                <span class="pwa-splash-progress-fill" data-splash-progress></span>
+            </div>
+            <p class="pwa-splash-footnote">Launching your school app...</p>
+        </div>
+    </div>
+
+    <header class="header" id="header" role="banner">
+    <div class="header-container">
+        <a href="index.html" class="logo" title="Shree Jagdamba School Home">
+            <img src="images/logo.png" alt="Shree Jagdamba Convent School Logo" width="55" height="55" loading="eager">
+            <h2>Shree Jagdamba Convent School</h2>
+        </a>
+        <nav class="desktop-nav" role="navigation" aria-label="Main navigation">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="pages/about.html" class="nav-link">About Us</a>
+            <a href="pages/gallery.html" class="nav-link">Gallery</a>
+            <a href="sections/progress.html" class="nav-link">Student Progress</a>
+            <a href="pages/contact.html" class="nav-link">Contact</a>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle mobile menu" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+
+    <main role="main">
+        <section class="hero-section" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <div class="hero-badge">🎓 Excellence in Education Since 2001</div>
+                <h1 class="hero-title" id="hero-title">
+                    <span style="color: white;">Welcome to</span> <span class="gradient-text">Shree Jagdamba Convent School</span>
+                </h1>
+                <p class="hero-subtitle">Where Education, Values and Success Meet 🌟</p>
+                <div class="hero-buttons">
+                    <a href="admin/login.html" class="cta-button primary" aria-label="Admin login">
+                        <span>Admin Login</span>
+                        <i class="fas fa-user-shield"></i>
+                    </a>
+                    <a href="sections/progress.html" class="cta-button secondary"
+                        aria-label="View student progress reports">
+                        <span>Student Portal</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                <div class="session-highlight">📅 Session 2026-27</div>
+            </div>
+        </section>
+
+        <div style="background: white;">
+            <img src="images/stikers/students.webp" alt="Shree Jagdamba School Students - Quality Education" width="1920" height="544" style="width: 100%; height: auto; display: block; margin: 0; padding: 0;" loading="eager">
+        </div>
+        <div class="quote-bar">
+            ✨ We teach beyond books — preparing students for life.
+        </div>
+
+        <section id="home" class="features-section" aria-labelledby="features-heading">
+            <h2 id="features-heading" class="sr-only">School Statistics and Features</h2>
+            <div class="container">
+                <div class="stats-grid" role="list">
+                    <div class="stat-card" role="listitem">
+                        <i class="fas fa-users" aria-hidden="true"></i>
+                        <h3><span class="counter" data-target="120">0</span>+</h3>
+                        <p>Happy Students</p>
+                    </div>
+                    <div class="stat-card" role="listitem">
+                        <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
+                        <h3><span class="counter" data-target="4">0</span>+</h3>
+                        <p>Expert Teachers</p>
+                    </div>
+                    <div class="stat-card" role="listitem">
+                        <i class="fas fa-trophy" aria-hidden="true"></i>
+                        <h3><span class="counter" data-target="100">0</span>%</h3>
+                        <p>Success Rate</p>
+                    </div>
+                    <div class="stat-card" role="listitem">
+                        <i class="fas fa-award" aria-hidden="true"></i>
+                        <h3><span class="counter" data-target="5">0</span>+</h3>
+                        <p>Years Legacy</p>
+                    </div>
+                </div>
+
+                <img src="images/stikers/student_nursary.webp" alt="Shree Jagdamba Convent School Nursery Students" width="3165" height="1197" style="width: 100%; height: auto; display: block; margin: 0; padding: 0;" loading="lazy">
+                <div class="quote-bar quote-bar-green">
+                    🚀 Not just teaching, but building the future
+                </div>
+
+                <div class="features-grid" role="list">
+                    <article class="feature-card" role="listitem">
+                        <div class="feature-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Modern Education</h3>
+                        <p>Latest teaching methods and technology</p>
+                    </article>
+
+                    <article class="feature-card" role="listitem">
+                        <div class="feature-icon">
+                            <i class="fas fa-bus"></i>
+                        </div>
+                        <h3>Transport Facility</h3>
+                        <p>Safe and convenient bus service</p>
+                    </article>
+
+                    <article class="feature-card" role="listitem">
+                        <div class="feature-icon">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <h3>Sports Facilities</h3>
+                        <p>Playground for physical development</p>
+                    </article>
+
+                    <article class="feature-card" role="listitem">
+                        <div class="feature-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h3>Computer Lab</h3>
+                        <p>Modern lab for digital education</p>
+                    </article>
+
+                    <article class="feature-card" role="listitem">
+                        <div class="feature-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3>CCTV Campus</h3>
+                        <p>24x7 security surveillance</p>
+                    </article>
+
+                    <article class="feature-card" role="listitem">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Tech Support</h3>
+                        <p>Fast information for parents</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <div style="width: 100%; margin: 0; padding: 0; line-height: 0;">
+            <img src="images/stikers/student_with_headmaster.webp" alt="Students with Headmaster" width="2752" height="1536" style="width: 100%; height: auto; display: block; margin: 0; padding: 0;" loading="lazy">
+        </div>
+    </main>
+
+    <div class="quote-bar quote-bar-slate">
+        <p style="font-size: clamp(0.85rem, 2vw, 1rem); margin: 0; color: white; font-weight: 600; line-height: 1.5; font-family: 'Quicksand', sans-serif;">📖 Teaching that goes past classrooms and into real life</p>
+    </div>
+
+    <footer class="footer">
+    <div style="margin-bottom: 1rem;">
+        <img src="images/logo.png" alt="School Logo" style="width: 50px; height: 50px; margin: 0 auto 0.75rem; display: block;">
+        <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: white; font-weight: 700;">Shree Jagdamba Convent School, Dhadheru</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 0.3rem; opacity: 0.9;">Excellence in Education Since 2001</p>
+        <p style="font-size: 0.85rem; opacity: 0.8;">📍 Providing quality education with modern facilities</p>
+    </div>
+    <p>Made by <a href="https://klsuthar.github.io/KanhaiyalalSuthar/" target="_blank" style="background: #ffd700; color: #1a1a1a; padding: 0.25rem 0.75rem; border-radius: 5px; font-weight: 600;">@kanhaiyalal</a></p>
+</footer>
+
+    <nav class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+        <a href="index.html" class="nav-item active" aria-current="page" aria-label="Home"><i class="fas fa-home"
+                aria-hidden="true"></i><span>Home</span></a>
+        <a href="pages/about.html" class="nav-item" aria-label="About Us"><i class="fas fa-info-circle"
+                aria-hidden="true"></i><span>About</span></a>
+        <a href="pages/gallery.html" class="nav-item" aria-label="Gallery"><i class="fas fa-images"
+                aria-hidden="true"></i><span>Gallery</span></a>
+        <a href="sections/progress.html" class="nav-item" aria-label="Student Progress"><i class="fas fa-users"
+                aria-hidden="true"></i><span>Students</span></a>
+        <a href="pages/contact.html" class="nav-item" aria-label="Contact"><i class="fas fa-phone"
+                aria-hidden="true"></i><span>Contact</span></a>
+    </nav>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+        <button class="lightbox-close" aria-label="Close image viewer"><i class="fas fa-times"
+                aria-hidden="true"></i></button>
+        <button class="lightbox-prev" aria-label="Previous image"><i class="fas fa-chevron-left"
+                aria-hidden="true"></i></button>
+        <img src="" alt="" class="lightbox-image" loading="lazy">
+        <button class="lightbox-next" aria-label="Next image"><i class="fas fa-chevron-right"
+                aria-hidden="true"></i></button>
+    </div>
+
+    <script src="js/pwa.js" defer></script>
+    <script src="js/scroll-optimization.js" defer></script>
+    <script src="js/scroll-animation.js" defer></script>
+    <script src="js/header.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/hero.js" defer></script>
+    <script src="js/home.js" defer></script>
+    <script>
+        const container = document.getElementById('floatingSymbols');
+        if (container) {
+            const symbols = ['π', '∑', '∫', '√', 'α', 'β', 'θ', 'Δ', '∞', 'x²', 'y³', 'a+b', 'E=mc²', 'A', 'B', 'C', 'X', 'Y', 'Z', '÷', '×', '+', '=', '%', '∂', 'λ', 'μ', 'σ', 'Ω', '≈', '≠', '≤', '≥', '📚', '✏️', '📐', '🔬', '🎨', '🎵'];
+            const colors = ['#6366f1', '#8b5cf6', '#ec4899', '#f59e0b', '#10b981', '#06b6d4', '#f43f5e', '#a855f7'];
+            const animations = ['float1', 'float2', 'pulse'];
+            const isMobile = window.innerWidth <= 768;
+            const count = isMobile ? 20 : 35;
+            for (let i = 0; i < count; i++) {
+                const symbol = document.createElement('div');
+                symbol.className = 'symbol';
+                symbol.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+                symbol.style.left = Math.random() * 100 + '%';
+                symbol.style.top = Math.random() * 100 + '%';
+                symbol.style.color = colors[Math.floor(Math.random() * colors.length)];
+                symbol.style.fontSize = isMobile ? '1.2rem' : (1.5 + Math.random() * 1.5) + 'rem';
+                symbol.style.animation = animations[Math.floor(Math.random() * animations.length)] + ' ' + (10 + Math.random() * 10) + 's infinite ease-in-out';
+                symbol.style.animationDelay = Math.random() * 3 + 's';
+                symbol.style.opacity = 0.15 + Math.random() * 0.1;
+                container.appendChild(symbol);
+            }
+        }
+    </script>
+</body>
+
+</html>

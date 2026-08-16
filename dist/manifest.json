@@ -1,0 +1,66 @@
+{
+  "name": "Shree Jagdamba Convent School",
+  "short_name": "Jagdamba",
+  "description": "Shree Jagdamba Convent School - Quality Education & Student Progress Portal",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#09142f",
+  "theme_color": "#09142f",
+  "orientation": "portrait-primary",
+  "version": "10.3.0",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Student Progress",
+      "short_name": "Progress",
+      "description": "View Student Marks, Marksheets & Reports",
+      "url": "/progress",
+      "icons": [{ "src": "/android-chrome-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "School Gallery",
+      "short_name": "Gallery",
+      "description": "Browse Campus & Activity Photos",
+      "url": "/gallery",
+      "icons": [{ "src": "/android-chrome-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Contact School",
+      "short_name": "Contact",
+      "description": "Admissions Desk & WhatsApp Connect",
+      "url": "/contact",
+      "icons": [{ "src": "/android-chrome-192x192.png", "sizes": "192x192" }]
+    }
+  ],
+  "categories": [
+    "education",
+    "school"
+  ]
+}

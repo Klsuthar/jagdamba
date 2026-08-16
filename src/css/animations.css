@@ -1,0 +1,30 @@
+/* Minimal animations for mobile performance */
+@media (min-width: 768px) {
+    .animate-element {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .animate-element.animate-in {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* No animations on mobile for smooth scrolling */
+@media (max-width: 767px) {
+    .animate-element {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .animate-element {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}

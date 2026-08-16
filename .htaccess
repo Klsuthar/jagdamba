@@ -14,12 +14,18 @@
     AddType image/png .png
 </IfModule>
 
-# Disable caching - always serve latest files
+# Cache control rules
 <IfModule mod_headers.c>
+    # Disable caching for HTML, JS, CSS, JSON - always check latest
     <FilesMatch "\.(html|htm|js|css|json)$">
         Header set Cache-Control "no-cache, no-store, must-revalidate"
         Header set Pragma "no-cache"
         Header set Expires "0"
+    </FilesMatch>
+
+    # Permanent 1-year cache for images (rarely change)
+    <FilesMatch "\.(ico|pdf|jpg|jpeg|png|webp|gif|svg)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
     </FilesMatch>
 </IfModule>
 

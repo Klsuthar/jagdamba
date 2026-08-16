@@ -1,0 +1,42 @@
+[
+  {
+    "roll_no": 1,
+    "student_name": "DINDAYAL",
+    "image": "class_4_5/class-5-dindayal.jpg"
+  },
+  {
+    "roll_no": 2,
+    "student_name": "DINESH SIMAR",
+    "image": "class_4_5/class-5-dinesh-simar.jpg"
+  },
+  {
+    "roll_no": 3,
+    "student_name": "KAUSHALYA",
+    "image": "class_4_5/class-5-kaushalya.jpg"
+  },
+  {
+    "roll_no": 4,
+    "student_name": "MANISHA",
+    "image": "class_4_5/class-5-manisha.jpg"
+  },
+  {
+    "roll_no": 5,
+    "student_name": "NAVEEN SIMAR",
+    "image": "class_4_5/class-5-naveen-simar.jpg"
+  },
+  {
+    "roll_no": 6,
+    "student_name": "LAXMI",
+    "image": "class_4_5/class-5-laxmi.jpg"
+  },
+  {
+    "roll_no": 7,
+    "student_name": "SONAKSHI KANWAR",
+    "image": "class_4_5/class-5-sonakshi-kanwar.jpg"
+  },
+  {
+    "roll_no": 8,
+    "student_name": "DURLABH",
+    "image": "class_4_5/class-5-durlabh.jpg"
+  }
+]
