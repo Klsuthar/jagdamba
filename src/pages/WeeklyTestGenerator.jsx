@@ -270,7 +270,7 @@ export default function WeeklyTestGenerator() {
       const fileName = `Weekly_Test_Class${selectedClass}_${cleanSub.replace(/\s+/g, '_')}_${testDate}.pdf`;
 
       const opt = {
-        margin: [0, 0, 0, 0],
+        margin: 0,
         filename: fileName,
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { 
@@ -280,7 +280,7 @@ export default function WeeklyTestGenerator() {
           scrollY: 0
         },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-        pagebreak: { mode: ['css', 'legacy'], after: '.wt-a4-page' }
+        pagebreak: { mode: ['css', 'legacy'] }
       };
 
       await html2pdf().set(opt).from(element).save();
@@ -990,20 +990,17 @@ export default function WeeklyTestGenerator() {
                     </span>
                   </div>
 
-                  {/* Circular Photo with Concentric Rings */}
-                  <div className="wt-card-photo-rings">
-                    <div className="wt-photo-outer-ring"></div>
-                    <div className="wt-photo-inner-circle">
-                      <img 
-                        src={stu.image || `https://ui-avatars.com/api/?name=${encodeURIComponent(stu.student_name)}&background=1e3a8a&color=fff&size=200&bold=true`} 
-                        alt={stu.student_name}
-                        className="wt-photo-img-circle"
-                        onError={(e) => { 
-                          e.currentTarget.onerror = null;
-                          e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(stu.student_name)}&background=1e3a8a&color=fff&size=200&bold=true`; 
-                        }}
-                      />
-                    </div>
+                  {/* Big Square Student Photo */}
+                  <div className="wt-card-photo-square">
+                    <img 
+                      src={stu.image || `https://ui-avatars.com/api/?name=${encodeURIComponent(stu.student_name)}&background=1e3a8a&color=fff&size=200&bold=true`} 
+                      alt={stu.student_name}
+                      className="wt-photo-img-square"
+                      onError={(e) => { 
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(stu.student_name)}&background=1e3a8a&color=fff&size=200&bold=true`; 
+                      }}
+                    />
                   </div>
 
                   {/* Student Name */}
