@@ -206,5 +206,13 @@
     "father_name": "RAJURAM",
     "mother_name": "PANNA DEVI",
     "dob": "04/02/2018"
+  },
+  {
+    "roll_no": 27,
+    "student_name": "HEMA RATAWA",
+    "image": "class_1/class-1-hema.jpg",
+    "father_name": "DINESH KUMAR RATAWA",
+    "mother_name": "ARCHANA DEVI",
+    "dob": "14/12/2019"
   }
 ]

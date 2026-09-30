@@ -12,7 +12,7 @@ const CLASSES_DATA = [
     name: 'Class 1',
     grade: '1st Grade',
     icon: 'fa-book-reader',
-    totalStudents: 26,
+    totalStudents: 27,
     incharge: 'Mrs. Renu',
     description: 'Foundational literacy, mathematics, creative activities, and environmental awareness.'
   },

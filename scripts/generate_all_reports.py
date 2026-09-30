@@ -61,12 +61,73 @@ def resolve_photo(class_key, student_name):
         return None
 
     if '1' in str(class_key):
+        explicit_map_1 = {
+            'hema': 'class-1-hema.jpg',
+            'hema ratawa': 'class-1-hema.jpg',
+            'karmveer singh': 'class-1-karmveer-singh.jpg',
+            'karmveer singh rajvi': 'class-1-karmveer-singh.jpg',
+            'magharam bhadu': 'class-1-magharam-bhadu.jpg',
+            'magharam bhamu': 'class-1-magharam-bhadu.jpg',
+            'rajyavardhan singh': 'class-1-rajyavardhan-singh.jpg',
+            'rajayverdhan singh rathore': 'class-1-rajyavardhan-singh.jpg',
+            'gunjan': 'class-1-gunjan.jpg',
+            'gunjan choudhary': 'class-1-gunjan.jpg',
+            'santosh khairiya': 'class-1-santosh-khairiya.jpg',
+            'santosh': 'class-1-santosh-khairiya.jpg',
+            'minaxi sharma': 'class-1-minaxi-sharma.jpg',
+            'miakshi': 'class-1-minaxi-sharma.jpg',
+            'pankaj khairiya': 'class-1-pankaj-khairiya.jpg',
+            'pankaj kheria': 'class-1-pankaj-khairiya.jpg',
+            'parveen': 'class-1-parveen-kumar.jpg',
+            'praveen kumar': 'class-1-parveen-kumar.jpg',
+            'ramdev': 'class-1-ramdev-suthar.jpg',
+            'ramdev suthar': 'class-1-ramdev-suthar.jpg',
+            'dharmendra': 'class-1-dharmendra.jpg',
+            'dharmendra simar': 'class-1-dharmendra.jpg',
+            'yogendra': 'class-1-yogendra.jpg',
+            'yogendra singh': 'class-1-yogendra.jpg',
+            'mahak sinwal': 'class-1-mahak-sinwal.jpg',
+            'mahak': 'class-1-mahak-sinwal.jpg',
+            'naresh': 'class-1-naresh.jpg',
+            'naresh suthar': 'class-1-naresh.jpg',
+            'vinod kheriya': 'class-1-vinod-kheriya.jpg',
+        }
+        folder = os.path.join('public', 'images', 'students', 'class_1')
+        if clean_name in explicit_map_1:
+            p = os.path.join(folder, explicit_map_1[clean_name])
+            if os.path.exists(p):
+                return p
         folders = ['class_1']
         prefix = 'class-1'
     elif '2' in str(class_key):
         folders = ['class_2']
         prefix = 'class-2'
     elif '3' in str(class_key):
+        explicit_map_3 = {
+            'neha': 'class-3-neha-bhamu.jpg',
+            'neha bhambhu': 'class-3-neha-bhamu.jpg',
+            'kartik dan': 'class-3-kartik-dan-charan.jpg',
+            'kartik dan charan': 'class-3-kartik-dan-charan.jpg',
+            'mukesh': 'class-3-mukesh-nehara.jpg',
+            'mukesh nehara': 'class-3-mukesh-nehara.jpg',
+            'riyanspal': 'class-3-riyans-pal.jpg',
+            'riyans pal': 'class-3-riyans-pal.jpg',
+            'vijay': 'class-3-vijay-kheriya.jpg',
+            'vijay kheria': 'class-3-vijay-kheriya.jpg',
+            'pankaj': 'class-3-pankaj-nehara.jpg',
+            'pankaj nehra': 'class-3-pankaj-nehara.jpg',
+            'babulal': 'class-3-babulal.jpg',
+            'babu lal': 'class-3-babulal.jpg',
+            'dikshit': 'class-3-dikshit-charan.jpg',
+            'diksheet charan': 'class-3-dikshit-charan.jpg',
+            'aasish': 'class-3-aasish.jpg',
+            'aashish nehara': 'class-3-aasish.jpg',
+        }
+        folder = os.path.join('public', 'images', 'students', 'class_3')
+        if clean_name in explicit_map_3:
+            p = os.path.join(folder, explicit_map_3[clean_name])
+            if os.path.exists(p):
+                return p
         folders = ['class_3']
         prefix = 'class-3'
     else:
