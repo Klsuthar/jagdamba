@@ -14,7 +14,9 @@ const CLASSES_DATA = [
     icon: 'fa-book-reader',
     totalStudents: 27,
     incharge: 'Mrs. Renu',
-    description: 'Foundational literacy, mathematics, creative activities, and environmental awareness.'
+    description: 'Foundational literacy, mathematics, creative activities, and environmental awareness.',
+    majorTestPdf: '/pdf/major_test/Class_1St_Report_Card.pdf',
+    majorTestPdfName: 'Class 1st Major Test Report Card'
   },
   {
     key: 'class2',
@@ -24,7 +26,9 @@ const CLASSES_DATA = [
     icon: 'fa-pencil-alt',
     totalStudents: 15,
     incharge: 'Mr. Kanhaiya Lal',
-    description: 'Primary language comprehension, numeracy skills, general science, and arts.'
+    description: 'Primary language comprehension, numeracy skills, general science, and arts.',
+    majorTestPdf: '/pdf/major_test/Class_2nd_Report_Card.pdf',
+    majorTestPdfName: 'Class 2nd Major Test Report Card'
   },
   {
     key: 'class3',
@@ -34,7 +38,9 @@ const CLASSES_DATA = [
     icon: 'fa-award',
     totalStudents: 23,
     incharge: 'Mr. Kanhaiya Lal',
-    description: 'Intermediate primary curriculum, structured science & social studies, mathematics.'
+    description: 'Intermediate primary curriculum, structured science & social studies, mathematics.',
+    majorTestPdf: '/pdf/major_test/Class_3Rd_Report_Card.pdf',
+    majorTestPdfName: 'Class 3rd Major Test Report Card'
   },
   {
     key: 'class4',
@@ -42,9 +48,11 @@ const CLASSES_DATA = [
     name: 'Class 4',
     grade: '4th Grade',
     icon: 'fa-graduation-cap',
-    totalStudents: 18,
+    totalStudents: 23,
     incharge: 'Mr. Chandan Singh',
-    description: 'Advanced primary learning, problem solving, English grammar, and environmental science.'
+    description: 'Advanced primary learning, problem solving, English grammar, and environmental science.',
+    majorTestPdf: '/pdf/major_test/Class_4th_5th_Report_Cards.pdf',
+    majorTestPdfName: 'Class 4th & 5th Major Test Report Card'
   },
   {
     key: 'class5',
@@ -52,9 +60,11 @@ const CLASSES_DATA = [
     name: 'Class 5',
     grade: '5th Grade',
     icon: 'fa-user-graduate',
-    totalStudents: 8,
+    totalStudents: 3,
     incharge: 'Mr. Chandan Singh',
-    description: 'Senior primary board preparation, leadership, comprehensive assessment, and sports.'
+    description: 'Senior primary board preparation, leadership, comprehensive assessment, and sports.',
+    majorTestPdf: '/pdf/major_test/Class_4th_5th_Report_Cards.pdf',
+    majorTestPdfName: 'Class 4th & 5th Major Test Report Card'
   },
 ];
 
@@ -588,17 +598,32 @@ export default function Progress() {
                           </div>
                         </div>
 
-                        <button
-                          className="class-card-btn"
-                          type="button"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            handleSelectClass(cls.key);
-                          }}
-                        >
-                          <span>Open {cls.name} Students</span>
-                          <i className="fas fa-arrow-right"></i>
-                        </button>
+                        <div className="class-card-actions-wrap">
+                          <button
+                            className="class-card-btn"
+                            type="button"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleSelectClass(cls.key);
+                            }}
+                          >
+                            <span>Open {cls.name} Students</span>
+                            <i className="fas fa-arrow-right"></i>
+                          </button>
+                          {cls.majorTestPdf && (
+                            <a
+                              href={cls.majorTestPdf}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="class-card-pdf-link"
+                              onClick={(e) => e.stopPropagation()}
+                              title={`Open ${cls.name} Major Test PDF`}
+                            >
+                              <i className="fas fa-file-pdf"></i>
+                              <span>Major Test Report PDF</span>
+                            </a>
+                          )}
+                        </div>
                       </motion.div>
                     );
                   })}
@@ -632,14 +657,28 @@ export default function Progress() {
                   <span>Back to Class Selection</span>
                 </button>
 
-                <div className="portal-breadcrumb-tag">
-                  <i className={`fas ${currentClassObj.icon}`}></i>
-                  <span>{currentClassObj.name} ({classStudentsList.length} Students)</span>
+                <div className="portal-top-bar-right">
+                  {currentClassObj.majorTestPdf && (
+                    <a
+                      href={currentClassObj.majorTestPdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="portal-top-pdf-btn"
+                      title={`Open ${currentClassObj.name} Major Test Official PDF`}
+                    >
+                      <i className="fas fa-file-pdf"></i>
+                      <span>Major Test PDF</span>
+                    </a>
+                  )}
+                  <div className="portal-breadcrumb-tag">
+                    <i className={`fas ${currentClassObj.icon}`}></i>
+                    <span>{currentClassObj.name} ({classStudentsList.length} Students)</span>
+                  </div>
                 </div>
               </div>
 
               {/* Class Title Header */}
-              <div className="portal-hero" style={{ marginBottom: '1.8rem' }}>
+              <div className="portal-hero" style={{ marginBottom: '1.4rem' }}>
                 <h1 className="portal-title">
                   {currentClassObj.name} <span>Student Roster</span>
                 </h1>
@@ -647,6 +686,46 @@ export default function Progress() {
                   Class Teacher: <strong>{currentClassObj.incharge}</strong> • Academic Session: <strong>2026-27</strong> • Select a student to open their detailed marksheet.
                 </p>
               </div>
+
+              {/* Major Test PDF Download/View Banner for Parents */}
+              {currentClassObj.majorTestPdf && (
+                <div className="class-major-pdf-banner">
+                  <div className="class-major-pdf-icon">
+                    <i className="fas fa-file-pdf"></i>
+                  </div>
+                  <div className="class-major-pdf-info">
+                    <div className="class-major-pdf-tag">
+                      <span className="live-dot"></span>
+                      <span>September Major Test 2026-27</span>
+                    </div>
+                    <h3 className="class-major-pdf-title">
+                      {currentClassObj.name} Official Report Cards (Print & View PDF)
+                    </h3>
+                    <p className="class-major-pdf-desc">
+                      Parents can view and download the complete colored report card with student photos, subject-wise marks, percentage, and class position.
+                    </p>
+                  </div>
+                  <div className="class-major-pdf-actions">
+                    <a
+                      href={currentClassObj.majorTestPdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="class-major-pdf-btn primary"
+                    >
+                      <i className="fas fa-external-link-alt"></i>
+                      <span>Open PDF in New Tab</span>
+                    </a>
+                    <a
+                      href={currentClassObj.majorTestPdf}
+                      download={currentClassObj.majorTestPdf.split('/').pop()}
+                      className="class-major-pdf-btn secondary"
+                    >
+                      <i className="fas fa-download"></i>
+                      <span>Download PDF</span>
+                    </a>
+                  </div>
+                </div>
+              )}
 
               {/* Toolbar: Search, Sort & View Controls */}
               <div className="portal-toolbar">
@@ -1321,6 +1400,18 @@ export default function Progress() {
                     <i className="fas fa-file-pdf"></i>
                     <span>Save as PDF (A4)</span>
                   </button>
+                  {currentClassObj?.majorTestPdf && (
+                    <a
+                      href={currentClassObj.majorTestPdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-print-preview major-test-quick-btn"
+                      title={`View ${currentClassObj.name} Major Test Official PDF`}
+                    >
+                      <i className="fas fa-file-alt"></i>
+                      <span>View {currentClassObj.name} Major Test PDF</span>
+                    </a>
+                  )}
                 </div>
 
                 <div className="download-session-notice">

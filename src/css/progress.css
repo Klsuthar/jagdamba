@@ -2027,3 +2027,281 @@
     height: 44px !important;
   }
 }
+
+/* ==========================================================================
+   MAJOR TEST PDF BANNERS & ACTION BUTTONS
+   ========================================================================== */
+.portal-announcement-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  background: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 100%);
+  border: 1.5px solid #c7d2fe;
+  border-radius: 16px;
+  padding: 1.1rem 1.4rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.08);
+}
+
+@media (max-width: 768px) {
+  .portal-announcement-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.portal-announcement-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.portal-announcement-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #4f46e5;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.portal-announcement-title {
+  margin: 0 0 0.2rem 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #1e1b4b;
+}
+
+.portal-announcement-text {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #4338ca;
+  line-height: 1.45;
+}
+
+.portal-announcement-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #4f46e5;
+  color: #ffffff;
+  padding: 0.65rem 1.25rem;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.25);
+}
+
+.portal-announcement-btn:hover {
+  background: #4338ca;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+  color: #ffffff;
+}
+
+/* In-Class Major Test Banner */
+.class-major-pdf-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f5f3ff 100%);
+  border: 1.5px solid #ddd6fe;
+  border-left: 6px solid #7c3aed;
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.8rem;
+  box-shadow: 0 4px 18px rgba(124, 58, 237, 0.08);
+}
+
+@media (max-width: 820px) {
+  .class-major-pdf-banner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.1rem;
+  }
+}
+
+.class-major-pdf-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+}
+
+.class-major-pdf-info {
+  flex: 1;
+}
+
+.class-major-pdf-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(124, 58, 237, 0.1);
+  color: #6d28d9;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  margin-bottom: 0.35rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.class-major-pdf-tag .live-dot {
+  width: 7px;
+  height: 7px;
+  background: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3);
+}
+
+.class-major-pdf-title {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #1e1b4b;
+}
+
+.class-major-pdf-desc {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #4b5563;
+  line-height: 1.45;
+}
+
+.class-major-pdf-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.class-major-pdf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.2rem;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.class-major-pdf-btn.primary {
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(109, 40, 217, 0.25);
+}
+
+.class-major-pdf-btn.primary:hover {
+  background: linear-gradient(135deg, #6d28d9 0%, #5b21b6 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(109, 40, 217, 0.35);
+  color: #ffffff;
+}
+
+.class-major-pdf-btn.secondary {
+  background: #ffffff;
+  color: #4338ca;
+  border: 1.5px solid #c7d2fe;
+}
+
+.class-major-pdf-btn.secondary:hover {
+  background: #eff6ff;
+  border-color: #a5b4fc;
+  color: #3730a3;
+  transform: translateY(-2px);
+}
+
+/* Class card bottom actions in Step 1 */
+.class-card-actions-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.class-card-pdf-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  padding: 0.55rem 0.85rem;
+  border-radius: 12px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.class-card-pdf-link:hover {
+  background: #fee2e2;
+  border-color: #fca5a5;
+  color: #991b1b;
+  transform: translateY(-1px);
+}
+
+.portal-top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.portal-top-pdf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fca5a5;
+  padding: 0.45rem 0.9rem;
+  border-radius: 12px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.portal-top-pdf-btn:hover {
+  background: #dc2626;
+  color: #ffffff;
+  border-color: #dc2626;
+  transform: translateY(-1px);
+}
+
+.major-test-quick-btn {
+  background: #eff6ff !important;
+  color: #1d4ed8 !important;
+  border: 1.5px solid #bfdbfe !important;
+  text-decoration: none;
+}
+
+.major-test-quick-btn:hover {
+  background: #dbeafe !important;
+  color: #1e40af !important;
+  transform: translateY(-2px);
+}
+

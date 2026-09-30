@@ -160,5 +160,50 @@
     "mathematics": 8,
     "maths": 8,
     "evs": 7
+  },
+  {
+    "roll_no": 19,
+    "student_name": "DINDAYAL",
+    "hindi": 9,
+    "english": 5,
+    "mathematics": 8,
+    "maths": 8,
+    "evs": 6
+  },
+  {
+    "roll_no": 20,
+    "student_name": "DINESH SIMAR",
+    "hindi": 8,
+    "english": 9,
+    "mathematics": 8,
+    "maths": 8,
+    "evs": 8
+  },
+  {
+    "roll_no": 21,
+    "student_name": "KAUSHALYA",
+    "hindi": 10,
+    "english": 10,
+    "mathematics": 10,
+    "maths": 10,
+    "evs": 5
+  },
+  {
+    "roll_no": 22,
+    "student_name": "MANISHA",
+    "hindi": 6,
+    "english": 7,
+    "mathematics": 9,
+    "maths": 9,
+    "evs": 3
+  },
+  {
+    "roll_no": 23,
+    "student_name": "NAVEEN SIMAR",
+    "hindi": 10,
+    "english": 9,
+    "mathematics": 10,
+    "maths": 10,
+    "evs": 7
   }
 ]

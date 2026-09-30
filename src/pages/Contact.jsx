@@ -137,6 +137,42 @@ export default function Contact() {
           </a>
         </div>
 
+        {/* Social Media Connect Bar */}
+        <div className="contact-social-banner">
+          <div className="contact-social-banner-left">
+            <div className="contact-social-badge">
+              <i className="fas fa-hashtag"></i>
+              <span>Official Social Media</span>
+            </div>
+            <h3 className="contact-social-heading">Connect With Us Online</h3>
+            <p className="contact-social-sub">Follow our official Instagram & Facebook pages for school events, student activities, celebrations, and notices.</p>
+          </div>
+          <div className="contact-social-banner-actions">
+            <a
+              href="https://www.instagram.com/shree_jagdamba_convent_school"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-banner-btn instagram-btn"
+              title="Follow Shree Jagdamba School on Instagram"
+            >
+              <i className="fab fa-instagram"></i>
+              <span>Instagram Profile</span>
+              <i className="fas fa-external-link-alt mini-icon"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/share/1C98h1Bac6/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-banner-btn facebook-btn"
+              title="Follow Shree Jagdamba School on Facebook"
+            >
+              <i className="fab fa-facebook-f"></i>
+              <span>Facebook Profile</span>
+              <i className="fas fa-external-link-alt mini-icon"></i>
+            </a>
+          </div>
+        </div>
+
         {/* 2-Column Main Section: Form & Campus Information */}
         <div className="contact-main-layout">
           {/* Left Column: Inquiry Form */}
@@ -378,6 +414,55 @@ export default function Contact() {
                     </a>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            {/* Official Social Media Channels Card */}
+            <div className="sidebar-card social-media-card">
+              <div className="sidebar-card-header">
+                <div className="sidebar-icon-pill social-pill">
+                  <i className="fas fa-share-alt"></i>
+                </div>
+                <div>
+                  <h3 className="sidebar-card-title">Official Social Media</h3>
+                  <span className="sidebar-card-sub">Follow us for photos, events & notices</span>
+                </div>
+              </div>
+
+              <div className="sidebar-social-list">
+                <a
+                  href="https://www.instagram.com/shree_jagdamba_convent_school"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="sidebar-social-item instagram-item"
+                  title="Open Instagram Profile"
+                >
+                  <div className="sidebar-social-icon insta-gradient">
+                    <i className="fab fa-instagram"></i>
+                  </div>
+                  <div className="sidebar-social-details">
+                    <span className="sidebar-social-name">Instagram</span>
+                    <strong className="sidebar-social-handle">@shree_jagdamba_convent_school</strong>
+                  </div>
+                  <i className="fas fa-arrow-right sidebar-social-arrow"></i>
+                </a>
+
+                <a
+                  href="https://www.facebook.com/share/1C98h1Bac6/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="sidebar-social-item facebook-item"
+                  title="Open Facebook Page"
+                >
+                  <div className="sidebar-social-icon fb-blue">
+                    <i className="fab fa-facebook-f"></i>
+                  </div>
+                  <div className="sidebar-social-details">
+                    <span className="sidebar-social-name">Facebook</span>
+                    <strong className="sidebar-social-handle">Shree Jagdamba School</strong>
+                  </div>
+                  <i className="fas fa-arrow-right sidebar-social-arrow"></i>
+                </a>
               </div>
             </div>
 

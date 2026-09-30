@@ -142,5 +142,45 @@
     "father_name": "GOVIND RAM JAT",
     "mother_name": "DHAPU DEVI",
     "dob": "14/11/2017"
+  },
+  {
+    "roll_no": 19,
+    "student_name": "DINDAYAL",
+    "image": "class_4_5/class-5-dindayal.jpg",
+    "father_name": "SANWAR MAL",
+    "mother_name": "SUNITA DEVI",
+    "dob": "02/01/2017"
+  },
+  {
+    "roll_no": 20,
+    "student_name": "DINESH SIMAR",
+    "image": "class_4_5/class-5-dinesh-simar.jpg",
+    "father_name": "MOHANRAM MEGHWAL",
+    "mother_name": "SAROJ DEVI",
+    "dob": "02/01/2018"
+  },
+  {
+    "roll_no": 21,
+    "student_name": "KAUSHALYA",
+    "image": "class_4_5/class-5-kaushalya.jpg",
+    "father_name": "RAKESH",
+    "mother_name": "ANURADHA",
+    "dob": "14/12/2016"
+  },
+  {
+    "roll_no": 22,
+    "student_name": "MANISHA",
+    "image": "class_4_5/class-5-manisha.jpg",
+    "father_name": "MEGHARAM NEHARA",
+    "mother_name": "MANGI DEVI",
+    "dob": "29/04/2015"
+  },
+  {
+    "roll_no": 23,
+    "student_name": "NAVEEN SIMAR",
+    "image": "class_4_5/class-5-naveen-simar.jpg",
+    "father_name": "BHANI RAM",
+    "mother_name": "RUKAMANI DEVI",
+    "dob": "04/10/2016"
   }
 ]

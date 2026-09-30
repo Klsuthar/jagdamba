@@ -19,6 +19,33 @@ export default function Footer() {
           📍 Providing quality education with modern facilities
         </p>
       </div>
+
+      {/* Social Media Links */}
+      <div className="footer-social-links">
+        <a
+          href="https://www.instagram.com/shree_jagdamba_convent_school"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="footer-social-btn instagram"
+          aria-label="Follow us on Instagram"
+          title="Follow Shree Jagdamba School on Instagram"
+        >
+          <i className="fab fa-instagram"></i>
+          <span>Instagram</span>
+        </a>
+        <a
+          href="https://www.facebook.com/share/1C98h1Bac6/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="footer-social-btn facebook"
+          aria-label="Follow us on Facebook"
+          title="Follow Shree Jagdamba School on Facebook"
+        >
+          <i className="fab fa-facebook-f"></i>
+          <span>Facebook</span>
+        </a>
+      </div>
+
       <p style={{ color: '#475569', fontSize: '0.88rem' }}>
         Website Is designed by{' '}
         <a
