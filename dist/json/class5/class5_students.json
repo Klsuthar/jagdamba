@@ -2,41 +2,65 @@
   {
     "roll_no": 1,
     "student_name": "DINDAYAL",
-    "image": "class_4_5/class-5-dindayal.jpg"
+    "image": "class_4_5/class-5-dindayal.jpg",
+    "father_name": "SANWAR MAL",
+    "mother_name": "SUNITA DEVI",
+    "dob": "02/01/2017"
   },
   {
     "roll_no": 2,
     "student_name": "DINESH SIMAR",
-    "image": "class_4_5/class-5-dinesh-simar.jpg"
+    "image": "class_4_5/class-5-dinesh-simar.jpg",
+    "father_name": "MOHANRAM MEGHWAL",
+    "mother_name": "SAROJ DEVI",
+    "dob": "02/01/2018"
   },
   {
     "roll_no": 3,
     "student_name": "KAUSHALYA",
-    "image": "class_4_5/class-5-kaushalya.jpg"
+    "image": "class_4_5/class-5-kaushalya.jpg",
+    "father_name": "RAKESH",
+    "mother_name": "ANURADHA",
+    "dob": "14/12/2016"
   },
   {
     "roll_no": 4,
     "student_name": "MANISHA",
-    "image": "class_4_5/class-5-manisha.jpg"
+    "image": "class_4_5/class-5-manisha.jpg",
+    "father_name": "MEGHARAM NEHARA",
+    "mother_name": "MANGI DEVI",
+    "dob": "29/04/2015"
   },
   {
     "roll_no": 5,
     "student_name": "NAVEEN SIMAR",
-    "image": "class_4_5/class-5-naveen-simar.jpg"
+    "image": "class_4_5/class-5-naveen-simar.jpg",
+    "father_name": "BHANI RAM",
+    "mother_name": "RUKAMANI DEVI",
+    "dob": "04/10/2016"
   },
   {
     "roll_no": 6,
     "student_name": "LAXMI",
-    "image": "class_4_5/class-5-laxmi.jpg"
+    "image": "class_4_5/class-5-laxmi.jpg",
+    "father_name": "RAKESH SUTHAR",
+    "mother_name": "CHUKI DEVI",
+    "dob": "07/02/2015"
   },
   {
     "roll_no": 7,
     "student_name": "SONAKSHI KANWAR",
-    "image": "class_4_5/class-5-sonakshi-kanwar.jpg"
+    "image": "class_4_5/class-5-sonakshi-kanwar.jpg",
+    "father_name": "JITENDRA SINGH",
+    "mother_name": "RITU NIRWAN",
+    "dob": "06/06/2016"
   },
   {
     "roll_no": 8,
     "student_name": "DURLABH",
-    "image": "class_4_5/class-5-durlabh.jpg"
+    "image": "class_4_5/class-5-durlabh.jpg",
+    "father_name": "KAILASH SUTHAR",
+    "mother_name": "LALITA SUTHAR",
+    "dob": "05/04/2016"
   }
 ]

@@ -2,81 +2,121 @@
   {
     "roll_no": 1,
     "student_name": "ANUSHKA KANWAR",
-    "image": "class_2/class-2-anushka-kanwar.jpg"
+    "image": "class_2/class-2-anushka-kanwar.jpg",
+    "father_name": "KALU SINGH BHATI",
+    "mother_name": "BHAGWATI KANWAR",
+    "dob": "15/10/2019"
   },
   {
     "roll_no": 2,
     "student_name": "DEEPIKA",
-    "image": "class_2/class-2-deepika.jpg"
+    "image": "class_2/class-2-deepika.jpg",
+    "father_name": "TARACHAND MEGHWAL",
+    "mother_name": "AMARI DEVI",
+    "dob": "13/11/2019"
   },
   {
     "roll_no": 3,
     "student_name": "DHARNA",
-    "image": "class_2/class-2-dharna.jpg"
+    "image": "class_2/class-2-dharna.jpg",
+    "father_name": "BABU LAL",
+    "mother_name": "MANOHARI",
+    "dob": "03/11/2018"
   },
   {
     "roll_no": 4,
     "student_name": "NARENDRA SHARMA",
-    "image": "class_2/class-2-narendra-sharma.jpg"
+    "image": "class_2/class-2-narendra-sharma.jpg",
+    "father_name": "SANWAR MAL",
+    "mother_name": "SHANTI DEVI",
+    "dob": "22/07/2018"
   },
   {
     "roll_no": 5,
     "student_name": "PUNAM",
-    "image": "class_2/class-2-punam.jpg"
+    "image": "class_2/class-2-punam.jpg",
+    "father_name": "MANOJ KUMAR BAJIYA",
+    "mother_name": "KIRAN DEVI",
+    "dob": "10/09/2018"
   },
   {
     "roll_no": 6,
     "student_name": "RADHIKA",
-    "image": "class_2/class-2-radhika.jpg"
+    "image": "class_2/class-2-radhika.jpg",
+    "father_name": "ASHU RAM",
+    "mother_name": "RANJU",
+    "dob": "31/08/2018"
   },
   {
     "roll_no": 7,
     "student_name": "RAKSHA NEHARA",
-    "image": "class_2/class-2-raksha-nehara.jpg"
+    "image": "class_2/class-2-raksha-nehara.jpg",
+    "father_name": "BAL RAM NEHARA",
+    "mother_name": "SUMAN",
+    "dob": "15/08/2019"
   },
   {
     "roll_no": 8,
     "student_name": "ROHIT NYOL",
-    "image": "class_2/class-2-rohit-nyol.jpg"
+    "image": "class_2/class-2-rohit-nyol.jpg",
+    "father_name": "SHYAM SUNDAR NYOL",
+    "mother_name": "KISTURI",
+    "dob": "08/01/2018"
   },
   {
     "roll_no": 9,
     "student_name": "SHIV KUMAR",
-    "image": "class_2/class-2-shiv-kumar.jpg"
+    "image": "class_2/class-2-shiv-kumar.jpg",
+    "father_name": "VIKRAM",
+    "mother_name": "SALOCHANA",
+    "dob": "24/09/2017"
   },
   {
     "roll_no": 10,
     "student_name": "VISHAKHA NEHARA",
-    "image": "class_2/class-2-vishakha-nehara.jpg"
+    "image": "class_2/class-2-vishakha-nehara.jpg",
+    "father_name": "SHANKAR LAL NEHARA",
+    "mother_name": "MANOJ",
+    "dob": "24/08/2019"
   },
   {
     "roll_no": 11,
     "student_name": "YOGENDRA SINGH",
-    "image": "class_2/class-2-yogendra-singh.jpg"
+    "image": "class_2/class-2-yogendra-singh.jpg",
+    "father_name": "KARANI SINGH",
+    "mother_name": "SUMAN KANWAR",
+    "dob": "28/08/2018"
   },
   {
     "roll_no": 12,
     "student_name": "DHARMENDR PRAJAPAT",
-    "image": "class_2/class-2-dharmendr-prajapat.jpg"
+    "image": "class_2/class-2-dharmendr-prajapat.jpg",
+    "father_name": "BABU LAL PRAJAPAT",
+    "mother_name": "SUMAN",
+    "dob": "30/11/2018"
   },
   {
     "roll_no": 13,
-    "student_name": "DIVYA SUTHAR",
-    "image": "class_2/class-2-divya-suthar.jpg"
+    "student_name": "DIVYA",
+    "image": "class_2/class-2-divya-suthar.jpg",
+    "father_name": "GIRDHARI LAL",
+    "mother_name": "KAMLA",
+    "dob": "17/11/2018"
   },
   {
     "roll_no": 15,
     "student_name": "TEENA SWAMI",
-    "image": "class_2/class-2-teena-swami.jpg"
-  },
-  {
-    "roll_no": 16,
-    "student_name": "PALVIT",
-    "image": "class_2/class-2-palvit.jpg"
+    "image": "class_2/class-2-teena-swami.jpg",
+    "father_name": "GIRDHARI SWAMI",
+    "mother_name": "",
+    "dob": ""
   },
   {
     "roll_no": 17,
     "student_name": "GAJENDRA SINGH",
-    "image": "class_2/class-2-gajendra.jpg"
+    "image": "class_2/class-2-gajendra.jpg",
+    "father_name": "ARJUN SINGH",
+    "mother_name": "POONAM",
+    "dob": "02/05/2019"
   }
 ]

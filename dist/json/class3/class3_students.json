@@ -2,116 +2,185 @@
   {
     "roll_no": 1,
     "student_name": "AANAND SUTHAR",
-    "image": "class_3/class-3-aanand-suthar.jpg"
+    "image": "class_3/class-3-aanand-suthar.jpg",
+    "father_name": "MALA RAM",
+    "mother_name": "SANJU",
+    "dob": "09/12/2017"
   },
   {
     "roll_no": 2,
     "student_name": "AKANKSHA",
-    "image": "class_3/class-3-akanksha.jpg"
+    "image": "class_3/class-3-akanksha.jpg",
+    "father_name": "MOHAN LAL",
+    "mother_name": "BABLI",
+    "dob": "06/07/2018"
   },
   {
     "roll_no": 3,
     "student_name": "ARADHYA",
-    "image": "class_3/class-3-aradhya.jpg"
+    "image": "class_3/class-3-aradhya.jpg",
+    "father_name": "MAHENDRA KUMAR",
+    "mother_name": "SANTOSH DEVI",
+    "dob": "04/09/2018"
   },
   {
     "roll_no": 4,
-    "student_name": "ARCHANA",
-    "image": "class_3/class-3-archana.jpg"
+    "student_name": "BHAVESH",
+    "image": "class_3/class-3-archana.jpg",
+    "father_name": "GHANSHYAM",
+    "mother_name": "SANTOSH",
+    "dob": "20/07/2018"
   },
   {
     "roll_no": 5,
-    "student_name": "BHARATI",
-    "image": "class_3/class-3-bharati.jpg"
+    "student_name": "DEEPESH SUTHAR",
+    "image": "class_3/class-3-bharati.jpg",
+    "father_name": "MANOJ KUMAR SUTHAR",
+    "mother_name": "SUNITA DEVI",
+    "dob": "15/02/2018"
   },
   {
     "roll_no": 6,
     "student_name": "DEVENDRA",
-    "image": "class_3/class-3-devendra.jpg"
+    "image": "class_3/class-3-devendra.jpg",
+    "father_name": "BABU LAL",
+    "mother_name": "CHAWALI DEVI",
+    "dob": "07/07/2014"
   },
   {
     "roll_no": 7,
     "student_name": "HARDIK SEN",
-    "image": "class_3/class-3-hardik-sen.jpg"
+    "image": "class_3/class-3-hardik-sen.jpg",
+    "father_name": "OM PRAKASH NAI",
+    "mother_name": "LAXMI NAI",
+    "dob": "20/08/2017"
   },
   {
     "roll_no": 8,
     "student_name": "KARTIK DAN CHARAN",
-    "image": "class_3/class-3-kartik-dan-charan.jpg"
+    "image": "class_3/class-3-kartik-dan-charan.jpg",
+    "father_name": "MAHENDRA DAAN",
+    "mother_name": "SAROJ KANWAR",
+    "dob": "19/01/2018"
   },
   {
     "roll_no": 9,
     "student_name": "KISHAN",
-    "image": "class_3/class-3-kishan.jpg"
+    "image": "class_3/class-3-kishan.jpg",
+    "father_name": "RAM LAL",
+    "mother_name": "RUKMANI DEVI",
+    "dob": "30/10/2015"
   },
   {
     "roll_no": 10,
     "student_name": "MUKESH NEHARA",
-    "image": "class_3/class-3-mukesh-nehara.jpg"
+    "image": "class_3/class-3-mukesh-nehara.jpg",
+    "father_name": "GOPALA RAM NEHARA",
+    "mother_name": "SUMAN",
+    "dob": "13/11/2017"
   },
   {
     "roll_no": 11,
     "student_name": "RIYANS PAL",
-    "image": "class_3/class-3-riyans-pal.jpg"
+    "image": "class_3/class-3-riyans-pal.jpg",
+    "father_name": "RAGHVENDRA PAL",
+    "mother_name": "YARSHA PAL",
+    "dob": "22/10/2017"
   },
   {
     "roll_no": 12,
-    "student_name": "VIJAY KHERIYA",
-    "image": "class_3/class-3-vijay-kheriya.jpg"
+    "student_name": "VIJAY KHERIA",
+    "image": "class_3/class-3-vijay-kheriya.jpg",
+    "father_name": "BHAGU RAM KHERIA",
+    "mother_name": "DHAPU",
+    "dob": "07/11/2018"
   },
   {
     "roll_no": 13,
     "student_name": "MAHIR SINGH",
-    "image": "class_3/class-3-mahir-singh.jpg"
+    "image": "class_3/class-3-mahir-singh.jpg",
+    "father_name": "UMED SINGH",
+    "mother_name": "MUKESH KANWAR",
+    "dob": "09/08/2018"
   },
   {
     "roll_no": 14,
     "student_name": "YUVRAJ SINGH",
-    "image": "class_3/class-3-yuvraj-singh.jpg"
+    "image": "class_3/class-3-yuvraj-singh.jpg",
+    "father_name": "PEM SINGH",
+    "mother_name": "MEM KANWAR",
+    "dob": "13/12/2017"
   },
   {
     "roll_no": 15,
     "student_name": "ANUSHKA KANWAR",
-    "image": "class_3/class-3-anushka-kanwar.jpg"
+    "image": "class_3/class-3-anushka-kanwar.jpg",
+    "father_name": "RAJU SINGH",
+    "mother_name": "MAMTA KANWAR",
+    "dob": "09/01/2018"
   },
   {
     "roll_no": 16,
-    "student_name": "PANKAJ NEHARA",
-    "image": "class_3/class-3-pankaj-nehara.jpg"
+    "student_name": "PANKAJ NEHRA",
+    "image": "class_3/class-3-pankaj-nehara.jpg",
+    "father_name": "SAHIRAM NEHRA",
+    "mother_name": "RAJU DEVI",
+    "dob": "24/05/2018"
   },
   {
     "roll_no": 17,
     "student_name": "SUNITA KHERIYA",
-    "image": "class_3/class-3-sunita-kheriya.jpg"
+    "image": "class_3/class-3-sunita-kheriya.jpg",
+    "father_name": "DEVENDRA KUMAR",
+    "mother_name": "SHANTI DEVI",
+    "dob": "22/07/2018"
   },
   {
     "roll_no": 18,
-    "student_name": "BABULAL",
-    "image": "class_3/class-3-babulal.jpg"
+    "student_name": "BABU LAL",
+    "image": "class_3/class-3-babulal.jpg",
+    "father_name": "GIRDHARI LAL",
+    "mother_name": "UDI DEVI",
+    "dob": "15/10/2017"
   },
   {
     "roll_no": 19,
     "student_name": "NAITIK SONI",
-    "image": "class_3/class-3-naitik-soni.jpg"
+    "image": "class_3/class-3-naitik-soni.jpg",
+    "father_name": "RAKESH SONI",
+    "mother_name": "LAXMI",
+    "dob": "17/10/2017"
   },
   {
     "roll_no": 20,
     "student_name": "NIHARIKA",
-    "image": "class_3/class-3-niharika.jpg"
+    "image": "class_3/class-3-niharika.jpg",
+    "father_name": "ARJUN RAM",
+    "mother_name": "SUNITA JAKHAR",
+    "dob": "24/10/2017"
   },
   {
     "roll_no": 21,
-    "student_name": "NEHA BHAMU",
-    "image": "class_3/class-3-neha-bhamu.jpg"
+    "student_name": "NEHA BHAMBHU",
+    "image": "class_3/class-3-neha-bhamu.jpg",
+    "father_name": "SANJAY KUMAR",
+    "mother_name": "LICHHMA DEVI",
+    "dob": "21/12/2017"
   },
   {
     "roll_no": 22,
-    "student_name": "DIKSHIT CHARAN",
-    "image": "class_3/class-3-dikshit-charan.jpg"
+    "student_name": "DIKSHEET CHARAN",
+    "image": "class_3/class-3-dikshit-charan.jpg",
+    "father_name": "LAKHAN DAN CHARAN",
+    "mother_name": "LALITA KANWAR",
+    "dob": "22/08/2017"
   },
   {
     "roll_no": 23,
-    "student_name": "AASISH",
-    "image": "class_3/class-3-aasish.jpg"
+    "student_name": "AASHISH NEHARA",
+    "image": "class_3/class-3-aasish.jpg",
+    "father_name": "BAJRANG LAL NEHARA",
+    "mother_name": "CHHOTI DEVI",
+    "dob": "29/08/2016"
   }
 ]

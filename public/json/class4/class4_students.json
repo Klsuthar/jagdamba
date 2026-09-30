@@ -2,91 +2,145 @@
   {
     "roll_no": 1,
     "student_name": "ANKIT JANGIR",
-    "image": "class_4_5/class-4-ankit-jangir.jpg"
+    "image": "class_4_5/class-4-ankit-jangir.jpg",
+    "father_name": "JAISA RAM KHATI",
+    "mother_name": "ANJU DEVI",
+    "dob": "09/09/2015"
   },
   {
     "roll_no": 2,
     "student_name": "ANURADHA",
-    "image": "class_4_5/class-4-anuradha.jpg"
+    "image": "class_4_5/class-4-anuradha.jpg",
+    "father_name": "RAMCHANDRA SINWAL",
+    "mother_name": "DROPATI",
+    "dob": "17/09/2018"
   },
   {
     "roll_no": 3,
     "student_name": "ARAV SINWAL",
-    "image": "class_4_5/class-4-arav-sinwal.jpg"
+    "image": "class_4_5/class-4-arav-sinwal.jpg",
+    "father_name": "HARI RAM SINWAL",
+    "mother_name": "DHANNI DEVI",
+    "dob": "28/09/2018"
   },
   {
     "roll_no": 4,
     "student_name": "DHIRAJ",
-    "image": "class_4_5/class-4-dhiraj.jpg"
+    "image": "class_4_5/class-4-dhiraj.jpg",
+    "father_name": "MANOJ KUMAR JANGIR",
+    "mother_name": "SAVITRI SUTHAR",
+    "dob": "25/10/2017"
   },
   {
     "roll_no": 5,
     "student_name": "DINESH",
-    "image": "class_4_5/class-4-dinesh.jpg"
+    "image": "class_4_5/class-4-dinesh.jpg",
+    "father_name": "NANDURAM",
+    "mother_name": "SHARADA",
+    "dob": "11/11/2016"
   },
   {
     "roll_no": 6,
     "student_name": "DIVYA",
-    "image": "class_4_5/class-4-divya.jpg"
+    "image": "class_4_5/class-4-divya.jpg",
+    "father_name": "LABHURAM KHERIYA",
+    "mother_name": "RADHA DEVI",
+    "dob": "04/10/2017"
   },
   {
     "roll_no": 7,
     "student_name": "GOURI",
-    "image": "class_4_5/class-4-gouri.jpg"
+    "image": "class_4_5/class-4-gouri.jpg",
+    "father_name": "OM PRAKASH",
+    "mother_name": "SUMAN",
+    "dob": "03/08/2017"
   },
   {
     "roll_no": 8,
     "student_name": "HEJAL PAL",
-    "image": "class_4_5/class-4-hejal-pal.jpg"
+    "image": "class_4_5/class-4-hejal-pal.jpg",
+    "father_name": "RAGHVENDRA PAL",
+    "mother_name": "VARSHA PAL",
+    "dob": "18/12/2017"
   },
   {
     "roll_no": 9,
     "student_name": "KANAK",
-    "image": "class_4_5/class-4-kanak.jpg"
+    "image": "class_4_5/class-4-kanak.jpg",
+    "father_name": "OM PRAKASH SUTHAR",
+    "mother_name": "SANJU DEVI",
+    "dob": "05/09/2017"
   },
   {
     "roll_no": 10,
     "student_name": "MANSI",
-    "image": "class_4_5/class-4-mansi.jpg"
+    "image": "class_4_5/class-4-mansi.jpg",
+    "father_name": "LABHURAM KHERIYA",
+    "mother_name": "RADHA DEVI",
+    "dob": "24/04/2018"
   },
   {
     "roll_no": 11,
     "student_name": "MANVENDRA SINGH",
-    "image": "class_4_5/class-4-manvendra-singh.jpg"
+    "image": "class_4_5/class-4-manvendra-singh.jpg",
+    "father_name": "RAM SINGH",
+    "mother_name": "KAVITA KANWAR",
+    "dob": "03/06/2018"
   },
   {
     "roll_no": 12,
     "student_name": "NAVEEN",
-    "image": "class_4_5/class-4-naveen.jpg"
+    "image": "class_4_5/class-4-naveen.jpg",
+    "father_name": "LAXMAN RAM KHICHAR",
+    "mother_name": "RAJU DEVI",
+    "dob": "29/11/2016"
   },
   {
     "roll_no": 13,
-    "student_name": "NISHTHA",
-    "image": "class_4_5/class-4-nishtha.jpg"
+    "student_name": "NISHTHA SUTHAR",
+    "image": "class_4_5/class-4-nishtha.jpg",
+    "father_name": "BHANWAR LAL SUTHAR",
+    "mother_name": "SEEMA SUTHAR",
+    "dob": "23/10/2017"
   },
   {
     "roll_no": 14,
     "student_name": "RAVI PRAKASH",
-    "image": "class_4_5/class-4-ravi-prakash.jpg"
+    "image": "class_4_5/class-4-ravi-prakash.jpg",
+    "father_name": "GIRDHARI DAS",
+    "mother_name": "SUNDAR DEVI",
+    "dob": "18/05/2018"
   },
   {
     "roll_no": 15,
     "student_name": "SARSWATI KANWAR",
-    "image": "class_4_5/class-4-sarswati-kanwar.jpg"
+    "image": "class_4_5/class-4-sarswati-kanwar.jpg",
+    "father_name": "RAJU SINGH",
+    "mother_name": "FULA KANWAR",
+    "dob": "08/08/2017"
   },
   {
     "roll_no": 16,
     "student_name": "SHIVRAJ",
-    "image": "class_4_5/class-4-shivraj.jpg"
+    "image": "class_4_5/class-4-shivraj.jpg",
+    "father_name": "BHAGWAN",
+    "mother_name": "SUSHILA DEVI",
+    "dob": "04/06/2017"
   },
   {
     "roll_no": 17,
     "student_name": "NARESH SUTHAR",
-    "image": "class_4_5/class-4-naresh-suthar.jpg"
+    "image": "class_4_5/class-4-naresh-suthar.jpg",
+    "father_name": "GIRDHARI LAL SUTHAR",
+    "mother_name": "KAMLA",
+    "dob": "07/07/2017"
   },
   {
     "roll_no": 18,
     "student_name": "PRAVEENA",
-    "image": "class_4_5/class-4-praveena.jpg"
+    "image": "class_4_5/class-4-praveena.jpg",
+    "father_name": "GOVIND RAM JAT",
+    "mother_name": "DHAPU DEVI",
+    "dob": "14/11/2017"
   }
 ]

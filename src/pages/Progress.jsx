@@ -12,7 +12,7 @@ const CLASSES_DATA = [
     name: 'Class 1',
     grade: '1st Grade',
     icon: 'fa-book-reader',
-    totalStudents: 25,
+    totalStudents: 26,
     incharge: 'Mrs. Renu',
     description: 'Foundational literacy, mathematics, creative activities, and environmental awareness.'
   },
@@ -22,7 +22,7 @@ const CLASSES_DATA = [
     name: 'Class 2',
     grade: '2nd Grade',
     icon: 'fa-pencil-alt',
-    totalStudents: 16,
+    totalStudents: 15,
     incharge: 'Mr. Kanhaiya Lal',
     description: 'Primary language comprehension, numeracy skills, general science, and arts.'
   },
@@ -114,8 +114,24 @@ function computeStudentMarks(student, classExamData, allClassStudents = []) {
   if (!student) return null;
   const roll = student.rollNo;
 
+  const normalizeName = (s) => {
+    if (!s) return '';
+    return s.toLowerCase().replace(/[^a-z0-9]/g, '');
+  };
+
+  const stuNormName = normalizeName(student.name);
+
   const findRecord = (list) => {
     if (!Array.isArray(list) || list.length === 0) return null;
+    // 1. Primary match by student name
+    if (stuNormName) {
+      const nameMatch = list.find(item => {
+        const itemNorm = normalizeName(item.student_name || item.name || '');
+        return itemNorm && (itemNorm === stuNormName || itemNorm.includes(stuNormName) || stuNormName.includes(itemNorm));
+      });
+      if (nameMatch) return nameMatch;
+    }
+    // 2. Fallback to roll number or ID
     return list.find(item => {
       const itemRoll = String(item.roll_no ?? item.roll ?? '').replace(/\D/g, '');
       return itemRoll === String(roll) || item.student_id === student.id;
@@ -129,8 +145,10 @@ function computeStudentMarks(student, classExamData, allClassStudents = []) {
   const yrData = findRecord(classExamData?.yearly);
 
   let anyMarkPresent = false;
-  let totalObtained = 0;
-  let totalConductedMax = 0;
+  let examObtained = 0;
+  let examConductedMax = 0;
+  let testObtained = 0;
+  let testConductedMax = 0;
 
   const subjectsData = REPORT_SUBJECTS.map((sub) => {
     const key = sub.name.toLowerCase(); // 'mathematics', 'hindi', 'english', 'evs'
@@ -145,6 +163,9 @@ function computeStudentMarks(student, classExamData, allClassStudents = []) {
       totalT = (t1 || 0) + (t2 || 0) + (t3 || 0);
       anyMarkPresent = true;
     }
+    if (t1 !== null) { testObtained += t1; testConductedMax += 10; }
+    if (t2 !== null) { testObtained += t2; testConductedMax += 10; }
+    if (t3 !== null) { testObtained += t3; testConductedMax += 10; }
 
     // Half Yearly (Written & Oral)
     const hyW = parseMark(hyData?.[`${key}_written`] ?? hyData?.[`${mathsKey}_written`] ?? hyData?.[key]?.written ?? hyData?.[mathsKey]?.written ?? hyData?.[key]);
@@ -155,8 +176,8 @@ function computeStudentMarks(student, classExamData, allClassStudents = []) {
     if (hyW !== null || hyO !== null) {
       hyT = (hyW || 0) + (hyO || 0);
       anyMarkPresent = true;
-      totalObtained += hyT;
-      totalConductedMax += sub.hyTotalMax;
+      examObtained += hyT;
+      examConductedMax += sub.hyTotalMax;
     }
 
     // Yearly (Written & Oral)
@@ -168,8 +189,8 @@ function computeStudentMarks(student, classExamData, allClassStudents = []) {
     if (yrW !== null || yrO !== null) {
       yrT = (yrW || 0) + (yrO || 0);
       anyMarkPresent = true;
-      totalObtained += yrT;
-      totalConductedMax += sub.yrTotalMax;
+      examObtained += yrT;
+      examConductedMax += sub.yrTotalMax;
     }
 
     // Subject SubTotal
@@ -205,8 +226,13 @@ function computeStudentMarks(student, classExamData, allClassStudents = []) {
     };
   });
 
+  const hasExams = examConductedMax > 0;
+  const totalObtained = hasExams ? examObtained : null;
+  const totalConductedMax = hasExams ? examConductedMax : 0;
   const maxMarks = 600;
-  const percentage = anyMarkPresent && totalConductedMax > 0
+
+  // Percentage is not calculated for periodic tests (only for comprehensive exams)
+  const percentage = hasExams && totalConductedMax > 0
     ? parseFloat(((totalObtained / totalConductedMax) * 100).toFixed(2))
     : null;
 
@@ -223,10 +249,10 @@ function computeStudentMarks(student, classExamData, allClassStudents = []) {
 
   // Calculate Rank among students who have marks in this class
   let displayRank = student.rank || '—';
-  if (anyMarkPresent && allClassStudents.length > 0) {
+  if (hasExams && allClassStudents.length > 0) {
     const studentsWithMarks = allClassStudents
       .map(s => computeStudentMarks(s, classExamData))
-      .filter(res => res && res.hasMarks)
+      .filter(res => res && res.hasMarks && res.totalObtained !== null)
       .sort((a, b) => (b.totalObtained || 0) - (a.totalObtained || 0));
 
     const rankIdx = studentsWithMarks.findIndex(r => r.totalObtained === totalObtained);
@@ -239,6 +265,7 @@ function computeStudentMarks(student, classExamData, allClassStudents = []) {
 
   return {
     hasMarks: anyMarkPresent,
+    hasExams,
     subjectsData,
     totalObtained: anyMarkPresent ? totalObtained : null,
     totalConductedMax,
@@ -881,7 +908,9 @@ export default function Progress() {
                             </span>
                             <span className="bio-colon">:</span>
                             <span className="bio-field-val bio-bold">
-                              {reportData.hasMarks ? reportData.totalObtained : <span className="dotted-placeholder">...................................</span>} / 600
+                              {reportData.hasExams && reportData.totalObtained !== null
+                                ? `${reportData.totalObtained} / 600`
+                                : <><span className="dotted-placeholder">...................................</span> / 600</>}
                             </span>
                           </div>
                         </div>

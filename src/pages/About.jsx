@@ -104,7 +104,7 @@ export default function About() {
         >
           {/* Director Card */}
           <motion.div 
-            className="principal-card"
+            className="principal-card leader-theme-director"
             variants={{
               hidden: { opacity: 0, y: 30 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -137,7 +137,7 @@ export default function About() {
 
           {/* Principal Card */}
           <motion.div 
-            className="principal-card"
+            className="principal-card leader-theme-principal"
             variants={{
               hidden: { opacity: 0, y: 30 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -170,7 +170,7 @@ export default function About() {
 
           {/* Management Director Card */}
           <motion.div 
-            className="principal-card"
+            className="principal-card leader-theme-md"
             variants={{
               hidden: { opacity: 0, y: 30 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -203,7 +203,7 @@ export default function About() {
 
           {/* Headmaster Card */}
           <motion.div 
-            className="principal-card"
+            className="principal-card leader-theme-headmaster"
             variants={{
               hidden: { opacity: 0, y: 30 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }

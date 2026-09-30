@@ -5,6 +5,12 @@
     margin-bottom: 0;
 }
 
+@media (max-width: 768px) {
+    .about-section {
+        padding-bottom: 90px;
+    }
+}
+
 .page-header {
     text-align: center;
     padding: 2rem 1rem;

@@ -9,7 +9,7 @@
           "file": "json/class1/test1.json",
           "max_marks": {
             "hindi": 10,
-            "english": 5,
+            "english": 10,
             "mathematics": 10,
             "evs": 10
           }
@@ -20,7 +20,7 @@
           "file": "json/class1/test2.json",
           "max_marks": {
             "hindi": 10,
-            "english": 5,
+            "english": 10,
             "mathematics": 10,
             "evs": 10
           }
@@ -31,7 +31,7 @@
           "file": "json/class1/test3.json",
           "max_marks": {
             "hindi": 10,
-            "english": 5,
+            "english": 10,
             "mathematics": 10,
             "evs": 10
           }
@@ -94,7 +94,7 @@
           "file": "json/class2/test1.json",
           "max_marks": {
             "hindi": 10,
-            "english": 5,
+            "english": 10,
             "mathematics": 10,
             "evs": 10
           }
@@ -105,7 +105,7 @@
           "file": "json/class2/test2.json",
           "max_marks": {
             "hindi": 10,
-            "english": 5,
+            "english": 10,
             "mathematics": 10,
             "evs": 10
           }
@@ -116,7 +116,7 @@
           "file": "json/class2/test3.json",
           "max_marks": {
             "hindi": 10,
-            "english": 5,
+            "english": 10,
             "mathematics": 10,
             "evs": 10
           }
@@ -179,7 +179,7 @@
           "file": "json/class3/test1.json",
           "max_marks": {
             "hindi": 10,
-            "english": 5,
+            "english": 10,
             "mathematics": 10,
             "evs": 10
           }
@@ -190,7 +190,7 @@
           "file": "json/class3/test2.json",
           "max_marks": {
             "hindi": 10,
-            "english": 5,
+            "english": 10,
             "mathematics": 10,
             "evs": 10
           }
@@ -201,7 +201,7 @@
           "file": "json/class3/test3.json",
           "max_marks": {
             "hindi": 10,
-            "english": 5,
+            "english": 10,
             "mathematics": 10,
             "evs": 10
           }
@@ -264,7 +264,7 @@
           "file": "json/class4/test1.json",
           "max_marks": {
             "hindi": 10,
-            "english": 5,
+            "english": 10,
             "mathematics": 10,
             "evs": 10
           }
@@ -275,7 +275,7 @@
           "file": "json/class4/test2.json",
           "max_marks": {
             "hindi": 10,
-            "english": 5,
+            "english": 10,
             "mathematics": 10,
             "evs": 10
           }
@@ -286,7 +286,7 @@
           "file": "json/class4/test3.json",
           "max_marks": {
             "hindi": 10,
-            "english": 5,
+            "english": 10,
             "mathematics": 10,
             "evs": 10
           }
@@ -349,7 +349,7 @@
           "file": "json/class5/test1.json",
           "max_marks": {
             "hindi": 10,
-            "english": 5,
+            "english": 10,
             "mathematics": 10,
             "evs": 10
           }
@@ -360,7 +360,7 @@
           "file": "json/class5/test2.json",
           "max_marks": {
             "hindi": 10,
-            "english": 5,
+            "english": 10,
             "mathematics": 10,
             "evs": 10
           }
@@ -371,7 +371,7 @@
           "file": "json/class5/test3.json",
           "max_marks": {
             "hindi": 10,
-            "english": 5,
+            "english": 10,
             "mathematics": 10,
             "evs": 10
           }

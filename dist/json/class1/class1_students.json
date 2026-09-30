@@ -2,126 +2,209 @@
   {
     "roll_no": 1,
     "student_name": "BHANU PRATAP SINGH",
-    "image": "class_1/class-1-bhanu-pratap-singh.jpg"
+    "image": "class_1/class-1-bhanu-pratap-singh.jpg",
+    "father_name": "SURENDRA SINGH",
+    "mother_name": "SANJU KANWAR",
+    "dob": "24/01/2020"
   },
   {
     "roll_no": 2,
     "student_name": "DIVYA SIDH",
-    "image": "class_1/class-1-divya-sidh.jpg"
+    "image": "class_1/class-1-divya-sidh.jpg",
+    "father_name": "PARAKASH NATH MAHIYA",
+    "mother_name": "RADHA SIDH",
+    "dob": "01/04/2020"
   },
   {
     "roll_no": 3,
     "student_name": "ISHITA KANWAR",
-    "image": "class_1/class-1-ishita-kanwar.jpg"
+    "image": "class_1/class-1-ishita-kanwar.jpg",
+    "father_name": "HIMMAT SINGH",
+    "mother_name": "LALITA KANWAR",
+    "dob": "19/09/2019"
   },
   {
     "roll_no": 4,
-    "student_name": "KARMVEER SINGH",
-    "image": "class_1/class-1-karmveer-singh.jpg"
+    "student_name": "KARMVEER SINGH RAJVI",
+    "image": "class_1/class-1-karmveer-singh.jpg",
+    "father_name": "SUMER SINGH RAJAVEE",
+    "mother_name": "SENTI KANWAR",
+    "dob": "31/07/2019"
   },
   {
     "roll_no": 5,
-    "student_name": "MAGHARAM BHADU",
-    "image": "class_1/class-1-magharam-bhadu.jpg"
+    "student_name": "MAGHARAM BHAMU",
+    "image": "class_1/class-1-magharam-bhadu.jpg",
+    "father_name": "SANJAY KUMAR",
+    "mother_name": "LICHMA DEVI",
+    "dob": "07/06/2019"
   },
   {
     "roll_no": 6,
     "student_name": "MANAV SUTHAR",
-    "image": "class_1/class-1-manav-suthar.jpg"
+    "image": "class_1/class-1-manav-suthar.jpg",
+    "father_name": "HARI RAM",
+    "mother_name": "MOHINI",
+    "dob": "17/03/2018"
   },
   {
     "roll_no": 7,
     "student_name": "MURALIDHAR JAT",
-    "image": "class_1/class-1-muralidhar-jat.jpg"
+    "image": "class_1/class-1-muralidhar-jat.jpg",
+    "father_name": "ANOPA RAM JAT",
+    "mother_name": "GOMATI DEVI",
+    "dob": "09/08/2018"
   },
   {
     "roll_no": 8,
-    "student_name": "NARESH",
-    "image": "class_1/class-1-naresh.jpg"
+    "student_name": "NARESH SUTHAR",
+    "image": "class_1/class-1-naresh.jpg",
+    "father_name": "GIRDHARI LAL SUTHAR",
+    "mother_name": "KAMLA",
+    "dob": "07/07/2017"
   },
   {
     "roll_no": 9,
     "student_name": "PALVIT",
-    "image": "class_1/class-1-palvit.jpg"
+    "image": "class_1/class-1-palvit.jpg",
+    "father_name": "IMRATA RAM",
+    "mother_name": "RADHA",
+    "dob": "24/11/2019"
   },
   {
     "roll_no": 10,
     "student_name": "PIYUSH SUTHAR",
-    "image": "class_1/class-1-piyush-suthar.jpg"
+    "image": "class_1/class-1-piyush-suthar.jpg",
+    "father_name": "GHANSHYAM",
+    "mother_name": "SANTOSH",
+    "dob": "17/11/2017"
   },
   {
     "roll_no": 11,
-    "student_name": "RAJYAVARDHAN SINGH",
-    "image": "class_1/class-1-rajyavardhan-singh.jpg"
+    "student_name": "RAJAYVERDHAN SINGH RATHORE",
+    "image": "class_1/class-1-rajyavardhan-singh.jpg",
+    "father_name": "NARENDRA SINGH",
+    "mother_name": "SANTOSH KANWAR",
+    "dob": "30/09/2019"
   },
   {
     "roll_no": 12,
     "student_name": "SANDIP",
-    "image": "class_1/class-1-sandip.jpg"
+    "image": "class_1/class-1-sandip.jpg",
+    "father_name": "PRADEEP SINGH",
+    "mother_name": "SUNITA KANWAR",
+    "dob": "14/09/2019"
   },
   {
     "roll_no": 13,
     "student_name": "YASHPAL SINGH",
-    "image": "class_1/class-1-yashpal-singh.jpg"
+    "image": "class_1/class-1-yashpal-singh.jpg",
+    "father_name": "RATAN SINGH RAJPUT",
+    "mother_name": "REKHA KANWAR",
+    "dob": "14/07/2019"
   },
   {
     "roll_no": 14,
     "student_name": "NEHA",
-    "image": "class_1/class-1-neha.jpg"
+    "image": "class_1/class-1-neha.jpg",
+    "father_name": "BABULAL",
+    "mother_name": "SUMAN",
+    "dob": "14/04/2017"
   },
   {
     "roll_no": 15,
     "student_name": "VINOD KHERIYA",
-    "image": "class_1/class-1-vinod-kheriya.jpg"
+    "image": "class_1/class-1-vinod-kheriya.jpg",
+    "father_name": "DULARAM KHERIYA",
+    "mother_name": "",
+    "dob": ""
   },
   {
     "roll_no": 16,
     "student_name": "TANISH JAKHAR",
-    "image": "class_1/class-1-tanish-jakhar.jpg"
+    "image": "class_1/class-1-tanish-jakhar.jpg",
+    "father_name": "SHANKAR NATH",
+    "mother_name": "VIMALA",
+    "dob": "07/12/2021"
   },
   {
     "roll_no": 17,
     "student_name": "SAKSHAM",
-    "image": "class_1/class-1-saksham.jpg"
+    "image": "class_1/class-1-saksham.jpg",
+    "father_name": "RAMSWAROOP",
+    "mother_name": "LAXMI",
+    "dob": "07/09/2020"
   },
   {
     "roll_no": 18,
-    "student_name": "YOGENDRA",
-    "image": "class_1/class-1-yogendra.jpg"
+    "student_name": "YOGENDRA SINGH",
+    "image": "class_1/class-1-yogendra.jpg",
+    "father_name": "KARANI SINGH",
+    "mother_name": "SUMAN KANWAR",
+    "dob": "28/08/2018"
   },
   {
     "roll_no": 19,
-    "student_name": "DHARMENDRA",
-    "image": "class_1/class-1-dharmendra.jpg"
+    "student_name": "DHARMENDRA SIMAR",
+    "image": "class_1/class-1-dharmendra.jpg",
+    "father_name": "POKAR RAM",
+    "mother_name": "DROPATI DEVI",
+    "dob": "06/12/2016"
   },
   {
     "roll_no": 20,
-    "student_name": "MAHAK SINWAL",
-    "image": "class_1/class-1-mahak-sinwal.jpg"
+    "student_name": "MAHAK",
+    "image": "class_1/class-1-mahak-sinwal.jpg",
+    "father_name": "SHANKAR NATH",
+    "mother_name": "SUSHILA SIDH",
+    "dob": "11/07/2016"
   },
   {
     "roll_no": 21,
-    "student_name": "GUNJAN",
-    "image": "class_1/class-1-gunjan.jpg"
+    "student_name": "GUNJAN CHOUDHARY",
+    "image": "class_1/class-1-gunjan.jpg",
+    "father_name": "HARIRAM SINWAL",
+    "mother_name": "FULA DEVI",
+    "dob": "21/06/2020"
   },
   {
     "roll_no": 22,
-    "student_name": "SANTOSH KHAIRIYA",
-    "image": "class_1/class-1-santosh-khairiya.jpg"
+    "student_name": "SANTOSH",
+    "image": "class_1/class-1-santosh-khairiya.jpg",
+    "father_name": "NANDURAM",
+    "mother_name": "SHARADA",
+    "dob": "17/08/2019"
   },
   {
     "roll_no": 23,
-    "student_name": "MINAXI SHARMA",
-    "image": "class_1/class-1-minaxi-sharma.jpg"
+    "student_name": "MIAKSHI",
+    "image": "class_1/class-1-minaxi-sharma.jpg",
+    "father_name": "RAM LAL SHARMA",
+    "mother_name": "PRIYANKA AYMA",
+    "dob": "24/07/2020"
   },
   {
     "roll_no": 24,
-    "student_name": "PANKAJ KHAIRIYA",
-    "image": "class_1/class-1-pankaj-khairiya.jpg"
+    "student_name": "PANKAJ KHERIA",
+    "image": "class_1/class-1-pankaj-khairiya.jpg",
+    "father_name": "BHAGU RAM KHERIA",
+    "mother_name": "MANJU",
+    "dob": "18/12/2019"
   },
   {
     "roll_no": 25,
-    "student_name": "PARVEEN KUMAR",
-    "image": "class_1/class-1-parveen-kumar.jpg"
+    "student_name": "PRAVEEN KUMAR",
+    "image": "class_1/class-1-parveen-kumar.jpg",
+    "father_name": "DEDA RAM",
+    "mother_name": "SAROJ DEVI",
+    "dob": "31/08/2019"
+  },
+  {
+    "roll_no": 26,
+    "student_name": "RAMDEV SUTHAR",
+    "image": "class_1/class-1-ramdev-suthar.jpg",
+    "father_name": "RAJURAM",
+    "mother_name": "PANNA DEVI",
+    "dob": "04/02/2018"
   }
 ]

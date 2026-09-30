@@ -1,1 +1,236 @@
-[]
+[
+  {
+    "roll_no": 1,
+    "student_name": "BHANU PRATAP SINGH",
+    "hindi": 6,
+    "english": 9,
+    "mathematics": 10,
+    "maths": 10,
+    "evs": null
+  },
+  {
+    "roll_no": 2,
+    "student_name": "DIVYA SIDH",
+    "hindi": 5,
+    "english": 4,
+    "mathematics": 9,
+    "maths": 9,
+    "evs": null
+  },
+  {
+    "roll_no": 3,
+    "student_name": "ISHITA KANWAR",
+    "hindi": 5,
+    "english": 5,
+    "mathematics": 7,
+    "maths": 7,
+    "evs": null
+  },
+  {
+    "roll_no": 4,
+    "student_name": "KARMVEER SINGH RAJVI",
+    "hindi": 3,
+    "english": 6,
+    "mathematics": 8,
+    "maths": 8,
+    "evs": null
+  },
+  {
+    "roll_no": 5,
+    "student_name": "MAGHARAM BHAMU",
+    "hindi": 7,
+    "english": 4,
+    "mathematics": 10,
+    "maths": 10,
+    "evs": null
+  },
+  {
+    "roll_no": 6,
+    "student_name": "MANAV SUTHAR",
+    "hindi": 5,
+    "english": 3,
+    "mathematics": 10,
+    "maths": 10,
+    "evs": null
+  },
+  {
+    "roll_no": 7,
+    "student_name": "MURALIDHAR JAT",
+    "hindi": 7,
+    "english": 10,
+    "mathematics": 10,
+    "maths": 10,
+    "evs": null
+  },
+  {
+    "roll_no": 8,
+    "student_name": "NARESH SUTHAR",
+    "hindi": 6,
+    "english": 5,
+    "mathematics": 7,
+    "maths": 7,
+    "evs": null
+  },
+  {
+    "roll_no": 9,
+    "student_name": "PALVIT",
+    "hindi": 5,
+    "english": 6,
+    "mathematics": 10,
+    "maths": 10,
+    "evs": null
+  },
+  {
+    "roll_no": 10,
+    "student_name": "PIYUSH SUTHAR",
+    "hindi": 6,
+    "english": 5,
+    "mathematics": 10,
+    "maths": 10,
+    "evs": null
+  },
+  {
+    "roll_no": 11,
+    "student_name": "RAJAYVERDHAN SINGH RATHORE",
+    "hindi": 10,
+    "english": 10,
+    "mathematics": 10,
+    "maths": 10,
+    "evs": null
+  },
+  {
+    "roll_no": 12,
+    "student_name": "SANDIP",
+    "hindi": 5,
+    "english": 3,
+    "mathematics": 1,
+    "maths": 1,
+    "evs": null
+  },
+  {
+    "roll_no": 13,
+    "student_name": "YASHPAL SINGH",
+    "hindi": 4,
+    "english": 6,
+    "mathematics": 8,
+    "maths": 8,
+    "evs": null
+  },
+  {
+    "roll_no": 14,
+    "student_name": "NEHA",
+    "hindi": 6,
+    "english": 5,
+    "mathematics": 7,
+    "maths": 7,
+    "evs": null
+  },
+  {
+    "roll_no": 15,
+    "student_name": "VINOD KHERIYA",
+    "hindi": 7,
+    "english": 8,
+    "mathematics": 10,
+    "maths": 10,
+    "evs": null
+  },
+  {
+    "roll_no": 16,
+    "student_name": "TANISH JAKHAR",
+    "hindi": null,
+    "english": null,
+    "mathematics": 8,
+    "maths": 8,
+    "evs": null
+  },
+  {
+    "roll_no": 17,
+    "student_name": "SAKSHAM",
+    "hindi": 2,
+    "english": 5,
+    "mathematics": null,
+    "maths": null,
+    "evs": null
+  },
+  {
+    "roll_no": 18,
+    "student_name": "YOGENDRA SINGH",
+    "hindi": 7,
+    "english": 2,
+    "mathematics": 7,
+    "maths": 7,
+    "evs": null
+  },
+  {
+    "roll_no": 19,
+    "student_name": "DHARMENDRA SIMAR",
+    "hindi": 10,
+    "english": 9,
+    "mathematics": 10,
+    "maths": 10,
+    "evs": null
+  },
+  {
+    "roll_no": 20,
+    "student_name": "MAHAK",
+    "hindi": 9,
+    "english": 8,
+    "mathematics": 10,
+    "maths": 10,
+    "evs": null
+  },
+  {
+    "roll_no": 21,
+    "student_name": "GUNJAN CHOUDHARY",
+    "hindi": 7,
+    "english": 5,
+    "mathematics": 8,
+    "maths": 8,
+    "evs": null
+  },
+  {
+    "roll_no": 22,
+    "student_name": "SANTOSH",
+    "hindi": 5,
+    "english": 5,
+    "mathematics": 7,
+    "maths": 7,
+    "evs": null
+  },
+  {
+    "roll_no": 23,
+    "student_name": "MIAKSHI",
+    "hindi": 6,
+    "english": 7,
+    "mathematics": 6,
+    "maths": 6,
+    "evs": null
+  },
+  {
+    "roll_no": 24,
+    "student_name": "PANKAJ KHERIA",
+    "hindi": 7,
+    "english": 6,
+    "mathematics": 10,
+    "maths": 10,
+    "evs": null
+  },
+  {
+    "roll_no": 25,
+    "student_name": "PRAVEEN KUMAR",
+    "hindi": 4,
+    "english": 7,
+    "mathematics": 9,
+    "maths": 9,
+    "evs": null
+  },
+  {
+    "roll_no": 26,
+    "student_name": "RAMDEV SUTHAR",
+    "hindi": 4,
+    "english": 6,
+    "mathematics": 9,
+    "maths": 9,
+    "evs": null
+  }
+]
